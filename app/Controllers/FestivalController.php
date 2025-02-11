@@ -9,8 +9,27 @@ class FestivalController extends Controller
 {
     public function index()
     {
-        $model = new FestivalModel();
-        $data['festivales'] = $model->findAll();
+        $festivalModel = new FestivalModel();
+        $perPage = 5; // Número de festivales por página
+
+        // Obtener los filtros desde la URL
+        $nombre = $this->request->getGet('nombre');
+        $fecha_inicio = $this->request->getGet('fecha_inicio');
+        $ubicacion = $this->request->getGet('ubicacion');
+
+        // Filtrar resultados según los valores ingresados
+        if ($nombre) {
+            $festivalModel->like('nombre', $nombre);
+        }
+        if ($fecha_inicio) {
+            $festivalModel->where('fecha_inicio', $fecha_inicio);
+        }
+        if ($ubicacion) {
+            $festivalModel->like('ubicación', $ubicacion);
+        }
+
+        $data['festivales'] = $festivalModel->paginate($perPage);
+        $data['pager'] = $festivalModel->pager;
 
         return view('festivales/index', $data);
     }
@@ -66,3 +85,4 @@ class FestivalController extends Controller
         return redirect()->to('/festivales');
     }
 }
+
