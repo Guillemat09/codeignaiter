@@ -36,8 +36,10 @@ class ArtistaController extends Controller
     {
         $model = new ArtistaModel();
         $data['artista'] = $model->find($id);
+        $message = 'Usuario editado correctamente'
 
         return view('artistas/edit', $data);
+
     }
 
     public function update($id)
@@ -48,6 +50,7 @@ class ArtistaController extends Controller
             'nombre' => $this->request->getPost('nombre'),
             'género' => $this->request->getPost('género'),
         ]);
+        $message = 'Usuario actualizado correctamente'
 
         return redirect()->to('/artistas');
     }
@@ -56,7 +59,9 @@ class ArtistaController extends Controller
     {
         $model = new ArtistaModel();
         $model->delete($id);
+        $message = 'Usuario borrado correctamente'
 
         return redirect()->to('/artistas');
+        
     }
 }
