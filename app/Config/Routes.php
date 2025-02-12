@@ -13,3 +13,12 @@ $routes->get('users/save/(:num)', 'UserController::saveUser/$1'); // Mostrar for
 $routes->post('users/save', 'UserController::saveUser'); // Crear usuario (POST)
 $routes->post('users/save/(:num)', 'UserController::saveUser/$1'); // Editar usuario (POST)
 $routes->get('users/delete/(:num)', 'UserController::delete/$1'); // Eliminar usuario
+
+$routes->get('/register', 'AuthController::register');//
+$routes->post('register/process', 'AuthController::registerProcess');//
+$routes->get('/login', 'AuthController::login'); //
+$routes->post('login/process', 'AuthController::loginProcess');//
+$routes->get('/logout', 'AuthController::logout');//
+$routes->get('/dashboard', 'AuthController::dashboard', ['filter' => 'auth']);
+
+
