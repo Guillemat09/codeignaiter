@@ -10,3 +10,4 @@ class UserModel extends Model
     protected $primaryKey = 'id'; // Clave primaria de la tabla
     protected $allowedFields = ['name', 'email']; // Campos permitidos para inserción/actualización
 }
+

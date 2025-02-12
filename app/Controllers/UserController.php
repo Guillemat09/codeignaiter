@@ -58,7 +58,6 @@ class UserController extends BaseController
         return view('user_form', $data);
     }
 
-    // Estas vigilado
     public function delete($id)
     {
         $userModel = new UserModel();
