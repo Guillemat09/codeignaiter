@@ -6,8 +6,7 @@ use CodeIgniter\Model;
 
 class UserModel extends Model
 {
-    protected $table      = 'usuarios';  // La tabla en la base de datos
-    protected $primaryKey = 'id';  // La clave primaria
-    protected $allowedFields = ['name', 'email'];  // Campos que se pueden insertar/actualizar
-    protected $useTimestamps = true;  // Usar marcas de tiempo
+    protected $table = 'users'; // Nombre de la tabla en la base de datos
+    protected $primaryKey = 'id'; // Clave primaria de la tabla
+    protected $allowedFields = ['name', 'email']; // Campos permitidos para inserción/actualización
 }
