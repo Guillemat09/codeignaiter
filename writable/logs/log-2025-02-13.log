@@ -1,0 +1,1721 @@
+INFO - 2025-02-13 16:09:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 16:24:53 --> mysqli_sql_exception: Table 'gestion_festivales.user' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 16:24:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.user' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:24:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:24:53 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:25:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 16:25:37 --> mysqli_sql_exception: Table 'gestion_festivales.user' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 16:25:37 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.user' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:25:37 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:25:37 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.user' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `user`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `user` ON `user`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 16:28:00 --> mysqli_sql_exception: Unknown column 'entradas.user_id' in 'on clause' in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 16:28:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'entradas.user_id' in 'on clause'
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:28:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'entradas.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:28:00 --> [Caused by] mysqli_sql_exception: Unknown column 'entradas.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 16:28:01 --> mysqli_sql_exception: Unknown column 'entradas.user_id' in 'on clause' in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 16:28:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'entradas.user_id' in 'on clause'
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:28:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'entradas.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:28:01 --> [Caused by] mysqli_sql_exception: Unknown column 'entradas.user_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.*, `users`.`name` as `user`, `festivales`.`nombre` as `festival`
+FROM `entradas`
+JOIN `users` ON `users`.`id` = `entradas`.`user_id`
+JOIN `festivales` ON `festivales`.`id` = `entradas`.`festival_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(15): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(13): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:36:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:36:51 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/1]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:36:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:37:05 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/1]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('1')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:37:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:37:11 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:39:42 --> ErrorException: Undefined variable $users
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 6.
+ 1 APPPATH\Views\entrada_form.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:39:43 --> ErrorException: Undefined variable $users
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 6.
+ 1 APPPATH\Views\entrada_form.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:39:48 --> ErrorException: Undefined variable $users
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 6.
+ 1 APPPATH\Views\entrada_form.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:39:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:40:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:40:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:40:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:40:52 --> ErrorException: Undefined variable $users
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 6.
+ 1 APPPATH\Views\entrada_form.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:42:20 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:42:20 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:42:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:42:32 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(47): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:42:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:56:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 16:56:26 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:56:36 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:56:37 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:56:37 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:56:37 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 16:56:37 --> ErrorException: Undefined array key "user_id"
+[Method: GET, Route: entradas/edit/5]
+in APPPATH\Views\entrada_form.php on line 7.
+ 1 APPPATH\Views\entrada_form.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "user_id"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 7)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(64): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->edit('5')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 16:57:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:57:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:57:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 16:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:01:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 17:02:30 --> ErrorException: Undefined variable $users
+[Method: GET, Route: entradas/create]
+in APPPATH\Views\entrada_form.php on line 6.
+ 1 APPPATH\Views\entrada_form.php(6): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $users', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php', 6)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_form.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_form', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(26): view('entrada_form', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->create()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 17:03:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-02-13 17:08:29 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:29 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:29 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:30 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:30 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:30 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:30 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:30 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:31 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:31 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:31 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:31 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:32 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:32 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:32 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:32 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-13 17:08:32 --> mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\codeignaiter\app\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-13 17:08:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+[Method: GET, Route: entradas]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 17:08:32 --> [Caused by] mysqli_sql_exception: Table 'gestion_festivales.usuarios' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `entradas`.`id`, `entradas`.`tipo_entrada`, `entradas`.`precio`, `usuarios`.`name` as `usuario_name`, `festivales`.`nombre` as `festival_name`
+FROM `entradas`
+JOIN `usuarios` ON `entradas`.`usuario_id` = `usuarios`.`id`
+JOIN `festivales` ON `entradas`.`festival_id` = `festivales`.`id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\EntradaModel.php(19): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\EntradaController.php(16): App\Models\EntradaModel->getEntradasConDetalles()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 17:09:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:12:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:12:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:23:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 17:24:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 18:09:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:09:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:12:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:00 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-13 18:13:45 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "festivales/index.php"
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('festivales/index.php')
+ 2 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festivales/index', [], true)
+ 3 APPPATH\Controllers\FestivalController.php(14): view('festivales/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 18:18:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 18:19:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 18:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 18:19:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 18:45:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-02-13 18:45:03 --> ErrorException: Undefined variable $user
+[Method: GET, Route: artistas]
+in APPPATH\Views\artista_list.php on line 45.
+ 1 APPPATH\Views\artista_list.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $user', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\artista_list.php', 45)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\artista_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('artista_list', [], true)
+ 5 APPPATH\Controllers\ArtistaController.php(13): view('artista_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ArtistaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ArtistaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-02-13 18:45:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:11:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:12:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:16:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:16:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:16:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:17:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:21:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:21:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-02-13 19:24:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

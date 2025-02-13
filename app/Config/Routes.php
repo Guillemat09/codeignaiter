@@ -22,3 +22,10 @@ $routes->get('/logout', 'AuthController::logout');//
 $routes->get('/dashboard', 'AuthController::dashboard', ['filter' => 'auth']);
 
 
+
+$routes->get('artistas', 'ArtistaController::index'); // Listar artistas
+$routes->get('artistas/save', 'ArtistaController::saveArtista'); // Mostrar formulario vacio para meter un artista nuevo
+$routes->get('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // Mostrar formulario relleno como un artista para cambiar sus datos
+$routes->post('artistas/save', 'ArtistaController::saveArtista'); // Crear usuario en la base de datos (POST)
+$routes->post('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // Editar usuario en la base de datos (POST)
+$routes->get('artistas/delete/(:num)', 'ArtistaController::delete/$1'); // Eliminar artista
