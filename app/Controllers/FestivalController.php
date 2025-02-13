@@ -9,7 +9,18 @@ class FestivalController extends BaseController
     public function index()
     {
         $festivalModel = new FestivalModel();
-        $data['festivales'] = $festivalModel->findAll(); // Obtener todos los festivales
+        $filters = $this->request->getGet();  // Obtener filtros del formulario
+        
+        // Configurar paginación
+        $perPage = 10;
+        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+
+        // Obtener datos paginados con filtros
+        $data['festivales'] = $festivalModel->filter($filters)
+                                            ->paginate($perPage, 'default', $currentPage);
+        $data['pager'] = $festivalModel->pager;  // Aquí se asegura de pasar `pager` a la vista
+        $data['filters'] = $filters; // Pasar filtros a la vista
+
         return view('festival_list', $data);
     }
 
@@ -17,47 +28,28 @@ class FestivalController extends BaseController
     {
         $festivalModel = new FestivalModel();
         helper(['form', 'url']);
-        // Cargar datos del festival si es edición
         $data['festival'] = $id ? $festivalModel->find($id) : null;
 
         if ($this->request->getMethod() == 'post') {
+            $festivalData = [
+                'nombre' => $this->request->getPost('nombre'),
+                'descripcion' => $this->request->getPost('descripcion'),
+                'fecha_inicio' => $this->request->getPost('fecha_inicio'),
+                'fecha_fin' => $this->request->getPost('fecha_fin'),
+                'lugar' => $this->request->getPost('lugar')
+            ];
 
-            // Reglas de validación
-            // $validation = \Config\Services::validation();
-            // $validation->setRules([
-            //     'name' => 'required|min_length[3]|max_length[50]',
-            //     'email' => 'required|valid_email',
-            // ]);
+            if ($id) {
+                $festivalModel->update($id, $festivalData);
+                $message = 'Festival actualizado correctamente.';
+            } else {
+                $festivalModel->save($festivalData);
+                $message = 'Festival creado correctamente.';
+            }
 
-            // if (!$validation->withRequest($this->request)->run()) {
-            //     // Mostrar errores de validación
-            //     $data['validation'] = $validation;
-            // } else {
-            //     Preparar datos del formulario
-                $festivalData = [
-                    'nombre' => $this->request->getPost('nombre'),
-                    'descripcion' => $this->request->getPost('descripcion'),
-                    'fecha_inicio' => $this->request->getPost('fecha_inicio'),
-                    'fecha_fin' => $this->request->getPost('fecha_fin'),
-                    'lugar' => $this->request->getPost('lugar')
-                ];
-
-                if ($id) {
-                    // Actualizar festival existente
-                    $festivalModel->update($id, $festivalData);
-                    $message = 'Festival actualizado correctamente.';
-                } else {
-                    // Crear nuevo festival
-                    $festivalModel->save($festivalData);
-                    $message = 'Festival creado correctamente.';
-                }
-
-                // Redirigir al listado con un mensaje de éxito
-                return redirect()->to('/festivales')->with('success', $message);
-            // }
+            return redirect()->to('/festivales')->with('success', $message);
         }
 
-        // Cargar la vista del formulario (crear/editar)
         return view('festival_form', $data);
     }
 
@@ -68,3 +60,4 @@ class FestivalController extends BaseController
         return redirect()->to('/festivales')->with('success', 'Festival eliminado correctamente.');
     }
 }
+

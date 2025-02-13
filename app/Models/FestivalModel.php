@@ -14,4 +14,15 @@ class FestivalModel extends Model
 
     protected $allowedFields = ['nombre', 'descripcion', 'fecha_inicio','fecha_fin','lugar','created_at']; // Campos permitidos para inserción/actualización
 
+    // Añadir filtros
+    public function filter($filters)
+    {
+        foreach ($filters as $key => $value) {
+            if (!empty($value)) {
+                $this->like($key, $value);
+            }
+        }
+        return $this;
+    }
 }
+

@@ -9,7 +9,18 @@ class ArtistaController extends BaseController
     public function index()
     {
         $artistaModel = new ArtistaModel();
-        $data['artistas'] = $artistaModel->findAll(); // Obtener todos los artistas
+        $filters = $this->request->getGet();  // Obtener filtros del formulario
+        
+        // Configurar paginación
+        $perPage = 10;
+        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+
+        // Obtener datos paginados con filtros
+        $data['artistas'] = $artistaModel->filter($filters)
+                                         ->paginate($perPage, 'default', $currentPage);
+        $data['pager'] = $artistaModel->pager;  // Aquí se asegura de pasar `pager` a la vista
+        $data['filters'] = $filters; // Pasar filtros a la vista
+
         return view('artista_list', $data);
     }
 
@@ -21,42 +32,23 @@ class ArtistaController extends BaseController
         $data['artista'] = $id ? $artistaModel->find($id) : null;
 
         if ($this->request->getMethod() == 'POST') {
+            $artistaData = [
+                'nombre' => $this->request->getPost('nombre'),
+                'descripcion' => $this->request->getPost('descripcion'),
+                'genero' => $this->request->getPost('genero')
+            ];
 
-            // Reglas de validación
-            // $validation = \Config\Services::validation();
-            // $validation->setRules([
-            //     'name' => 'required|min_length[3]|max_length[50]',
-            //     'email' => 'required|valid_email',
-            // ]);
+            if ($id) {
+                $artistaModel->update($id, $artistaData);
+                $message = 'Artista actualizado correctamente.';
+            } else {
+                $artistaModel->save($artistaData);
+                $message = 'Artista creado correctamente.';
+            }
 
-            // if (!$validation->withRequest($this->request)->run()) {
-            //     // Mostrar errores de validación
-            //     $data['validation'] = $validation;
-            // } else {
-            //     Preparar datos del formulario
-                $artistaData = [
-                    'nombre' => $this->request->getPost('nombre'),
-                    'descripcion' => $this->request->getPost('descripcion'),
-                    'genero' => $this->request->getPost('genero')
-                    
-                ];
-
-                if ($id) {
-                    // Actualizar usuario existente
-                    $artistaModel->update($id, $artistaData);
-                    $message = 'Artista actualizado correctamente.';
-                } else {
-                    // Crear nuevo usuario
-                    $artistaModel->save($artistaData);
-                    $message = 'Artista creado correctamente.';
-                }
-
-                // Redirigir al listado con un mensaje de éxito
-                return redirect()->to('/artistas')->with('success', $message);
-            // }
+            return redirect()->to('/artistas')->with('success', $message);
         }
 
-        // Cargar la vista del formulario (crear/editar)
         return view('artista_form', $data);
     }
 
@@ -67,3 +59,5 @@ class ArtistaController extends BaseController
         return redirect()->to('/artistas')->with('success', 'Artista eliminado correctamente.');
     }
 }
+
+
