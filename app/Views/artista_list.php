@@ -61,7 +61,7 @@
                         <td><?= esc($artista['nombre']) ?></td>
                         <td><?= esc($artista['descripcion']) ?></td>
                         <td><?= esc($artista['genero']) ?></td>
-                        <td><?= isset($artista['created_at']) ? esc($artista['created_at']) : 'N/A' ?></td>
+                        <td><?= isset($artista['fecha_creacion']) ? esc($artista['fecha_creacion']) : 'N/A' ?></td>
                         <td>
                             <a href="<?= base_url('artistas/save/' . $artista['id']) ?>" class="btn btn-warning">Editar</a>
                             <a href="<?= base_url('artistas/delete/' . esc($artista['id'])) ?>" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este artista?');">Eliminar</a>
