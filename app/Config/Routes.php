@@ -36,3 +36,10 @@ $routes->get('patrocinadores/save/(:num)', 'PatrocinadorController::savePatrocin
 $routes->post('patrocinadores/save', 'PatrocinadorController::savePatrocinador'); // Crear usuario en la base de datos (POST)
 $routes->post('patrocinadores/save/(:num)', 'PatrocinadorController::savePatrocinador/$1'); // Editar usuario en la base de datos (POST)
 $routes->get('patrocinadores/delete/(:num)', 'PatrocinadorController::delete/$1'); // Eliminar patrocinadores
+
+$routes->get('festivales', 'FestivalController::index'); // Listar patrocinador
+$routes->get('festivales/save', 'FestivalController::saveFestival'); // Mostrar formulario vacio para meter un patrocinador nuevo
+$routes->get('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); // Mostrar formulario relleno como un patrocinador para cambiar sus datos
+$routes->post('festivales/save', 'FestivalController::saveFestival'); // Crear usuario en la base de datos (POST)
+$routes->post('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); // Editar usuario en la base de datos (POST)
+$routes->get('festivales/delete/(:num)', 'FestivalController::delete/$1'); // Eliminar patrocinadores

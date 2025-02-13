@@ -33,7 +33,7 @@ class ArtistaController extends BaseController
             //     // Mostrar errores de validación
             //     $data['validation'] = $validation;
             // } else {
-                // Preparar datos del formulario
+            //     Preparar datos del formulario
                 $artistaData = [
                     'nombre' => $this->request->getPost('nombre'),
                     'descripcion' => $this->request->getPost('descripcion'),
