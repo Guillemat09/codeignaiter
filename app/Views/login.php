@@ -4,32 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Iniciar Sesión</h2>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Iniciar Sesión</h2>
 
     <?php if (session()->getFlashdata('error')): ?>
-        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+        <div class="alert alert-danger">
+            <?= session()->getFlashdata('error') ?>
+        </div>
     <?php endif; ?>
 
     <?php if (session()->getFlashdata('success')): ?>
-        <p style="color: green;"><?= session()->getFlashdata('success') ?></p>
+        <div class="alert alert-success">
+            <?= session()->getFlashdata('success') ?>
+        </div>
     <?php endif; ?>
 
     <form action="<?= base_url('/process-login') ?>" method="post">
         <?= csrf_field() ?>
 
-        <label for="email">Correo:</label>
-        <input type="email" name="email" required>
-        <span style="color:red;"><?= session('validation.email') ?></span>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+            <div class="text-danger"><?= session('validation.email') ?></div>
+        </div>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
-        <span style="color:red;"><?= session('validation.password') ?></span>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <div class="text-danger"><?= session('validation.password') ?></div>
+        </div>
 
-        <button type="submit">Iniciar Sesión</button>
+        <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
     </form>
 
-    <p>¿No tienes cuenta? <a href="<?= base_url('/register') ?>">Regístrate</a></p>
+    <p class="text-center mt-3">¿No tienes cuenta? <a href="<?= base_url('/register') ?>">Regístrate</a></p>
+</div>
 </body>
 </html>
+
+

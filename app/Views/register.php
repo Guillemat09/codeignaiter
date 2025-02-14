@@ -4,42 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <h2>Registro de Usuario</h2>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Registro de Usuario</h2>
 
     <?php if (session()->getFlashdata('error')): ?>
-        <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+        <div class="alert alert-danger">
+            <?= session()->getFlashdata('error') ?>
+        </div>
     <?php endif; ?>
 
     <form action="<?= base_url('/process-register') ?>" method="post">
         <?= csrf_field() ?>
 
-        <label for="name">Nombre:</label>
-        <input type="text" name="name" value="<?= old('name') ?>" required>
-        <span style="color:red;"><?= session('validation.name') ?></span>
+        <div class="mb-3">
+            <label for="name" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" value="<?= old('name') ?>" required>
+            <div class="text-danger"><?= session('validation.name') ?></div>
+        </div>
 
-        <label for="email">Correo:</label>
-        <input type="email" name="email" value="<?= old('email') ?>" required>
-        <span style="color:red;"><?= session('validation.email') ?></span>
+        <div class="mb-3">
+            <label for="email" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="email" name="email" value="<?= old('email') ?>" required>
+            <div class="text-danger"><?= session('validation.email') ?></div>
+        </div>
 
-        <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
-        <span style="color:red;"><?= session('validation.password') ?></span>
+        <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+            <div class="text-danger"><?= session('validation.password') ?></div>
+        </div>
 
-        <label for="password_confirm">Confirmar Contraseña:</label>
-        <input type="password" name="password_confirm" required>
-        <span style="color:red;"><?= session('validation.password_confirm') ?></span>
+        <div class="mb-3">
+            <label for="password_confirm" class="form-label">Confirmar Contraseña</label>
+            <input type="password" class="form-control" id="password_confirm" name="password_confirm" required>
+            <div class="text-danger"><?= session('validation.password_confirm') ?></div>
+        </div>
 
-        <label for="role">Rol:</label>
-        <select name="role" required>
-            <option value="usuario">Usuario</option>
-            <option value="admin">Admin</option>
-        </select>
+        <div class="mb-3">
+            <label for="role" class="form-label">Rol</label>
+            <select class="form-control" id="role" name="role" required>
+                <option value="usuario">Usuario</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
 
-        <button type="submit">Registrarse</button>
+        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
     </form>
 
-    <p>¿Ya tienes cuenta? <a href="<?= base_url('/login') ?>">Inicia sesión</a></p>
+    <p class="text-center mt-3">¿Ya tienes cuenta? <a href="<?= base_url('/login') ?>">Inicia sesión</a></p>
+</div>
 </body>
 </html>
+
+
