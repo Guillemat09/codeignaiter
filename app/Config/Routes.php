@@ -21,8 +21,6 @@ $routes->post('login/process', 'AuthController::loginProcess');//
 $routes->get('/logout', 'AuthController::logout');//
 $routes->get('/dashboard', 'AuthController::dashboard', ['filter' => 'auth']);
 
-
-
 $routes->get('artistas', 'ArtistaController::index'); // Listar artistas
 $routes->get('artistas/save', 'ArtistaController::saveArtista'); // Mostrar formulario vacio para meter un artista nuevo
 $routes->get('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // Mostrar formulario relleno como un artista para cambiar sus datos
@@ -43,3 +41,21 @@ $routes->get('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); /
 $routes->post('festivales/save', 'FestivalController::saveFestival'); // Crear usuario en la base de datos (POST)
 $routes->post('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); // Editar usuario en la base de datos (POST)
 $routes->get('festivales/delete/(:num)', 'FestivalController::delete/$1'); // Eliminar patrocinadores
+
+$routes->group('entradas', function($routes) {
+    $routes->get('/', 'EntradaController::index');
+    $routes->get('save/(:segment)', 'EntradaController::saveEntrada/$1');
+    $routes->get('save', 'EntradaController::saveEntrada');
+    $routes->post('save/(:segment)', 'EntradaController::saveEntrada/$1');
+    $routes->post('save', 'EntradaController::saveEntrada');
+    $routes->get('delete/(:segment)', 'EntradaController::delete/$1');
+});
+
+$routes->group('roles', function($routes) {
+    $routes->get('/', 'RolController::index');
+    $routes->get('save/(:segment)', 'RolController::saveRol/$1');
+    $routes->get('save', 'RolController::saveRol');
+    $routes->post('save/(:segment)', 'RolController::saveRol/$1');
+    $routes->post('save', 'RolController::saveRol');
+    $routes->get('delete/(:segment)', 'RolController::delete/$1');
+});
