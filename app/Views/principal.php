@@ -92,7 +92,7 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-title">User Management</span>
+										<span class="menu-title">Listas</span>
 										<span class="menu-arrow"></span>
 									</span>
 									<div class="menu-sub menu-sub-accordion">
@@ -106,19 +106,43 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 											<div class="menu-sub menu-sub-accordion">
 												<div class="menu-item">
-													<a class="menu-link" href="../../demo1/dist/apps/user-management/users/list.html">
+													<a class="menu-link" href="<?= base_url('users') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Users List</span>
+														<span class="menu-title">Users</span>
 													</a>
 												</div>
 												<div class="menu-item">
-													<a class="menu-link" href="../../demo1/dist/apps/user-management/users/view.html">
+													<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">View User</span>
+														<span class="menu-title">Patrocinadores</span>
+													</a>
+												</div>
+												<div class="menu-item">
+													<a class="menu-link" href="<?= base_url('artistas') ?>">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Artistas</span>
+													</a>
+												</div>
+												<div class="menu-item">
+													<a class="menu-link" href="<?= base_url('entradas') ?>">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Entradas</span>
+													</a>
+												</div>
+												<div class="menu-item">
+													<a class="menu-link" href="<?= base_url('festivales') ?>">
+														<span class="menu-bullet">
+															<span class="bullet bullet-dot"></span>
+														</span>
+														<span class="menu-title">Festivales</span>
 													</a>
 												</div>
 											</div>
@@ -133,7 +157,7 @@ License: For each use you must have a valid license purchased only from above li
 											</span>
 											<div class="menu-sub menu-sub-accordion">
 												<div class="menu-item">
-													<a class="menu-link" href="../../demo1/dist/apps/user-management/roles/list.html">
+													<a class="menu-link" href="<?= base_url('roles') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
