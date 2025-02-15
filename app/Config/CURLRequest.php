@@ -4,6 +4,11 @@ namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
+/**
+ * Clase de configuración para CURLRequest.
+ *
+ * @package Config
+ */
 class CURLRequest extends BaseConfig
 {
     /**
@@ -11,10 +16,13 @@ class CURLRequest extends BaseConfig
      * CURLRequest Share Options
      * --------------------------------------------------------------------------
      *
-     * Whether share options between requests or not.
+     * Si compartir las opciones entre solicitudes o no.
      *
-     * If true, all the options won't be reset between requests.
-     * It may cause an error request with unnecessary headers.
+     * Si es verdadero, todas las opciones no se restablecerán entre las solicitudes.
+     * Puede causar un error de solicitud con encabezados innecesarios.
+     *
+     * @var bool
      */
     public bool $shareOptions = false;
 }
+
