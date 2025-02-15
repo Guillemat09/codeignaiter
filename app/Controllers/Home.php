@@ -1,13 +1,30 @@
 <?php
 
 namespace App\Controllers;
+
+use App\Models\RolModel;
 use App\Models\UserModel;
 
 class Home extends BaseController
 {
     public function index()
     {
-        return view('custom_view');
+        return view('login');
+    }
+
+    public function principal(){
+        $session = session();
+        $rolModel = new RolModel();
+        $rol = $rolModel->find($session->get('role'));
+        // var_dump($rol);die();
+        $data = [
+            'name' => $session->get('name'),
+            'email' => $session->get('email'),
+            'rol' => $rol['nombre']
+
+        ];
+        return view('principal', $data);
+
     }
 
     public function getUsers()  

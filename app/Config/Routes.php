@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('home', 'Home::index');
+$routes->get('principal','Home::principal');
 $routes->get('users', 'UserController::index'); // Listar usuarios
 $routes->get('users/save', 'UserController::saveUser'); // Mostrar formulario para crear usuario
 $routes->get('users/save/(:num)', 'UserController::saveUser/$1'); // Mostrar formulario para editar usuario

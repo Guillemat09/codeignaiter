@@ -10,7 +10,7 @@ class AuthController extends BaseController
     public function login()
     {
         helper(['form']);
-        if ($this->request->getMethod() == 'post') {
+        if ($this->request->getMethod() == 'POST') {
             $session = session();
             $model = new UserModel();
             $email = $this->request->getVar('email');
@@ -18,17 +18,19 @@ class AuthController extends BaseController
             $data = $model->getUserByEmail($email);
             if ($data) {
                 $pass = $data['password'];
-                $authenticatePassword = password_verify($password, $pass);
+                // $authenticatePassword = password_verify($password, $pass);
+                // var_dump($data);die();
+                $authenticatePassword = ($password == $pass);
                 if ($authenticatePassword) {
                     $sessionData = [
                         'id' => $data['id'],
                         'name' => $data['name'],
                         'email' => $data['email'],
-                        'role' => $data['role'],
+                        'role' => $data['role_id'],
                         'isLoggedIn' => TRUE
                     ];
                     $session->set($sessionData);
-                    return redirect()->to('/index.html');
+                    return redirect()->to('/principal');
                 } else {
                     $session->setFlashdata('error', 'Contraseña incorrecta.');
                     return redirect()->to('/login');
