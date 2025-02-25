@@ -34,6 +34,7 @@ License: For each use you must have a valid license purchased only from above li
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -2858,11 +2859,13 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="text-muted fs-7 fw-bold">Finance and accounting reports</div>
 														</div>
 														<div class="fw-bolder fs-3 text-primary">$24,500</div>
+													</div> 
+													<div class="md-5">
+													<div id="chart" style="height: 100px;"></div>
 													</div>
 												</div>
 												<!--end::Stats-->
 												<!--begin::Chart-->
-												<div class="mixed-widget-7-chart card-rounded-bottom" data-kt-chart-color="primary" style="height: 150px"></div>
 												<!--end::Chart-->
 											</div>
 											<!--end::Body-->
@@ -8292,6 +8295,7 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/custom/apps/chat/chat.js"></script>
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../../assets/js/custom/chart.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
