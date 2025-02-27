@@ -30,6 +30,11 @@
             <input type="email" name="email" id="email" class="form-control" 
                    value="<?= isset($user) ? esc($user['email']) : '' ?>" required>
         </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="password" class="form-control" 
+                   value="<?= isset($user) ? esc($user['password']) : '' ?>" required>
+        </div>
         <button type="submit" class="btn btn-success"><?= isset($user) ? 'Actualizar' : 'Guardar' ?></button>
         <a href="<?= base_url('users') ?>" class="btn btn-secondary">Cancelar</a>
     </form>
