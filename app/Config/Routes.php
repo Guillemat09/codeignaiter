@@ -52,11 +52,10 @@ $routes->group('entradas', function($routes) {
     $routes->get('delete/(:segment)', 'EntradaController::delete/$1');
 });
 
-$routes->group('roles', function($routes) {
-    $routes->get('/', 'RolController::index');
-    $routes->get('save/(:segment)', 'RolController::saveRol/$1');
-    $routes->get('save', 'RolController::saveRol');
-    $routes->post('save/(:segment)', 'RolController::saveRol/$1');
-    $routes->post('save', 'RolController::saveRol');
-    $routes->get('delete/(:segment)', 'RolController::delete/$1');
+$routes->get('fetch-events', 'EventController::fetchEvents');
+$routes->post('add-event', 'EventController::addEvent');
+$routes->delete('delete-event/(:num)', 'EventController::deleteEvent/$1');
+$routes->get('calendar', function() {
+    return view('calendar');
 });
+
