@@ -21,13 +21,18 @@ class UserController extends BaseController
         $data['user'] = $id ? $userModel->find($id) : null;
 
         if ($this->request->getMethod() == 'POST') {
-
             // Reglas de validación
             $validation = \Config\Services::validation();
-            $validation->setRules([
+            $rules = [
                 'name' => 'required|min_length[3]|max_length[50]',
                 'email' => 'required|valid_email',
-            ]);
+            ];
+
+            if (!$id) { // Si es un nuevo usuario, verificar que el email sea único
+                $rules['email'] .= '|is_unique[users.email]';
+            }
+
+            $validation->setRules($rules);
 
             if (!$validation->withRequest($this->request)->run()) {
                 // Mostrar errores de validación
@@ -61,7 +66,13 @@ class UserController extends BaseController
     public function delete($id)
     {
         $userModel = new UserModel();
-        $userModel->delete($id); // Eliminar usuario
-        return redirect()->to('/users')->with('success', 'Usuario eliminado correctamente.');
+        $user = $userModel->find($id);
+        
+        if ($user) {
+            $userModel->delete($id); // Eliminar usuario
+            return redirect()->to('/users')->with('success', 'Usuario eliminado correctamente.');
+        } else {
+            return redirect()->to('/users')->with('error', 'El usuario no existe.');
+        }
     }
 }
