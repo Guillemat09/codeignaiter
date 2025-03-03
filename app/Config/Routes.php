@@ -16,10 +16,12 @@ $routes->post('users/save/(:num)', 'UserController::saveUser/$1'); // Editar usu
 $routes->get('users/delete/(:num)', 'UserController::delete/$1'); // Eliminar usuario
 
 $routes->get('/login', 'AuthController::login');
-$routes->post('/process-login', 'AuthController::login');
+$routes->post('/login', 'AuthController::login');
 $routes->get('/register', 'AuthController::register');
-$routes->post('/process-register', 'AuthController::register');
+$routes->post('/register', 'AuthController::register');
 $routes->get('/logout', 'AuthController::logout');
+
+
 
 
 $routes->get('artistas', 'ArtistaController::index'); // Listar artistas
@@ -58,4 +60,8 @@ $routes->delete('delete-event/(:num)', 'EventController::deleteEvent/$1');
 $routes->get('calendar', function() {
     return view('calendar');
 });
+
+$routes->get('export/csv', 'Export::exportCSV');
+
+$routes->get('roles', 'RolController::index'); 
 

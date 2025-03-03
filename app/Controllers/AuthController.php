@@ -4,40 +4,46 @@ namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\RolModel;
+use CodeIgniter\Controller;
 
 class AuthController extends BaseController
 {
     public function login()
     {
         helper(['form']);
-        if ($this->request->getMethod() == 'POST') {
+        
+        if ($this->request->getMethod() == 'post') {
             $session = session();
             $model = new UserModel();
             $email = $this->request->getVar('email');
             $password = $this->request->getVar('password');
-            $data = $model->where('email', $email)->first(); // Obtener usuario por email
-            
-            if ($data) {
-                if (password_verify($password, $data['password'])) { // Verificación segura
-                    $sessionData = [
-                        'id' => $data['id'],
-                        'name' => $data['name'],
-                        'email' => $data['email'],
-                        'role' => $data['role_id'],
-                        'isLoggedIn' => TRUE
-                    ];
-                    $session->set($sessionData);
-                    return redirect()->to('/principal');
-                } else {
-                    $session->setFlashdata('error', 'Contraseña incorrecta.');
-                    return redirect()->to('/login');
-                }
-            } else {
+            $data = $model->where('email', $email)->first();
+
+            if (!$data) {
                 $session->setFlashdata('error', 'Email no encontrado.');
                 return redirect()->to('/login');
             }
+
+            if (!password_verify($password, $data['password'])) {
+                $session->setFlashdata('error', 'Contraseña incorrecta.');
+                return redirect()->to('/login');
+            }
+
+            // Guardar datos en sesión
+            $sessionData = [
+                'id' => $data['id'],
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'role' => $data['role_id'],
+                'isLoggedIn' => true
+            ];
+            $session->set($sessionData);
+
+            log_message('info', 'Usuario autenticado correctamente: ' . $data['email']);
+            return redirect()->to('/principal');
         }
-        return view('login');
+
+        return view('principal');
     }
 
     public function register()
@@ -55,19 +61,29 @@ class AuthController extends BaseController
                 'role' => 'required'
             ];
 
-            if ($this->validate($rules)) {
-                $model = new UserModel();
-                $data = [
-                    'name' => $this->request->getPost('name'),
-                    'email' => $this->request->getPost('email'),
-                    'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-                    'role_id' => $this->request->getPost('role')
-                ];
-                $model->insert($data); // Usar insert() para evitar problemas con id automáticos
+            if (!$this->validate($rules)) {
+                $data['validation'] = $this->validator;
+                return view('register', $data);
+            }
+
+            $model = new UserModel();
+            $passwordHash = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+
+            $userData = [
+                'name' => $this->request->getPost('name'),
+                'email' => $this->request->getPost('email'),
+                'password' => $passwordHash,
+                'role_id' => $this->request->getPost('role')
+            ];
+
+            if ($model->insert($userData)) {
+                log_message('info', 'Usuario registrado correctamente: ' . $userData['email']);
                 session()->setFlashdata('success', 'Registro exitoso. Puedes iniciar sesión.');
                 return redirect()->to('/login');
             } else {
-                $data['validation'] = $this->validator;
+                log_message('error', 'Error al registrar usuario: ' . json_encode($userData));
+                session()->setFlashdata('error', 'Hubo un problema con el registro.');
+                return redirect()->to('/register');
             }
         }
 
@@ -80,3 +96,8 @@ class AuthController extends BaseController
         return redirect()->to('/login');
     }
 }
+
+
+
+
+

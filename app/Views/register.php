@@ -8,11 +8,17 @@
 </head>
 <body>
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Registro de Usuario</h2>
+    <h2 class="text-center mb-4">Registro de Usuarios</h2>
 
     <?php if (session()->getFlashdata('error')): ?>
         <div class="alert alert-danger">
             <?= session()->getFlashdata('error') ?>
+        </div>
+    <?php endif; ?>
+
+    <?php if (isset($validation)): ?>
+        <div class="alert alert-danger">
+            <?= $validation->listErrors(); ?>
         </div>
     <?php endif; ?>
 
@@ -22,25 +28,21 @@
         <div class="mb-3">
             <label for="name" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="name" name="name" value="<?= old('name') ?>" required>
-            <div class="text-danger"><?= session('validation.name') ?></div>
         </div>
 
         <div class="mb-3">
             <label for="email" class="form-label">Correo</label>
             <input type="email" class="form-control" id="email" name="email" value="<?= old('email') ?>" required>
-            <div class="text-danger"><?= session('validation.email') ?></div>
         </div>
 
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
             <input type="password" class="form-control" id="password" name="password" required>
-            <div class="text-danger"><?= session('validation.password') ?></div>
         </div>
 
         <div class="mb-3">
             <label for="password_confirm" class="form-label">Confirmar Contraseña</label>
             <input type="password" class="form-control" id="password_confirm" name="password_confirm" required>
-            <div class="text-danger"><?= session('validation.password_confirm') ?></div>
         </div>
 
         <div class="mb-3">
@@ -58,5 +60,6 @@
 </div>
 </body>
 </html>
+
 
 

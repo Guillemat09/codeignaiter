@@ -28,23 +28,36 @@ class RolController extends BaseController
     {
         $rolModel = new RolModel();
         helper(['form', 'url']);
-        // Cargar datos del rol si es edición
+
+        // Si es edición, obtener datos del rol
         $data['rol'] = $id ? $rolModel->find($id) : null;
 
-        if ($this->request->getMethod() == 'POST') {
-            $rolData = [
-                'nombre' => $this->request->getPost('nombre')
+        if ($this->request->getMethod() === 'post') {
+            // Validación de datos
+            $rules = [
+                'nombre' => 'required|min_length[3]|is_unique[roles.nombre,id,{id}]'
             ];
 
-            if ($id) {
-                $rolModel->update($id, $rolData);
-                $message = 'Rol actualizado correctamente.';
-            } else {
-                $rolModel->save($rolData);
-                $message = 'Rol creado correctamente.';
+            if (!$this->validate($rules)) {
+                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
             }
 
-            return redirect()->to('/roles')->with('success', $message);
+            // Datos del rol
+            $rolData = ['nombre' => $this->request->getPost('nombre')];
+
+            try {
+                if ($id) {
+                    if ($rolModel->update($id, $rolData)) {
+                        return redirect()->to('/roles')->with('success', 'Rol actualizado correctamente.');
+                    }
+                } else {
+                    if ($rolModel->insert($rolData)) {
+                        return redirect()->to('/roles')->with('success', 'Rol creado correctamente.');
+                    }
+                }
+            } catch (\Exception $e) {
+                return redirect()->back()->withInput()->with('error', 'Ocurrió un error al guardar el rol.');
+            }
         }
 
         return view('rol_form', $data);

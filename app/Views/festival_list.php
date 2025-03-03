@@ -2440,7 +2440,7 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 												<form method="get" action="<?= base_url('festivales') ?>" id="formulariobusqueda">
-												<input type="text" id="busquedaFestival" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Busqueda" />
+												<input type="text" name="nombre" id="busquedaFestival" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Busqueda" />
 												</form>
 											</div>
 											<!--end::Search-->
