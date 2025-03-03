@@ -15,13 +15,10 @@ class AuthController extends BaseController
             $model = new UserModel();
             $email = $this->request->getVar('email');
             $password = $this->request->getVar('password');
-            $data = $model->getUserByEmail($email);
+            $data = $model->where('email', $email)->first(); // Obtener usuario por email
+            
             if ($data) {
-                $pass = $data['password'];
-                // $authenticatePassword = password_verify($password, $pass);
-                // var_dump($data);die();
-                $authenticatePassword = ($password == $pass);
-                if ($authenticatePassword) {
+                if (password_verify($password, $data['password'])) { // Verificación segura
                     $sessionData = [
                         'id' => $data['id'],
                         'name' => $data['name'],
@@ -64,9 +61,9 @@ class AuthController extends BaseController
                     'name' => $this->request->getPost('name'),
                     'email' => $this->request->getPost('email'),
                     'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-                    'role' => $this->request->getPost('role')
+                    'role_id' => $this->request->getPost('role')
                 ];
-                $model->save($data);
+                $model->insert($data); // Usar insert() para evitar problemas con id automáticos
                 session()->setFlashdata('success', 'Registro exitoso. Puedes iniciar sesión.');
                 return redirect()->to('/login');
             } else {

@@ -16,7 +16,7 @@
         </div>
     <?php endif; ?>
 
-    <form action="<?= base_url('/process-register') ?>" method="post">
+    <form action="<?= base_url('/register') ?>" method="post">
         <?= csrf_field() ?>
 
         <div class="mb-3">
