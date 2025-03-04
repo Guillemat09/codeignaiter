@@ -8,11 +8,7 @@
 </head>
 <body>
 <div class="container mt-5">
-<<<<<<< Updated upstream
-    <h2 class="text-center mb-4">Registro de Usuarios</h2>
-=======
     <h2 class="text-center mb-4">Registro de Users</h2>
->>>>>>> Stashed changes
 
     <?php if (session()->getFlashdata('error')): ?>
         <div class="alert alert-danger">
