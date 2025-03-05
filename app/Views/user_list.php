@@ -35,6 +35,8 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -5835,6 +5837,12 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
 		<script src="../../assets/js/custom/chart.js"></script>
+		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 		<script>
@@ -5847,6 +5855,27 @@ License: For each use you must have a valid license purchased only from above li
 			document.getElementById('export-excel-btn').addEventListener('click', function() {
     window.location.href = "<?= base_url('export/csv') ?>";
             });
+
+			$(document).ready(function() {
+        $('#kt_table_users').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
+            },
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'csvHtml5',
+                    text: 'Exportar CSV',
+                    className: 'btn btn-primary'
+                },
+                {
+                    extend: 'excelHtml5',
+                    text: 'Exportar Excel',
+                    className: 'btn btn-primary'
+                }
+            ]
+        });
+    });
 		</script>
 	</body>
 	<!--end::Body-->
