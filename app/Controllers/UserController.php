@@ -96,4 +96,36 @@ class UserController extends BaseController
             return redirect()->to('/users')->with('error', 'El usuario no existe.');
         }
     }
+    public function deactivate($id)
+    {
+        $userModel = new UserModel();
+        $user = $userModel->find($id);
+
+        if ($user) {
+            $userModel->update($id, ['is_active' => 0]); // Marcar user como inactivo
+            return redirect()->to('/users')->with('success', 'user dado de baja correctamente.');
+        } else {
+            return redirect()->to('/users')->with('error', 'El user no existe.');
+        }
+    }
+
+    public function toggleActive($id)
+    {
+        $userModel = new UserModel();
+        $user = $userModel->find($id);
+
+        if ($user) {
+            // Cambiar el estado actual
+            $newStatus = $user['is_active'] ? 0 : 1;
+            $message = $newStatus ? 'user dado de alta correctamente.' : 'user dado de baja correctamente.';
+
+            // Actualizar en la base de datos
+            $userModel->update($id, ['is_active' => $newStatus]);
+
+            return redirect()->to('/users')->with('success', $message);
+        } else {
+            return redirect()->to('/users')->with('error', 'El user no existe.');
+        }
+    }
+
 }

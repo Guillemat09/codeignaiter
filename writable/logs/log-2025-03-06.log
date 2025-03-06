@@ -1034,3 +1034,486 @@ INFO - 2025-03-06 18:22:56 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-03-06 18:24:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-03-06 18:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-03-06 18:26:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 18:34:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 18:35:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 18:38:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 18:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-06 19:03:43 --> ErrorException: Undefined variable $artista
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2805.
+ 1 APPPATH\Views\user_list.php(2805): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $artista', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2805)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:04:42 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:04:43 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:05:45 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:53 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:54 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:55 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:55 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:55 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:55 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:09:56 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:11:11 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:11:11 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: users]
+in APPPATH\Views\user_list.php on line 2815.
+ 1 APPPATH\Views\user_list.php(2815): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php', 2815)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\user_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('user_list', [], true)
+ 5 APPPATH\Controllers\UserController.php(34): view('user_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-06 19:23:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-06 19:24:29 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: patrocinadores]
+in APPPATH\Views\patrocinador_list.php on line 2864.
+ 1 APPPATH\Views\patrocinador_list.php(2864): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\patrocinador_list.php', 2864)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\patrocinador_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('patrocinador_list', [], true)
+ 5 APPPATH\Controllers\PatrocinadorController.php(34): view('patrocinador_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:26:23 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:38 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:39 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:27:46 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/1]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:28:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "$1"
+[Method: GET, Route: patrocinadores/deactivate/$1]
+in SYSTEMPATH\Router\Router.php on line 737.
+ 1 SYSTEMPATH\Router\Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('patrocinadores/deactivate/$1')
+ 2 SYSTEMPATH\CodeIgniter.php(834): CodeIgniter\Router\Router->handle('patrocinadores/deactivate/$1')
+ 3 SYSTEMPATH\CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:28:23 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/1]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('1')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:46:23 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: festivales]
+in APPPATH\Views\festival_list.php on line 2921.
+ 1 APPPATH\Views\festival_list.php(2921): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\festival_list.php', 2921)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\festival_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('festival_list', [], true)
+ 5 APPPATH\Controllers\FestivalController.php(34): view('festival_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-06 19:48:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:48:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:48:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:48:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-06 19:50:42 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: users/toggleActive/3]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\UserController.php(123): CodeIgniter\Model->update('3', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->toggleActive('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:50:43 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: users/toggleActive/3]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\UserController.php(123): CodeIgniter\Model->update('3', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->toggleActive('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:51:15 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: users/deactivate/3]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\UserController.php(105): CodeIgniter\Model->update('3', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->deactivate('3')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 19:54:38 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: entradas]
+in APPPATH\Views\entrada_list.php on line 2859.
+ 1 APPPATH\Views\entrada_list.php(2859): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_list.php', 2859)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp2\\htdocs\\codeignaiter\\app\\Views\\entrada_list.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1171): CodeIgniter\View\View->render('entrada_list', [], true)
+ 5 APPPATH\Controllers\EntradaController.php(34): view('entrada_list', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-06 19:56:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:56:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:56:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 19:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:18:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:18:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-03-06 20:18:57 --> mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`gestion_festivales`.`entradas`, CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE) in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `entrada...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `entrada...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `entrada...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `entrada...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(1028): CodeIgniter\Model->doUpdate(Array, Array)
+#6 C:\xampp2\htdocs\codeignaiter\system\Model.php(865): CodeIgniter\BaseModel->update(Array, Array)
+#7 C:\xampp2\htdocs\codeignaiter\app\Controllers\EntradaController.php(54): CodeIgniter\Model->update('13', Array)
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\EntradaController->saveEntrada('13')
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+#10 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-03-06 20:18:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`gestion_festivales`.`entradas`, CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
+[Method: POST, Route: entradas/save/13]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `entradas` SET `usuario_id` = :usuario_id:, `festival_id` = :festival_id:, `tipo_entrada` = :tipo_entrada:, `precio` = :precio:, `fecha_compra` = :fecha_compra:
+WHERE `entradas`.`id` IN :entradas.id:', [...], false)
+ 2 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 3 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 4 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 5 APPPATH\Controllers\EntradaController.php(54): CodeIgniter\Model->update('13', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->saveEntrada('13')
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 20:18:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Cannot add or update a child row: a foreign key constraint fails (`gestion_festivales`.`entradas`, CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `entradas` SET `usuario_id` = \'70\', `festival_id` = \'5\', `tipo_entrada` = \'general\', `precio` = \'10.00\', `fecha_compra` = \'2025-03-07\'
+WHERE `entradas`.`id` IN (\'13\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `entradas` SET `usuario_id` = \'70\', `festival_id` = \'5\', `tipo_entrada` = \'general\', `precio` = \'10.00\', `fecha_compra` = \'2025-03-07\'
+WHERE `entradas`.`id` IN (\'13\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `entradas` SET `usuario_id` = :usuario_id:, `festival_id` = :festival_id:, `tipo_entrada` = :tipo_entrada:, `precio` = :precio:, `fecha_compra` = :fecha_compra:
+WHERE `entradas`.`id` IN :entradas.id:', [...], false)
+ 4 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 5 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 6 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 7 APPPATH\Controllers\EntradaController.php(54): CodeIgniter\Model->update('13', [...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->saveEntrada('13')
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 20:18:57 --> [Caused by] mysqli_sql_exception: Cannot add or update a child row: a foreign key constraint fails (`gestion_festivales`.`entradas`, CONSTRAINT `entradas_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `users` (`id`) ON DELETE CASCADE)
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('UPDATE `entradas` SET `usuario_id` = \'70\', `festival_id` = \'5\', `tipo_entrada` = \'general\', `precio` = \'10.00\', `fecha_compra` = \'2025-03-07\'
+WHERE `entradas`.`id` IN (\'13\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `entradas` SET `usuario_id` = \'70\', `festival_id` = \'5\', `tipo_entrada` = \'general\', `precio` = \'10.00\', `fecha_compra` = \'2025-03-07\'
+WHERE `entradas`.`id` IN (\'13\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `entradas` SET `usuario_id` = \'70\', `festival_id` = \'5\', `tipo_entrada` = \'general\', `precio` = \'10.00\', `fecha_compra` = \'2025-03-07\'
+WHERE `entradas`.`id` IN (\'13\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2516): CodeIgniter\Database\BaseConnection->query('UPDATE `entradas` SET `usuario_id` = :usuario_id:, `festival_id` = :festival_id:, `tipo_entrada` = :tipo_entrada:, `precio` = :precio:, `fecha_compra` = :fecha_compra:
+WHERE `entradas`.`id` IN :entradas.id:', [...], false)
+ 5 SYSTEMPATH\Model.php(461): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH\BaseModel.php(1028): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH\Controllers\EntradaController.php(54): CodeIgniter\Model->update('13', [...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\EntradaController->saveEntrada('13')
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\EntradaController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-03-06 20:19:51 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: patrocinadores/deactivate/12]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\PatrocinadorController.php(78): CodeIgniter\Model->update('12', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\PatrocinadorController->deactivate('12')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PatrocinadorController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-06 20:20:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:22:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-03-06 20:22:38 --> CodeIgniter\Database\Exceptions\DataException: There is no data to update.
+[Method: GET, Route: users/deactivate/13]
+in SYSTEMPATH\BaseModel.php on line 1011.
+ 1 SYSTEMPATH\BaseModel.php(1011): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+ 2 SYSTEMPATH\Model.php(865): CodeIgniter\BaseModel->update([...], [])
+ 3 APPPATH\Controllers\UserController.php(105): CodeIgniter\Model->update('13', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\UserController->deactivate('13')
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UserController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-03-06 20:23:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-03-06 20:25:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

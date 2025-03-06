@@ -103,7 +103,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">Users</span>
+												<span class="menu-title">Usuarios</span>
 												<span class="menu-arrow"></span>
 											</span>
 											<div class="menu-sub menu-sub-accordion">
@@ -167,7 +167,7 @@ License: For each use you must have a valid license purchased only from above li
 													</a>
 												</div>
 												<div class="menu-item">
-													<a class="menu-link" href="../../demo1/dist/apps/user-management/roles/view.html">
+													<a class="menu-link" href="../../demo1/dist/apps/patrocinador-management/roles/view.html">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
@@ -177,7 +177,7 @@ License: For each use you must have a valid license purchased only from above li
 											</div>
 										</div>
 										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/apps/user-management/permissions.html">
+											<a class="menu-link" href="../../demo1/dist/apps/patrocinador-management/permissions.html">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -267,7 +267,7 @@ License: For each use you must have a valid license purchased only from above li
 									</span>
 									<div class="menu-sub menu-sub-accordion menu-active-bg">
 										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('users') ?>">
+											<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
@@ -764,7 +764,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Items-->
 															<div class="scroll-y mh-200px mh-lg-350px">
 																<!--begin::Category title-->
-																<h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">Users</h3>
+																<h3 class="fs-5 text-muted m-0 pb-5" data-kt-search-element="category-title">patrocinadores</h3>
 																<!--end::Category title-->
 																<!--begin::Item-->
 																<a href="#" class="d-flex text-dark text-hover-primary align-items-center mb-5">
@@ -1257,8 +1257,8 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Option-->
 																<!--begin::Option-->
 																<label>
-																	<input type="radio" class="btn-check" name="type" value="users" />
-																	<span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">Users</span>
+																	<input type="radio" class="btn-check" name="type" value="patrocinadores" />
+																	<span class="btn btn-sm btn-color-muted btn-active btn-active-primary px-4">patrocinadores</span>
 																</label>
 																<!--end::Option-->
 																<!--begin::Option-->
@@ -1384,7 +1384,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Input group-->
 														<div class="py-4 border-bottom">
 															<label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-																<span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">Users</span>
+																<span class="form-check-label text-gray-700 fs-6 fw-bold ms-0 me-2">patrocinadores</span>
 																<input class="form-check-input" type="checkbox" value="1" />
 															</label>
 														</div>
@@ -2059,7 +2059,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end:Item-->
 													<!--begin:Item-->
 													<div class="col-6">
-														<a href="../../demo1/dist/pages/projects/users.html" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light">
+														<a href="../../demo1/dist/pages/projects/patrocinadores.html" class="d-flex flex-column flex-center h-100 p-6 bg-hover-light">
 															<!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
 															<span class="svg-icon svg-icon-3x svg-icon-primary mb-2">
 																<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2093,8 +2093,8 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Menu wrapper-->
 										</div>
 										<!--end::Quick links-->
-										<!--begin::User-->
-										<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_user_menu_toggle">
+										<!--begin::patrocinador-->
+										<div class="d-flex align-items-center ms-1 ms-lg-3" id="kt_header_patrocinador_menu_toggle">
 											<!--begin::Menu wrapper-->
 											<div class="cursor-pointer symbol symbol-30px symbol-md-40px" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">
 											</div>
@@ -2108,13 +2108,13 @@ License: For each use you must have a valid license purchased only from above li
 															<img alt="Logo" src="../assets/media/avatars/150-26.jpg" />
 														</div>
 														<!--end::Avatar-->
-														<!--begin::Username-->
+														<!--begin::patrocinadorname-->
 														<div class="d-flex flex-column">
 															<div class="fw-bolder d-flex align-items-center fs-5">Max Smith
 															<span class="badge badge-light-success fw-bolder fs-8 px-2 py-1 ms-2">Pro</span></div>
 															<a href="#" class="fw-bold text-muted text-hover-primary fs-7">max@kt.com</a>
 														</div>
-														<!--end::Username-->
+														<!--end::patrocinadorname-->
 													</div>
 												</div>
 												<!--end::Menu item-->
@@ -2259,8 +2259,8 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Menu item-->
 												<div class="menu-item px-5">
 													<div class="menu-content px-5">
-														<label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_user_menu_dark_mode_toggle">
-															<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_user_menu_dark_mode_toggle" data-kt-url="../../demo1/dist/index.html" />
+														<label class="form-check form-switch form-check-custom form-check-solid pulse pulse-success" for="kt_patrocinador_menu_dark_mode_toggle">
+															<input class="form-check-input w-30px h-20px" type="checkbox" value="1" name="mode" id="kt_patrocinador_menu_dark_mode_toggle" data-kt-url="../../demo1/dist/index.html" />
 															<span class="pulse-ring ms-n1"></span>
 															<span class="form-check-label text-gray-600 fs-7">Dark Mode</span>
 														</label>
@@ -2271,7 +2271,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Menu-->
 											<!--end::Menu wrapper-->
 										</div>
-										<!--end::User -->
+										<!--end::patrocinador -->
 										<!--begin::Heaeder menu toggle-->
 										<div class="d-flex align-items-center d-lg-none ms-2 me-n3" title="Show header menu">
 											<div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px" id="kt_header_menu_mobile_toggle">
@@ -2441,7 +2441,7 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 												<form method="get" action="<?= base_url('patrocinadores') ?>" id="formulariobusqueda">
-												<input type="text" name="nombre" id="busquedaPatrocinador" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Busqueda" />
+												<input type="text" name="nombre" id="busquedaPatrocinador" data-kt-patrocinador-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Busqueda" />
 												</form>
 											</div>
 											<!--end::Search-->
@@ -2450,7 +2450,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Card toolbar-->
 										<div class="card-toolbar">
 											<!--begin::Toolbar-->
-											<div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+											<div class="d-flex justify-content-end" data-kt-patrocinador-table-toolbar="base">
 												<!--begin::Filter-->
 												<button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
 												<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
@@ -2471,7 +2471,7 @@ License: For each use you must have a valid license purchased only from above li
 													<div class="separator border-gray-200"></div>
 													<!--end::Separator-->
 													<!--begin::Content-->
-													<div class="px-7 py-5" data-kt-user-table-filter="form">
+													<div class="px-7 py-5" data-kt-patrocinador-table-filter="form">
 													<form method="get" action="<?= base_url('patrocinadores') ?>">
 														<!--begin::Input group-->
 														<div class="mb-10">
@@ -2509,8 +2509,8 @@ License: For each use you must have a valid license purchased only from above li
 
 														<!--begin::Actions-->
 														<div class="d-flex justify-content-end">
-															<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Limpiar</button>
-															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Filtrar</button>
+															<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-patrocinador-table-filter="reset">Limpiar</button>
+															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-patrocinador-table-filter="filter">Filtrar</button>
 														</div>
 													</form>
 														<!--end::Actions-->
@@ -2520,7 +2520,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu 1-->
 												<!--end::Filter-->
 												<!--begin::Export-->
-												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_patrocinadores">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2531,8 +2531,8 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->Export</button>
 												<!--end::Export-->
-												<!--begin::Add user-->
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+												<!--begin::Add patrocinador-->
+												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_patrocinador">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2541,111 +2541,62 @@ License: For each use you must have a valid license purchased only from above li
 													</svg>
 												</span>
 												<!--end::Svg Icon-->Añadir Patrocinadores </button>
-												<!--end::Add user-->
+												<!--end::Add patrocinador-->
 											</div>
 											<!--end::Toolbar-->
 											<!--begin::Group actions-->
-											<div class="d-flex justify-content-end align-items-center d-none" data-kt-user-table-toolbar="selected">
+											<div class="d-flex justify-content-end align-items-center d-none" data-kt-patrocinador-table-toolbar="selected">
 												<div class="fw-bolder me-5">
-												<span class="me-2" data-kt-user-table-select="selected_count"></span>Selected</div>
-												<button type="button" class="btn btn-danger" data-kt-user-table-select="delete_selected">Delete Selected</button>
+												<span class="me-2" data-kt-patrocinador-table-select="selected_count"></span>Selected</div>
+												<button type="button" class="btn btn-danger" data-kt-patrocinador-table-select="delete_selected">Delete Selected</button>
 											</div>
 											<!--end::Group actions-->
 											<!--begin::Modal - Adjust Balance-->
-											<div class="modal fade" id="kt_modal_export_users" tabindex="-1" aria-hidden="true">
-												<!--begin::Modal dialog-->
-												<div class="modal-dialog modal-dialog-centered mw-650px">
-													<!--begin::Modal content-->
-													<div class="modal-content">
-														<!--begin::Modal header-->
-														<div class="modal-header">
-															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Export Users</h2>
-															<!--end::Modal title-->
-															<!--begin::Close-->
-															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-																<span class="svg-icon svg-icon-1">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-																	</svg>
-																</span>
-																<!--end::Svg Icon-->
-															</div>
-															<!--end::Close-->
-														</div>
-														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form id="kt_modal_export_users_form" class="form" action="#">
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="fs-6 fw-bold form-label mb-2">Select Roles:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="role" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="Administrator">Administrator</option>
-																		<option value="Analyst">Analyst</option>
-																		<option value="Developer">Developer</option>
-																		<option value="Support">Support</option>
-																		<option value="Trial">Trial</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="required fs-6 fw-bold form-label mb-2">Select Export Format:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="format" data-control="select2" data-placeholder="Select a format" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="excel">Excel</option>
-																		<option value="pdf">PDF</option>
-																		<option value="cvs">CVS</option>
-																		<option value="zip">ZIP</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Actions-->
-																<div class="text-center">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-																		<span class="indicator-label">Submit</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
-													</div>
-													<!--end::Modal content-->
+											<div class="modal fade" id="kt_modal_export_patrocinadores" tabindex="-1" aria-hidden="true">
+								<div class="modal-dialog modal-dialog-centered mw-650px">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h2 class="fw-bolder">Exportar Patrocinadores</h2>
+											<button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+												<span class="svg-icon svg-icon-1">
+													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+														<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+														<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+													</svg>
+												</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<form id="export-form">
+												<div class="mb-10">
+													<label class="fs-6 fw-bold form-label mb-2">Selecciona el formato:</label>
+													<select id="export-format" class="form-select form-select-solid fw-bolder">
+														<option value="csv">CSV (Excel)</option>
+													</select>
 												</div>
-												<!--end::Modal dialog-->
-											</div>
+												<div class="text-center">
+													<button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
+													<button type="button" id="export-excel-btn" class="btn btn-primary">Exportar</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
 											<!--end::Modal - New Card-->
 											<!--begin::Modal - Add task-->
-											<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+											<div class="modal fade" id="kt_modal_add_patrocinador" tabindex="-1" aria-hidden="true">
 												<!--begin::Modal dialog-->
 												<div class="modal-dialog modal-dialog-centered mw-650px">
 													<!--begin::Modal content-->
 													<div class="modal-content">
 														<!--begin::Modal header-->
-														<div class="modal-header" id="kt_modal_add_user_header">
+														<div class="modal-header" id="kt_modal_add_patrocinador_header">
 															<!--begin::Modal title-->
 															<h2 class="fw-bolder">Añadir Patrocinador</h2>
 															<!--end::Modal title-->
 															<!--begin::Close-->
-															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-patrocinadores-modal-action="close">
 																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
 																<span class="svg-icon svg-icon-1">
 																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2663,7 +2614,7 @@ License: For each use you must have a valid license purchased only from above li
 															<!--begin::Form-->
 															<form action="<?= isset($patrocinador) ? base_url('patrocinadores/save/') . $patrocinador['id'] : base_url('patrocinadores/save') ?>" method="post">
 																<!--begin::Scroll-->
-																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_patrocinador_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_patrocinador_header" data-kt-scroll-wrappers="#kt_modal_add_patrocinador_scroll" data-kt-scroll-offset="300px">
 																	<!--begin::Input group-->
 																	<!--end::Input group-->
 																	<!--begin::Input group-->
@@ -2700,8 +2651,8 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Scroll-->
 																<!--begin::Actions-->
 																<div class="text-center pt-15">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+																	<button type="reset" class="btn btn-light me-3" data-kt-patrocinadores-modal-action="cancel">Cancelar</button>
+																	<button type="submit" class="btn btn-primary" data-kt-patrocinadores-modal-action="submit">
 																		<span class="indicator-label">Guardar</span>
 																		<span class="indicator-progress">Please wait...
 																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -2725,14 +2676,14 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Card body-->
 									<div class="card-body pt-0">
 										<!--begin::Table-->
-										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_patrocinadores">
 											<!--begin::Table head-->
 											<thead>
 												<!--begin::Table row-->
 												<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
 													<th class="w-10px pe-2">
 														<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
+															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_patrocinadores .form-check-input" value="1" />
 														</div>
 													</th>
 													<th class="min-w-125px">
@@ -2803,23 +2754,23 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 													</td>
 													<!--end::Checkbox-->
-													<!--begin::User=-->
+													<!--begin::patrocinador=-->
 													<td class="d-flex align-items-center">
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-															<a href="../../demo1/dist/apps/user-management/users/view.html">
+															<a href="../../demo1/dist/apps/patrocinador-management/patrocinadores/view.html">
 																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($patrocinador['nombre']) ?></div>
 															</a>
 														</div>
 														<!--end::Avatar-->
-														<!--begin::User details-->
+														<!--begin::patrocinador details-->
 														<div class="d-flex flex-column">
-															<a href="../../demo1/dist/apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($patrocinador['nombre']) ?></a>
+															<a href="../../demo1/dist/apps/patrocinador-management/patrocinadores/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($patrocinador['nombre']) ?></a>
 															<span><?= esc($patrocinador['id']) ?></span>
 														</div>
-														<!--begin::User details-->
+														<!--begin::patrocinador details-->
 													</td>
-													<!--end::User=-->
+													<!--end::patrocinador=-->
 													<!--begin::Role=-->
 													<td><?= esc($patrocinador['descripcion']) ?></td>
 													<!--end::Role=-->
@@ -2848,8 +2799,22 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="<?= base_url('patrocinadores/delete/' . $patrocinador['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
+																<a href="<?= base_url('patrocinadores/delete/' . $patrocinador['id']) ?>" class="menu-link px-3" data-kt-patrocinadores-table-filter="delete_row">Eliminar</a>
 															</div>
+															<div class="menu-item px-3">
+													<a href="<?= base_url('patrocinadores/deactivate/' . esc($patrocinador['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-patrocinadores-table-filter="deactivate_row">
+														<span class="text-danger">Dar de baja</span>
+													</a>
+												</div>
+												<div class="menu-item px-3">
+													<a href="<?= base_url('patrocinadores/toggleActive/' . esc($patrocinador['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-patrocinadores-table-filter="toggle_active">
+														<?= $patrocinador['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
+													</a>
+														</div>
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->
@@ -2985,11 +2950,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Added at 4:23 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
 												<img src="../assets/media/avatars/150-11.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3006,25 +2971,25 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="badge badge-light text-muted">Application Design</span>
 											</div>
 											<!--end::Label-->
-											<!--begin::Users-->
+											<!--begin::patrocinadores-->
 											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px pe-2">
-												<!--begin::User-->
+												<!--begin::patrocinador-->
 												<div class="symbol symbol-circle symbol-25px">
 													<img src="../assets/media/avatars/150-3.jpg" alt="img" />
 												</div>
-												<!--end::User-->
-												<!--begin::User-->
+												<!--end::patrocinador-->
+												<!--begin::patrocinador-->
 												<div class="symbol symbol-circle symbol-25px">
 													<img src="../assets/media/avatars/150-11.jpg" alt="img" />
 												</div>
-												<!--end::User-->
-												<!--begin::User-->
+												<!--end::patrocinador-->
+												<!--begin::patrocinador-->
 												<div class="symbol symbol-circle symbol-25px">
 													<div class="symbol-label fs-8 fw-bold bg-primary text-inverse-primary">A</div>
 												</div>
-												<!--end::User-->
+												<!--end::patrocinador-->
 											</div>
-											<!--end::Users-->
+											<!--end::patrocinadores-->
 											<!--begin::Progress-->
 											<div class="min-w-125px pe-2">
 												<span class="badge badge-light-primary">In Progress</span>
@@ -3045,20 +3010,20 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="badge badge-light text-muted">CRM System Development</span>
 											</div>
 											<!--end::Label-->
-											<!--begin::Users-->
+											<!--begin::patrocinadores-->
 											<div class="symbol-group symbol-hover flex-nowrap flex-grow-1 min-w-100px">
-												<!--begin::User-->
+												<!--begin::patrocinador-->
 												<div class="symbol symbol-circle symbol-25px">
 													<img src="../assets/media/avatars/150-5.jpg" alt="img" />
 												</div>
-												<!--end::User-->
-												<!--begin::User-->
+												<!--end::patrocinador-->
+												<!--begin::patrocinador-->
 												<div class="symbol symbol-circle symbol-25px">
 													<div class="symbol-label fs-8 fw-bold bg-success text-inverse-primary">B</div>
 												</div>
-												<!--end::User-->
+												<!--end::patrocinador-->
 											</div>
-											<!--end::Users-->
+											<!--end::patrocinadores-->
 											<!--begin::Progress-->
 											<div class="min-w-125px">
 												<span class="badge badge-light-success">Completed</span>
@@ -3106,11 +3071,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Sent at 4:23 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Alan Nilson">
 												<img src="../assets/media/avatars/150-2.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3150,11 +3115,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Sent at 10:30 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Jan Hummer">
 												<img src="../assets/media/avatars/150-6.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3253,11 +3218,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Initiated at 4:23 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Nina Nilson">
 												<img src="../assets/media/avatars/150-11.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3297,11 +3262,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Created at 4:23 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Marcus Dotson">
 												<img src="../assets/media/avatars/150-3.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3392,9 +3357,9 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Info-->
 												<div class="text-muted me-2 fs-7">Added at 4:23 PM by</div>
 												<!--end::Info-->
-												<!--begin::User-->
+												<!--begin::patrocinador-->
 												<a href="#" class="text-primary fw-bolder me-1">Alice Tan</a>
-												<!--end::User-->
+												<!--end::patrocinador-->
 											</div>
 											<!--end::Wrapper-->
 										</div>
@@ -3436,11 +3401,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Placed at 5:05 AM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<div class="symbol symbol-circle symbol-25px" data-bs-toggle="tooltip" data-bs-boundary="window" data-bs-placement="top" title="Robert Rich">
 												<img src="../assets/media/avatars/150-14.jpg" alt="img" />
 											</div>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3513,9 +3478,9 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Info-->
 											<div class="text-muted me-2 fs-7">Placed at 4:23 PM by</div>
 											<!--end::Info-->
-											<!--begin::User-->
+											<!--begin::patrocinador-->
 											<a href="#" class="text-primary fw-bolder me-1">Jimmy Bold</a>
-											<!--end::User-->
+											<!--end::patrocinador-->
 										</div>
 										<!--end::Description-->
 									</div>
@@ -3554,7 +3519,7 @@ License: For each use you must have a valid license purchased only from above li
 				<div class="card-header pe-5" id="kt_drawer_chat_messenger_header">
 					<!--begin::Title-->
 					<div class="card-title">
-						<!--begin::User-->
+						<!--begin::patrocinador-->
 						<div class="d-flex justify-content-center flex-column me-3">
 							<a href="#" class="fs-4 fw-bolder text-gray-900 text-hover-primary me-1 mb-2 lh-1">Brian Cox</a>
 							<!--begin::Info-->
@@ -3564,7 +3529,7 @@ License: For each use you must have a valid license purchased only from above li
 							</div>
 							<!--end::Info-->
 						</div>
-						<!--end::User-->
+						<!--end::patrocinador-->
 					</div>
 					<!--end::Title-->
 					<!--begin::Card toolbar-->
@@ -3583,7 +3548,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Heading-->
 								<!--begin::Menu item-->
 								<div class="menu-item px-3">
-									<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_users_search">Add Contact</a>
+									<a href="#" class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#kt_modal_patrocinadores_search">Add Contact</a>
 								</div>
 								<!--end::Menu item-->
 								<!--begin::Menu item-->
@@ -3652,7 +3617,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-start mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
@@ -3666,7 +3631,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Details-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start" data-kt-element="message-text">How likely are you to recommend our company to your friends and family ?</div>
 								<!--end::Text-->
@@ -3678,7 +3643,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-end mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Details-->
 									<div class="me-3">
@@ -3692,7 +3657,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Avatar-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text">Hey there, we’re just writing to let you know that you’ve been subscribed to a repository on GitHub.</div>
 								<!--end::Text-->
@@ -3704,7 +3669,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-start mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
@@ -3718,7 +3683,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Details-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start" data-kt-element="message-text">Ok, Understood!</div>
 								<!--end::Text-->
@@ -3730,7 +3695,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-end mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Details-->
 									<div class="me-3">
@@ -3744,7 +3709,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Avatar-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text">You’ll receive notifications for all issues, pull requests!</div>
 								<!--end::Text-->
@@ -3756,7 +3721,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-start mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
@@ -3770,7 +3735,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Details-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start" data-kt-element="message-text">You can unwatch this repository immediately by clicking here:
 								<a href="https://keenthemes.com">Keenthemes.com</a></div>
@@ -3783,7 +3748,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-end mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Details-->
 									<div class="me-3">
@@ -3797,7 +3762,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Avatar-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text">Most purchased Business courses during this sale!</div>
 								<!--end::Text-->
@@ -3809,7 +3774,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-start mb-10">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
@@ -3823,7 +3788,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Details-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start" data-kt-element="message-text">Company BBQ to celebrate the last quater achievements and goals. Food and drinks provided</div>
 								<!--end::Text-->
@@ -3835,7 +3800,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-end mb-10 d-none" data-kt-element="template-out">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-end">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Details-->
 									<div class="me-3">
@@ -3849,7 +3814,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Avatar-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-primary text-dark fw-bold mw-lg-400px text-end" data-kt-element="message-text"></div>
 								<!--end::Text-->
@@ -3861,7 +3826,7 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="d-flex justify-content-start mb-10 d-none" data-kt-element="template-in">
 							<!--begin::Wrapper-->
 							<div class="d-flex flex-column align-items-start">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex align-items-center mb-2">
 									<!--begin::Avatar-->
 									<div class="symbol symbol-35px symbol-circle">
@@ -3875,7 +3840,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Details-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 								<!--begin::Text-->
 								<div class="p-5 rounded bg-light-info text-dark fw-bold mw-lg-400px text-start" data-kt-element="message-text">Right before vacation season we have the next Big Deal for you.</div>
 								<!--end::Text-->
@@ -3961,7 +3926,7 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex flex-column">
 										<div class="d-flex align-items-center mb-1">
 											<div class="fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1">Regular License</div>
-											<i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="popover" data-bs-custom-class="popover-dark" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Use, by you or one client in a single end product which end users are not charged for."></i>
+											<i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="popover" data-bs-custom-class="popover-dark" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Use, by you or one client in a single end product which end patrocinadores are not charged for."></i>
 										</div>
 										<div class="fs-7 text-muted">For single end product used by you or one client</div>
 									</div>
@@ -3978,9 +3943,9 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="d-flex flex-column">
 										<div class="d-flex align-items-center mb-1">
 											<div class="fs-6 fw-bold text-gray-800 fw-bold mb-0 me-1">Extended License</div>
-											<i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="popover" data-bs-custom-class="popover-dark" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Use, by you or one client, in a single end product which end users can be charged for."></i>
+											<i class="text-gray-400 fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="popover" data-bs-custom-class="popover-dark" data-bs-trigger="hover" data-bs-placement="top" data-bs-content="Use, by you or one client, in a single end product which end patrocinadores can be charged for."></i>
 										</div>
-										<div class="fs-7 text-muted">For single end product with paying users.</div>
+										<div class="fs-7 text-muted">For single end product with paying patrocinadores.</div>
 									</div>
 									<div class="text-nowrap">
 										<span class="text-muted fs-7 fw-bold me-n1">$</span>
@@ -4355,14 +4320,14 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Textarea-->
 						<textarea class="form-control form-control-solid mb-8" rows="3" placeholder="Type or paste emails here"></textarea>
 						<!--end::Textarea-->
-						<!--begin::Users-->
+						<!--begin::patrocinadores-->
 						<div class="mb-10">
 							<!--begin::Heading-->
 							<div class="fs-6 fw-bold mb-2">Your Invitations</div>
 							<!--end::Heading-->
 							<!--begin::List-->
 							<div class="mh-300px scroll-y me-n7 pe-7">
-								<!--begin::User-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4389,8 +4354,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4417,8 +4382,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4445,8 +4410,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4473,8 +4438,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4501,8 +4466,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4529,8 +4494,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4557,8 +4522,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4585,8 +4550,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4613,8 +4578,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4 border-bottom border-gray-300 border-bottom-dashed">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4641,8 +4606,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
-								<!--begin::User-->
+								<!--end::patrocinador-->
+								<!--begin::patrocinador-->
 								<div class="d-flex flex-stack py-4">
 									<!--begin::Details-->
 									<div class="d-flex align-items-center">
@@ -4669,16 +4634,16 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Access menu-->
 								</div>
-								<!--end::User-->
+								<!--end::patrocinador-->
 							</div>
 							<!--end::List-->
 						</div>
-						<!--end::Users-->
+						<!--end::patrocinadores-->
 						<!--begin::Notice-->
 						<div class="d-flex flex-stack">
 							<!--begin::Label-->
 							<div class="me-5 fw-bold">
-								<label class="fs-6">Adding Users by Team Members</label>
+								<label class="fs-6">Adding patrocinadores by Team Members</label>
 								<div class="fs-7 text-muted">If you need more info, please check budget planning</div>
 							</div>
 							<!--end::Label-->
@@ -5574,7 +5539,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="pt-1">
 												<!--begin::Item-->
 												<div class="d-flex align-items-center mb-7">
-													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active Users</span>
+													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active patrocinadores</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-success">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -5683,7 +5648,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="pt-1">
 												<!--begin::Item-->
 												<div class="d-flex align-items-center mb-7">
-													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active Users</span>
+													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active patrocinadores</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-success">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -5790,7 +5755,7 @@ License: For each use you must have a valid license purchased only from above li
 											<div class="pt-1">
 												<!--begin::Item-->
 												<div class="d-flex align-items-center mb-7">
-													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active Users</span>
+													<span class="fw-bold fs-5 text-gray-700 flex-grow-1">Up to 10 Active patrocinadores</span>
 													<!--begin::Svg Icon | path: icons/duotune/general/gen043.svg-->
 													<span class="svg-icon svg-icon-1 svg-icon-success">
 														<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -5944,6 +5909,9 @@ License: For each use you must have a valid license purchased only from above li
                     document.getElementById("formulariobusqueda").submit();
 				}
 			});
+			document.getElementById('export-excel-btn').addEventListener('click', function() {
+			window.location.href = "<?= base_url('export/csv/patrocinadores') ?>";
+		});
 		</script>
 	</body>
 	<!--end::Body-->

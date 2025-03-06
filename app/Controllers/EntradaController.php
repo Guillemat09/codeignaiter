@@ -70,4 +70,35 @@ class EntradaController extends BaseController
         $entradaModel->delete($id); // Eliminar entrada
         return redirect()->to('/entradas')->with('success', 'Entrada eliminada correctamente.');
     }
+    public function deactivate($id)
+    {
+        $entradaModel = new EntradaModel();
+        $entrada = $entradaModel->find($id);
+
+        if ($entrada) {
+            $entradaModel->update($id, ['is_active' => 0]); // Marcar entrada como inactivo
+            return redirect()->to('/entradas')->with('success', 'entrada dado de baja correctamente.');
+        } else {
+            return redirect()->to('/entradas')->with('error', 'El entrada no existe.');
+        }
+    }
+
+    public function toggleActive($id)
+    {
+        $entradaModel = new EntradaModel();
+        $entrada = $entradaModel->find($id);
+
+        if ($entrada) {
+            // Cambiar el estado actual
+            $newStatus = $entrada['is_active'] ? 0 : 1;
+            $message = $newStatus ? 'entrada dado de alta correctamente.' : 'entrada dado de baja correctamente.';
+
+            // Actualizar en la base de datos
+            $entradaModel->update($id, ['is_active' => $newStatus]);
+
+            return redirect()->to('/entradas')->with('success', $message);
+        } else {
+            return redirect()->to('/entradas')->with('error', 'El entrada no existe.');
+        }
+    }
 }

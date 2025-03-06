@@ -68,4 +68,37 @@ class PatrocinadorController extends BaseController
         $patrocinadorModel->delete($id); // Eliminar patrocinador
         return redirect()->to('/patrocinadores')->with('success', 'Patrocinador eliminado correctamente.');
     }
+
+    public function deactivate($id)
+    {
+        $patrocinadorModel = new PatrocinadorModel();
+        $patrocinador = $patrocinadorModel->find($id);
+
+        if ($patrocinador) {
+            $patrocinadorModel->update($id, ['is_active' => 0]); // Marcar patrocinador como inactivo
+            return redirect()->to('/patrocinadores')->with('success', 'patrocinador dado de baja correctamente.');
+        } else {
+            return redirect()->to('/patrocinadores')->with('error', 'El patrocinador no existe.');
+        }
+    }
+
+    public function toggleActive($id)
+    {
+        $patrocinadorModel = new PatrocinadorModel();
+        $patrocinador = $patrocinadorModel->find($id);
+
+        if ($patrocinador) {
+            // Cambiar el estado actual
+            $newStatus = $patrocinador['is_active'] ? 0 : 1;
+            $message = $newStatus ? 'patrocinador dado de alta correctamente.' : 'patrocinador dado de baja correctamente.';
+
+            // Actualizar en la base de datos
+            $patrocinadorModel->update($id, ['is_active' => $newStatus]);
+
+            return redirect()->to('/patrocinadores')->with('success', $message);
+        } else {
+            return redirect()->to('/patrocinadores')->with('error', 'El patrocinador no existe.');
+        }
+    }
+
 }

@@ -2513,7 +2513,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu 1-->
 												<!--end::Filter-->
 												<!--begin::Export-->
-												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_entradas">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2545,86 +2545,37 @@ License: For each use you must have a valid license purchased only from above li
 											</div>
 											<!--end::Group actions-->
 											<!--begin::Modal - Adjust Balance-->
-											<div class="modal fade" id="kt_modal_export_users" tabindex="-1" aria-hidden="true">
-												<!--begin::Modal dialog-->
-												<div class="modal-dialog modal-dialog-centered mw-650px">
-													<!--begin::Modal content-->
-													<div class="modal-content">
-														<!--begin::Modal header-->
-														<div class="modal-header">
-															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Export Users</h2>
-															<!--end::Modal title-->
-															<!--begin::Close-->
-															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-																<span class="svg-icon svg-icon-1">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-																	</svg>
-																</span>
-																<!--end::Svg Icon-->
-															</div>
-															<!--end::Close-->
-														</div>
-														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form id="kt_modal_export_users_form" class="form" action="#">
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="fs-6 fw-bold form-label mb-2">Select Roles:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="role" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="Administrator">Administrator</option>
-																		<option value="Analyst">Analyst</option>
-																		<option value="Developer">Developer</option>
-																		<option value="Support">Support</option>
-																		<option value="Trial">Trial</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="required fs-6 fw-bold form-label mb-2">Select Export Format:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="format" data-control="select2" data-placeholder="Select a format" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="excel">Excel</option>
-																		<option value="pdf">PDF</option>
-																		<option value="cvs">CVS</option>
-																		<option value="zip">ZIP</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Actions-->
-																<div class="text-center">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-																		<span class="indicator-label">Submit</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
-													</div>
-													<!--end::Modal content-->
-												</div>
-												<!--end::Modal dialog-->
-											</div>
+											<div class="modal fade" id="kt_modal_export_entradas" tabindex="-1" aria-hidden="true">
+                     <div class="modal-dialog modal-dialog-centered mw-650px">
+                   <div class="modal-content">
+                <div class="modal-header">
+                 <h2 class="fw-bolder">Exportar Entradas</h2>
+                 <button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                 </button>
+             </div>
+             <div class="modal-body">
+                <form id="export-form">
+                    <div class="mb-10">
+                        <label class="fs-6 fw-bold form-label mb-2">Selecciona el formato:</label>
+                        <select id="export-format" class="form-select form-select-solid fw-bolder">
+                            <option value="csv">CSV (Excel)</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="export-excel-btn" class="btn btn-primary">Exportar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 											<!--end::Modal - New Card-->
 											<!--begin::Modal - Add task-->
 											<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
@@ -2845,6 +2796,20 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="menu-item px-3">
 																<a href="<?= base_url('entradas/delete/' . $entrada['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
 															</div>
+
+															<a href="<?= base_url('entradas/deactivate/' . esc($entrada['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-entradas-table-filter="deactivate_row">
+														<span class="text-danger">Dar de baja</span>
+													</a>
+												</div>
+												<div class="menu-item px-3">
+													<a href="<?= base_url('entradas/toggleActive/' . esc($entrada['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-entradas-table-filter="toggle_active">
+														<?= $entrada['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
+													</a>
+														</div>
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->
@@ -5940,6 +5905,9 @@ License: For each use you must have a valid license purchased only from above li
                     document.getElementById("formulariobusqueda").submit();
 				}
 			});
+			document.getElementById('export-excel-btn').addEventListener('click', function() {
+			window.location.href = "<?= base_url('export/csv/entradas') ?>";
+		});
 
 		</script>
 	</body>

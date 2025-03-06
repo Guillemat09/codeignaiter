@@ -2801,7 +2801,19 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="menu-item px-3">
 																<a href="<?=base_url('users/delete/') . esc($user['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
 															</div>
-															<!--end::Menu item-->
+															<div class="menu-item px-3">
+													<a href="<?= base_url('users/deactivate/' . esc($user['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-users-table-filter="deactivate_row">
+														<span class="text-danger">Dar de baja</span>
+													</a>
+												</div>
+												<div class="menu-item px-3">
+													<a href="<?= base_url('users/toggleActive/' . esc($user['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-users-table-filter="toggle_active">
+														<?= $user['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
+													</a>
 														</div>
 														<!--end::Menu-->
 													</td>

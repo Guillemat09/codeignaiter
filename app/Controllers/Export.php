@@ -1,25 +1,52 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\UserModel;
 use App\Models\AdminModel;
 use App\Models\ReportModel;
 use App\Models\ArtistaModel;
+use App\Models\FestivalModel;  // Asegúrate de tener este modelo
+use App\Models\PatrocinadorModel;  // Asegúrate de tener este modelo
+use App\Models\EntradaModel;  // Asegúrate de tener este modelo
 
 class Export extends BaseController
 {
     public function exportCSV($type = 'users')
     {
-        if ($type == 'users') {
-            $model = new UserModel();
-            $filename = "usuarios.csv";
-            $headers = ['ID', 'Nombre', 'Correo', 'Rol', 'Fecha de Creación'];
-        } elseif ($type == 'artistas') {
-            $model = new ArtistaModel();
-            $filename = "artistas.csv";
-            $headers = ['ID', 'Nombre', 'Descripción', 'Género', 'Fecha de Creación'];
-        } else {
-            return redirect()->to(base_url('/'))->with('error', 'Tipo de exportación no válido');
+        switch ($type) {
+            case 'users':
+                $model = new UserModel();
+                $filename = "usuarios.csv";
+                $headers = ['ID', 'Nombre', 'Correo', 'Rol', 'Fecha de Creación'];
+                break;
+
+            case 'artistas':
+                $model = new ArtistaModel();
+                $filename = "artistas.csv";
+                $headers = ['ID', 'Nombre', 'Descripción', 'Género', 'Fecha de Creación'];
+                break;
+
+            case 'festivales':
+                $model = new FestivalModel();
+                $filename = "festivales.csv";
+                $headers = ['ID', 'Nombre', 'Descripción', 'Fecha de Inicio', 'Fecha de Fin', 'Lugar', 'Fecha de Creación'];
+                break;
+
+            case 'patrocinadores':
+                $model = new PatrocinadorModel();
+                $filename = "patrocinadores.csv";
+                $headers = ['ID', 'Nombre', 'Descripción', 'Contacto', 'Festival ID', 'Fecha de Creación'];
+                break;
+
+            case 'entradas':
+                $model = new EntradaModel();
+                $filename = "entradas.csv";
+                $headers = ['ID', 'Usuario ID', 'Festival ID', 'Tipo de Entrada', 'Precio', 'Fecha de Compra'];
+                break;
+
+            default:
+                return redirect()->to(base_url('/'))->with('error', 'Tipo de exportación no válido');
         }
 
         $data = $model->findAll();
@@ -42,3 +69,4 @@ class Export extends BaseController
         exit();
     }
 }
+

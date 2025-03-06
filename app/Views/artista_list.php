@@ -2610,7 +2610,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Modal body-->
 										<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
 											<!--begin::Form-->
-											<form id="kt_modal_add_user_form" class="form" action="<?= isset($artista) ? base_url('artistas/save/') . $artista['id'] : base_url('artistas/save') ?>" method="post">
+											<form id="kt_modal_add_user_form" class="form" action="<?= isset($artista) ? base_url('artistas/save/') . $artista['id'] : base_url('artistas/save') ?>" method="post" onsubmit="return validateForm()">
 												<!--begin::Scroll-->
 												<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
 													<!--begin::Input group-->
@@ -5891,6 +5891,17 @@ License: For each use you must have a valid license purchased only from above li
 		document.getElementById('export-excel-btn').addEventListener('click', function() {
 			window.location.href = "<?= base_url('export/csv/artistas') ?>";
 		});
+		function validateForm() {
+            var nombre = document.forms["kt_modal_add_user_form"]["nombre"].value;
+            var descripcion = document.forms["kt_modal_add_user_form"]["descripcion"].value;
+            var genero = document.forms["kt_modal_add_user_form"]["genero"].value;
+
+            if (nombre == "" || descripcion == "" || genero == "") {
+                alert("Todos los campos son requeridos");
+                return false;
+            }
+            return true;
+        }
 	</script>
 </body>
 <!--end::Body-->

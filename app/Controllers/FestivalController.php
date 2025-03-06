@@ -69,5 +69,38 @@ class FestivalController extends BaseController
         $festivalModel->delete($id); // Eliminar Festival
         return redirect()->to('/festivales')->with('success', 'Festival eliminado correctamente.');
     }
+
+    public function deactivate($id)
+    {
+        $festivalModel = new FestivalModel();
+        $festival = $festivalModel->find($id);
+
+        if ($festival) {
+            $festivalModel->update($id, ['is_active' => 0]); // Marcar festival como inactivo
+            return redirect()->to('/festivales')->with('success', 'festival dado de baja correctamente.');
+        } else {
+            return redirect()->to('/festivales')->with('error', 'El festival no existe.');
+        }
+    }
+
+    public function toggleActive($id)
+    {
+        $festivalModel = new FestivalModel();
+        $festival = $festivalModel->find($id);
+
+        if ($festival) {
+            // Cambiar el estado actual
+            $newStatus = $festival['is_active'] ? 0 : 1;
+            $message = $newStatus ? 'festival dado de alta correctamente.' : 'festival dado de baja correctamente.';
+
+            // Actualizar en la base de datos
+            $festivalModel->update($id, ['is_active' => $newStatus]);
+
+            return redirect()->to('/festivales')->with('success', $message);
+        } else {
+            return redirect()->to('/festivales')->with('error', 'El festival no existe.');
+        }
+    }
+
 }
 
