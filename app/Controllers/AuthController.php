@@ -3,99 +3,104 @@
 namespace App\Controllers;
 
 use App\Models\UserModel;
-use App\Models\RolModel;
-use CodeIgniter\Controller;
 
 class AuthController extends BaseController
 {
-    public function login()
-    {
-        helper(['form']);
-        
-        if ($this->request->getMethod() == 'post') {
-            $session = session();
-            $model = new UserModel();
-            $email = $this->request->getVar('email');
-            $password = $this->request->getVar('password');
-            $data = $model->where('email', $email)->first();
-
-            if (!$data) {
-                $session->setFlashdata('error', 'Email no encontrado.');
-                return redirect()->to('/login');
-            }
-
-            if (!password_verify($password, $data['password'])) {
-                $session->setFlashdata('error', 'Contraseña incorrecta.');
-                return redirect()->to('/login');
-            }
-
-            // Guardar datos en sesión
-            $sessionData = [
-                'id' => $data['id'],
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'role' => $data['role_id'],
-                'isLoggedIn' => true
-            ];
-            $session->set($sessionData);
-
-            log_message('info', 'Usuario autenticado correctamente: ' . $data['email']);
-            return redirect()->to('/principal');
-        }
-
-        return view('principal');
-    }
-
+    /**
+     * Muestra el formulario de registro.
+     */
     public function register()
     {
-        helper(['form']);
-        $rolModel = new RolModel();
-        $data['roles'] = $rolModel->findAll();
-
-        if ($this->request->getMethod() == 'post') {
-            $rules = [
-                'name' => 'required|min_length[3]|max_length[100]',
-                'email' => 'required|min_length[6]|max_length[100]|valid_email|is_unique[users.email]',
-                'password' => 'required|min_length[8]|max_length[255]',
-                'password_confirm' => 'required|matches[password]',
-                'role' => 'required'
-            ];
-
-            if (!$this->validate($rules)) {
-                $data['validation'] = $this->validator;
-                return view('register', $data);
-            }
-
-            $model = new UserModel();
-            $passwordHash = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
-
-            $userData = [
-                'name' => $this->request->getPost('name'),
-                'email' => $this->request->getPost('email'),
-                'password' => $passwordHash,
-                'role_id' => $this->request->getPost('role')
-            ];
-
-            if ($model->insert($userData)) {
-                log_message('info', 'Usuario registrado correctamente: ' . $userData['email']);
-                session()->setFlashdata('success', 'Registro exitoso. Puedes iniciar sesión.');
-                return redirect()->to('/login');
-            } else {
-                log_message('error', 'Error al registrar usuario: ' . json_encode($userData));
-                session()->setFlashdata('error', 'Hubo un problema con el registro.');
-                return redirect()->to('/register');
-            }
-        }
-
-        return view('register', $data);
+        return view('register');
     }
 
+    /**
+     * Procesa el registro de un nuevo usuario.
+     */
+    public function processRegister()
+    {
+        helper(['form', 'url']);
+
+        $rules = [
+            'name' => 'required|min_length[3]|max_length[50]',
+            'email' => 'required|valid_email|is_unique[users.email]',
+            'password' => 'required|min_length[6]',
+            'password_confirm' => 'required|matches[password]',
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('register', ['validation' => $this->validator]);
+        }
+
+        $userModel = new UserModel();
+        $userModel->save([
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        ]);
+
+        return redirect()->to('/login')->with('success', 'Usuario registrado correctamente.');
+    }
+
+    /**
+     * Muestra el formulario de inicio de sesión.
+     */
+    public function login()
+    {
+        return view('login');
+    }
+
+    /**
+     * Procesa el inicio de sesión.
+     */
+    public function processLogin()
+    {
+        helper(['form', 'url']);
+        $session = session();
+
+        $rules = [
+            'email' => 'required|valid_email',
+            'password' => 'required',
+        ];
+
+        if (!$this->validate($rules)) {
+            return view('login', ['validation' => $this->validator]);
+        }
+
+        $userModel = new UserModel();
+        $user = $userModel->where('email', $this->request->getPost('email'))->first();
+
+        if (!$user) {
+            return redirect()->to('/login')->with('error', 'Usuario no encontrado.');
+        }
+
+        if (!password_verify($this->request->getPost('password'), $user['password'])) {
+            return redirect()->to('/login')->with('error', 'Correo o contraseña incorrectos.');
+        }
+
+        $session->set([
+            'id' => $user['id'],
+            'name' => $user['name'],
+            'email' => $user['email'],
+            'isLoggedIn' => true,
+            'created_at' => $user['created_at'],
+        ]);
+
+        return redirect()->to('/dashboard')->with('success', 'Inicio de sesión exitoso.');
+    }
+
+    /**
+     * Cierra la sesión del usuario.
+     */
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/login');
+        return redirect()->to('/login')->with('success', 'Has cerrado sesión correctamente.');
     }
 }
+
+
+
 
 
 

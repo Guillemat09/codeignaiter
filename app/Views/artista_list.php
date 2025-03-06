@@ -2441,8 +2441,11 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->
 												<form method="get" action="<?= base_url('artistas') ?>" id="formulariobusqueda">
-												<input type="text" name="nombre" id="busquedaArtista" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Busqueda x" />
-												</form>
+                                             <input type="text" name="nombre" id="busquedaArtista" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-14" placeholder="Búsqueda" value="<?= htmlspecialchars($nombre) ?>" />
+                              <input type="hidden" name="sort" value="<?= $sort ?>">
+                        <input type="hidden" name="direction" value="<?= $direction ?>">
+                      </form>
+
 											</div>
 											<!--end::Search-->
 										</div>
@@ -2801,6 +2804,21 @@ License: For each use you must have a valid license purchased only from above li
 															<div class="menu-item px-3">
 																<a href="<?= base_url('artistas/delete/' . esc($artista['id'])) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
 															</div>
+
+															<div class="menu-item px-3">
+    <a href="<?= base_url('artistas/deactivate/' . esc($artista['id'])) ?>" 
+       class="menu-link px-3" 
+       data-kt-users-table-filter="deactivate_row">
+       <span class="text-danger">Dar de baja</span>
+    </a>
+</div>
+<div class="menu-item px-3">
+    <a href="<?= base_url('artistas/toggleActive/' . esc($artista['id'])) ?>" 
+       class="menu-link px-3" 
+       data-kt-users-table-filter="toggle_active">
+       <?= $artista['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
+    </a>
+
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->

@@ -30,6 +30,9 @@ $routes->get('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // Mo
 $routes->post('artistas/save', 'ArtistaController::saveArtista'); // Crear usuario en la base de datos (POST)
 $routes->post('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // Editar usuario en la base de datos (POST)
 $routes->get('artistas/delete/(:num)', 'ArtistaController::delete/$1'); // Eliminar artista
+$routes->get('artistas/deactivate/(:num)', 'ArtistaController::deactivate/$1');
+$routes->get('artistas/toggleActive/(:num)', 'ArtistaController::toggleActive/$1');
+
 
 $routes->get('patrocinadores', 'PatrocinadorController::index'); // Listar patrocinador
 $routes->get('patrocinadores/save', 'PatrocinadorController::savePatrocinador'); // Mostrar formulario vacio para meter un patrocinador nuevo
