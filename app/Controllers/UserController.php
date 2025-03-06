@@ -9,7 +9,28 @@ class UserController extends BaseController
     public function index()
     {
         $userModel = new UserModel();
-        $data['users'] = $userModel->findAll(); // Obtener todos los usuarios
+        $filters = $this->request->getGet();  // Obtener filtros del formulario
+        
+        // Configurar paginación
+        $perPage = 10;
+        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'name';
+        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
+
+        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
+        unset($filters['sort']);
+        unset($filters['direction']);
+        unset($filters['page']);
+
+        // Obtener datos paginados con filtros y ordenación
+        $data['users'] = $userModel->filter($filters)
+                                   ->orderBy($sort, $direction)
+                                   ->paginate($perPage, 'default', $currentPage);
+        $data['pager'] = $userModel->pager;  // Aquí se asegura de pasar `pager` a la vista
+        $data['filters'] = $filters; // Pasar filtros a la vista
+        $data['sort'] = $sort;
+        $data['direction'] = $direction;
+
         return view('user_list', $data);
     }
 

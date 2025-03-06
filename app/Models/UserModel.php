@@ -16,5 +16,14 @@ class UserModel extends Model
     {
         return $this->where('email', $email)->first();
     }
+    public function filter($filters)
+    {
+        foreach ($filters as $key => $value) {
+            if (!empty($value)) {
+                $this->like($key, $value);
+            }
+        }
+        return $this;
+    }
 }
 

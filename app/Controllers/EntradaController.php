@@ -14,12 +14,22 @@ class EntradaController extends BaseController
         // Configurar paginación
         $perPage = 10;
         $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'fecha_compra';
+        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
 
-        // Obtener datos paginados con filtros
+        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
+        unset($filters['sort']);
+        unset($filters['direction']);
+        unset($filters['page']);
+
+        // Obtener datos paginados con filtros y ordenación
         $data['entradas'] = $entradaModel->filter($filters)
+                                         ->orderBy($sort, $direction)
                                          ->paginate($perPage, 'default', $currentPage);
         $data['pager'] = $entradaModel->pager;  // Aquí se asegura de pasar `pager` a la vista
         $data['filters'] = $filters; // Pasar filtros a la vista
+        $data['sort'] = $sort;
+        $data['direction'] = $direction;
 
         return view('entrada_list', $data);
     }

@@ -14,12 +14,22 @@ class FestivalController extends BaseController
         // Configurar paginación
         $perPage = 10;
         $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre';
+        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
 
-        // Obtener datos paginados con filtros
+        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
+        unset($filters['sort']);
+        unset($filters['direction']);
+        unset($filters['page']);
+
+        // Obtener datos paginados con filtros y ordenación
         $data['festivales'] = $festivalModel->filter($filters)
+                                            ->orderBy($sort, $direction)
                                             ->paginate($perPage, 'default', $currentPage);
         $data['pager'] = $festivalModel->pager;  // Aquí se asegura de pasar `pager` a la vista
         $data['filters'] = $filters; // Pasar filtros a la vista
+        $data['sort'] = $sort;
+        $data['direction'] = $direction;
 
         return view('festival_list', $data);
     }

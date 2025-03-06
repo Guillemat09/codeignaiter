@@ -36,7 +36,6 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -2521,16 +2520,16 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Menu 1-->
 												<!--end::Filter-->
 												<!--begin::Export-->
-												<button type="button" class="btn btn-light-primary me-3" id="exportButton" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
-												<!--begin::Svg Icon | path: icons/duotune/arrows/arr078.svg-->
-												<span class="svg-icon svg-icon-2">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="black" />
-														<path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="black" />
-														<path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
-													</svg>
-												</span>
-												<!--end::Svg Icon-->Export</button>
+												<button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_artistas">
+                                                     <span class="svg-icon svg-icon-2">
+                                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                               <rect opacity="0.3" x="12.75" y="4.25" width="12" height="2" rx="1" transform="rotate(90 12.75 4.25)" fill="black" />
+                                                                <path d="M12.0573 6.11875L13.5203 7.87435C13.9121 8.34457 14.6232 8.37683 15.056 7.94401C15.4457 7.5543 15.4641 6.92836 15.0979 6.51643L12.4974 3.59084C12.0996 3.14332 11.4004 3.14332 11.0026 3.59084L8.40206 6.51643C8.0359 6.92836 8.0543 7.5543 8.44401 7.94401C8.87683 8.37683 9.58785 8.34458 9.9797 7.87435L11.4427 6.11875C11.6026 5.92684 11.8974 5.92684 12.0573 6.11875Z" fill="black" />
+                                                                   <path d="M18.75 8.25H17.75C17.1977 8.25 16.75 8.69772 16.75 9.25C16.75 9.80228 17.1977 10.25 17.75 10.25C18.3023 10.25 18.75 10.6977 18.75 11.25V18.25C18.75 18.8023 18.3023 19.25 17.75 19.25H5.75C5.19772 19.25 4.75 18.8023 4.75 18.25V11.25C4.75 10.6977 5.19771 10.25 5.75 10.25C6.30229 10.25 6.75 9.80228 6.75 9.25C6.75 8.69772 6.30229 8.25 5.75 8.25H4.75C3.64543 8.25 2.75 9.14543 2.75 10.25V19.25C2.75 20.3546 3.64543 21.25 4.75 21.25H18.75C19.8546 21.25 20.75 20.3546 20.75 19.25V10.25C20.75 9.14543 19.8546 8.25 18.75 8.25Z" fill="#C4C4C4" />
+                                                         </svg>
+                                                         </span>
+                                                           Exportar
+                                                            </button>
 												<!--end::Export-->
 												<!--begin::Add user-->
 												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
@@ -2553,86 +2552,37 @@ License: For each use you must have a valid license purchased only from above li
 											</div>
 											<!--end::Group actions-->
 											<!--begin::Modal - Adjust Balance-->
-											<div class="modal fade" id="kt_modal_export_users" tabindex="-1" aria-hidden="true">
-												<!--begin::Modal dialog-->
-												<div class="modal-dialog modal-dialog-centered mw-650px">
-													<!--begin::Modal content-->
-													<div class="modal-content">
-														<!--begin::Modal header-->
-														<div class="modal-header">
-															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Export Users</h2>
-															<!--end::Modal title-->
-															<!--begin::Close-->
-															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-																<span class="svg-icon svg-icon-1">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-																	</svg>
-																</span>
-																<!--end::Svg Icon-->
-															</div>
-															<!--end::Close-->
-														</div>
-														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form id="kt_modal_export_users_form" class="form" action="#">
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="fs-6 fw-bold form-label mb-2">Select Roles:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="role" data-control="select2" data-placeholder="Select a role" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="Administrator">Administrator</option>
-																		<option value="Analyst">Analyst</option>
-																		<option value="Developer">Developer</option>
-																		<option value="Support">Support</option>
-																		<option value="Trial">Trial</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Input group-->
-																<div class="fv-row mb-10">
-																	<!--begin::Label-->
-																	<label class="required fs-6 fw-bold form-label mb-2">Select Export Format:</label>
-																	<!--end::Label-->
-																	<!--begin::Input-->
-																	<select name="format" data-control="select2" data-placeholder="Select a format" data-hide-search="true" class="form-select form-select-solid fw-bolder">
-																		<option></option>
-																		<option value="excel">Excel</option>
-																		<option value="pdf">PDF</option>
-																		<option value="cvs">CVS</option>
-																		<option value="zip">ZIP</option>
-																	</select>
-																	<!--end::Input-->
-																</div>
-																<!--end::Input group-->
-																<!--begin::Actions-->
-																<div class="text-center">
-																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-																		<span class="indicator-label">Submit</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
-													</div>
-													<!--end::Modal content-->
-												</div>
-												<!--end::Modal dialog-->
-											</div>
+											<div class="modal fade" id="kt_modal_export_artistas" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered mw-650px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="fw-bolder">Exportar Artistas</h2>
+                    <button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                        <span class="svg-icon svg-icon-1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                                <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="export-form">
+                        <div class="mb-10">
+                            <label class="fs-6 fw-bold form-label mb-2">Selecciona el formato:</label>
+                            <select id="export-format" class="form-select form-select-solid fw-bolder">
+                                <option value="csv">CSV (Excel)</option>
+                            </select>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" id="export-excel-btn" class="btn btn-primary">Exportar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 											<!--end::Modal - New Card-->
 											<!--begin::Modal - Add task-->
 											<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
@@ -2736,10 +2686,54 @@ License: For each use you must have a valid license purchased only from above li
 															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
 														</div>
 													</th>
-													<th class="min-w-125px">Artistas-ID</th>
-													<th class="min-w-125px">Descripcion</th>
-													<th class="min-w-125px">Genero</th>
-													<th class="min-w-125px">Fecha de Creacion</th>
+													<th class="min-w-125px">
+                                        <a href="<?= base_url('artistas?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Artista-id
+                                            <?php if ($sort == 'nombre'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('artistas?sort=descripcion&direction=' . ($sort == 'descripcion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Descripción
+                                            <?php if ($sort == 'descripcion'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('artistas?sort=genero&direction=' . ($sort == 'genero' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Género
+                                            <?php if ($sort == 'genero'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('artistas?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Fecha creacion
+                                            <?php if ($sort == 'fecha_creacion'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
 													<th class="text-end min-w-100px">Acciones</th>
 												</tr>
 												<!--end::Table row-->
@@ -2813,7 +2807,7 @@ License: For each use you must have a valid license purchased only from above li
 													</td>
 													<!--end::Action=-->
 												</tr>
-                <?php endforeach; ?>
+                                                  <?php endforeach; ?>
 												<!--end::Table row-->
 												<!--begin::Table row-->
 							
@@ -2825,6 +2819,7 @@ License: For each use you must have a valid license purchased only from above li
 											</tbody>
 											<!--end::Table body-->
 										</table>
+										<p><?= $pager->links() ?></p>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->
@@ -5888,10 +5883,6 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../../assets/js/custom/chart.js"></script>
 		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- DataTables JS -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 			<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 		<script>
@@ -5901,26 +5892,8 @@ License: For each use you must have a valid license purchased only from above li
                     document.getElementById("formulariobusqueda").submit();
 				}
 			});
-
-	$(document).ready(function() {
-            $('#kt_table_users').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
-                },
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'csvHtml5',
-                        text: 'Exportar CSV',
-                        className: 'btn btn-primary'
-                    },
-                    {
-                        extend: 'excelHtml5',
-                        text: 'Exportar Excel',
-                        className: 'btn btn-primary'
-                    }
-                ]
-            });
+			document.getElementById('export-excel-btn').addEventListener('click', function() {
+            window.location.href = "<?= base_url('export/csv/artistas') ?>";
         });
 		</script>
 	</body>

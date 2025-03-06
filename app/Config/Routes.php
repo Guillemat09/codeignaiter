@@ -62,6 +62,7 @@ $routes->get('calendar', function() {
 });
 
 $routes->get('export/csv', 'Export::exportCSV');
+$routes->get('export/csv/(:segment)', 'Export::exportCSV/$1');
 
 $routes->get('roles', 'RolController::index'); 
 

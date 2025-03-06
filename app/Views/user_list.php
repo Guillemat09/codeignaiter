@@ -36,7 +36,6 @@ License: For each use you must have a valid license purchased only from above li
 		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 		<!--end::Global Stylesheets Bundle-->
 	</head>
 	<!--end::Head-->
@@ -2687,10 +2686,54 @@ License: For each use you must have a valid license purchased only from above li
 															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
 														</div>
 													</th>
-													<th class="min-w-125px">Nombre-ID</th>
-													<th class="min-w-125px">Email</th>
-													<th class="min-w-125px">Password</th>
-													<th class="min-w-125px">Fecha de creacion</th>
+													<th class="min-w-125px">
+                                        <a href="<?= base_url('users?sort=name&direction=' . ($sort == 'name' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Nombre-Id
+                                            <?php if ($sort == 'name'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('users?sort=email&direction=' . ($sort == 'email' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Email
+                                            <?php if ($sort == 'email'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('users?sort=password&direction=' . ($sort == 'password' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Password
+                                            <?php if ($sort == 'password'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('users?sort=created_at&direction=' . ($sort == 'created_at' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Fecha creacion
+                                            <?php if ($sort == 'created_at'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
 													<th class="text-end min-w-100px">Acciones</th>
 												</tr>
 												<!--end::Table row-->
@@ -2776,6 +2819,11 @@ License: For each use you must have a valid license purchased only from above li
 											</tbody>
 											<!--end::Table body-->
 										</table>
+										<nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <?= $pager->links() ?>
+                            </ul>
+                        </nav>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->
@@ -5839,10 +5887,6 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../../assets/js/custom/chart.js"></script>
 		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- DataTables JS -->
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 		<script>
@@ -5855,27 +5899,6 @@ License: For each use you must have a valid license purchased only from above li
 			document.getElementById('export-excel-btn').addEventListener('click', function() {
     window.location.href = "<?= base_url('export/csv') ?>";
             });
-
-			$(document).ready(function() {
-        $('#kt_table_users').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/Spanish.json"
-            },
-            dom: 'Bfrtip',
-            buttons: [
-                {
-                    extend: 'csvHtml5',
-                    text: 'Exportar CSV',
-                    className: 'btn btn-primary'
-                },
-                {
-                    extend: 'excelHtml5',
-                    text: 'Exportar Excel',
-                    className: 'btn btn-primary'
-                }
-            ]
-        });
-    });
 		</script>
 	</body>
 	<!--end::Body-->

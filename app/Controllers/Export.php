@@ -4,6 +4,7 @@ namespace App\Controllers;
 use App\Models\UserModel;
 use App\Models\AdminModel;
 use App\Models\ReportModel;
+use App\Models\ArtistaModel;
 
 class Export extends BaseController
 {
@@ -13,6 +14,10 @@ class Export extends BaseController
             $model = new UserModel();
             $filename = "usuarios.csv";
             $headers = ['ID', 'Nombre', 'Correo', 'Rol', 'Fecha de Creación'];
+        } elseif ($type == 'artistas') {
+            $model = new ArtistaModel();
+            $filename = "artistas.csv";
+            $headers = ['ID', 'Nombre', 'Descripción', 'Género', 'Fecha de Creación'];
         } else {
             return redirect()->to(base_url('/'))->with('error', 'Tipo de exportación no válido');
         }

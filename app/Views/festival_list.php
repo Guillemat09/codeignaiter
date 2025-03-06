@@ -2760,12 +2760,78 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 													</th>
 													<th class="min-w-125px">ID</th>
-                                                    <th class="min-w-125px">Nombre</th>
-                                                    <th class="min-w-125px">Descripcion</th>
-                                                    <th class="min-w-125px">Fecha inicio</th>
-                                                    <th class="min-w-125px">Fecha fin</th>
-                                                    <th class="min-w-125px">Lugar</th>
-													<th class="min-w-125px">Fecha de Compra</th>
+													<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Nombre
+                                            <?php if ($sort == 'nombre'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=descripcion&direction=' . ($sort == 'descripcion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Descripción
+                                            <?php if ($sort == 'descripcion'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=fecha_inicio&direction=' . ($sort == 'fecha_inicio' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Fecha de Inicio
+                                            <?php if ($sort == 'fecha_inicio'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=fecha_fin&direction=' . ($sort == 'fecha_fin' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Fecha de Fin
+                                            <?php if ($sort == 'fecha_fin'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=lugar&direction=' . ($sort == 'lugar' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            Lugar
+                                            <?php if ($sort == 'lugar'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
+									<th class="min-w-125px">
+                                        <a href="<?= base_url('festivales?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
+                                            fecha compra
+                                            <?php if ($sort == 'fecha_creacion'): ?>
+                                                <span class="svg-icon svg-icon-5 m-0">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
+                                                    </svg>
+                                                </span>
+                                            <?php endif; ?>
+                                        </a>
+                                    </th>
 													<th class="text-end min-w-100px">Acciones</th>
 												</tr>
 												<!--end::Table row-->
@@ -2847,7 +2913,7 @@ License: For each use you must have a valid license purchased only from above li
 													</td>
 													<!--end::Action=-->
 												</tr>
-                <?php endforeach; ?>
+                                               <?php endforeach; ?>
 												<!--end::Table row-->
 												<!--begin::Table row-->
 							
@@ -2859,6 +2925,11 @@ License: For each use you must have a valid license purchased only from above li
 											</tbody>
 											<!--end::Table body-->
 										</table>
+										<nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <?= $pager->links() ?>
+                            </ul>
+                        </nav>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->
