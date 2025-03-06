@@ -11,43 +11,46 @@ class ArtistaController extends BaseController
         $artistaModel = new ArtistaModel();
 
         // Captura y validación de parámetros
-        $searchTerm = $this->request->getVar('nombre') ? $this->request->getVar('nombre') : '';
-        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre';
-        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
+        $nombre = $this->request->getGet('nombre');
+        $descripcion = $this->request->getGet('descripcion');
+        $genero = $this->request->getGet('genero');
 
-        $allowedSorts = ['nombre', 'descripcion', 'genero', 'fecha_creacion'];
-        $allowedDirections = ['ASC', 'DESC'];
+        $sort = $this->request->getGet('sort') ?? 'id'; 
+        $order = $this->request->getGet('order') ?? 'asc';
 
-        if (!in_array($sort, $allowedSorts)) {
-            $sort = 'nombre';
-        }
-
-        if (!in_array($direction, $allowedDirections)) {
-            $direction = 'ASC';
-        }
-
-        $filters = $this->request->getGet();  // Obtener filtros del formulario
         
-        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
-        unset($filters['sort']);
-        unset($filters['direction']);
-        unset($filters['page']);
+
+        
+
+        if ($nombre) {
+            $artistaModel->like('artistas.nombre', $nombre);
+        }
+        if ($descripcion) {
+            $artistaModel->like('artistas.descripcion', $descripcion);
+        }
+        if ($genero) {
+            $artistaModel->like('artistas.genero', $genero);
+        }  
+        
+        // Aplicar ordenación
+        $artistaModel->orderBy($sort, $order);
+        
+       
 
         // Configurar paginación
         $perPage = 10;
-        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
 
         // Obtener datos paginados con filtros, búsqueda y ordenación
-        $data['artistas'] = $artistaModel->like('nombre', $searchTerm)
-                                         ->orLike('descripcion', $searchTerm)
-                                         ->filter($filters)
-                                         ->orderBy($sort, $direction)
-                                         ->paginate($perPage, 'default', $currentPage);
+        $data['artistas'] = $artistaModel ->paginate($perPage, 'default', $page);
         $data['pager'] = $artistaModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
+        $data['nombre'] = $nombre; // Pasar filtros a la vista
         $data['sort'] = $sort;
-        $data['direction'] = $direction;
-        $data['nombre'] = $searchTerm;
+        $data['perPage'] = $perPage;
+        $data['page'] = $page;
+        $data['order'] = $order;
+        $data['descripcion'] = $descripcion;
+        $data['genero'] = $genero;
 
         return view('artista_list', $data);
     }
