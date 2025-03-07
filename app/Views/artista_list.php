@@ -2551,36 +2551,36 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Group actions-->
 							<!--begin::Modal - Adjust Balance-->
 							<div class="modal fade" id="kt_modal_export_artistas" tabindex="-1" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered mw-650px">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h2 class="fw-bolder">Exportar Artistas</h2>
-											<button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
-												<span class="svg-icon svg-icon-1">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-														<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-													</svg>
-												</span>
-											</button>
-										</div>
-										<div class="modal-body">
-											<form id="export-form">
-												<div class="mb-10">
-													<label class="fs-6 fw-bold form-label mb-2">Selecciona el formato:</label>
-													<select id="export-format" class="form-select form-select-solid fw-bolder">
-														<option value="csv">CSV (Excel)</option>
-													</select>
-												</div>
-												<div class="text-center">
-													<button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
-													<button type="button" id="export-excel-btn" class="btn btn-primary">Exportar</button>
-												</div>
-											</form>
-										</div>
-									</div>
-								</div>
-							</div>
+                     <div class="modal-dialog modal-dialog-centered mw-650px">
+                   <div class="modal-content">
+                <div class="modal-header">
+                 <h2 class="fw-bolder">Exportar Artistas</h2>
+                 <button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal">
+                    <span class="svg-icon svg-icon-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+                            <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+                        </svg>
+                    </span>
+                 </button>
+             </div>
+             <div class="modal-body">
+                <form id="export-form">
+                    <div class="mb-10">
+                        <label class="fs-6 fw-bold form-label mb-2">Selecciona el formato:</label>
+                        <select id="export-format" class="form-select form-select-solid fw-bolder">
+                            <option value="csv">CSV (Excel)</option>
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" id="export-excel-btn" class="btn btn-primary">Exportar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 							<!--end::Modal - New Card-->
 							<!--begin::Modal - Add task-->
 							<div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
@@ -5891,17 +5891,7 @@ License: For each use you must have a valid license purchased only from above li
 		document.getElementById('export-excel-btn').addEventListener('click', function() {
 			window.location.href = "<?= base_url('export/csv/artistas') ?>";
 		});
-		function validateForm() {
-            var nombre = document.forms["kt_modal_add_user_form"]["nombre"].value;
-            var descripcion = document.forms["kt_modal_add_user_form"]["descripcion"].value;
-            var genero = document.forms["kt_modal_add_user_form"]["genero"].value;
 
-            if (nombre == "" || descripcion == "" || genero == "") {
-                alert("Todos los campos son requeridos");
-                return false;
-            }
-            return true;
-        }
 	</script>
 </body>
 <!--end::Body-->
