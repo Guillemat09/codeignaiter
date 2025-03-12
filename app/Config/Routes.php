@@ -23,7 +23,7 @@ $routes->get('users/toggleActive/(:num)', 'UserController::toggleActive/$1');
 $routes->get('/login', 'AuthController::login');
 $routes->post('/login', 'AuthController::login');
 $routes->get('/register', 'AuthController::register');
-$routes->post('/register', 'AuthController::register');
+$routes->post('/register', 'AuthController::processRegister');
 $routes->get('/logout', 'AuthController::logout');
 
 

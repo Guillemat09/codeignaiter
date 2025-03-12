@@ -29,6 +29,7 @@ class AuthController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
+            session()->setFlashdata('error', 'Datos no validos.');
             return view('register', ['validation' => $this->validator]);
         }
 
@@ -36,7 +37,9 @@ class AuthController extends BaseController
         $userModel->save([
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            // 'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'password' => $this->request->getPost('password'),
+            'role_id' => 3,
         ]);
 
         return redirect()->to('/login')->with('success', 'Usuario registrado correctamente.');
@@ -47,8 +50,37 @@ class AuthController extends BaseController
      */
     public function login()
     {
-        return view('login');
+        $request = service('request');
+    if ($request->getMethod() === 'POST') {
+        $email = $request->getPost('email');
+        $password = $request->getPost('password');
+
+        // Cargar el modelo de usuario
+        $userModel = new \App\Models\UserModel();
+
+        // Buscar el usuario en la base de datos
+        $user = $userModel->where('email', $email)->first();
+
+        if ($user && $password == $user['password']) {
+            // Autenticación exitosa
+            $roleModel = new \App\Models\RolModel();
+
+            // Buscar el rol correspondiente en la base de datos
+            $role = $roleModel->find($user['role_id']);
+
+            // Guardar el usuario y el rol en la sesión
+            session()->set('user', $user);
+            session()->set('role', $role);
+            return view('principal');
+        } else {
+            // Autenticación fallida
+            session()->setFlashdata('error', 'Email o contraseña incorrectos.');
+            return view('login');
+        }
     }
+return view ('login');
+    }
+    
 
     /**
      * Procesa el inicio de sesión.
