@@ -49,9 +49,11 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="../../demo1/dist/index.html">
-							<img alt="Logo" src="../assets/media/logos/logo.png" class="h-100px logo" />
-						</a>
+						<!--begin::Logo-->
+              <a href="<?= base_url('principal') ?>">
+        <img alt="Logo" src="../assets/media/logos/logo.png" class="h-100px logo" />
+          </a>
+<!--end::Logo-->
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
 						<div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
@@ -2320,14 +2322,15 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Wrapper-->
 									<div class="me-4">
 										<!--begin::Menu-->
-										<a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-										<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-										<span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-											</svg>
-										</span>
-										<!--end::Svg Icon-->Filter</a>
+										<a href="<?= base_url('login') ?>" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder">
+    <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
+    <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
+        </svg>
+    </span>
+    <!--end::Svg Icon-->Login
+</a>
 										<!--begin::Menu 1-->
 										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61484bf44d957">
 											<!--begin::Header-->
@@ -2861,7 +2864,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="fw-bolder fs-3 text-primary">$24,500</div>
 													</div> 
 													<div class="md-5">
-													<div id="chart" style="height: 100px;"></div>
+													<div id="chart" style="height: 300px;"></div>
 													</div>
 												</div>
 												<!--end::Stats-->
@@ -2882,6 +2885,9 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="text-gray-400 fw-bold">Oct 8 - Oct 26 21</span>
 													</div>
 													<div class="fw-bolder fs-3 text-primary">$15,300</div>
+													<div class="md-5">
+													<div id="chart1" style="height: 50px;"></div>
+													</div>
 												</div>
 												<!--end::Hidden-->
 												<!--begin::Chart-->
@@ -8296,6 +8302,50 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
 		<script src="../../assets/js/custom/chart.js"></script>
+		<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var options = {
+            chart: {
+                type: 'bar',
+                height: 300 // Ajusta la altura según sea necesario
+            },
+            series: [{
+                name: 'Sales',
+                data: [30, 40, 45, 50, 49, 60, 70, 91, 125]
+            }],
+            xaxis: {
+                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+            }
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+    });
+    document.addEventListener('DOMContentLoaded', function () {
+        var options = {
+            chart: {
+                type: 'donut',
+                height: 300 // Ajusta la altura según sea necesario
+            },
+            series: [44, 55, 41, 17, 15], // Datos de ejemplo
+            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'], // Etiquetas de ejemplo
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }]
+        };
+
+        var chart = new ApexCharts(document.querySelector("#chart1"), options);
+        chart.render();
+    });
+</script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 	</body>
