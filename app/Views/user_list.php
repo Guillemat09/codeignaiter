@@ -2215,6 +2215,11 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="card">
 									<!--begin::Card header-->
 									<div class="card-header border-0 pt-6">
+										<?php if (session()->getFlashdata('success')): ?>
+											<div class="alert alert-success">
+												<?= session()->getFlashdata('success') ?>
+											</div>
+										<?php endif; ?>
 										<!--begin::Card title-->
 										<div class="card-title">
 											<!--begin::Search-->
@@ -2319,7 +2324,7 @@ License: For each use you must have a valid license purchased only from above li
                                                             </button>
 												<!--end::Export-->
 												<!--begin::Add user-->
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
+												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user" id="addUser">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2380,7 +2385,14 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Modal header-->
 														<div class="modal-header" id="kt_modal_add_user_header">
 															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Añadir usuario</h2>
+															<?php
+															$user = session()->getFlashdata('user');
+															?>
+															<?php if (isset($user)): ?>
+								<h2 class="fw-bolder">Editar usuario</h2>
+							<?php else: ?>
+								<h2 class="fw-bolder">Añadir usuario</h2>
+							<?php endif; ?>
 															<!--end::Modal title-->
 															<!--begin::Close-->
 															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -2399,6 +2411,12 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin::Modal body-->
 														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
 															<!--begin::Form-->
+															<?php if (session()->getFlashdata('error')): ?>
+                                <div class="alert alert-danger">
+                                    <?= session()->getFlashdata('error') ?>
+                                </div>
+                                
+                            <?php endif; ?>
 															<form action="<?= isset($user) ? base_url('users/save/') . $user['id'] : base_url('users/save') ?>" method="post">
 																<!--begin::Scroll-->
 																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -2410,7 +2428,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<label class="required fw-bold fs-6 mb-2">Nombre</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="nombre del usuario" value="" />
+																		<input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="nombre del usuario" value="<?= isset($user) ? esc($user['name']) : '' ?>" />
 																		<!--end::Input-->
 																	</div>
 																	<!--end::Input group-->
@@ -2419,7 +2437,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<label class="required fw-bold fs-6 mb-2">Correo</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="correo" value="" />
+																		<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="correo"  value="<?= isset($user) ? esc($user['email']) : '' ?>" />
 																		<!--end::Input-->
 																	</div>
 																	<!--begin::Input group-->
@@ -2429,7 +2447,7 @@ License: For each use you must have a valid license purchased only from above li
 																		<label class="required fw-bold fs-6 mb-2">Contraseña</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="contraseña" value="" />
+																		<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="contraseña" value="<?= isset($user) ? esc($user['password']) : '' ?>" />
 																		<!--end::Input-->
 																	</div>
 																	<!--begin::Input group-->
@@ -2439,7 +2457,7 @@ License: For each use you must have a valid license purchased only from above li
 																<!--begin::Actions-->
 																<div class="text-center pt-15">
 																	<button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
-																	<button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+																	<button type="submit" class="btn btn-primary">
 																		<span class="indicator-label">Guardar</span>
 																		<span class="indicator-progress">Please wait...
 																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
@@ -5701,6 +5719,14 @@ License: For each use you must have a valid license purchased only from above li
     window.location.href = "<?= base_url('export/csv') ?>";
             });
 		</script>
+		<?php if (session()->getFlashdata('error') || session()->getFlashdata('activarFormulario')==true) : ?>
+		<script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            // Simular una pulsación sobre el botón con id addUser
+            document.getElementById('addUser').click();
+        });
+    </script>
+	<?php endif;?>
 	</body>
 	<!--end::Body-->
 </html>

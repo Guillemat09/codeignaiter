@@ -83,7 +83,7 @@ License: For each use you must have a valid license purchased only from above li
 
 							<div class="menu-item">
 								<div class="menu-content pt-8 pb-2">
-									<span class="menu-section text-muted text-uppercase fs-8 ls-1">Lista</span>
+									<span class="menu-section text-muted text-uppercase fs-8 ls-1">List</span>
 								</div>
 							</div>
 
@@ -168,7 +168,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Roles Lista</span>
+													<span class="menu-title">Roles List</span>
 												</a>
 											</div>
 										</div>
@@ -2199,7 +2199,49 @@ License: For each use you must have a valid license purchased only from above li
 <div class="d-flex align-items-stretch" id="kt_header_nav">
 <div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
 <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
-<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard</h1>
+<div id="kt_toolbar_container" class="container d-flex flex-stack flex-wrap">
+        <!--begin::Page title-->
+        <div class="page-title d-flex flex-column me-3">
+            <h1 class="d-flex text-dark fw-bold my-1 fs-3">
+                <?= ' Artistas' ?>
+            </h1>
+
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="<?= base_url('principal') ?>" class="text-muted text-hover-primary">Principal</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="" class="text-muted text-hover-primary">Listas</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">Usuarios</li>
+
+				<li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+				
+                </li>
+				<li class="breadcrumb-item text-dark">Artistas</li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+    </div>
 </div>
 </div>
 </div>
@@ -2336,6 +2378,7 @@ License: For each use you must have a valid license purchased only from above li
 								</button>
 								<!--end::Export-->
 								<!--begin::Add user-->
+								<?php if (session()->get('role')['nombre'] == "admin"): ?>  
 								<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
 									<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 									<span class="svg-icon svg-icon-2">
@@ -2345,6 +2388,7 @@ License: For each use you must have a valid license purchased only from above li
 										</svg>
 									</span>
 									<!--end::Svg Icon-->Añadir artista</button>
+									<?php endif; ?>
 								<!--end::Add user-->
 							</div>
 							<!--end::Toolbar-->

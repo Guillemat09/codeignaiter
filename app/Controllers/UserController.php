@@ -58,11 +58,18 @@ class UserController extends BaseController
             if (!$validation->withRequest($this->request)->run()) {
                 // Mostrar errores de validación
                 $data['validation'] = $validation;
+               $errores ="";
+               foreach ($validation->getErrors() as $key => $value) {
+                  $errores.=$key.":".$value."<br>";
+                }
+                return redirect()->to('/users')->withInput()->with('error', $errores);
             } else {
                 // Preparar datos del formulario
                 $userData = [
                     'name' => $this->request->getPost('name'),
                     'email' => $this->request->getPost('email'),
+                    'password' => $this->request->getPost('password'),
+                    'role_id' => 3,  // Por defecto, todos los usuarios tienen el rol de usuario
                 ];
 
                 if ($id) {
@@ -81,7 +88,8 @@ class UserController extends BaseController
         }
 
         // Cargar la vista del formulario (crear/editar)
-        return view('user_form', $data);
+    // var_dump($data['user']);die();
+        return redirect()->to('/users')->with('activarFormulario',true)->with('user', $data['user']);
     }
 
     public function delete($id)

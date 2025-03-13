@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Registro</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -61,18 +61,16 @@ License: For each use you must have a valid license purchased only from above li
 								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesion</a></div>
 								<!--end::Link-->
 							</div>
+							<?php if (session()->getFlashdata('error')): ?>
+                                <div class="alert alert-danger">
+                                    <?= session()->getFlashdata('error') ?>
+                                </div>
+                                <?php elseif (session()->getFlashdata('success')): ?>
+                                <div class="alert alert-success">
+                                    <?= session()->getFlashdata('success') ?>
+                                </div>
+                            <?php endif; ?>
 							<!--end::Heading-->
-							<!--begin::Action-->
-							<button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-							<img alt="Logo" src="../assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Inicia sesion con Google</button>
-							<!--end::Action-->
-							<!--begin::Separator-->
-							<div class="d-flex align-items-center mb-10">
-								<div class="border-bottom border-gray-300 mw-50 w-100"></div>
-								<span class="fw-bold text-gray-400 fs-7 mx-2">OR</span>
-								<div class="border-bottom border-gray-300 mw-50 w-100"></div>
-							</div>
-							<!--end::Separator-->
 							<!--begin::Input group-->
 							<div class="row fv-row mb-7">
 									<label class="form-label fw-bolder text-dark fs-6">Nombre<span style="color: red;">*</span></label>

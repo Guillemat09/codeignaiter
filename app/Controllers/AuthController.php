@@ -34,13 +34,19 @@ class AuthController extends BaseController
         }
 
         $userModel = new UserModel();
-        $userModel->save([
+        $data = [
             'name' => $this->request->getPost('name'),
             'email' => $this->request->getPost('email'),
-            // 'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
             'password' => $this->request->getPost('password'),
             'role_id' => 3,
-        ]);
+        ];
+        // $userModel->save([
+        //     'name' => $this->request->getPost('name'),
+        //     'email' => $this->request->getPost('email'),
+        //     // 'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+        //     'password' => $this->request->getPost('password'),
+        //     'role_id' => 3,
+        // ]);
 
         if ($userModel->save($data)) {
             session()->setFlashdata('success', 'Usuario registrado correctamente.');
@@ -96,7 +102,7 @@ return view ('login');
         $session = session();
 
         $rules = [
-            'email' => 'required|valid_email',
+            'email' => 'required|',
             'password' => 'required',
         ];
 

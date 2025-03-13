@@ -9,52 +9,45 @@ class ArtistaController extends BaseController
     public function index()
     {
         $artistaModel = new ArtistaModel();
-
+    
         // Captura y validación de parámetros
-        $nombre = $this->request->getGet('nombre');
-        $descripcion = $this->request->getGet('descripcion');
-        $genero = $this->request->getGet('genero');
-
+        $filters = [
+            'nombre' => $this->request->getGet('nombre'),
+            'descripcion' => $this->request->getGet('descripcion'),
+            'genero' => $this->request->getGet('genero'),
+        ];
+    
         $sort = $this->request->getGet('sort') ?? 'id'; 
         $order = $this->request->getGet('order') ?? 'asc';
-
-        
-
-        
-
-        if ($nombre) {
-            $artistaModel->like('artistas.nombre', $nombre);
+    
+        // Aplicar filtros si existen
+        foreach ($filters as $campo => $valor) {
+            if (!empty($valor)) {
+                $artistaModel->like("artistas.$campo", $valor);
+            }
         }
-        if ($descripcion) {
-            $artistaModel->like('artistas.descripcion', $descripcion);
-        }
-        if ($genero) {
-            $artistaModel->like('artistas.genero', $genero);
-        }  
-        
+    
         // Aplicar ordenación
         $artistaModel->orderBy($sort, $order);
-        
-       
-
+    
         // Configurar paginación
         $perPage = 10;
-        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
-
-        // Obtener datos paginados con filtros, búsqueda y ordenación
-        $data['artistas'] = $artistaModel ->paginate($perPage, 'default', $page);
-        $data['pager'] = $artistaModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['nombre'] = $nombre; // Pasar filtros a la vista
-        $data['sort'] = $sort;
-        $data['perPage'] = $perPage;
-        $data['page'] = $page;
-        $data['order'] = $order;
-        $data['descripcion'] = $descripcion;
-        $data['genero'] = $genero;
-
+        $page = $this->request->getVar('page') ?? 1;
+    
+        // Obtener datos paginados con filtros y ordenación
+        $data = [
+            'artistas' => $artistaModel->paginate($perPage),
+            'pager' => $artistaModel->pager,
+            'filters' => $filters, // Pasar los filtros a la vista
+            'sort' => $sort,
+            'order' => $order,
+            'perPage' => $perPage,
+            'page' => $page,
+        ];
+    
         return view('artista_list', $data);
     }
-
+    
     public function saveArtista($id = null)
     {
         $artistaModel = new ArtistaModel();
