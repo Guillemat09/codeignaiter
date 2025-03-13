@@ -58,7 +58,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">Ya tienes una cuenta?
-								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Login</a></div>
+								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesion</a></div>
 								<!--end::Link-->
 							</div>
 							<!--end::Heading-->
@@ -76,7 +76,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Input group-->
 							<div class="row fv-row mb-7">
 									<label class="form-label fw-bolder text-dark fs-6">Nombre<span style="color: red;">*</span></label>
-									<input class="form-control form-control-lg form-control-solid" type="text" placeholder=""  autocomplete="off" name="name" value="<?= old('name') ?>" required />
+									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="Introduzca su Nombre"  autocomplete="off" name="name" value="<?= old('name') ?>" required />
 								<!--end::Col-->
 								<!--begin::Col-->
 								<!--end::Col-->
@@ -84,8 +84,8 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
-								<label class="form-label fw-bolder text-dark fs-6">Email<span style="color: red;">*</span></label>
-								<input class="form-control form-control-lg form-control-solid" type="email" placeholder=""  autocomplete="off"  name="email" value="<?= old('email') ?>" required />
+								<label class="form-label fw-bolder text-dark fs-6">Correo<span style="color: red;">*</span></label>
+								<input class="form-control form-control-lg form-control-solid" type="email" placeholder="Introduzca Correo Electronico"  autocomplete="off"  name="email" value="<?= old('email') ?>" required />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
@@ -97,7 +97,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
-										<input class="form-control form-control-lg form-control-solid" type="password" placeholder=""  autocomplete="off"  id="password" name="password" required />
+										<input class="form-control form-control-lg form-control-solid" type="password" placeholder="Introduzca Contraseña"  autocomplete="off"  id="password" name="password" required />
 										<span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
 											<i class="bi bi-eye-slash fs-2"></i>
 											<i class="bi bi-eye fs-2 d-none"></i>
@@ -122,7 +122,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Input group-->
 							<div class="fv-row mb-5">
 								<label class="form-label fw-bolder text-dark fs-6">Confirmar Contraseña<span style="color: red;">*</span></label>
-								<input class="form-control form-control-lg form-control-solid" type="password" placeholder=""  autocomplete="off" id="password_confirm" name="password_confirm" required />
+								<input class="form-control form-control-lg form-control-solid" type="password" placeholder="Repita Contraseña"  autocomplete="off" id="password_confirm" name="password_confirm" required />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->

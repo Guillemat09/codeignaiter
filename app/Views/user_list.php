@@ -80,11 +80,10 @@ License: For each use you must have a valid license purchased only from above li
 
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">List</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Lista</span>
 									</div>
 								</div>
-				
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
+								<div data-kt-menu-trigger="click" class="menu-item  mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
@@ -102,19 +101,14 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="menu-sub menu-sub-accordion">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Users</span>
-												<span class="menu-arrow"></span>
 											</span>
-											<div class="menu-sub menu-sub-accordion">
+											<div class="">
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('users') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Users</span>
+														<span class="menu-title">Usuario</span>
 													</a>
 												</div>
 												<div class="menu-item">
@@ -165,7 +159,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Roles List</span>
+														<span class="menu-title">Roles Lista</span>
 													</a>
 												</div>
 											</div>
@@ -182,124 +176,6 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								
 								<div class="menu-item">
-									<div class="menu-content pt-8 pb-0">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Layout</span>
-									</div>
-								</div>
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/abstract/abs042.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path d="M18 21.6C16.6 20.4 9.1 20.3 6.3 21.2C5.7 21.4 5.1 21.2 4.7 20.8L2 18C4.2 15.8 10.8 15.1 15.8 15.8C16.2 18.3 17 20.5 18 21.6ZM18.8 2.8C18.4 2.4 17.8 2.20001 17.2 2.40001C14.4 3.30001 6.9 3.2 5.5 2C6.8 3.3 7.4 5.5 7.7 7.7C9 7.9 10.3 8 11.7 8C15.8 8 19.8 7.2 21.5 5.5L18.8 2.8Z" fill="black" />
-													<path opacity="0.3" d="M21.2 17.3C21.4 17.9 21.2 18.5 20.8 18.9L18 21.6C15.8 19.4 15.1 12.8 15.8 7.8C18.3 7.4 20.4 6.70001 21.5 5.60001C20.4 7.00001 20.2 14.5 21.2 17.3ZM8 11.7C8 9 7.7 4.2 5.5 2L2.8 4.8C2.4 5.2 2.2 5.80001 2.4 6.40001C2.7 7.40001 3.00001 9.2 3.10001 11.7C3.10001 15.5 2.40001 17.6 2.10001 18C3.20001 16.9 5.3 16.2 7.8 15.8C8 14.2 8 12.7 8 11.7Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Toolbars</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg">
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/toolbars/toolbar-1.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Toolbar 1</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/toolbars/toolbar-2.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Toolbar 2</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/toolbars/toolbar-3.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Toolbar 3</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/toolbars/toolbar-4.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Toolbar 4</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/toolbars/toolbar-5.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Toolbar 5</span>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-									<span class="menu-link">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/general/gen009.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path opacity="0.3" d="M21 22H14C13.4 22 13 21.6 13 21V3C13 2.4 13.4 2 14 2H21C21.6 2 22 2.4 22 3V21C22 21.6 21.6 22 21 22Z" fill="black" />
-													<path d="M10 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H10C10.6 2 11 2.4 11 3V21C11 21.6 10.6 22 10 22Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Aside</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<div class="menu-sub menu-sub-accordion menu-active-bg">
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('users') ?>">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Light Skin</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/aside/font-icons.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Font Icons</span>
-											</a>
-										</div>
-										<div class="menu-item">
-											<a class="menu-link" href="../../demo1/dist/layouts/aside/minimized.html">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Minimized</span>
-											</a>
-										</div>
-									</div>
-								</div>
-								<div class="menu-item">
-									<a class="menu-link" href="https://preview.keenthemes.com/metronic8/demo1/layout-builder.html" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/general/gen019.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path d="M17.5 11H6.5C4 11 2 9 2 6.5C2 4 4 2 6.5 2H17.5C20 2 22 4 22 6.5C22 9 20 11 17.5 11ZM15 6.5C15 7.9 16.1 9 17.5 9C18.9 9 20 7.9 20 6.5C20 5.1 18.9 4 17.5 4C16.1 4 15 5.1 15 6.5Z" fill="black" />
-													<path opacity="0.3" d="M17.5 22H6.5C4 22 2 20 2 17.5C2 15 4 13 6.5 13H17.5C20 13 22 15 22 17.5C22 20 20 22 17.5 22ZM4 17.5C4 18.9 5.1 20 6.5 20C7.9 20 9 18.9 9 17.5C9 16.1 7.9 15 6.5 15C5.1 15 4 16.1 4 17.5Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Layout Builder</span>
-									</a>
 								</div>
 								<div class="menu-item">
 									<div class="menu-content">
@@ -2299,134 +2175,40 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Wrapper-->
 						</div>
 						<!--end::Container-->
+						<div id="kt_header" class="header align-items-stretch">
+<!--begin::Container-->
+<div class="container-fluid d-flex align-items-stretch justify-content-between">
+<!--begin::Wrapper-->
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+<!--begin::Navbar-->
+<div class="d-flex align-items-stretch" id="kt_header_nav">
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+<div class="d-flex align-items-stretch" id="kt_header_nav">
+<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
+<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1 d-flex justify-content-end">
+<?php if (session()->has('user')): ?>
+<a href="logout" class="btn btn-danger">Cerrar Sesion</a>
+    <?php else: ?>
+<a href="login" class="btn btn-primary me-2">Inicio Sesion</a>
+<a href="register" class="btn btn-secondary">Registro</a>
+<?php endif;?>
+</div>
+<!--end::Navbar-->
+</div>
+<!--end::Wrapper-->
+</div>
+<!--end::Container-->
+</div>
 					</div>
 					<!--end::Header-->
 					<!--begin::Content-->
-					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
-						<!--begin::Toolbar-->
-						<div class="toolbar" id="kt_toolbar">
-							<!--begin::Container-->
-							<div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
-								<!--begin::Page title-->
-								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
-									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard
-									<!--begin::Separator-->
-									<span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
-									<!--end::Separator-->
-									<!--begin::Description-->
-									<small class="text-muted fs-7 fw-bold my-1 ms-1">#XRS-45670</small>
-									<!--end::Description--></h1>
-									<!--end::Title-->
-								</div>
-								<!--end::Page title-->
-								<!--begin::Actions-->
-								<div class="d-flex align-items-center py-1">
-									<!--begin::Wrapper-->
-									<div class="me-4">
-										<!--begin::Menu-->
-										<a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-										<!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-										<span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-											<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-												<path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black" />
-											</svg>
-										</span>
-										<!--end::Svg Icon-->Filter</a>
-										<!--begin::Menu 1-->
-										<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61484bf44d957">
-											<!--begin::Header-->
-											<div class="px-7 py-5">
-												<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-											</div>
-											<!--end::Header-->
-											<!--begin::Menu separator-->
-											<div class="separator border-gray-200"></div>
-											<!--end::Menu separator-->
-											<!--begin::Form-->
-											<div class="px-7 py-5">
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Status:</label>
-													<!--end::Label-->
-													<!--begin::Input-->
-													<div>
-														<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_61484bf44d957" data-allow-clear="true">
-															<option></option>
-															<option value="1">Approved</option>
-															<option value="2">Pending</option>
-															<option value="2">In Process</option>
-															<option value="2">Rejected</option>
-														</select>
-													</div>
-													<!--end::Input-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Member Type:</label>
-													<!--end::Label-->
-													<!--begin::Options-->
-													<div class="d-flex">
-														<!--begin::Options-->
-														<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-															<input class="form-check-input" type="checkbox" value="1" />
-															<span class="form-check-label">Author</span>
-														</label>
-														<!--end::Options-->
-														<!--begin::Options-->
-														<label class="form-check form-check-sm form-check-custom form-check-solid">
-															<input class="form-check-input" type="checkbox" value="2" checked="checked" />
-															<span class="form-check-label">Customer</span>
-														</label>
-														<!--end::Options-->
-													</div>
-													<!--end::Options-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Input group-->
-												<div class="mb-10">
-													<!--begin::Label-->
-													<label class="form-label fw-bold">Notifications:</label>
-													<!--end::Label-->
-													<!--begin::Switch-->
-													<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-														<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-														<label class="form-check-label">Enabled</label>
-													</div>
-													<!--end::Switch-->
-												</div>
-												<!--end::Input group-->
-												<!--begin::Actions-->
-												<div class="d-flex justify-content-end">
-													<button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-													<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-												</div>
-												<!--end::Actions-->
-											</div>
-											<!--end::Form-->
-										</div>
-										<!--end::Menu 1-->
-										<!--end::Menu-->
-									</div>
-									<!--end::Wrapper-->
-									<!--begin::Button-->
-									<a href="#" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app" id="kt_toolbar_primary_button">Create</a>
-									<!--end::Button-->
-								</div>
-								<!--end::Actions-->
-							</div>
-							<!--end::Container-->
-						</div>
-						<!--end::Toolbar-->
-						<!--begin::Post-->
-						<div class="post d-flex flex-column-fluid" id="kt_post">
-							<!--begin::Container-->
-							
-                            
-                            
 
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Card-->
@@ -2482,23 +2264,23 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Nombre:</label>
 														
-															<input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="name" value="<?= isset($filters['name']) ? esc($filters['name']) : '' ?>" />
+															<input type="text" name="name" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="nombre" value="<?= isset($filters['name']) ? esc($filters['name']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Email:</label>
+															<label class="form-label fs-6 fw-bold">Correo:</label>
 														
-															<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="email" value="<?= isset($filters['email']) ? esc($filters['email']) : '' ?>" />
+															<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Correo" value="<?= isset($filters['email']) ? esc($filters['email']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Password:</label>
+															<label class="form-label fs-6 fw-bold">Contraseña:</label>
 														
-															<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="password" value="<?= isset($filters['password']) ? esc($filters['password']) : '' ?>" />
+															<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Contraseña" value="<?= isset($filters['password']) ? esc($filters['password']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -2634,20 +2416,20 @@ License: For each use you must have a valid license purchased only from above li
 																	<!--end::Input group-->
 																	<div class="fv-row mb-7">
 																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Email</label>
+																		<label class="required fw-bold fs-6 mb-2">Correo</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="email" value="" />
+																		<input type="text" name="email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="correo" value="" />
 																		<!--end::Input-->
 																	</div>
 																	<!--begin::Input group-->
 																	<!--end::Input group-->
 																	<div class="fv-row mb-7">
 																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Password</label>
+																		<label class="required fw-bold fs-6 mb-2">Contraseña</label>
 																		<!--end::Label-->
 																		<!--begin::Input-->
-																		<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="password" value="" />
+																		<input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="contraseña" value="" />
 																		<!--end::Input-->
 																	</div>
 																	<!--begin::Input group-->
@@ -2693,7 +2475,7 @@ License: For each use you must have a valid license purchased only from above li
 													</th>
 													<th class="min-w-125px">
                                         <a href="<?= base_url('users?sort=name&direction=' . ($sort == 'name' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Nombre-Id
+                                            Nombre
                                             <?php if ($sort == 'name'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2705,7 +2487,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('users?sort=email&direction=' . ($sort == 'email' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Email
+                                            Correo
                                             <?php if ($sort == 'email'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2717,7 +2499,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('users?sort=password&direction=' . ($sort == 'password' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Password
+                                            Contraseña
                                             <?php if ($sort == 'password'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -2738,7 +2520,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 </span>
                                             <?php endif; ?>
                                         </a>
-                                    </th>
+                                    </th>  
 													<th class="text-end min-w-100px">Acciones</th>
 												</tr>
 												<!--end::Table row-->
@@ -2812,6 +2594,8 @@ License: For each use you must have a valid license purchased only from above li
 														data-kt-users-table-filter="deactivate_row">
 														<span class="text-danger">Dar de baja</span>
 													</a>
+													
+													
 												</div>
 												<div class="menu-item px-3">
 													<a href="<?= base_url('users/toggleActive/' . esc($user['id'])) ?>"

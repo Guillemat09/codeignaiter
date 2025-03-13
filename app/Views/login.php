@@ -77,7 +77,7 @@ License: For each use you must have a valid license purchased only from above li
 								<label class="form-label fs-6 fw-bolder text-dark">Correo <span style="color: red;">*</span></label>
 								<!--end::Label-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off"  id="email" required />
+								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off"  id="email" placeholder="Introduzca Correo Electronico" required />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->
@@ -94,7 +94,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid" type="password" autocomplete="off" id="password" name="password" required />
+								<input class="form-control form-control-lg form-control-solid" type="password" autocomplete="off" id="password" name="password" placeholder="Introduzca Contraseña" required />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->

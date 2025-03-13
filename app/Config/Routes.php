@@ -79,6 +79,10 @@ $routes->get('export/csv', 'Export::exportCSV');
 $routes->get('export/csv/(:segment)', 'Export::exportCSV/$1');
 
 $routes->get('roles', 'RolController::index'); 
+$routes->post('roles/save', 'RolController::save'); // Ruta para crear o actualizar roles
+$routes->get('roles/delete/(:num)', 'RolController::delete/$1');
+
+
 
 $routes->get('entradas/deactivate/(:num)', 'EntradaController::deactivate/$12');
 $routes->get('entradas/toggleActive/(:num)', 'EntradaController::toggleActive/$12');
