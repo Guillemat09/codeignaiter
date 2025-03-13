@@ -79,7 +79,7 @@ License: For each use you must have a valid license purchased only from above li
 
 								<div class="menu-item">
 									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">List</span>
+										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Lista</span>
 									</div>
 								</div>
 				
@@ -104,7 +104,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
 												</span>
-												<span class="menu-title">Users</span>
+												<span class="menu-title">Usuarios</span>
 												<span class="menu-arrow"></span>
 											</span>
 											<div class="menu-sub menu-sub-accordion">
@@ -113,7 +113,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Users</span>
+														<span class="menu-title">Usuario</span>
 													</a>
 												</div>
 												<div class="menu-item">
@@ -164,7 +164,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
 														</span>
-														<span class="menu-title">Roles List</span>
+														<span class="menu-title">Roles Lista</span>
 													</a>
 												</div>
 											</div>
@@ -2200,10 +2200,10 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <div class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1 d-flex justify-content-end">
 <?php if (session()->has('user')): ?>
-<a href="logout" class="btn btn-danger">Logout</a>
+<a href="logout" class="btn btn-danger">Cerrar Sesion</a>
     <?php else: ?>
-<a href="login" class="btn btn-primary me-2">Login</a>
-<a href="register" class="btn btn-secondary">Register</a>
+<a href="login" class="btn btn-primary me-2">Inicio Sesion</a>
+<a href="register" class="btn btn-secondary">Registro</a>
 <?php endif;?>
 </div>
 <!--end::Navbar-->
