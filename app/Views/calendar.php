@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Calendario</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -194,7 +194,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-    <a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="200+ in-house components and 3rd-party plugins">
+    <a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
         <span class="btn-label">
             <?php if (session()->has('user')): ?>
                 <div class="media align-items-center">
@@ -297,15 +297,16 @@ License: For each use you must have a valid license purchased only from above li
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-     $(document).ready(function () {
+    $(document).ready(function () {
     const calendarEl = document.getElementById('calendar');
-    
+
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         selectable: true,
         editable: true,
         displayEventTime: false,
         firstDay: '1',
+        locale: 'es', // Establecer idioma español
 
         // Cargar eventos desde el servidor
         events: function(fetchInfo, successCallback, failureCallback) {
@@ -313,7 +314,7 @@ License: For each use you must have a valid license purchased only from above li
                 url: '<?= base_url('/fetch-events') ?>',
                 method: 'GET',
                 success: function(data) {
-                    console.log("Eventos cargados desde el servidor: ", data);  // Verificar los eventos
+                    console.log("Eventos cargados desde el servidor: ", data);
                     successCallback(data);
                 },
                 error: function(xhr, status, error) {
@@ -325,18 +326,28 @@ License: For each use you must have a valid license purchased only from above li
 
         // Acción cuando se selecciona un rango de fechas en el calendario
         select: function(info) {
-            // Limpiar el formulario cada vez que se abra el modal
-            $('#eventForm')[0].reset();
-            $('#fecha_inicio').val(info.startStr);  // Coloca la fecha de inicio
-            $('#fecha_fin').val(info.endStr);        // Coloca la fecha de fin
+            $('#eventForm')[0].reset(); // Limpiar formulario
 
-            // Mostrar el modal para agregar el evento
+            const today = new Date().toISOString().split("T")[0];
+
+            // Establecer valores predeterminados para fechas
+            $('#fecha_inicio').val(info.startStr || today);
+            $('#fecha_inicio').attr("min", today);
+
+            $('#fecha_fin').val(info.endStr || today);
+            $('#fecha_fin').attr("min", info.startStr || today);
+
+            // Actualizar la fecha mínima de fin al cambiar la fecha de inicio
+            $('#fecha_inicio').off('change').on('change', function () {
+                $('#fecha_fin').attr("min", this.value);
+            });
+
+            // Mostrar modal
             var myModal = new bootstrap.Modal(document.getElementById('eventModal'), {});
             myModal.show();
 
-            // Enlazar el evento 'click' para el botón de guardar
+            // Guardar evento
             $('#saveEventBtn').off('click').on('click', function () {
-                // Recoger los datos del formulario
                 const eventData = {
                     titulo: $('#titulo').val(),
                     fecha_inicio: $('#fecha_inicio').val(),
@@ -346,20 +357,27 @@ License: For each use you must have a valid license purchased only from above li
                     fecha_eliminacion: $('#fecha_eliminacion').val()
                 };
 
-                // Verificar que el título y la fecha de inicio estén presentes
+                console.log("Datos enviados al servidor: ", eventData); // Depuración
+
+                // Validar fechas
                 if (!eventData.titulo || !eventData.fecha_inicio) {
                     alert("El título y la fecha de inicio son obligatorios.");
                     return;
                 }
 
-                // Realizar la petición AJAX para agregar el evento
+                if (eventData.fecha_fin < eventData.fecha_inicio) {
+                    alert("La fecha de fin no puede ser anterior a la fecha de inicio.");
+                    return;
+                }
+
+                // Petición AJAX para guardar evento
                 $.ajax({
                     url: '<?= base_url('/add-event') ?>',
                     method: 'POST',
                     data: eventData,
                     success: function(response) {
+                        console.log("Respuesta del servidor: ", response);
                         if (response.status === 'success') {
-                            // Refrescar los eventos y cerrar el modal
                             calendar.refetchEvents();
                             myModal.hide();
                         } else {
@@ -373,7 +391,7 @@ License: For each use you must have a valid license purchased only from above li
             });
         },
 
-        // Acción cuando se hace clic en un evento (SweetAlert para la eliminación)
+        // Eliminar evento
         eventClick: function(info) {
             Swal.fire({
                 title: '¿Estás seguro?',
@@ -391,40 +409,23 @@ License: For each use you must have a valid license purchased only from above li
                         success: function(response) {
                             if (response.status === 'success') {
                                 info.event.remove();
-                                Swal.fire(
-                                    'Eliminado!',
-                                    'El evento ha sido eliminado.',
-                                    'success'
-                                );
+                                Swal.fire('Eliminado!', 'El evento ha sido eliminado.', 'success');
                             } else {
-                                Swal.fire(
-                                    'Error',
-                                    'No se pudo eliminar el evento.',
-                                    'error'
-                                );
+                                Swal.fire('Error', 'No se pudo eliminar el evento.', 'error');
                             }
                         },
                         error: function(xhr, status, error) {
                             console.error("Error en la petición AJAX: ", status, error);
-                            Swal.fire(
-                                'Error',
-                                'Hubo un problema al intentar eliminar el evento.',
-                                'error'
-                            );
+                            Swal.fire('Error', 'Hubo un problema al intentar eliminar el evento.', 'error');
                         }
                     });
                 } else {
-                    Swal.fire(
-                        'Cancelado',
-                        'El evento no fue eliminado.',
-                        'info'
-                    );
+                    Swal.fire('Cancelado', 'El evento no fue eliminado.', 'info');
                 }
             });
         }
     });
 
-    // Inicializar el calendario
     calendar.render();
 });
 
