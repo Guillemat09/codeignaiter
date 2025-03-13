@@ -44,7 +44,11 @@ class Export extends BaseController
                 $filename = "entradas.csv";
                 $headers = ['ID', 'Usuario ID', 'Festival ID', 'Tipo de Entrada', 'Precio', 'Fecha de Compra'];
                 break;
-
+                case 'entradas':
+                    $model = new EntradaModel();
+                    $filename = "roles.csv";
+                    $headers = ['ID', 'Nombre'];
+                    break;
             default:
                 return redirect()->to(base_url('/'))->with('error', 'Tipo de exportación no válido');
         }

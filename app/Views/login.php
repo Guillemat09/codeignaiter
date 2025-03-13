@@ -43,8 +43,8 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Content-->
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
-					<a href="../../demo1/dist/index.html" class="mb-12">
-						<img alt="Logo" src="../assets/media/logos/logo-1.svg" class="h-40px" />
+					<a href="<?= base_url('login') ?>" class="mb-12">
+						<img alt="Logo" src="../assets/media/logos/logo.png" class="h-125px" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
@@ -63,18 +63,18 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
-								<h1 class="text-dark mb-3">Sign In to Metronic</h1>
+								<h1 class="text-dark mb-3">Iniciar Sesion</h1>
 								<!--end::Title-->
 								<!--begin::Link-->
-								<div class="text-gray-400 fw-bold fs-4">New Here?
-								<a href="<?= base_url('/register') ?>" class="link-primary fw-bolder">Create an Account</a></div>
+								<div class="text-gray-400 fw-bold fs-4">Nuevo aqui?
+								<a href="<?= base_url('/register') ?>" class="link-primary fw-bolder">Crea una Cuenta</a></div>
 								<!--end::Link-->
 							</div>
 							<!--begin::Heading-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-10">
 								<!--begin::Label-->
-								<label class="form-label fs-6 fw-bolder text-dark">Correo</label>
+								<label class="form-label fs-6 fw-bolder text-dark">Correo <span style="color: red;">*</span></label>
 								<!--end::Label-->
 								<!--begin::Input-->
 								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off"  id="email" required />
@@ -86,7 +86,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Wrapper-->
 								<div class="d-flex flex-stack mb-2">
 									<!--begin::Label-->
-									<label class="form-label fw-bolder text-dark fs-6 mb-0">Contraseña</label>
+									<label class="form-label fw-bolder text-dark fs-6 mb-0">Contraseña<span style="color: red;">*</span></label>
 									<!--end::Label-->
 									<!--begin::Link-->
 									<a href="../../demo1/dist/authentication/flows/basic/password-reset.html" class="link-primary fs-6 fw-bolder">Olvido la Contraseña ?</a>

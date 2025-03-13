@@ -42,9 +42,14 @@ class AuthController extends BaseController
             'role_id' => 3,
         ]);
 
-        return redirect()->to('/login')->with('success', 'Usuario registrado correctamente.');
+        if ($userModel->save($data)) {
+            session()->setFlashdata('success', 'Usuario registrado correctamente.');
+            return redirect()->to('/login');
+        } else {
+            session()->setFlashdata('error', 'No se pudo registrar el usuario.');
+            return redirect()->back()->withInput();
+        }
     }
-
     /**
      * Muestra el formulario de inicio de sesión.
      */

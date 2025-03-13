@@ -43,8 +43,8 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Content-->
 				<div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
 					<!--begin::Logo-->
-					<a href="../../demo1/dist/index.html" class="mb-12">
-						<img alt="Logo" src="../assets/media/logos/logo-1.svg" class="h-40px" />
+					<a href="<?= base_url('register') ?>" class="mb-12">
+						<img alt="Logo" src="../assets/media/logos/logo.png" class="h-125px" />
 					</a>
 					<!--end::Logo-->
 					<!--begin::Wrapper-->
@@ -58,13 +58,13 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">Ya tienes una cuenta?
-								<a href="../../demo1/dist/authentication/flows/basic/sign-in.html" class="link-primary fw-bolder">Login</a></div>
+								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Login</a></div>
 								<!--end::Link-->
 							</div>
 							<!--end::Heading-->
 							<!--begin::Action-->
 							<button type="button" class="btn btn-light-primary fw-bolder w-100 mb-10">
-							<img alt="Logo" src="../assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Sign in with Google</button>
+							<img alt="Logo" src="../assets/media/svg/brand-logos/google-icon.svg" class="h-20px me-3" />Inicia sesion con Google</button>
 							<!--end::Action-->
 							<!--begin::Separator-->
 							<div class="d-flex align-items-center mb-10">
@@ -75,7 +75,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Separator-->
 							<!--begin::Input group-->
 							<div class="row fv-row mb-7">
-									<label class="form-label fw-bolder text-dark fs-6">Nombre</label>
+									<label class="form-label fw-bolder text-dark fs-6">Nombre<span style="color: red;">*</span></label>
 									<input class="form-control form-control-lg form-control-solid" type="text" placeholder=""  autocomplete="off" name="name" value="<?= old('name') ?>" required />
 								<!--end::Col-->
 								<!--begin::Col-->
@@ -84,7 +84,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--end::Input group-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
-								<label class="form-label fw-bolder text-dark fs-6">Email</label>
+								<label class="form-label fw-bolder text-dark fs-6">Email<span style="color: red;">*</span></label>
 								<input class="form-control form-control-lg form-control-solid" type="email" placeholder=""  autocomplete="off"  name="email" value="<?= old('email') ?>" required />
 							</div>
 							<!--end::Input group-->
@@ -93,7 +93,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Wrapper-->
 								<div class="mb-1">
 									<!--begin::Label-->
-									<label class="form-label fw-bolder text-dark fs-6">Password</label>
+									<label class="form-label fw-bolder text-dark fs-6">Contraseña<span style="color: red;">*</span></label>
 									<!--end::Label-->
 									<!--begin::Input wrapper-->
 									<div class="position-relative mb-3">
@@ -115,13 +115,13 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Hint-->
-								<div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
+								<div class="text-muted">Usa 8 o mas caracteres con una combinacion de letras,numeros y simbolos.</div>
 								<!--end::Hint-->
 							</div>
 							<!--end::Input group=-->
 							<!--begin::Input group-->
 							<div class="fv-row mb-5">
-								<label class="form-label fw-bolder text-dark fs-6">Confirm Password</label>
+								<label class="form-label fw-bolder text-dark fs-6">Confirmar Contraseña<span style="color: red;">*</span></label>
 								<input class="form-control form-control-lg form-control-solid" type="password" placeholder=""  autocomplete="off" id="password_confirm" name="password_confirm" required />
 							</div>
 							<!--end::Input group-->
@@ -129,8 +129,8 @@ License: For each use you must have a valid license purchased only from above li
 							<div class="fv-row mb-10">
 								<label class="form-check form-check-custom form-check-solid form-check-inline">
 									<input class="form-check-input" type="checkbox" name="toc" value="1" />
-									<span class="form-check-label fw-bold text-gray-700 fs-6">I Agree
-									<a href="#" class="ms-1 link-primary">Terms and conditions</a>.</span>
+									<span class="form-check-label fw-bold text-gray-700 fs-6">Acepta
+									<a href="#" class="ms-1 link-primary">Terminos y condiciones</a>.</span>
 								</label>
 							</div>
 							<!--end::Input group-->

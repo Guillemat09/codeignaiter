@@ -3,65 +3,72 @@
 namespace App\Controllers;
 
 use App\Models\EventModel;
-use CodeIgniter\Controller;
 
 class EventController extends BaseController
 {
-    protected $eventModel;
-
-    public function __construct()
+    public function Calendar()
     {
-        $this->eventModel = new EventModel();
+        return view('fullcalendar/calendar.php'); // Muestra la vista con el calendario
     }
 
-    // Obtener todos los eventos activos
+    // Cargar eventos
     public function fetchEvents()
     {
-        $eventos = $this->eventModel->where('DELETION_DATE', null)->findAll();
-        $formattedEvents = array_map(function($evento) {
+        $eventModel = new EventModel();
+        $events = $eventModel->findAll(); // Obtener todos los eventos
+    
+        // Reformatear los eventos para FullCalendar
+        $formattedEvents = array_map(function($event) {
             return [
-                'id' => $evento['PK_ID_EVENT'],
-                'title' => $evento['TITLE'],
-                'start' => $evento['START_DATE'],
-                'end' => $evento['END_DATE'] ?? $evento['START_DATE'],
+                'id' => $event['pk_id_evento'], 
+                'title' => $event['titulo'],    
+                'start' => $event['fecha_inicio'], 
+                'end' => $event['fecha_fin'],   
+                'description' => $event['descripcion_es'],  
+                'description_eng' => $event['descripcion_eng'],
+                'fecha_eliminacion' => $event['fecha_eliminacion'], 
             ];
-        }, $eventos);
-
-        return $this->response->setJSON($formattedEvents);
+        }, $events);
+    
+        return $this->response->setJSON($formattedEvents); 
     }
+    
+    
 
-    // Agregar un nuevo evento
+
+
+    // Agregar un evento
     public function addEvent()
     {
-        log_message('debug', 'Datos recibidos en addEvent: ' . json_encode($this->request->getPost()));
     
-        $datos = $this->request->getPost();
-    
-        if (!$this->validate([
-            'TITLE'       => 'required',
-            'START_DATE'  => 'required|valid_date[Y-m-d H:i:s]',
-        ])) {
-            log_message('error', 'Validación fallida en addEvent');
-            return $this->response->setStatusCode(400)->setJSON(['error' => 'Datos inválidos']);
+        $eventModel = new EventModel();
+        
+        $data = [
+            'titulo' => $this->request->getPost('titulo'),
+            'fecha_inicio' => $this->request->getPost('fecha_inicio'),
+            'fecha_fin' => $this->request->getPost('fecha_fin'),
+            'descripcion_es' => $this->request->getPost('descripcion_es'),
+            'descripcion_eng' => $this->request->getPost('descripcion_eng'),
+            'fecha_eliminacion' => $this->request->getPost('fecha_eliminacion'),
+        ];
+        // Verificar si los campos obligatorios están presentes
+        if (empty($data['titulo']) || empty($data['fecha_inicio'])) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'El título y la fecha de inicio son obligatorios.']);
         }
     
-        if ($this->eventModel->insert($datos)) {
-            log_message('debug', 'Evento agregado correctamente');
-            return $this->response->setJSON(['mensaje' => 'Evento agregado correctamente']);
-        }
+        // Insertar los datos del evento
+        $eventModel->insert($data);
     
-        log_message('error', 'Error al insertar evento en la base de datos');
-        return $this->response->setStatusCode(500)->setJSON(['error' => 'Error al agregar el evento']);
+        return $this->response->setJSON(['status' => 'success']);
     }
     
 
-    // Eliminar un evento (borrado lógico)
+    // Eliminar un evento
     public function deleteEvent($id)
     {
-        if ($this->eventModel->find($id)) {
-            $this->eventModel->update($id, ['DELETION_DATE' => date('Y-m-d H:i:s')]);
-            return $this->response->setJSON(['mensaje' => 'Evento eliminado correctamente']);
-        }
-        return $this->response->setStatusCode(404)->setJSON(['error' => 'Evento no encontrado']);
+        $eventModel = new EventModel();
+        $eventModel->delete($id); // Elimina el evento por su ID
+
+        return $this->response->setJSON(['status'=>'success']); // Respuesta de éxito
     }
 }

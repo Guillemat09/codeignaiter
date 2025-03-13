@@ -8,18 +8,32 @@ class RolController extends BaseController
 {
     public function index()
     {
-        $rolModel = new RolModel();
-        $filters = $this->request->getGet();  // Obtener filtros del formulario
+        $RolModel = new RolModel(); // Instanciar el modelo
+
+        $nombre = $this->request->getGet('nombre');
+
+        $sort = $this->request->getGet('sort') ?? 'id'; 
+        $order = $this->request->getGet('order') ?? 'asc';
+
+        if ($nombre) {
+            $RolModel->like('roles.nombre', $nombre);
+        }
         
+        // Aplicar ordenación
+        $RolModel->orderBy($sort, $order);
+
         // Configurar paginación
         $perPage = 10;
-        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
 
-        // Obtener datos paginados con filtros
-        $data['roles'] = $rolModel->filter($filters)
-                                  ->paginate($perPage, 'default', $currentPage);
-        $data['pager'] = $rolModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
+        // Obtener datos paginados con filtros, búsqueda y ordenación
+        $data['roles'] = $RolModel->paginate($perPage, 'default', $page);
+        $data['pager'] = $RolModel->pager;  // Aquí se asegura de pasar `pager` a la vista
+        $data['nombre'] = $nombre; // Pasar filtros a la vista
+        $data['sort'] = $sort;
+        $data['perPage'] = $perPage;
+        $data['page'] = $page;
+        $data['order'] = $order;
 
         return view('rol_list', $data);
     }
