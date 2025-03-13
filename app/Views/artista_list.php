@@ -112,6 +112,7 @@ License: For each use you must have a valid license purchased only from above li
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
+										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<div class="menu-item">
 												<a class="menu-link" href="<?= base_url('users') ?>">
 													<span class="menu-bullet">
@@ -120,6 +121,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-title">Usuario</span>
 												</a>
 											</div>
+											<?php endif; ?>
 											<div class="menu-item">
 												<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 													<span class="menu-bullet">
@@ -136,6 +138,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-title">Artistas</span>
 												</a>
 											</div>
+											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<div class="menu-item">
 												<a class="menu-link" href="<?= base_url('entradas') ?>">
 													<span class="menu-bullet">
@@ -144,6 +147,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-title">Entradas</span>
 												</a>
 											</div>
+											<?php endif; ?>
 											<div class="menu-item">
 												<a class="menu-link" href="<?= base_url('festivales') ?>">
 													<span class="menu-bullet">
@@ -163,6 +167,7 @@ License: For each use you must have a valid license purchased only from above li
 											<span class="menu-arrow"></span>
 										</span>
 										<div class="menu-sub menu-sub-accordion">
+										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<div class="menu-item">
 												<a class="menu-link" href="<?= base_url('roles') ?>">
 													<span class="menu-bullet">
@@ -171,6 +176,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-title">Roles List</span>
 												</a>
 											</div>
+											<?php endif; ?>
 										</div>
 									</div>
 									<div class="menu-item">
@@ -182,8 +188,7 @@ License: For each use you must have a valid license purchased only from above li
 										</a>
 									</div>
 								</div>
-							</div>
-
+										</div>
 							<div class="menu-item">
 								<div class="menu-content pt-8 pb-0">
 								</div>
@@ -1410,7 +1415,6 @@ License: For each use you must have a valid license purchased only from above li
             <h1 class="d-flex text-dark fw-bold my-1 fs-3">
                 <?= ' Artistas' ?>
             </h1>
-
             <!--begin::Breadcrumb-->
             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-1">
                 <!--begin::Item-->
@@ -1467,21 +1471,6 @@ License: For each use you must have a valid license purchased only from above li
 <!--end::Container-->
 </div>
 	</div>
-	<!--end::Header-->
-	<!--begin::Content-->
-				<!--end::Page title-->
-				<!--begin::Actions-->
-				<!--end::Actions-->
-			</div>
-			<!--end::Container-->
-		</div>
-		<!--end::Toolbar-->
-		<!--begin::Post-->
-		<div class="post d-flex flex-column-fluid" id="kt_post">
-			<!--begin::Container-->
-
-
-
 
 			<div id="kt_content_container" class="container-xxl">
 				<!--begin::Card-->
@@ -1884,31 +1873,6 @@ License: For each use you must have a valid license purchased only from above li
 	</div>
 	<!--end::Content-->
 	<!--begin::Footer-->
-	<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-		<!--begin::Container-->
-		<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-			<!--begin::Copyright-->
-			<div class="text-dark order-2 order-md-1">
-				<span class="text-muted fw-bold me-1">2021©</span>
-				<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-			</div>
-			<!--end::Copyright-->
-			<!--begin::Menu-->
-			<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
-				<li class="menu-item">
-					<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-				</li>
-				<li class="menu-item">
-					<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
-				</li>
-				<li class="menu-item">
-					<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-				</li>
-			</ul>
-			<!--end::Menu-->
-		</div>
-		<!--end::Container-->
-	</div>
 	<!--end::Footer-->
 	</div>
 	<!--end::Wrapper-->

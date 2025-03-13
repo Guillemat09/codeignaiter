@@ -13,7 +13,7 @@ License: For each use you must have a valid license purchased only from above li
 <html lang="en">
 	<!--begin::Head-->
 	<head><base href="">
-		<title>Metronic - the world's #1 selling Bootstrap Admin Theme Ecosystem for HTML, Vue, React, Angular &amp; Laravel by Keenthemes</title>
+		<title>Patrocinador</title>
 		<meta name="description" content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
 		<meta name="keywords" content="Metronic, bootstrap, bootstrap 5, Angular, VueJs, React, Laravel, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -109,6 +109,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-arrow"></span>
 											</span>
 											<div class="menu-sub menu-sub-accordion">
+											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('users') ?>">
 														<span class="menu-bullet">
@@ -117,6 +118,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-title">Usuario</span>
 													</a>
 												</div>
+												<?php endif; ?>
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 														<span class="menu-bullet">
@@ -133,6 +135,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-title">Artistas</span>
 													</a>
 												</div>
+												<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('entradas') ?>">
 														<span class="menu-bullet">
@@ -141,6 +144,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-title">Entradas</span>
 													</a>
 												</div>
+												<?php endif; ?>
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('festivales') ?>">
 														<span class="menu-bullet">
@@ -160,6 +164,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-arrow"></span>
 											</span>
 											<div class="menu-sub menu-sub-accordion">
+											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('roles') ?>">
 														<span class="menu-bullet">
@@ -168,6 +173,7 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-title">Roles List</span>
 													</a>
 												</div>
+												<?php endif; ?>
 											</div>
 										</div>
 										<div class="menu-item">
@@ -2193,8 +2199,48 @@ License: For each use you must have a valid license purchased only from above li
 <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
 <div class="d-flex align-items-stretch" id="kt_header_nav">
 <div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
-<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
-<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Dashboard</h1>
+<div id="kt_toolbar_container" class="container d-flex flex-stack flex-wrap">
+        <!--begin::Page title-->
+        <div class="page-title d-flex flex-column me-3">
+            <h1 class="d-flex text-dark fw-bold my-1 fs-3">
+                <?= ' Patrocinadores' ?>
+            </h1>
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="<?= base_url('principal') ?>" class="text-muted text-hover-primary">Principal</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="" class="text-muted text-hover-primary">Listas</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">Usuarios</li>
+
+				<li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+				
+                </li>
+				<li class="breadcrumb-item text-dark">Patrocinadores</li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+    </div>
 </div>
 </div>
 </div>
@@ -2334,6 +2380,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Svg Icon-->Exportar</button>
 												<!--end::Export-->
 												<!--begin::Add patrocinador-->
+												<?php if (session()->get('role')['nombre'] == "admin"): ?>
 												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_patrocinador">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
@@ -2344,6 +2391,7 @@ License: For each use you must have a valid license purchased only from above li
 												</span>
 												<!--end::Svg Icon-->Añadir Patrocinadores </button>
 												<!--end::Add patrocinador-->
+												<?php endif; ?>
 											</div>
 											<!--end::Toolbar-->
 											<!--begin::Group actions-->
@@ -2662,31 +2710,6 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<div class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-between">
-							<!--begin::Copyright-->
-							<div class="text-dark order-2 order-md-1">
-								<span class="text-muted fw-bold me-1">2021©</span>
-								<a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-							</div>
-							<!--end::Copyright-->
-							<!--begin::Menu-->
-							<ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
-								<li class="menu-item">
-									<a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">Support</a>
-								</li>
-								<li class="menu-item">
-									<a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-								</li>
-							</ul>
-							<!--end::Menu-->
-						</div>
-						<!--end::Container-->
-					</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
