@@ -24,7 +24,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="../assets/media/logos/logo.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -155,6 +155,7 @@ License: For each use you must have a valid license purchased only from above li
 											</div>
 										</div>
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<span class="menu-link">
 												<span class="menu-bullet">
 													<span class="bullet bullet-dot"></span>
@@ -162,6 +163,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-title">Roles</span>
 												<span class="menu-arrow"></span>
 											</span>
+											<?php endif; ?>
 											<div class="menu-sub menu-sub-accordion">
 											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 												<div class="menu-item"> 
@@ -175,6 +177,7 @@ License: For each use you must have a valid license purchased only from above li
 												<?php endif; ?>
 											</div>
 										</div>
+										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 										<div class="menu-item">
 											<a class="menu-link" href="<?= base_url('calendar') ?>">
 												<span class="menu-bullet">
@@ -183,6 +186,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-title">Calendario</span>
 											</a>
 										</div>
+										<?php endif; ?>
 									</div>
 								</div>
 								
@@ -1428,23 +1432,9 @@ License: For each use you must have a valid license purchased only from above li
 										<div class="card card-xxl-stretch">
 											<!--begin::Header-->
 											<div class="card-header border-0 bg-danger py-5">
-												<h3 class="card-title fw-bolder text-white">Sales Statistic</h3>
+												<h3 class="card-title fw-bolder text-white">Estadisticas de Ventas</h3>
 												<div class="card-toolbar">
 													<!--begin::Menu-->
-													<button type="button" class="btn btn-sm btn-icon btn-color-white btn-active-white btn-active-color- border-0 me-n3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-														<span class="svg-icon svg-icon-2">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
-																	<rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-													</button>
 													<!--begin::Menu 3-->
 													<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3" data-kt-menu="true">
 														<!--begin::Heading-->
@@ -1546,7 +1536,7 @@ License: For each use you must have a valid license purchased only from above li
 																</svg>
 															</span>
 															<!--end::Svg Icon-->
-															<a href="#" class="text-warning fw-bold fs-6">Weekly Sales</a>
+															<a href="#" class="text-warning fw-bold fs-6">Ventas Semanales</a>
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -1559,7 +1549,7 @@ License: For each use you must have a valid license purchased only from above li
 																</svg>
 															</span>
 															<!--end::Svg Icon-->
-															<a href="#" class="text-primary fw-bold fs-6">New Projects</a>
+															<a href="#" class="text-primary fw-bold fs-6">Nuevo Proyecto</a>
 														</div>
 														<!--end::Col-->
 													</div>
@@ -1576,7 +1566,7 @@ License: For each use you must have a valid license purchased only from above li
 																</svg>
 															</span>
 															<!--end::Svg Icon-->
-															<a href="#" class="text-danger fw-bold fs-6 mt-2">Item Orders</a>
+															<a href="#" class="text-danger fw-bold fs-6 mt-2">Pedido de articulos</a>
 														</div>
 														<!--end::Col-->
 														<!--begin::Col-->
@@ -1589,7 +1579,7 @@ License: For each use you must have a valid license purchased only from above li
 																</svg>
 															</span>
 															<!--end::Svg Icon-->
-															<a href="#" class="text-success fw-bold fs-6 mt-2">Bug Reports</a>
+															<a href="#" class="text-success fw-bold fs-6 mt-2">Informes de errores</a>
 														</div>
 														<!--end::Col-->
 													</div>
@@ -1609,237 +1599,11 @@ License: For each use you must have a valid license purchased only from above li
 											<!--begin::Header-->
 											<div class="card-header align-items-center border-0 mt-4">
 												<h3 class="card-title align-items-start flex-column">
-													<span class="fw-bolder mb-2 text-dark">Activities</span>
-													<span class="text-muted fw-bold fs-7">890,344 Sales</span>
+													<span class="fw-bolder mb-2 text-dark">Actividades</span>
 												</h3>
-												<div class="card-toolbar">
-													<!--begin::Menu-->
-													<button type="button" class="btn btn-sm btn-icon btn-color-primary btn-active-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-														<!--begin::Svg Icon | path: icons/duotune/general/gen024.svg-->
-														<span class="svg-icon svg-icon-2">
-															<svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24">
-																<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-																	<rect x="5" y="5" width="5" height="5" rx="1" fill="#000000" />
-																	<rect x="14" y="5" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="5" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																	<rect x="14" y="14" width="5" height="5" rx="1" fill="#000000" opacity="0.3" />
-																</g>
-															</svg>
-														</span>
-														<!--end::Svg Icon-->
-													</button>
-													<!--begin::Menu 1-->
-													<div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_61484bf44f851">
-														<!--begin::Header-->
-														<div class="px-7 py-5">
-															<div class="fs-5 text-dark fw-bolder">Filter Options</div>
-														</div>
-														<!--end::Header-->
-														<!--begin::Menu separator-->
-														<div class="separator border-gray-200"></div>
-														<!--end::Menu separator-->
-														<!--begin::Form-->
-														<div class="px-7 py-5">
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Status:</label>
-																<!--end::Label-->
-																<!--begin::Input-->
-																<div>
-																	<select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_61484bf44f851" data-allow-clear="true">
-																		<option></option>
-																		<option value="1">Approved</option>
-																		<option value="2">Pending</option>
-																		<option value="2">In Process</option>
-																		<option value="2">Rejected</option>
-																	</select>
-																</div>
-																<!--end::Input-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Member Type:</label>
-																<!--end::Label-->
-																<!--begin::Options-->
-																<div class="d-flex">
-																	<!--begin::Options-->
-																	<label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-																		<input class="form-check-input" type="checkbox" value="1" />
-																		<span class="form-check-label">Author</span>
-																	</label>
-																	<!--end::Options-->
-																	<!--begin::Options-->
-																	<label class="form-check form-check-sm form-check-custom form-check-solid">
-																		<input class="form-check-input" type="checkbox" value="2" checked="checked" />
-																		<span class="form-check-label">Customer</span>
-																	</label>
-																	<!--end::Options-->
-																</div>
-																<!--end::Options-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Input group-->
-															<div class="mb-10">
-																<!--begin::Label-->
-																<label class="form-label fw-bold">Notifications:</label>
-																<!--end::Label-->
-																<!--begin::Switch-->
-																<div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-																	<input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-																	<label class="form-check-label">Enabled</label>
-																</div>
-																<!--end::Switch-->
-															</div>
-															<!--end::Input group-->
-															<!--begin::Actions-->
-															<div class="d-flex justify-content-end">
-																<button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-																<button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-															</div>
-															<!--end::Actions-->
-														</div>
-														<!--end::Form-->
-													</div>
-													<!--end::Menu 1-->
-													<!--end::Menu-->
-												</div>
 											</div>
 											<!--end::Header-->
 											<!--begin::Body-->
-											<div class="card-body pt-5">
-												<!--begin::Timeline-->
-												<div class="timeline-label">
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">08:42</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-warning fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="fw-mormal timeline-content text-muted ps-3">Outlines keep you honest. And keep structure</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">10:00</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-success fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Content-->
-														<div class="timeline-content d-flex">
-															<span class="fw-bolder text-gray-800 ps-3">AEOL meeting</span>
-														</div>
-														<!--end::Content-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">14:37</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bolder text-gray-800 ps-3">Make deposit
-														<a href="#" class="text-primary">USD 700</a>. to ESL</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bold text-gray-800 ps-3">New order placed
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">16:50</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-primary fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Indulging in poorly driving and keep structure keep great</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">21:03</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-danger fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Desc-->
-														<div class="timeline-content fw-bold text-gray-800 ps-3">New order placed
-														<a href="#" class="text-primary">#XF-2356</a>.</div>
-														<!--end::Desc-->
-													</div>
-													<!--end::Item-->
-													<!--begin::Item-->
-													<div class="timeline-item">
-														<!--begin::Label-->
-														<div class="timeline-label fw-bolder text-gray-800 fs-6">10:30</div>
-														<!--end::Label-->
-														<!--begin::Badge-->
-														<div class="timeline-badge">
-															<i class="fa fa-genderless text-success fs-1"></i>
-														</div>
-														<!--end::Badge-->
-														<!--begin::Text-->
-														<div class="timeline-content fw-mormal text-muted ps-3">Finance KPI Mobile app launch preparion meeting</div>
-														<!--end::Text-->
-													</div>
-													<!--end::Item-->
-												</div>
-												<!--end::Timeline-->
-											</div>
 											<!--end: Card Body-->
 										</div>
 										<!--end: List Widget 5-->
@@ -1855,10 +1619,8 @@ License: For each use you must have a valid license purchased only from above li
 												<div class="flex-grow-1 card-p pb-0">
 													<div class="d-flex flex-stack flex-wrap">
 														<div class="me-2">
-															<a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Generate Reports</a>
-															<div class="text-muted fs-7 fw-bold">Finance and accounting reports</div>
+															<a href="#" class="text-dark text-hover-primary fw-bolder fs-3">Informes Financieros</a>
 														</div>
-														<div class="fw-bolder fs-3 text-primary">$24,500</div>
 													</div> 
 													<div class="md-5">
 													<div id="chart" style="height: 300px;"></div>
@@ -1878,17 +1640,14 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Hidden-->
 												<div class="d-flex flex-stack flex-wrap flex-grow-1 px-9 pt-9 pb-3">
 													<div class="me-2">
-														<span class="fw-bolder text-gray-800 d-block fs-3">Sales</span>
-														<span class="text-gray-400 fw-bold">Oct 8 - Oct 26 21</span>
+														<span class="fw-bolder text-gray-800 d-block fs-3">Ventas</span>
 													</div>
-													<div class="fw-bolder fs-3 text-primary">$15,300</div>
 													<div class="md-5">
 													<div id="chart1" style="height: 50px;"></div>
 													</div>
 												</div>
 												<!--end::Hidden-->
 												<!--begin::Chart-->
-												<div class="mixed-widget-10-chart" data-kt-color="primary" style="height: 175px"></div>
 												<!--end::Chart-->
 											</div>
 										</div>

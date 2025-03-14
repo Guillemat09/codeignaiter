@@ -20,7 +20,6 @@
                     <?= $validation->listErrors() ?>
                 </div>
             <?php endif; ?>
-
             <!-- Formulario -->
             <form action="<?= isset($festival) ? base_url('festivales/save/') . $festival['id'] : base_url('festivales/save') ?>" method="post">
                 <?= csrf_field(); ?>
@@ -35,17 +34,17 @@
                            value="<?= isset($festival) ? esc($festival['descripcion']) : '' ?>" required>
                 </div> 
                 <div class="mb-5">
-                    <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio<span style="color: red;">*</span></label>
+                    <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio</label>
                     <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control form-control-solid" 
                            value="<?= isset($festival) ? esc($festival['fecha_inicio']) : '' ?>" required>
                 </div> 
                 <div class="mb-5">
-                    <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin<span style="color: red;">*</span></label>
+                    <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin</label>
                     <input type="date" name="fecha_fin" id="fecha_fin" class="form-control form-control-solid" 
                            value="<?= isset($festival) ? esc($festival['fecha_fin']) : '' ?>" required>
                 </div> 
                 <div class="mb-5">
-                    <label for="lugar" class="form-label fw-bold">Lugar<span style="color: red;">*</span></label>
+                    <label for="lugar" class="form-label fw-bold">Lugar</label>
                     <input type="text" name="lugar" id="lugar" class="form-control form-control-solid" 
                            value="<?= isset($festival) ? esc($festival['lugar']) : '' ?>" required>
                 </div> 

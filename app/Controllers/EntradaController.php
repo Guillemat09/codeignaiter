@@ -38,32 +38,49 @@ class EntradaController extends BaseController
     {
         $entradaModel = new EntradaModel();
         helper(['form', 'url']);
-        // Cargar datos de la entrada si es edición
+    
         $data['entrada'] = $id ? $entradaModel->find($id) : null;
-
+    
         if ($this->request->getMethod() == 'POST') {
-            $entradaData = [
-                'usuario_id' => $this->request->getPost('usuario_id'),
-                'festival_id' => $this->request->getPost('festival_id'),
-                'tipo_entrada' => $this->request->getPost('tipo_entrada'),
-                'precio' => $this->request->getPost('precio'),
-                'fecha_compra' => $this->request->getPost('fecha_compra')
+            // Reglas de validación
+            $validation = \Config\Services::validation();
+            $rules = [
+                'usuario_id' => 'required|integer',
+                'festival_id' => 'required|integer',
+                'tipo_entrada' => 'required|min_length[3]|max_length[50]',
+                'precio' => 'required|decimal',
+                'fecha_compra' => 'required|valid_date[Y-m-d]'
             ];
-
-            if ($id) {
-                $entradaModel->update($id, $entradaData);
-                $message = 'Entrada actualizada correctamente.';
+    
+            $validation->setRules($rules);
+    
+            if (!$validation->withRequest($this->request)->run()) {
+                $data['validation'] = $validation;
             } else {
-                $entradaModel->save($entradaData);
-                $message = 'Entrada creada correctamente.';
+                // Datos del formulario
+                $entradaData = [
+                    'usuario_id' => $this->request->getPost('usuario_id'),
+                    'festival_id' => $this->request->getPost('festival_id'),
+                    'tipo_entrada' => $this->request->getPost('tipo_entrada'),
+                    'precio' => $this->request->getPost('precio'),
+                    'fecha_compra' => $this->request->getPost('fecha_compra')
+                ];
+    
+                if ($id) {
+                    $entradaModel->update($id, $entradaData);
+                    $message = 'Entrada actualizada correctamente.';
+                } else {
+                    $entradaModel->save($entradaData);
+                    $message = 'Entrada creada correctamente.';
+                }
+    
+                return redirect()->to('/entradas')->with('success', $message);
             }
-
-            return redirect()->to('/entradas')->with('success', $message);
         }
-
+    
         return view('entrada_form', $data);
     }
-
+    
     public function delete($id)
     {
         $entradaModel = new EntradaModel();

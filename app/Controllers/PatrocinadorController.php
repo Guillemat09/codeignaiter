@@ -35,32 +35,70 @@ class PatrocinadorController extends BaseController
     }
 
     public function savePatrocinador($id = null)
-    {
-        $patrocinadorModel = new PatrocinadorModel();
-        helper(['form', 'url']);
-        $data['patrocinador'] = $id ? $patrocinadorModel->find($id) : null;
+{
+    $patrocinadorModel = new PatrocinadorModel();
+    helper(['form', 'url']);
 
-        if ($this->request->getMethod() == 'POST') {
-            $patrocinadorData = [
-                'nombre' => $this->request->getPost('nombre'),
-                'descripcion' => $this->request->getPost('descripcion'),
-                'contacto' => $this->request->getPost('contacto'),
-                'festival_id' => $this->request->getPost('festival_id')
-            ];
+    $data['patrocinador'] = $id ? $patrocinadorModel->find($id) : null;
 
-            if ($id) {
-                $patrocinadorModel->update($id, $patrocinadorData);
-                $message = 'Patrocinador actualizado correctamente.';
-            } else {
-                $patrocinadorModel->save($patrocinadorData);
-                $message = 'Patrocinador creado correctamente.';
-            }
+    if ($this->request->getMethod() == 'POST') {
+        // Reglas de validación
+        $validation = \Config\Services::validation();
+        $rules = [
+            'nombre' => 'required|min_length[3]|max_length[255]',
+            'descripcion' => 'required|min_length[5]',
+            'contacto' => 'required|min_length[5]|max_length[100]',
+        ];
 
-            return redirect()->to('/patrocinadores')->with('success', $message);
+        // Mensajes personalizados
+        $messages = [
+            'nombre' => [
+                'required' => 'El nombre es obligatorio.',
+                'min_length' => 'El nombre debe tener al menos 3 caracteres.',
+                'max_length' => 'El nombre no puede superar los 255 caracteres.'
+            ],
+            'descripcion' => [
+                'required' => 'La descripción es obligatoria.',
+                'min_length' => 'La descripción debe tener al menos 10 caracteres.'
+            ],
+            'contacto' => [
+                'required' => 'El contacto es obligatorio.',
+                'min_length' => 'El contacto debe tener al menos 5 caracteres.',
+                'max_length' => 'El contacto no puede superar los 100 caracteres.'
+            ],
+        ];
+
+        $validation->setRules($rules, $messages);
+
+        // Si la validación falla
+        if (!$validation->withRequest($this->request)->run()) {
+            return view('patrocinador_form', [
+                'patrocinador' => $data['patrocinador'],
+                'validation' => $validation
+            ]);
         }
 
-        return view('patrocinador_form', $data);
+        // Datos del patrocinador
+        $patrocinadorData = [
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'contacto' => $this->request->getPost('contacto'),
+        ];
+
+        if ($id) {
+            $patrocinadorModel->update($id, $patrocinadorData);
+            session()->setFlashdata('success', 'Patrocinador actualizado correctamente.');
+        } else {
+            $patrocinadorModel->save($patrocinadorData);
+            session()->setFlashdata('success', 'Patrocinador añadido correctamente.');
+        }
+
+        return redirect()->to('/patrocinadores');
     }
+
+    return view('patrocinador_form', $data);
+}
+
 
     public function delete($id)
     {

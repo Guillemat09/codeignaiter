@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
         width: 380,
         type: 'pie',
       },
-      labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'],
+      labels: ['Vip', ' General'],
       responsive: [{
         breakpoint: 480,
         options: {

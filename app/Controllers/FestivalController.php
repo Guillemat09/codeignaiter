@@ -38,28 +38,51 @@ class FestivalController extends BaseController
     {
         $festivalModel = new FestivalModel();
         helper(['form', 'url']);
+    
         $data['festival'] = $id ? $festivalModel->find($id) : null;
-
-        if ($this->request->getMethod() == 'post') {
-            $festivalData = [
-                'nombre' => $this->request->getPost('nombre'),
-                'descripcion' => $this->request->getPost('descripcion'),
-                'fecha_inicio' => $this->request->getPost('fecha_inicio'),
-                'fecha_fin' => $this->request->getPost('fecha_fin'),
-                'lugar' => $this->request->getPost('lugar')
+    
+        if ($this->request->getMethod() == 'POST') {
+            // Reglas de validación
+            $validation = \Config\Services::validation();
+            $rules = [
+                'nombre' => 'required|min_length[3]|max_length[255]',
+                'descripcion' => 'required|min_length[10]',
+                'fecha_inicio' => 'required|valid_date[Y-m-d]',
+                'fecha_fin' => 'required|valid_date[Y-m-d]',
+                'lugar' => 'required|min_length[3]|max_length[255]',
             ];
-
-            if ($id) {
-                $festivalModel->update($id, $festivalData);
-                $message = 'Festival actualizado correctamente.';
+    
+            $validation->setRules($rules);
+    
+            if (!$validation->withRequest($this->request)->run()) {
+                // Mostrar errores de validación
+                $data['validation'] = $validation;
             } else {
-                $festivalModel->save($festivalData);
-                $message = 'Festival creado correctamente.';
+                // Preparar datos del formulario
+                $festivalData = [
+                    'nombre' => $this->request->getPost('nombre'),
+                    'descripcion' => $this->request->getPost('descripcion'),
+                    'fecha_inicio' => $this->request->getPost('fecha_inicio'),
+                    'fecha_fin' => $this->request->getPost('fecha_fin'),
+                    'lugar' => $this->request->getPost('lugar'),
+                ];
+    
+                if ($id) {
+                    // Actualizar festival existente
+                    $festivalModel->update($id, $festivalData);
+                    $message = 'Festival actualizado correctamente.';
+                } else {
+                    // Crear nuevo festival
+                    $festivalModel->save($festivalData);
+                    $message = 'Festival creado correctamente.';
+                }
+    
+                // Redirigir al listado con un mensaje de éxito
+                return redirect()->to('/festivales')->with('success', $message);
             }
-
-            return redirect()->to('/festivales')->with('success', $message);
         }
-
+    
+        // Cargar la vista del formulario (crear/editar)
         return view('festival_form', $data);
     }
 

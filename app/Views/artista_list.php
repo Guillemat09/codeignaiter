@@ -26,7 +26,7 @@ License: For each use you must have a valid license purchased only from above li
 	<meta property="og:url" content="https://keenthemes.com/metronic" />
 	<meta property="og:site_name" content="Keenthemes | Metronic" />
 	<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-	<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+	<link rel="shortcut icon" href="../assets/media/logos/logo.ico" />
 	<!--begin::Fonts-->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 	<!--end::Fonts-->
@@ -159,6 +159,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 									<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+									<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 										<span class="menu-link">
 											<span class="menu-bullet">
 												<span class="bullet bullet-dot"></span>
@@ -166,6 +167,7 @@ License: For each use you must have a valid license purchased only from above li
 											<span class="menu-title">Roles</span>
 											<span class="menu-arrow"></span>
 										</span>
+										<?php endif; ?>
 										<div class="menu-sub menu-sub-accordion">
 										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<div class="menu-item">
@@ -179,6 +181,7 @@ License: For each use you must have a valid license purchased only from above li
 											<?php endif; ?>
 										</div>
 									</div>
+									<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 									<div class="menu-item">
 										<a class="menu-link" href="<?= base_url('calendar') ?>">
 											<span class="menu-bullet">
@@ -187,6 +190,7 @@ License: For each use you must have a valid license purchased only from above li
 											<span class="menu-title">Calendario</span>
 										</a>
 									</div>
+									<?php endif; ?>
 								</div>
 										</div>
 							<div class="menu-item">
@@ -1796,6 +1800,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--begin::Joined-->
 										<!--begin::Action=-->
 										<td class="text-end">
+										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 											<a href="#" class="btn btn-light btn-active-light-primary btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Acciones
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
 												<span class="svg-icon svg-icon-5 m-0">
@@ -1804,6 +1809,7 @@ License: For each use you must have a valid license purchased only from above li
 													</svg>
 												</span>
 												<!--end::Svg Icon--></a>
+												<?php endif; ?>
 											<!--begin::Menu-->
 											<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
 												<!--begin::Menu item-->
@@ -2873,9 +2879,6 @@ License: For each use you must have a valid license purchased only from above li
 	</div>
 	<!--end::Chat drawer-->
 	<!--begin::Exolore drawer toggle-->
-	<button id="kt_explore_toggle" class="explore-toggle btn btn-sm bg-body btn-color-gray-700 btn-active-primary shadow-sm position-fixed px-5 fw-bolder zindex-2 top-50 mt-10 end-0 transform-90 fs-6 rounded-top-0" title="Explore Metronic" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-trigger="hover">
-		<span id="kt_explore_toggle_label">Explore</span>
-	</button>
 	<!--end::Exolore drawer toggle-->
 	<!--begin::Exolore drawer-->
 	<div id="kt_explore" class="bg-body" data-kt-drawer="true" data-kt-drawer-name="explore" data-kt-drawer-activate="true" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'350px', 'lg': '475px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_explore_toggle" data-kt-drawer-close="#kt_explore_close">

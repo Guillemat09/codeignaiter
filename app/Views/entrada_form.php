@@ -14,6 +14,11 @@
             <h3 class="card-title"><?= isset($entrada) ? 'Editar Entrada' : 'Crear Entrada' ?></h3>
         </div>
         <div class="card-body">
+        <?php if (isset($validation)): ?>
+                <div class="alert alert-danger">
+                    <?= $validation->listErrors() ?>
+                </div>
+            <?php endif; ?>
             <form method="post" action="<?= base_url('entradas/save' . (isset($entrada) ? '/' . $entrada['id'] : '')) ?>">
                 <div class="mb-5">
                     <label for="usuario_id" class="form-label fw-bold">Usuario<span style="color: red;">*</span></label>
