@@ -14,10 +14,12 @@
             <h3 class="card-title"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h3>
         </div>
         <div class="card-body">
-            <!-- Mostrar errores de validación -->
+            <!-- Mostrar errores de validación en español -->
             <?php if (isset($validation)): ?>
                 <div class="alert alert-danger">
-                    <?= $validation->listErrors() ?>
+                    <ul>
+                        <?= $validation->listErrors() ?>
+                    </ul>
                 </div>
             <?php endif; ?>
             <!-- Formulario -->
@@ -26,27 +28,27 @@
                 <div class="mb-5">
                     <label for="nombre" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
                     <input type="text" name="nombre" id="nombre" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['nombre']) : '' ?>" required>
+                           value="<?= isset($festival) ? esc($festival['nombre']) : '' ?>" required placeholder="Ingrese el nombre del festival">
                 </div>
                 <div class="mb-5">
                     <label for="descripcion" class="form-label fw-bold">Descripción<span style="color: red;">*</span></label>
                     <input type="text" name="descripcion" id="descripcion" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['descripcion']) : '' ?>" required>
+                           value="<?= isset($festival) ? esc($festival['descripcion']) : '' ?>" required placeholder="Ingrese una descripción del festival">
                 </div> 
                 <div class="mb-5">
                     <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio</label>
                     <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['fecha_inicio']) : '' ?>" required>
+                           value="<?= isset($festival) ? esc($festival['fecha_inicio']) : '' ?>" required placeholder="Seleccione la fecha de inicio">
                 </div> 
                 <div class="mb-5">
                     <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin</label>
                     <input type="date" name="fecha_fin" id="fecha_fin" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['fecha_fin']) : '' ?>" required>
+                           value="<?= isset($festival) ? esc($festival['fecha_fin']) : '' ?>" required placeholder="Seleccione la fecha de fin">
                 </div> 
                 <div class="mb-5">
                     <label for="lugar" class="form-label fw-bold">Lugar</label>
                     <input type="text" name="lugar" id="lugar" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['lugar']) : '' ?>" required>
+                           value="<?= isset($festival) ? esc($festival['lugar']) : '' ?>" required placeholder="Ingrese el lugar del festival">
                 </div> 
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary"><?= isset($festival) ? 'Actualizar' : 'Guardar' ?></button>

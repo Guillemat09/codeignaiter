@@ -30,29 +30,30 @@
 
             <!-- Formulario -->
             <form action="<?= isset($artista) ? base_url('artistas/save/') . $artista['id'] : base_url('artistas/save') ?>" method="post">
-                <?= csrf_field(); ?>
-                <div class="mb-5">
-                    <label for="nombre" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
-                    <input type="text" name="nombre" id="nombre" class="form-control form-control-solid" 
-                           value="<?= isset($artista) ? esc($artista['nombre']) : '' ?>" required>
-                </div>
-                <div class="mb-5">
-                    <label for="descripcion" class="form-label fw-bold">Descripción<span style="color: red;">*</span></label>
-                    <input type="text" name="descripcion" id="descripcion" class="form-control form-control-solid" 
-                           value="<?= isset($artista) ? esc($artista['descripcion']) : '' ?>" required>
-                </div> 
-                <div class="mb-5">
-                    <label for="genero" class="form-label fw-bold">Género<span style="color: red;">*</span></label>
-                    <input type="text" name="genero" id="genero" class="form-control form-control-solid" 
-                           value="<?= isset($artista) ? esc($artista['genero']) : '' ?>" required>
-                </div> 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary">
-                        <?= session()->getFlashdata('success') == 'Artista creado correctamente.' ? 'Artista creado correctamente' : (isset($artista) ? 'Actualizar' : 'Guardar') ?>
-                    </button>
-                    <a href="<?= base_url('artistas') ?>" class="btn btn-light">Cancelar</a>
-                </div>
-            </form>
+    <?= csrf_field(); ?>
+    <div class="mb-5">
+        <label for="nombre" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
+        <input type="text" name="nombre" id="nombre" class="form-control form-control-solid" 
+               value="<?= isset($artista) ? esc($artista['nombre']) : '' ?>" required placeholder="Ingrese el nombre del artista">
+    </div>
+    <div class="mb-5">
+        <label for="descripcion" class="form-label fw-bold">Descripción<span style="color: red;">*</span></label>
+        <input type="text" name="descripcion" id="descripcion" class="form-control form-control-solid" 
+               value="<?= isset($artista) ? esc($artista['descripcion']) : '' ?>" required placeholder="Ingrese una descripción del artista">
+    </div> 
+    <div class="mb-5">
+        <label for="genero" class="form-label fw-bold">Género<span style="color: red;">*</span></label>
+        <input type="text" name="genero" id="genero" class="form-control form-control-solid" 
+               value="<?= isset($artista) ? esc($artista['genero']) : '' ?>" required placeholder="Ingrese el género musical del artista">
+    </div> 
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">
+            <?= session()->getFlashdata('success') == 'Artista creado correctamente.' ? 'Artista creado correctamente' : (isset($artista) ? 'Actualizar' : 'Guardar') ?>
+        </button>
+        <a href="<?= base_url('artistas') ?>" class="btn btn-light">Cancelar</a>
+    </div>
+</form>
+
         </div>
     </div>
 </div>

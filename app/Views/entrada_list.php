@@ -1859,16 +1859,16 @@ License: For each use you must have a valid license purchased only from above li
 															<a href="<?= base_url('entradas/deactivate/' . esc($entrada['id'])) ?>"
 														class="menu-link px-3"
 														data-kt-entradas-table-filter="deactivate_row">
-														<span class="text-danger">Dar de baja</span>
-													</a>
-												</div>
-												<div class="menu-item px-3">
+														<span class="text-danger"></span>
+														<div class="menu-item px-3">
 													<a href="<?= base_url('entradas/toggleActive/' . esc($entrada['id'])) ?>"
 														class="menu-link px-3"
 														data-kt-entradas-table-filter="toggle_active">
 														<?= $entrada['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
 													</a>
 														</div>
+													</a>
+												</div>
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->
@@ -1889,7 +1889,7 @@ License: For each use you must have a valid license purchased only from above li
 										</table>
 										<nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
-                                <?= $pager->links() ?>
+                                <?= $pager->links("default", "custom_pagination") ?>
                             </ul>
                         </nav>
 										<!--end::Table-->

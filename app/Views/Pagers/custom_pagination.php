@@ -2,7 +2,7 @@
     <nav aria-label="Paginación">
         <ul class="pagination justify-content-center">
             <!-- Enlace a la primera página -->
-            <?php if ($pager->hasPrevious()): ?>
+            <?php if ($pager->hasPreviousPage()): ?>
                 <li class="page-item">
                     <a class="page-link" href="<?= $pager->getFirst() ?>" aria-label="Primera">
                         <span aria-hidden="true">&laquo;&laquo;</span>
@@ -25,7 +25,7 @@
             <?php endforeach; ?>
 
             <!-- Enlace a la última página -->
-            <?php if ($pager->hasNext()): ?>
+            <?php if ($pager->hasNextPage()): ?>
                 <li class="page-item">
                     <a class="page-link" href="<?= $pager->getNext() ?>" aria-label="Siguiente">
                         <span aria-hidden="true">&raquo;</span>
@@ -40,3 +40,4 @@
         </ul>
     </nav>
 <?php endif; ?>
+

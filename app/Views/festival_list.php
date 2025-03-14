@@ -1773,10 +1773,9 @@ License: For each use you must have a valid license purchased only from above li
 															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
 														</div>
 													</th>
-													<th class="min-w-125px">ID</th>
 													<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Nombre
+                                            Nombre-Id
                                             <?php if ($sort == 'nombre'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1957,7 +1956,7 @@ License: For each use you must have a valid license purchased only from above li
 										</table>
 										<nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
-                                <?= $pager->links() ?>
+                                <?= $pager->links("default", "custom_pagination") ?>
                             </ul>
                         </nav>
 										<!--end::Table-->
