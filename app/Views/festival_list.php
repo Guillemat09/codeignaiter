@@ -1835,7 +1835,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            fecha compra
+                                            fecha creacion
                                             <?php if ($sort == 'fecha_creacion'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1897,7 +1897,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td> 
 														<div class="badge badge-light fw-bolder"><?= esc($festival['lugar']) ?></div>
 													</td>
-													<td><?= isset($festival['fecha_creacion']) ? esc($festival['fecha_creacion']) : 'N/A' ?></td>
+													<td><?= (new DateTime ($festival['fecha_creacion']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
 													<!--begin::Action=-->
 													<td class="text-end">

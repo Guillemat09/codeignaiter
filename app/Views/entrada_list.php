@@ -1832,7 +1832,7 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td> 
 														<div class="badge badge-light fw-bolder"><?= esc($entrada['precio']) ?></div>
 													</td>
-													<td><?= isset($entrada['fecha_compra']) ? esc($entrada['fecha_compra']) : 'N/A' ?></td>
+													<td><?= (new DateTime ($entrada['fecha_compra']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
 													<!--begin::Action=-->
 													<td class="text-end">

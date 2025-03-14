@@ -1796,7 +1796,7 @@ License: For each use you must have a valid license purchased only from above li
 										<td>
 											<div class="badge badge-light fw-bolder"><?= esc($artista['genero']) ?></div>
 										</td>
-										<td><?= isset($artista['fecha_creacion']) ? esc($artista['fecha_creacion']) : 'N/A' ?></td>
+										<td><?= (new DateTime ($artista['fecha_creacion']))-> format('d/m/Y') ?></td>
 										<!--begin::Joined-->
 										<!--begin::Action=-->
 										<td class="text-end">
@@ -1863,11 +1863,6 @@ License: For each use you must have a valid license purchased only from above li
 				</div>
 				<!--end::Card-->
 			</div>
-
-
-
-
-
 
 
 

@@ -1837,7 +1837,7 @@ License: For each use you must have a valid license purchased only from above li
 													<td>
 														<div class="badge badge-light fw-bolder"><?= esc($patrocinador['contacto']) ?></div>
 													</td>
-													<td><?= isset($patrocinador['fecha_creacion']) ? esc($patrocinador['fecha_creacion']) : 'N/A' ?></td>
+													<td><?= (new DateTime ($patrocinador['fecha_creacion']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
 													<!--begin::Action=-->
 													<td class="text-end">

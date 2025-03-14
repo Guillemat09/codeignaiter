@@ -1914,7 +1914,7 @@ License: For each use you must have a valid license purchased only from above li
 													<td>
 														<div class="badge badge-light fw-bolder"><?= esc($user['password']) ?></div>
 													</td>
-													<td><?= isset($user['created_at']) ? esc($user['created_at']) : 'N/A' ?></td>
+													<td><?= (new DateTime ($user['created_at']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
 													<!--begin::Action=-->
 													<td class="text-end">
