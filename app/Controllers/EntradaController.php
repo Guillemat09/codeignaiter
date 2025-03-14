@@ -43,8 +43,7 @@ class EntradaController extends BaseController
     
         if ($this->request->getMethod() == 'POST') {
             // Reglas de validación
-            $validation = \Config\Services::validation();
-            $rules = [
+            $validationRules = [
                 'usuario_id' => 'required|integer',
                 'festival_id' => 'required|integer',
                 'tipo_entrada' => 'required|min_length[3]|max_length[50]',
@@ -52,34 +51,64 @@ class EntradaController extends BaseController
                 'fecha_compra' => 'required|valid_date[Y-m-d]'
             ];
     
-            $validation->setRules($rules);
+            // Mensajes de validación en español
+            $validationMessages = [
+                'usuario_id' => [
+                    'required' => 'El usuario es obligatorio.',
+                    'integer' => 'El ID del usuario debe ser un número entero.'
+                ],
+                'festival_id' => [
+                    'required' => 'El festival es obligatorio.',
+                    'integer' => 'El ID del festival debe ser un número entero.'
+                ],
+                'tipo_entrada' => [
+                    'required' => 'El tipo de entrada es obligatorio.',
+                    'min_length' => 'El tipo de entrada debe tener al menos 3 caracteres.',
+                    'max_length' => 'El tipo de entrada no puede superar los 50 caracteres.'
+                ],
+                'precio' => [
+                    'required' => 'El precio es obligatorio.',
+                    'decimal' => 'El precio debe ser un número decimal válido.'
+                ],
+                'fecha_compra' => [
+                    'required' => 'La fecha de compra es obligatoria.',
+                    'valid_date' => 'La fecha de compra debe tener el formato YYYY-MM-DD.'
+                ]
+            ];
     
-            if (!$validation->withRequest($this->request)->run()) {
-                $data['validation'] = $validation;
-            } else {
-                // Datos del formulario
-                $entradaData = [
-                    'usuario_id' => $this->request->getPost('usuario_id'),
-                    'festival_id' => $this->request->getPost('festival_id'),
-                    'tipo_entrada' => $this->request->getPost('tipo_entrada'),
-                    'precio' => $this->request->getPost('precio'),
-                    'fecha_compra' => $this->request->getPost('fecha_compra')
-                ];
+            $validation = \Config\Services::validation();
+            $validation->setRules($validationRules, $validationMessages);
     
-                if ($id) {
-                    $entradaModel->update($id, $entradaData);
-                    $message = 'Entrada actualizada correctamente.';
-                } else {
-                    $entradaModel->save($entradaData);
-                    $message = 'Entrada creada correctamente.';
-                }
-    
-                return redirect()->to('/entradas')->with('success', $message);
+            if (!$this->validate($validationRules, $validationMessages)) {
+                return view('entrada_form', [
+                    'entrada' => $data['entrada'],
+                    'validation' => $this->validator
+                ]);
             }
+    
+            // Datos del formulario
+            $entradaData = [
+                'usuario_id' => $this->request->getPost('usuario_id'),
+                'festival_id' => $this->request->getPost('festival_id'),
+                'tipo_entrada' => $this->request->getPost('tipo_entrada'),
+                'precio' => $this->request->getPost('precio'),
+                'fecha_compra' => $this->request->getPost('fecha_compra')
+            ];
+    
+            if ($id) {
+                $entradaModel->update($id, $entradaData);
+                session()->setFlashdata('success', 'Entrada actualizada correctamente.');
+            } else {
+                $entradaModel->save($entradaData);
+                session()->setFlashdata('success', 'Entrada creada correctamente.');
+            }
+    
+            return redirect()->to('/entradas');
         }
     
         return view('entrada_form', $data);
     }
+    
     
     public function delete($id)
     {

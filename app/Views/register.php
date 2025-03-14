@@ -24,7 +24,7 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../assets/media/logos/favicon.ico" />
+		<link rel="shortcut icon" href="../assets/media/logos/logo.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
@@ -61,15 +61,6 @@ License: For each use you must have a valid license purchased only from above li
 								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesion</a></div>
 								<!--end::Link-->
 							</div>
-							<?php if (session()->getFlashdata('error')): ?>
-                                <div class="alert alert-danger">
-                                    <?= session()->getFlashdata('error') ?>
-                                </div>
-                                <?php elseif (session()->getFlashdata('success')): ?>
-                                <div class="alert alert-success">
-                                    <?= session()->getFlashdata('success') ?>
-                                </div>
-                            <?php endif; ?>
 							<!--end::Heading-->
 							<!--begin::Input group-->
 							<div class="row fv-row mb-7">
@@ -113,7 +104,7 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Wrapper-->
 								<!--begin::Hint-->
-								<div class="text-muted">Usa 8 o mas caracteres con una combinacion de letras,numeros y simbolos.</div>
+								<div class="text-muted">Usa mas de 5 caracteres.</div>
 								<!--end::Hint-->
 							</div>
 							<!--end::Input group=-->
@@ -150,11 +141,6 @@ License: For each use you must have a valid license purchased only from above li
 				<!--begin::Footer-->
 				<div class="d-flex flex-center flex-column-auto p-10">
 					<!--begin::Links-->
-					<div class="d-flex align-items-center fw-bold fs-6">
-						<a href="https://keenthemes.com" class="text-muted text-hover-primary px-2">About</a>
-						<a href="mailto:support@keenthemes.com" class="text-muted text-hover-primary px-2">Contact</a>
-						<a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2">Contact Us</a>
-					</div>
 					<!--end::Links-->
 				</div>
 				<!--end::Footer-->

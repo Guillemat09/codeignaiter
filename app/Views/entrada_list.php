@@ -53,7 +53,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Logo-->
 						<!--begin::Logo-->
 <a href="<?= base_url('principal') ?>">
-    <img alt="Logo" src="../assets/media/logos/logo.png" class="h-100px logo" />
+    <img alt="Logo" src="../assets/media/logos/logo.png" class="h-70px logo" />
 </a>
 <!--end::Logo-->
 						<!--end::Logo-->

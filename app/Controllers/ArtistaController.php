@@ -49,52 +49,76 @@ class ArtistaController extends BaseController
     }
     
     public function saveArtista($id = null)
-    {
-        $artistaModel = new ArtistaModel();
-        helper(['form', 'url']);
-        // Cargar datos del artista si es edición
-        $data['artista'] = $id ? $artistaModel->find($id) : null;
+{
+    $artistaModel = new ArtistaModel();
+    helper(['form', 'url']);
 
-        if ($this->request->getMethod() == 'POST') {
-            // Reglas de validación
-            $validation = \Config\Services::validation();
-            $rules = [
-                'nombre' => 'required|min_length[3]|max_length[50]',
-                'descripcion' => 'required|min_length[3]|max_length[255]',
-                'genero' => 'required|min_length[3]|max_length[50]',
-            ];
+    $data['artista'] = $id ? $artistaModel->find($id) : null;
 
-            $validation->setRules($rules);
+    if ($this->request->getMethod() == 'POST') {
+        // Reglas de validación
+        $validationRules = [
+            'nombre' => 'required|min_length[3]|max_length[50]',
+            'descripcion' => 'required|min_length[3]|max_length[255]',
+            'genero' => 'required|min_length[3]|max_length[50]',
+        ];
 
-            if (!$validation->withRequest($this->request)->run()) {
-                // Mostrar errores de validación
-                $data['validation'] = $validation;
-            } else {
-                // Preparar datos del formulario
-                $artistaData = [
-                    'nombre' => $this->request->getPost('nombre'),
-                    'descripcion' => $this->request->getPost('descripcion'),
-                    'genero' => $this->request->getPost('genero'),
-                ];
+        // Mensajes de validación en español
+        $validationMessages = [
+            'nombre' => [
+                'required' => 'El nombre del artista es obligatorio.',
+                'min_length' => 'El nombre debe tener al menos 3 caracteres.',
+                'max_length' => 'El nombre no puede superar los 50 caracteres.'
+            ],
+            'descripcion' => [
+                'required' => 'La descripción es obligatoria.',
+                'min_length' => 'La descripción debe tener al menos 3 caracteres.',
+                'max_length' => 'La descripción no puede superar los 255 caracteres.'
+            ],
+            'genero' => [
+                'required' => 'El género musical es obligatorio.',
+                'min_length' => 'El género debe tener al menos 3 caracteres.',
+                'max_length' => 'El género no puede superar los 50 caracteres.'
+            ]
+        ];
 
-                if ($id) {
-                    // Actualizar artista existente
-                    $artistaModel->update($id, $artistaData);
-                    $message = 'Artista actualizado correctamente.';
-                } else {
-                    // Crear nuevo artista
-                    $artistaModel->save($artistaData);
-                    $message = 'Artista creado correctamente.';
-                }
+        $validation = \Config\Services::validation();
+        $validation->setRules($validationRules, $validationMessages);
 
-                // Redirigir al listado con un mensaje de éxito
-                return redirect()->to('/artistas')->with('success', $message);
-            }
+        if (!$this->validate($validationRules, $validationMessages)) {
+            // Si la validación falla, se muestra el formulario con los errores
+            return view('artista_form', [
+                'artista' => $data['artista'],
+                'validation' => $this->validator
+            ]);
         }
 
-        // Cargar la vista del formulario (crear/editar)
-        return view('artista_form', $data);
+        // Datos del formulario
+        $artistaData = [
+            'nombre' => $this->request->getPost('nombre'),
+            'descripcion' => $this->request->getPost('descripcion'),
+            'genero' => $this->request->getPost('genero'),
+        ];
+
+        if ($id) {
+            // Si existe el ID, actualizar el artista
+            $artistaModel->update($id, $artistaData);
+            session()->setFlashdata('success', 'Artista actualizado correctamente.');
+        } else {
+            // Si no existe el ID, crear un nuevo artista
+            $artistaModel->save($artistaData);
+            session()->setFlashdata('success', 'Artista creado correctamente.');
+            $data['artista_creado'] = true; // Variable para el botón de éxito
+        }
+
+        // Redirigir al listado de artistas
+        return redirect()->to('/artistas');
     }
+
+    // Si no es una solicitud POST, mostrar el formulario
+    return view('artista_form', $data);
+}
+
 
     public function delete($id)
     {

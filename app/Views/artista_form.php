@@ -21,6 +21,13 @@
                 </div>
             <?php endif; ?>
 
+            <!-- Mostrar mensaje de éxito -->
+            <?php if (session()->getFlashdata('success')): ?>
+                <div class="alert alert-success">
+                    <?= session()->getFlashdata('success') ?>
+                </div>
+            <?php endif; ?>
+
             <!-- Formulario -->
             <form action="<?= isset($artista) ? base_url('artistas/save/') . $artista['id'] : base_url('artistas/save') ?>" method="post">
                 <?= csrf_field(); ?>
@@ -40,7 +47,9 @@
                            value="<?= isset($artista) ? esc($artista['genero']) : '' ?>" required>
                 </div> 
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary"><?= isset($artista) ? 'Actualizar' : 'Guardar' ?></button>
+                    <button type="submit" class="btn btn-primary">
+                        <?= session()->getFlashdata('success') == 'Artista creado correctamente.' ? 'Artista creado correctamente' : (isset($artista) ? 'Actualizar' : 'Guardar') ?>
+                    </button>
                     <a href="<?= base_url('artistas') ?>" class="btn btn-light">Cancelar</a>
                 </div>
             </form>
