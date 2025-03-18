@@ -12,7 +12,7 @@ class PatrocinadorModel extends Model
 
     protected $useTimesLamps = true; 
 
-    protected $allowedFields = ['nombre', 'descripcion', 'contacto', 'festival_id', 'created_at']; // Campos permitidos para inserción/actualización
+    protected $allowedFields = ['nombre', 'descripcion', 'contacto', 'festival_id', 'created_at', 'is_active']; // Campos permitidos para inserción/actualización
 
     // Añadir filtros
     public function filter($filters)

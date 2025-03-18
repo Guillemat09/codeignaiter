@@ -4846,7 +4846,7 @@ License: For each use you must have a valid license purchased only from above li
                 data: [30, 40, 45, 50, 49, 60, 70, 91, 125]
             }],
             xaxis: {
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep']
+                categories: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep']
             }
         };
 
@@ -4860,7 +4860,7 @@ License: For each use you must have a valid license purchased only from above li
                 height: 300 // Ajusta la altura según sea necesario
             },
             series: [44, 55, 41, 17, 15], // Datos de ejemplo
-            labels: ['Team A', 'Team B', 'Team C', 'Team D', 'Team E'], // Etiquetas de ejemplo
+            labels: ['Equipo A', 'Equipo B', 'Equipo C', 'Equipo D', 'Equipo E'], // Etiquetas de ejemplo
             responsive: [{
                 breakpoint: 480,
                 options: {

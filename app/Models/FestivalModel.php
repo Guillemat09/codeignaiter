@@ -12,7 +12,7 @@ class FestivalModel extends Model
 
     protected $useTimesLamps = true; 
 
-    protected $allowedFields = ['nombre', 'descripcion', 'fecha_inicio','fecha_fin','lugar','created_at']; // Campos permitidos para inserción/actualización
+    protected $allowedFields = ['nombre', 'descripcion', 'fecha_inicio','fecha_fin','lugar','created_at' , 'is_active']; // Campos permitidos para inserción/actualización
 
     // Añadir filtros
     public function filter($filters)

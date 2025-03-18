@@ -12,7 +12,7 @@ class EntradaModel extends Model
 
     protected $useTimesLamps = true; 
 
-    protected $allowedFields = ['usuario_id', 'festival_id', 'tipo_entrada', 'precio', 'fecha_compra']; // Campos permitidos para inserción/actualización
+    protected $allowedFields = ['usuario_id', 'festival_id', 'tipo_entrada', 'precio', 'fecha_compra','is_active']; // Campos permitidos para inserción/actualización
 
     // Añadir filtros
     public function filter($filters)

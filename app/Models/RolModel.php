@@ -12,7 +12,7 @@ class RolModel extends Model
 
     protected $useTimesLamps = true; 
 
-    protected $allowedFields = ['nombre']; // Campos permitidos para inserción/actualización
+    protected $allowedFields = ['nombre', 'is_active']; // Campos permitidos para inserción/actualización
 
     // Añadir filtros
     public function filter($filters)

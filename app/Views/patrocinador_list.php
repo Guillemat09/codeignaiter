@@ -1556,9 +1556,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha de creacion:</label>
+															<label class="form-label fs-6 fw-bold">Fecha de creación:</label>
 														
-															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creacion" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
+															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creación" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1783,7 +1783,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('patrocinadores?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Fecha creacion
+                                            Fecha creación
                                             <?php if ($sort == 'fecha_creacion'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
