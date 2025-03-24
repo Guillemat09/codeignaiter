@@ -82,7 +82,6 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Lista</span>
 									</div>
 								</div>
-				
 								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 									<span class="menu-link">
 										<span class="menu-icon">
@@ -118,7 +117,7 @@ License: For each use you must have a valid license purchased only from above li
 													</a>
 												</div>
 												<?php endif; ?>
-												<div class="menu-item">
+												<div class="menu-item active">
 													<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>

@@ -179,7 +179,6 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 									</div>
 								</div>
-								
 								<div class="menu-item">
 									<div class="menu-content">
 										<div class="separator mx-1 my-4"></div>
