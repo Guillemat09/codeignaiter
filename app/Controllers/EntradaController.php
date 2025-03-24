@@ -9,30 +9,50 @@ class EntradaController extends BaseController
     public function index()
     {
         $entradaModel = new EntradaModel();
-        $filters = $this->request->getGet();  // Obtener filtros del formulario
         
-        // Configurar paginación
-        $perPage = 10;
-        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
-        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'fecha_compra';
-        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
-
-        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
-        unset($filters['sort']);
-        unset($filters['direction']);
-        unset($filters['page']);
-
+        // Captura y validación de parámetros
+        $filters = [
+            'usuario_id' => $this->request->getGet('usuario_id'),
+            'festival_id' => $this->request->getGet('festival_id'),
+            'fecha_compra' => $this->request->getGet('fecha_compra'),
+        ];
+        
+        // Capturar los parámetros de ordenación y dirección
+        $sort = $this->request->getGet('sort') ?? 'fecha_compra'; 
+        $direction = $this->request->getGet('direction') ?? 'asc';  // Agregar dirección de ordenación
+        
+        // Aplicar filtros si existen
+        foreach ($filters as $campo => $valor) {
+            if (!empty($valor)) {
+                $entradaModel->like("entradas.$campo", $valor);
+            }
+        }
+        
+        // Contar el total de registros (sin paginación)
+        $totalRegistros = $entradaModel->countAllResults(false);
+        
+        // Aplicar ordenación
+        $entradaModel->orderBy($sort, $direction);  // Aplicar el orden por el campo y la dirección
+        
+        // Obtener la cantidad de registros por página (con un valor predeterminado)
+        $perPage = $this->request->getGet('perPage') ?? 10; // 10 registros por defecto
+        $page = $this->request->getVar('page') ?? 1;
+        
         // Obtener datos paginados con filtros y ordenación
-        $data['entradas'] = $entradaModel->filter($filters)
-                                         ->orderBy($sort, $direction)
-                                         ->paginate($perPage, 'default', $currentPage);
-        $data['pager'] = $entradaModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
-        $data['sort'] = $sort;
-        $data['direction'] = $direction;
-
-        return view('entrada_list', $data);
+        $data = [
+            'entradas' => $entradaModel->paginate($perPage),
+            'pager' => $entradaModel->pager,
+            'filters' => $filters, // Pasar los filtros a la vista
+            'sort' => $sort,
+            'direction' => $direction, // Pasar la dirección a la vista
+            'perPage' => $perPage,
+            'page' => $page,
+            'totalRegistros' => $totalRegistros, // Número total de registros
+        ];
+        
+        return view('entrada_list', $data);  // Pasar los datos a la vista
     }
+    
 
     public function saveEntrada($id = null)
     {

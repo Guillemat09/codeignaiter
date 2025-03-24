@@ -7,32 +7,39 @@ use App\Models\FestivalModel;
 class FestivalController extends BaseController
 {
     public function index()
-    {
-        $festivalModel = new FestivalModel();
-        $filters = $this->request->getGet();  // Obtener filtros del formulario
-        
-        // Configurar paginación
-        $perPage = 10;
-        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
-        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre';
-        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
+{
+    $festivalModel = new FestivalModel();
+    $filters = $this->request->getGet();  // Obtener filtros del formulario
 
-        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
-        unset($filters['sort']);
-        unset($filters['direction']);
-        unset($filters['page']);
+    // Configurar paginación
+    $perPage = $this->request->getVar('perPage') ? $this->request->getVar('perPage') : 10; // 10 es el valor predeterminado
+    $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1; // Página actual
+    $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre'; // Orden por defecto: 'nombre'
+    $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC'; // Orden ascendente por defecto
 
-        // Obtener datos paginados con filtros y ordenación
-        $data['festivales'] = $festivalModel->filter($filters)
-                                            ->orderBy($sort, $direction)
-                                            ->paginate($perPage, 'default', $currentPage);
-        $data['pager'] = $festivalModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
-        $data['sort'] = $sort;
-        $data['direction'] = $direction;
+    // Eliminar los parámetros de paginación y ordenación de los filtros antes de pasarlos al modelo
+    unset($filters['sort']);
+    unset($filters['direction']);
+    unset($filters['page']);
+    unset($filters['perPage']); // Eliminar el parámetro de cantidad por página de los filtros
 
-        return view('festival_list', $data);
-    }
+    // Obtener los festivales filtrados y paginados
+    $data['festivales'] = $festivalModel->filter($filters)  // Aplicar filtros
+                                        ->orderBy($sort, $direction)  // Aplicar ordenación
+                                        ->paginate($perPage, 'default', $currentPage);  // Paginación
+
+    // Pasar a la vista los datos necesarios
+    $data['pager'] = $festivalModel->pager;  // Pasar el objeto de paginación a la vista
+    $data['filters'] = $filters;  // Pasar los filtros aplicados a la vista
+    $data['sort'] = $sort;  // Campo de ordenación
+    $data['direction'] = $direction;  // Dirección de ordenación
+    $data['perPage'] = $perPage;  // Número de registros por página
+    $data['currentPage'] = $currentPage;  // Página actual
+
+    return view('festival_list', $data);  // Pasar los datos a la vista
+}
+
+    
 
     public function saveFestival($id = null)
     {

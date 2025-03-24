@@ -7,32 +7,54 @@ use App\Models\PatrocinadorModel;
 class PatrocinadorController extends BaseController
 {
     public function index()
-    {
-        $patrocinadorModel = new PatrocinadorModel();
-        $filters = $this->request->getGet();  // Obtener filtros del formulario
-        
-        // Configurar paginación
-        $perPage = 10;
-        $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
-        $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre';
-        $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
-
-        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
-        unset($filters['sort']);
-        unset($filters['direction']);
-        unset($filters['page']);
-
-        // Obtener datos paginados con filtros y ordenación
-        $data['patrocinadores'] = $patrocinadorModel->filter($filters)
-                                                    ->orderBy($sort, $direction)
-                                                    ->paginate($perPage, 'default', $currentPage);
-        $data['pager'] = $patrocinadorModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
-        $data['sort'] = $sort;
-        $data['direction'] = $direction;
-
-        return view('patrocinador_list', $data);
+{
+    $patrocinadorModel = new PatrocinadorModel();
+    
+    // Captura y validación de parámetros de filtro
+    $filters = [
+        'nombre' => $this->request->getGet('nombre'),
+        'descripcion' => $this->request->getGet('descripcion'),
+    ];
+    
+    // Configurar ordenación y dirección por defecto
+    $sort = $this->request->getGet('sort') ?? 'nombre';  // Valor predeterminado de ordenación por 'nombre'
+    $direction = $this->request->getGet('direction') ?? 'ASC';  // Valor predeterminado de dirección de ordenación ascendente
+    
+    // Aplicar filtros si existen
+    foreach ($filters as $campo => $valor) {
+        if (!empty($valor)) {
+            $patrocinadorModel->like("patrocinadores.$campo", $valor);
+        }
     }
+    
+    // Contar el total de registros (sin paginación)
+    $totalRegistros = $patrocinadorModel->countAllResults(false);
+    
+    // Aplicar ordenación
+    $patrocinadorModel->orderBy($sort, $direction);
+    
+    // Configurar paginación
+    $perPage = $this->request->getVar('perPage') ?? 10; // 10 es el valor predeterminado
+    $currentPage = $this->request->getVar('page') ?? 1;
+    
+    // Obtener datos paginados con filtros y ordenación
+    $data = [
+        'patrocinadores' => $patrocinadorModel->paginate($perPage),
+        'pager' => $patrocinadorModel->pager,  // Pasar el objeto de paginación a la vista
+        'filters' => $filters,  // Pasar los filtros a la vista
+        'sort' => $sort,  // Campo de ordenación
+        'direction' => $direction,  // Dirección de ordenación
+        'perPage' => $perPage,  // Número de registros por página
+        'currentPage' => $currentPage,  // Página actual
+        'totalRegistros' => $totalRegistros,  // Número total de registros
+    ];
+    
+    return view('patrocinador_list', $data);
+}
+
+    
+
+    
 
     public function savePatrocinador($id = null)
 {

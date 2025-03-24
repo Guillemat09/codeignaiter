@@ -9,32 +9,34 @@ class ArtistaController extends BaseController
     public function index()
     {
         $artistaModel = new ArtistaModel();
-    
+        
         // Captura y validación de parámetros
         $filters = [
             'nombre' => $this->request->getGet('nombre'),
             'descripcion' => $this->request->getGet('descripcion'),
             'genero' => $this->request->getGet('genero'),
         ];
-    
+        
         $sort = $this->request->getGet('sort') ?? 'id'; 
         $order = $this->request->getGet('order') ?? 'asc';
-    
+        
         // Aplicar filtros si existen
         foreach ($filters as $campo => $valor) {
             if (!empty($valor)) {
                 $artistaModel->like("artistas.$campo", $valor);
             }
         }
-    
+        
+        // Contar el total de registros (sin paginación)
+        $totalRegistros = $artistaModel->countAllResults(false);
+        
         // Aplicar ordenación
         $artistaModel->orderBy($sort, $order);
-    //  $numeroregistros=$artistaModel->countAllResults();              
-    //  var_dump($numeroregistros);
-        // Configurar paginación
-        $perPage = 10;
+        
+        // Obtener la cantidad de registros por página (con un valor predeterminado)
+        $perPage = $this->request->getGet('perPage') ?? 10; // 10 registros por defecto
         $page = $this->request->getVar('page') ?? 1;
-    
+        
         // Obtener datos paginados con filtros y ordenación
         $data = [
             'artistas' => $artistaModel->paginate($perPage),
@@ -44,11 +46,13 @@ class ArtistaController extends BaseController
             'order' => $order,
             'perPage' => $perPage,
             'page' => $page,
-            // 'numeroregistros' => $numeroregistros,  // Añadir número de registros a la vista
+            'totalRegistros' => $totalRegistros, // Número total de registros
         ];
-    
+        
         return view('artista_list', $data);
     }
+    
+    
     
     public function saveArtista($id = null)
 {

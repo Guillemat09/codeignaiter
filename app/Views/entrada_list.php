@@ -1892,6 +1892,26 @@ License: For each use you must have a valid license purchased only from above li
                                 <?= $pager->links("default", "custom_pagination") ?>
                             </ul>
                         </nav>
+						<div class="d-flex justify-content-between align-items-center mb-3">
+    <!-- Mostrar cantidad de registros -->
+    <div>
+        <span><?= count($entradas) ?> de <?= $pager->getTotal() ?> entradas</span>
+    </div>
+
+    <!-- Selector de cantidad de registros por página -->
+    <div>
+        <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
+            <label for="perPage" class="form-label me-2">Mostrar</label>
+            <select id="perPage" name="perPage" class="form-select form-select-sm" onchange="this.form.submit()">
+                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
+                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
+                <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
+                <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
+            </select>
+            <span class="ms-2">Entradas por página</span>
+        </form>
+    </div>
+</div>
 										<!--end::Table-->
 									</div>
 									<!--end::Card body-->

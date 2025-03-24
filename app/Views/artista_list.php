@@ -1859,9 +1859,36 @@ License: For each use you must have a valid license purchased only from above li
 						</table>
 
 						<div class="mt-4">
-							<?= $pager->only(['nombre', 'descripcion', 'genero', 'sort', 'order', 'page'])->links("default", "custom_pagination") ?>
-						</div>
+    <?= $pager->only(['nombre', 'descripcion', 'genero', 'sort', 'order', 'page', 'perPage'])->links("default", "custom_pagination") ?>
+</div>
+
+
 						<?php endif; ?>
+						<div class="d-flex justify-content-between align-items-center mb-3">
+						<form method="get" action="<?= current_url() ?>">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <!-- Selector de cantidad de registros por página -->
+        <div class="d-flex align-items-center">
+            <label for="perPage" class="form-label me-2">Mostrar</label>
+            <select id="perPage" name="perPage" class="form-select" onchange="this.form.submit()">
+                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5 registros</option>
+                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10 registros</option>
+                <option value="15" <?= $perPage == 15 ? 'selected' : '' ?>>15 registros</option>
+                <option value="20" <?= $perPage == 20 ? 'selected' : '' ?>>20 registros</option>
+            </select>
+        </div>
+        
+        <!-- Mensaje de mostrando registros -->
+        <div class="d-flex align-items-center">
+            <p class="text-muted mb-0 ms-3">
+                Mostrando <?= count($artistas) ?> de <?= $totalRegistros ?> registros
+            </p>
+        </div>
+    </div>
+</form>
+
+
+
 						<!--end::Table-->
 					</div>
 					<!--end::Card body-->

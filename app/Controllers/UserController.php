@@ -10,29 +10,34 @@ class UserController extends BaseController
     {
         $userModel = new UserModel();
         $filters = $this->request->getGet();  // Obtener filtros del formulario
-        
+    
         // Configurar paginación
-        $perPage = 10;
+        $perPage = $this->request->getVar('perPage') ? $this->request->getVar('perPage') : 10; // 10 es el valor predeterminado
         $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
         $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'name';
         $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC';
-
-        // Remover los parámetros 'sort', 'direction' y 'page' de los filtros
+    
+        // Remover los parámetros 'sort', 'direction', 'page' y 'perPage' de los filtros
         unset($filters['sort']);
         unset($filters['direction']);
         unset($filters['page']);
-
-        // Obtener datos paginados con filtros y ordenación
+        unset($filters['perPage']);
+    
+        // Obtener los usuarios filtrados y paginados con los filtros aplicados
         $data['users'] = $userModel->filter($filters)
                                    ->orderBy($sort, $direction)
                                    ->paginate($perPage, 'default', $currentPage);
-        $data['pager'] = $userModel->pager;  // Aquí se asegura de pasar `pager` a la vista
-        $data['filters'] = $filters; // Pasar filtros a la vista
+    
+        $data['pager'] = $userModel->pager;  // Pasar el objeto de paginación a la vista
+        $data['filters'] = $filters; // Pasar los filtros a la vista
         $data['sort'] = $sort;
         $data['direction'] = $direction;
-
+        $data['perPage'] = $perPage; // Pasar la cantidad de registros por página
+        $data['currentPage'] = $currentPage; // Pasar la página actual
+    
         return view('user_list', $data);
     }
+    
 
     public function saveUser($id = null)
     {
