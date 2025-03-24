@@ -1921,6 +1921,9 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
+					<div class="d-flex flex-center flex-column-auto p-10">
+<p>Guillermo Mateos Galea</p>
+				</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->

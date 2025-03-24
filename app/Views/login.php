@@ -63,7 +63,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Heading-->
 							<div class="text-center mb-10">
 								<!--begin::Title-->
-								<h1 class="text-dark mb-3">Iniciar Sesion</h1>
+								<h1 class="text-dark mb-3">Iniciar Sesión</h1>
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">Nuevo aqui?
@@ -77,7 +77,7 @@ License: For each use you must have a valid license purchased only from above li
 								<label class="form-label fs-6 fw-bolder text-dark">Correo <span style="color: red;">*</span></label>
 								<!--end::Label-->
 								<!--begin::Input-->
-								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off"  id="email" placeholder="Introduzca Correo Electronico" required />
+								<input class="form-control form-control-lg form-control-solid" type="text" name="email" autocomplete="off"  id="email" placeholder="Introduzca Correo " required />
 								<!--end::Input-->
 							</div>
 							<!--end::Input group-->

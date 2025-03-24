@@ -51,6 +51,15 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="w-lg-600px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
 						<!--begin::Form-->
 						<form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" action="<?= base_url('/register') ?>" method="post">
+						<?php if (session()->getFlashdata('error')): ?>
+                                <div class="alert alert-danger">
+                                    <?= session()->getFlashdata('error') ?>
+                                </div>
+                                <?php elseif (session()->getFlashdata('success')): ?>
+                                <div class="alert alert-success">
+                                    <?= session()->getFlashdata('success') ?>
+                                </div>
+                            <?php endif; ?>
 							<!--begin::Heading-->
 							<div class="mb-10 text-center">
 								<!--begin::Title-->
@@ -58,14 +67,14 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Title-->
 								<!--begin::Link-->
 								<div class="text-gray-400 fw-bold fs-4">Ya tienes una cuenta?
-								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesion</a></div>
+								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesión</a></div>
 								<!--end::Link-->
 							</div>
 							<!--end::Heading-->
 							<!--begin::Input group-->
 							<div class="row fv-row mb-7">
 									<label class="form-label fw-bolder text-dark fs-6">Nombre<span style="color: red;">*</span></label>
-									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="Introduzca su Nombre"  autocomplete="off" name="name" value="<?= old('name') ?>" required />
+									<input class="form-control form-control-lg form-control-solid" type="text" placeholder="Introduzca Nombre"  autocomplete="off" name="name" value="<?= old('name') ?>" required />
 								<!--end::Col-->
 								<!--begin::Col-->
 								<!--end::Col-->
@@ -74,7 +83,7 @@ License: For each use you must have a valid license purchased only from above li
 							<!--begin::Input group-->
 							<div class="fv-row mb-7">
 								<label class="form-label fw-bolder text-dark fs-6">Correo<span style="color: red;">*</span></label>
-								<input class="form-control form-control-lg form-control-solid" type="email" placeholder="Introduzca Correo Electronico"  autocomplete="off"  name="email" value="<?= old('email') ?>" required />
+								<input class="form-control form-control-lg form-control-solid" type="email" placeholder="Introduzca Correo "  autocomplete="off"  name="email" value="<?= old('email') ?>" required />
 							</div>
 							<!--end::Input group-->
 							<!--begin::Input group-->
@@ -140,8 +149,7 @@ License: For each use you must have a valid license purchased only from above li
 				<!--end::Content-->
 				<!--begin::Footer-->
 				<div class="d-flex flex-center flex-column-auto p-10">
-					<!--begin::Links-->
-					<!--end::Links-->
+<p>Guillermo Mateos Galea</p>
 				</div>
 				<!--end::Footer-->
 			</div>

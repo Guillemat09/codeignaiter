@@ -28,7 +28,8 @@ class Home extends BaseController
         $data = [
             'name' => $name,
             'email' => $email,
-            'rol' => $rolNombre
+            'rol' => $rolNombre,
+            'mensajeflash' => $session->get('mensajeflash'),
         ];
 
         return view('principal', $data);

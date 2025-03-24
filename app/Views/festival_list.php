@@ -1560,9 +1560,9 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha de compra:</label>
+															<label class="form-label fs-6 fw-bold">Fecha de creación:</label>
 														
-															<input type="text" name="fecha_compra" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha compra" value="<?= isset($filters['fecha_compra']) ? esc($filters['fecha_compra']) : '' ?>" />
+															<input type="text" name="fecha_compra" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creación" value="<?= isset($filters['fecha_compra']) ? esc($filters['fecha_compra']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1835,7 +1835,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            fecha creacion
+                                            fecha creación
                                             <?php if ($sort == 'fecha_creacion'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1974,6 +1974,9 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
+					<div class="d-flex flex-center flex-column-auto p-10">
+<p>Guillermo Mateos Galea</p>
+				</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->

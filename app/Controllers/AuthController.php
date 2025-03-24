@@ -11,6 +11,7 @@ class AuthController extends BaseController
      */
     public function register()
     {
+        session()->setFlashdata('error', '');
         return view('register');
     }
 
@@ -29,7 +30,21 @@ class AuthController extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            session()->setFlashdata('error', 'Datos no validos.');
+            $errores=$this->validator->getErrors();
+            $mensaje = '';
+            if (isset($errores['email'])) {
+                $mensaje.=  'El email ya existe o no es valido <br>';
+            }
+            if (isset($errores['name'])) {
+                $mensaje.= 'El nombre debe de tener entre 3 y 50 caracteres <br>';
+            }
+            if (isset($errores['password'])) {
+                $mensaje.= 'La contraseña debe de tener como minimo 6 caracteres <br>';
+            }
+            if (isset($errores['password_confirm'])) {
+                $mensaje.= 'Las contraseñas no coinciden <br>';
+            }   
+            session()->setFlashdata('error', $mensaje);
             return view('register', ['validation' => $this->validator]);
         }
 
@@ -89,6 +104,7 @@ class AuthController extends BaseController
             return view('login');
         }
     }
+    session()->setFlashdata('error', '');
 return view ('login');
     }
     
@@ -127,9 +143,10 @@ return view ('login');
             'email' => $user['email'],
             'isLoggedIn' => true,
             'created_at' => $user['created_at'],
+            'mensajeflash' => 'Inicio de sesión exitoso.',
         ]);
 
-        return redirect()->to('/dashboard')->with('success', 'Inicio de sesión exitoso.');
+        return redirect()->to('/principal')->with('success', 'Inicio de sesión exitoso.');
     }
 
     /**

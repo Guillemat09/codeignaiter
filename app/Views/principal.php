@@ -1424,6 +1424,11 @@ License: For each use you must have a valid license purchased only from above li
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
 							<div id="kt_content_container" class="container-xxl">
+							<?php if (isset($mensajeflash)): ?>
+                                <div class="alert alert-success">
+                                    <?= esc($mensajeflash) ?>
+                                </div>
+                            <?php endif; ?>
 								<!--begin::Row-->
 								<div class="row gy-5 g-xl-8">
 									<!--begin::Col-->
@@ -1662,10 +1667,9 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
-						<!--begin::Container-->
-						<!--end::Container-->
-					</div>
+					<div class="d-flex flex-center flex-column-auto p-10">
+<p>Guillermo Mateos Galea</p>
+				</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->

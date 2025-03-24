@@ -1723,6 +1723,9 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Card body-->
 					<div class="card-body pt-0">
 						<!--begin::Table-->
+						<?php if (empty($artistas)): ?>
+							<div class="text-center text-danger fs-4">No se encontraron artistas</div>
+							<?php else:?>
 						<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 							<!--begin::Table head-->
 							<thead>
@@ -1854,9 +1857,11 @@ License: For each use you must have a valid license purchased only from above li
 							</tbody>
 							<!--end::Table body-->
 						</table>
+
 						<div class="mt-4">
 							<?= $pager->only(['nombre', 'descripcion', 'genero', 'sort', 'order', 'page'])->links("default", "custom_pagination") ?>
 						</div>
+						<?php endif; ?>
 						<!--end::Table-->
 					</div>
 					<!--end::Card body-->
@@ -1874,6 +1879,9 @@ License: For each use you must have a valid license purchased only from above li
 	</div>
 	<!--end::Content-->
 	<!--begin::Footer-->
+	<div class="d-flex flex-center flex-column-auto p-10">
+<p>Guillermo Mateos Galea</p>
+				</div>
 	<!--end::Footer-->
 	</div>
 	<!--end::Wrapper-->

@@ -29,7 +29,8 @@ class ArtistaController extends BaseController
     
         // Aplicar ordenación
         $artistaModel->orderBy($sort, $order);
-    
+    //  $numeroregistros=$artistaModel->countAllResults();              
+    //  var_dump($numeroregistros);
         // Configurar paginación
         $perPage = 10;
         $page = $this->request->getVar('page') ?? 1;
@@ -43,6 +44,7 @@ class ArtistaController extends BaseController
             'order' => $order,
             'perPage' => $perPage,
             'page' => $page,
+            // 'numeroregistros' => $numeroregistros,  // Añadir número de registros a la vista
         ];
     
         return view('artista_list', $data);
