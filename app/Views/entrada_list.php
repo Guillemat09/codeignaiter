@@ -1786,7 +1786,9 @@ License: For each use you must have a valid license purchased only from above li
                                             <?php endif; ?>
                                         </a>
                                     </th>
+									<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 													<th class="text-end min-w-100px">Acciones</th>
+													<?php endif; ?>
 												</tr>
 												<!--end::Table row-->
 											</thead>

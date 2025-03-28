@@ -1460,7 +1460,7 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <div class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1 d-flex justify-content-end">
 <?php if (session()->has('user')): ?>
-<a href="logout" class="btn btn-danger">Cerrar Sesion</a>
+<a href="logout" class="btn btn-danger">Cerrar Sesión</a>
     <?php else: ?>
 <a href="login" class="btn btn-primary me-2">Iniciar Sesion</a>
 <a href="register" class="btn btn-secondary">Registro</a>
@@ -1845,7 +1845,9 @@ License: For each use you must have a valid license purchased only from above li
                                             <?php endif; ?>
                                         </a>
                                     </th>
+									<?php if (session()->get('role')['nombre'] == "admin"): ?>
 													<th class="text-end min-w-100px">Acciones</th>
+													<?php endif; ?>
 												</tr>
 												<!--end::Table row-->
 											</thead>
@@ -1994,9 +1996,10 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="d-flex flex-center flex-column-auto p-10">
-<p>Guillermo Mateos Galea</p>
-				</div>
+					<div class="footer bg-white text-center py-2 w-100" style="height: 60px; font-size: 14px;">
+    <p class="m-0">Guillermo Mateos Galea</p>
+</div>
+
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->

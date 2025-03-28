@@ -66,7 +66,7 @@ License: For each use you must have a valid license purchased only from above li
 								<h1 class="text-dark mb-3">Crear una Cuenta</h1>
 								<!--end::Title-->
 								<!--begin::Link-->
-								<div class="text-gray-400 fw-bold fs-4">Ya tienes una cuenta?
+								<div class="text-gray-400 fw-bold fs-4">¿Ya tienes una cuenta?
 								<a href="<?= base_url('/login') ?>" class="link-primary fw-bolder">Iniciar Sesión</a></div>
 								<!--end::Link-->
 							</div>
@@ -128,7 +128,7 @@ License: For each use you must have a valid license purchased only from above li
 								<label class="form-check form-check-custom form-check-solid form-check-inline">
 									<input class="form-check-input" type="checkbox" name="toc" value="1" />
 									<span class="form-check-label fw-bold text-gray-700 fs-6">Acepta
-									<a href="#" class="ms-1 link-primary">Terminos y condiciones</a>.</span>
+									<a href="#" class="ms-1 link-primary">Términos y condiciones</a>.</span>
 								</label>
 							</div>
 							<!--end::Input group-->
