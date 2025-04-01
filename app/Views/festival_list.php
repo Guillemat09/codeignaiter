@@ -1871,15 +1871,13 @@ License: For each use you must have a valid license purchased only from above li
 													<td class="d-flex align-items-center">
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-															<a href="../../demo1/dist/apps/user-management/users/view.html">
-																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($festival['id']) ?></div>
+																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($festival['nombre']) ?></div>
 															</a>
 														</div>
 														<!--end::Avatar-->
 														<!--begin::User details-->
 														<div class="d-flex flex-column">
-															<a href="../../demo1/dist/apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($festival['nombre']) ?></a>
-								                            <span><?= esc($festival['id']) ?></span>
+															<a href class="text-gray-800 text-hover-primary mb-1"><?= esc($festival['nombre']) ?></a>
 														</div>
 														<!--begin::User details-->
 													</td>
@@ -1968,18 +1966,18 @@ License: For each use you must have a valid license purchased only from above li
     </div>
 
     <!-- Selector de cantidad de registros por página -->
-    <div>
-        <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
-            <label for="perPage" class="form-label me-2">Mostrar</label>
-            <select id="perPage" name="perPage" class="form-select form-select-sm" onchange="this.form.submit()">
-                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
-                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
-                <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
-                <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
-            </select>
-            <span class="ms-2">Festivales por página</span>
-        </form>
-    </div>
+	<div class="d-flex justify-content-end mb-3">
+    <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
+        <label for="perPage" class="me-2">Mostrar</label>
+        <select id="perPage" name="perPage" class="form-control form-control-sm w-auto" onchange="this.form.submit()">
+            <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
+            <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
+            <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
+            <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
+        </select>
+        <span class="ms-2">Festivales por página</span>
+    </form>
+</div>
 </div>
 										<!--end::Table-->
 									</div>

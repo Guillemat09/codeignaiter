@@ -81,7 +81,7 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
 						<div class="menu-item">
 
-							<div class="menu-item">
+							<div class="menu-item active">
 								<div class="menu-content pt-8 pb-2">
 									<span class="menu-section text-muted text-uppercase fs-8 ls-1">List</span>
 								</div>
@@ -102,7 +102,7 @@ License: For each use you must have a valid license purchased only from above li
 									<span class="menu-title">Listas</span>
 									<span class="menu-arrow"></span>
 								</span>
-								<div class="menu-sub menu-sub-accordion">
+								<div class="menu-sub menu-sub-accordion active">
 									<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 										<span class="menu-link">
 											<span class="menu-bullet">
@@ -1462,7 +1462,7 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <div class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1 d-flex justify-content-end">
 <?php if (session()->has('user')): ?>
-<a href="logout" class="btn btn-danger">Cerrar sesion</a>
+<a href="logout" class="btn btn-danger">Cerrar Sesión</a>
     <?php else: ?>
 <a href="login" class="btn btn-primary me-2">Inicio Sesion</a>
 <a href="register" class="btn btn-secondary">Registro</a>
@@ -1781,15 +1781,14 @@ License: For each use you must have a valid license purchased only from above li
 										<td class="d-flex align-items-center">
 											<!--begin:: Avatar -->
 											<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-												<a href="../../demo1/dist/apps/user-management/users/view.html">
 													<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($artista['nombre']) ?></div>
 												</a>
 											</div>
 											<!--end::Avatar-->
 											<!--begin::User details-->
 											<div class="d-flex flex-column">
-												<a href="../../demo1/dist/apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($artista['nombre']) ?></a>
-												<span><?= esc($artista['id']) ?></span>
+												<a href class="text-gray-800 text-hover-primary mb-1"><?= esc($artista['nombre']) ?></a>
+												
 											</div>
 											<!--begin::User details-->
 										</td>
@@ -1870,22 +1869,20 @@ License: For each use you must have a valid license purchased only from above li
 						<form method="get" action="<?= current_url() ?>">
     <div class="d-flex justify-content-between align-items-center mb-3">
         <!-- Selector de cantidad de registros por página -->
-        <div class="d-flex align-items-center">
-            <label for="perPage" class="form-label me-2">Mostrar</label>
-            <select id="perPage" name="perPage" class="form-select" onchange="this.form.submit()">
-                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5 registros</option>
-                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10 registros</option>
-                <option value="15" <?= $perPage == 15 ? 'selected' : '' ?>>15 registros</option>
-                <option value="20" <?= $perPage == 20 ? 'selected' : '' ?>>20 registros</option>
-            </select>
-        </div>
+		<div class="d-flex justify-content-end mb-3">
+    <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
+        <label for="perPage" class="me-2">Mostrar</label>
+        <select id="perPage" name="perPage" class="form-control form-control-sm w-auto" onchange="this.form.submit()">
+            <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
+            <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
+            <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
+            <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
+        </select>
+        <span class="ms-2">Artistas por página</span>
+    </form>
+</div>
         
-        <!-- Mensaje de mostrando registros -->
-        <div class="d-flex align-items-center">
-            <p class="text-muted mb-0 ms-3">
-                Mostrando <?= count($artistas) ?> de <?= $totalRegistros ?> registros
-            </p>
-        </div>
+        <!-- Mensaje de mostrando registros --
     </div>
 </form>
 

@@ -53,8 +53,8 @@ class FestivalController extends BaseController
             $validationRules = [
                 'nombre' => 'required|min_length[3]|max_length[255]',
                 'descripcion' => 'required|min_length[10]',
-                'fecha_inicio' => 'required|valid_date[Y-m-d]',
-                'fecha_fin' => 'required|valid_date[Y-m-d]',
+                'fecha_inicio' => 'required|valid_date[d/m/Y]',
+                'fecha_fin' => 'required|valid_date[d/m/Y]',
                 'lugar' => 'required|min_length[3]|max_length[255]',
             ];
     
@@ -71,11 +71,11 @@ class FestivalController extends BaseController
                 ],
                 'fecha_inicio' => [
                     'required' => 'La fecha de inicio es obligatoria.',
-                    'valid_date' => 'La fecha de inicio debe ser válida (formato: YYYY-MM-DD).'
+                    'valid_date' => 'La fecha de inicio debe ser válida (formato: DD/MM/YYYY).'
                 ],
                 'fecha_fin' => [
                     'required' => 'La fecha de fin es obligatoria.',
-                    'valid_date' => 'La fecha de fin debe ser válida (formato: YYYY-MM-DD).'
+                    'valid_date' => 'La fecha de fin debe ser válida (formato: DD/MM/YYYY).'
                 ],
                 'lugar' => [
                     'required' => 'El lugar es obligatorio.',

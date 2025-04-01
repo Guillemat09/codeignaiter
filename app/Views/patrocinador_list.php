@@ -1457,7 +1457,7 @@ License: For each use you must have a valid license purchased only from above li
 </div>
 <div class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1 d-flex justify-content-end">
 <?php if (session()->has('user')): ?>
-<a href="logout" class="btn btn-danger">Cerrar Sesion</a>
+<a href="logout" class="btn btn-danger">Cerrar Sesión</a>
     <?php else: ?>
 <a href="login" class="btn btn-primary me-2">Inicio sesion</a>
 <a href="register" class="btn btn-secondary">Registro</a>
@@ -1783,7 +1783,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('patrocinadores?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Fecha creación
+                                            Fecha 
                                             <?php if ($sort == 'fecha_creacion'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1819,15 +1819,14 @@ License: For each use you must have a valid license purchased only from above li
 													<td class="d-flex align-items-center">
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-															<a href="../../demo1/dist/apps/patrocinador-management/patrocinadores/view.html">
+
 																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($patrocinador['nombre']) ?></div>
 															</a>
 														</div>
 														<!--end::Avatar-->
 														<!--begin::patrocinador details-->
 														<div class="d-flex flex-column">
-															<a href="../../demo1/dist/apps/patrocinador-management/patrocinadores/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($patrocinador['nombre']) ?></a>
-															<span><?= esc($patrocinador['id']) ?></span>
+															<a href="" class="text-gray-800 text-hover-primary mb-1"><?= esc($patrocinador['nombre']) ?></a>
 														</div>
 														<!--begin::patrocinador details-->
 													</td>
@@ -1908,18 +1907,19 @@ License: For each use you must have a valid license purchased only from above li
     </div>
 
     <!-- Selector de cantidad de registros por página -->
-    <div>
-        <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
-            <label for="perPage" class="form-label me-2">Mostrar</label>
-            <select id="perPage" name="perPage" class="form-select form-select-sm" onchange="this.form.submit()">
-                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
-                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
-                <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
-                <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
-            </select>
-            <span class="ms-2">patrocinadores por página</span>
-        </form>
-    </div>
+	<div class="d-flex justify-content-end mb-3">
+    <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
+        <label for="perPage" class="me-2">Mostrar</label>
+        <select id="perPage" name="perPage" class="form-control form-control-sm w-auto" onchange="this.form.submit()">
+            <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
+            <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
+            <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
+            <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
+        </select>
+        <span class="ms-2">patrocinadores por página</span>
+    </form>
+</div>
+
 </div>
 										<!--end::Table-->
 									</div>
