@@ -1860,7 +1860,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('users?sort=created_at&direction=' . ($sort == 'created_at' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Fecha creación
+                                            Fecha 
                                             <?php if ($sort == 'created_at'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

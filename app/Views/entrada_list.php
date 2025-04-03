@@ -1776,7 +1776,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('entradas?sort=fecha_compra&direction=' . ($sort == 'fecha_compra' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Fecha de Compra
+                                            Fecha 
                                             <?php if ($sort == 'fecha_compra'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">

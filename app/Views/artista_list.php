@@ -1543,7 +1543,7 @@ License: For each use you must have a valid license purchased only from above li
 											<!--end::Input group-->
 											<!--begin::Input group-->
 											<div class="mb-10">
-												<label class="form-label fs-6 fw-bold">Fecha de creacion:</label>
+												<label class="form-label fs-6 fw-bold">Fecha:</label>
 
 												<input type="date" name="fecha_creacion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creacion" value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
 
@@ -1741,7 +1741,7 @@ License: For each use you must have a valid license purchased only from above li
 										'id' => 'Artista-id',
 										'descripcion' => 'Descripción',
 										'genero' => 'Género',
-										'fecha_creacion' => 'Fecha creación'
+										'fecha_creacion' => 'Fecha '
 									];
 									foreach ($columns as $col => $title):
 										$new_order = ($sort == $col && $order == 'asc') ? 'desc' : 'asc';

@@ -1835,7 +1835,7 @@ License: For each use you must have a valid license purchased only from above li
                                     </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=fecha_creacion&direction=' . ($sort == 'fecha_creacion' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            fecha creación
+                                            Fecha 
                                             <?php if ($sort == 'fecha_creacion'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
