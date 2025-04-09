@@ -1734,6 +1734,9 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Card header-->
 									<!--begin::Card body-->
 									<div class="card-body pt-0">
+									<?php if (empty($patrocinadores)): ?>
+							<div class="text-center text-danger fs-4">No se encontraron patrocinadores</div>
+							<?php else:?>
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_patrocinadores">
 											<!--begin::Table head-->
@@ -1836,7 +1839,7 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Role=-->
 													<!--begin::Last login=-->
 													<td>
-														<div class="badge badge-light fw-bolder"><?= esc($patrocinador['contacto']) ?></div>
+														<div><?= esc($patrocinador['contacto']) ?></div>
 													</td>
 													<td><?= (new DateTime ($patrocinador['fecha_creacion']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
@@ -1900,6 +1903,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <?= $pager->links() ?>
                             </ul>
                         </nav>
+						<?php endif; ?>
 						<div class="d-flex justify-content-between align-items-center mb-3">
     <!-- Mostrar cantidad de registros -->
     <div>

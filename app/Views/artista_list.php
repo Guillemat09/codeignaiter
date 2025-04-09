@@ -1781,7 +1781,7 @@ License: For each use you must have a valid license purchased only from above li
 										<td class="d-flex align-items-center">
 											<!--begin:: Avatar -->
 											<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-													<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($artista['nombre']) ?></div>
+											<img alt src="../assets/media/avatars/150-<?= rand(24,25);?>.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"/>
 												</a>
 											</div>
 											<!--end::Avatar-->
@@ -1798,7 +1798,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--end::Role=-->
 										<!--begin::Last login=-->
 										<td>
-											<div class="badge badge-light fw-bolder"><?= esc($artista['genero']) ?></div>
+											<div><?= esc($artista['genero']) ?></div>
 										</td>
 										<td><?= (new DateTime ($artista['fecha_creacion']))-> format('d/m/Y') ?></td>
 										<!--begin::Joined-->

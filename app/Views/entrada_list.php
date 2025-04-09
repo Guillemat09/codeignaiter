@@ -1727,6 +1727,9 @@ License: For each use you must have a valid license purchased only from above li
 									<!--end::Card header-->
 									<!--begin::Card body-->
 									<div class="card-body pt-0">
+									<?php if (empty($entradas)): ?>
+							<div class="text-center text-danger fs-4">No se encontraron entradas</div>
+							<?php else:?>
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
 											<!--begin::Table head-->
@@ -1812,7 +1815,7 @@ License: For each use you must have a valid license purchased only from above li
 													<td class="d-flex align-items-center">
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($entrada['id']) ?></div>
+														<img alt src="../assets/media/avatars/150-<?= rand(24,25);?>.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"/>
 															</a>
 														</div>
 														<!--end::Avatar-->
@@ -1827,10 +1830,10 @@ License: For each use you must have a valid license purchased only from above li
 													<!--end::Role=-->
 													<!--begin::Last login=-->
                                                     <td>
-														<div class="badge badge-light fw-bolder"><?= esc($entrada['tipo_entrada']) ?></div>
+														<div><?= esc($entrada['tipo_entrada']) ?></div>
 													</td>
                                                     <td> 
-														<div class="badge badge-light fw-bolder"><?= esc($entrada['precio']) ?></div>
+														<div><?= esc($entrada['precio']) ?></div>
 													</td>
 													<td><?= (new DateTime ($entrada['fecha_compra']))-> format('d/m/Y') ?></td>
 													<!--begin::Joined-->
@@ -1892,6 +1895,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <?= $pager->links("default", "custom_pagination") ?>
                             </ul>
                         </nav>
+						<?php endif; ?>
 						<div class="d-flex justify-content-between align-items-center mb-3">
     <!-- Mostrar cantidad de registros -->
     <div>
