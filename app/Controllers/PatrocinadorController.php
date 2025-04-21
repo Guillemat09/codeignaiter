@@ -150,7 +150,7 @@ class PatrocinadorController extends BaseController
         if ($patrocinador) {
             // Cambiar el estado actual
             $newStatus = $patrocinador['is_active'] ? 0 : 1;
-            $message = $newStatus ? 'patrocinador dado de alta correctamente.' : 'patrocinador dado de baja correctamente.';
+            $message = $newStatus ? 'Patrocinador dado de alta correctamente.' : 'Patrocinador dado de baja correctamente.';
 
             // Actualizar en la base de datos
             $patrocinadorModel->update($id, ['is_active' => $newStatus]);

@@ -65,7 +65,7 @@ $routes->group('entradas', function($routes) {
     $routes->post('save', 'EntradaController::saveEntrada');
     $routes->get('delete/(:segment)', 'EntradaController::delete/$1');
     $routes->get('entradas/deactivate/(:num)', 'EntradaController::deactivate/$12');
-$routes->get('entradas/toggleActive/(:num)', 'EntradaController::toggleActive/$12');
+    $routes->get('entradas/toggleActive/(:num)', 'EntradaController::toggleActive/$1');
 });
 
 $routes->get('fetch-events', 'EventController::fetchEvents');

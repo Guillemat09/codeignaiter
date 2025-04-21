@@ -1485,6 +1485,11 @@ License: For each use you must have a valid license purchased only from above li
 								<div class="card">
 									<!--begin::Card header-->
 									<div class="card-header border-0 pt-6">
+									<?php if (session()->getFlashdata('success')): ?>
+											<div class="alert alert-success">
+												<?= session()->getFlashdata('success') ?>
+											</div>
+										<?php endif; ?>
 										<!--begin::Card title-->
 										<div class="card-title">
 											<!--begin::Search-->

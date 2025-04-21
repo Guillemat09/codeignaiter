@@ -157,7 +157,7 @@ class EntradaController extends BaseController
         if ($entrada) {
             // Cambiar el estado actual
             $newStatus = $entrada['is_active'] ? 0 : 1;
-            $message = $newStatus ? 'entrada dado de alta correctamente.' : 'entrada dado de baja correctamente.';
+            $message = $newStatus ? 'Entrada dado de alta correctamente.' : 'Entrada dado de baja correctamente.';
 
             // Actualizar en la base de datos
             $entradaModel->update($id, ['is_active' => $newStatus]);
