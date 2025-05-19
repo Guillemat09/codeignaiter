@@ -220,6 +220,7 @@ License: For each use you must have a valid license purchased only from above li
 
                 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
     <!--begin::Container-->
+    <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="margin-top: -200px;">
     <div class="container-xxl" id="kt_content_container">
         <!--begin::Card-->
         <div class="card card-flush">

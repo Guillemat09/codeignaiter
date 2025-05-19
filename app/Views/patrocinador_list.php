@@ -1479,7 +1479,7 @@ License: For each use you must have a valid license purchased only from above li
 							
                             
                             
-
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="margin-top: -200px;">
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Card-->
 								<div class="card">
@@ -1595,7 +1595,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Export-->
 												<!--begin::Add patrocinador-->
 												<?php if (session()->get('role')['nombre'] == "admin"): ?>
-												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_patrocinador">
+												<a href="<?= base_url('patrocinadores/save') ?>" class="btn btn-primary" >
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
 												<span class="svg-icon svg-icon-2">
 													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1603,7 +1603,7 @@ License: For each use you must have a valid license purchased only from above li
 														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
 													</svg>
 												</span>
-												<!--end::Svg Icon-->Añadir Patrocinadores </button>
+												<!--end::Svg Icon-->Añadir Patrocinadores </a>
 												<!--end::Add patrocinador-->
 												<?php endif; ?>
 											</div>
@@ -1649,89 +1649,7 @@ License: For each use you must have a valid license purchased only from above li
 							</div>
 											<!--end::Modal - New Card-->
 											<!--begin::Modal - Add task-->
-											<div class="modal fade" id="kt_modal_add_patrocinador" tabindex="-1" aria-hidden="true">
-												<!--begin::Modal dialog-->
-												<div class="modal-dialog modal-dialog-centered mw-650px">
-													<!--begin::Modal content-->
-													<div class="modal-content">
-														<!--begin::Modal header-->
-														<div class="modal-header" id="kt_modal_add_patrocinador_header">
-															<!--begin::Modal title-->
-															<h2 class="fw-bolder">Añadir Patrocinador</h2>
-															<!--end::Modal title-->
-															<!--begin::Close-->
-															<div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-patrocinadores-modal-action="close">
-																<!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-																<span class="svg-icon svg-icon-1">
-																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-																	</svg>
-																</span>
-																<!--end::Svg Icon-->
-															</div>
-															<!--end::Close-->
-														</div>
-														<!--end::Modal header-->
-														<!--begin::Modal body-->
-														<div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-															<!--begin::Form-->
-															<form action="<?= isset($patrocinador) ? base_url('patrocinadores/save/') . $patrocinador['id'] : base_url('patrocinadores/save') ?>" method="post">
-																<!--begin::Scroll-->
-																<div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_patrocinador_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_patrocinador_header" data-kt-scroll-wrappers="#kt_modal_add_patrocinador_scroll" data-kt-scroll-offset="300px">
-																	<!--begin::Input group-->
-																	<!--end::Input group-->
-																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Nombre</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="text" name="nombre" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="nombre del patrocinador" value="" />
-																		<!--end::Input-->
-																	</div>
-																	<!--end::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Descripcion</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="text" name="descripcion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="descripcion" value="" />
-																		<!--end::Input-->
-																	</div>
-																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Contacto</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="text" name="contacto" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="contacto" value="" />
-																		<!--end::Input-->
-																	</div>
-																	<!--end::Input group-->
-																	<!--begin::Input group-->
-																	<!--end::Input group-->
-																</div>
-																<!--end::Scroll-->
-																<!--begin::Actions-->
-																<div class="text-center pt-15">
-																	<button type="reset" class="btn btn-light me-3" data-kt-patrocinadores-modal-action="cancel">Cancelar</button>
-																	<button type="submit" class="btn btn-primary" data-kt-patrocinadores-modal-action="submit">
-																		<span class="indicator-label">Guardar</span>
-																		<span class="indicator-progress">Please wait...
-																		<span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-																	</button>
-																</div>
-																<!--end::Actions-->
-															</form>
-															<!--end::Form-->
-														</div>
-														<!--end::Modal body-->
-													</div>
-													<!--end::Modal content-->
-												</div>
-												<!--end::Modal dialog-->
-											</div>
+									
 											<!--end::Modal - Add task-->
 										</div>
 										<!--end::Card toolbar-->

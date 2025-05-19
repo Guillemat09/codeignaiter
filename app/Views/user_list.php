@@ -1540,7 +1540,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Header-->
 					<!--begin::Content-->
-
+                      <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="margin-top: -200px;">
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Card-->
 								<div class="card">
