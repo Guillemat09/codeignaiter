@@ -1622,9 +1622,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha de creación:</label>
+															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creación" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
+															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1935,9 +1935,6 @@ License: For each use you must have a valid license purchased only from above li
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?=base_url('users/delete/') . esc($user['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
-															</div>
 															<div class="menu-item px-3">
 													<a href="<?= base_url('users/deactivate/' . esc($user['id'])) ?>"
 														class="menu-link px-3"

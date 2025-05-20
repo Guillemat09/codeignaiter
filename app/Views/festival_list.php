@@ -1547,27 +1547,27 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Nombre:</label>
 														
-															<input type="text" name="nombre" class="form-control" placeholder="Filtrar por nombre" value="<?= isset($filters['nombre']) ? esc($filters['nombre']) : '' ?>">
+															<input type="text" name="nombre" class="form-control" placeholder="nombre" value="<?= isset($filters['nombre']) ? esc($filters['nombre']) : '' ?>">
 
 														</div>
 														<!--end::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Descripcion:</label>
+															<label class="form-label fs-6 fw-bold">Descripción:</label>
 														
-															<input type="text" name="descripcion" class="form-control" placeholder="Filtrar por descripción" value="<?= isset($filters['descripcion']) ? esc($filters['descripcion']) : '' ?>">
+															<input type="text" name="descripcion" class="form-control" placeholder=" descripción" value="<?= isset($filters['descripcion']) ? esc($filters['descripcion']) : '' ?>">
 
 														</div>
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Lugar:</label>
 														
-															<input type="text" name="lugar" class="form-control" placeholder="Filtrar por lugar" value="<?= isset($filters['lugar']) ? esc($filters['lugar']) : '' ?>">
+															<input type="text" name="lugar" class="form-control" placeholder="lugar" value="<?= isset($filters['lugar']) ? esc($filters['lugar']) : '' ?>">
 
 														</div>
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha de creación:</label>
+															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="text" name="fecha_compra" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creación" value="<?= isset($filters['fecha_compra']) ? esc($filters['fecha_compra']) : '' ?>" />
+															<input type="text" name="fecha_compra" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['fecha_compra']) ? esc($filters['fecha_compra']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1676,7 +1676,7 @@ License: For each use you must have a valid license purchased only from above li
 													</th>
 													<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Nombre-Id
+                                            Nombre
                                             <?php if ($sort == 'nombre'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1821,9 +1821,6 @@ License: For each use you must have a valid license purchased only from above li
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
 															<div class="menu-item px-3">
-																<a href="<?= base_url('festivales/delete/' . $festival['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
-															</div>
-															<div class="menu-item px-3">
 													<a href="<?= base_url('festivales/deactivate/' . esc($festival['id'])) ?>"
 														class="menu-link px-3"
 														data-kt-festivales-table-filter="deactivate_row">
@@ -1896,7 +1893,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="footer bg-white text-center py-2 w-100" style="height: 60px; font-size: 14px;">
+<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 80px; font-size: 14px; z-index: 100;">
     <p class="m-0">Guillermo Mateos Galea</p>
 </div>
 

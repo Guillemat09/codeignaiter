@@ -1454,7 +1454,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Tipo entrada:</label>
+															<label class="form-label fs-6 fw-bold">Nombre:</label>
 														
 															<input type="text" name="nombre" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="nombre" value="<?= isset($filters['nombre']) ? esc($filters['nombre']) : '' ?>" />
 
@@ -1574,14 +1574,6 @@ License: For each use you must have a valid license purchased only from above li
 																	<!--begin::Input group-->
 																	<!--end::Input group-->
 																	<!--begin::Input group-->
-																	<div class="fv-row mb-7">
-																		<!--begin::Label-->
-																		<label class="required fw-bold fs-6 mb-2">Id</label>
-																		<!--end::Label-->
-																		<!--begin::Input-->
-																		<input type="text" name="id" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="id del rol" value="" />
-																		<!--end::Input-->
-																	</div>
 																	<!--end::Input group-->
 																	<div class="fv-row mb-7">
 																		<!--begin::Label-->
@@ -1634,18 +1626,6 @@ License: For each use you must have a valid license purchased only from above li
 															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
 														</div>
 													</th>
-													<th class="min-w-125px">
-                                        <a href="<?= base_url('roles?sort=id&order=' . ($sort == 'id' && $order == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                             ID
-                                            <?php if ($sort == 'id'): ?>
-                                                <span class="svg-icon svg-icon-5 m-0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <path d="<?= $order == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
-                                                    </svg>
-                                                </span>
-                                            <?php endif; ?>
-                                        </a>
-                                    </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('roles?sort=nombre&order=' . ($sort == 'nombre' && $order == 'ASC' ? 'DESC' : 'ASC')) ?>">
                                             Nombre
@@ -1679,21 +1659,6 @@ License: For each use you must have a valid license purchased only from above li
 													</td>
 													<!--end::Checkbox-->
 													<!--begin::User=-->
-													<td class="d-flex align-items-center">
-														<!--begin:: Avatar -->
-														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-															<a href="../../demo1/dist/apps/user-management/users/view.html">
-																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($rol['id']) ?></div>
-															</a>
-														</div>
-														<!--end::Avatar-->
-														<!--begin::User details-->
-														<div class="d-flex flex-column">
-															<a href="../../demo1/dist/apps/user-management/users/view.html" class="text-gray-800 text-hover-primary mb-1"><?= esc($rol['id']) ?></a>
-								
-														</div>
-														<!--begin::User details-->
-													</td>
 													<!--end::User=-->
 													<!--begin::Role=-->
 													<!--end::Role=-->
@@ -1735,6 +1700,7 @@ License: For each use you must have a valid license purchased only from above li
 												<!--end::Table row-->
 											</tbody>
 											<!--end::Table body-->
+											
 										</table>
 										<nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
@@ -1748,13 +1714,6 @@ License: For each use you must have a valid license purchased only from above li
 								<!--end::Card-->
 							</div>
 
-
-
-
-
-
-
-
 								<!--end::Row-->
 							
 							<!--end::Container-->
@@ -1763,6 +1722,9 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
+					<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 80px; font-size: 14px; z-index: 100;">
+    <p class="m-0">Guillermo Mateos Galea</p>
+</div>
 
 					<!--end::Footer-->
 				</div>

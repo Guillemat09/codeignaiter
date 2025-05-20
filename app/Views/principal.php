@@ -203,7 +203,7 @@ License: For each use you must have a valid license purchased only from above li
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-    <a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
+    <a href="" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
         <span class="btn-label">
             <?php if (session()->has('user')): ?>
                 <div class="media align-items-center">
@@ -1608,12 +1608,89 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="fw-bolder mb-2 text-dark">Actividades</span>
 													</h3>
 												</div>
-												<!--end::Header-->
-												<!--begin::Body-->
-												<!--end: Card Body-->
-											</div>
-											<!--end: List Widget 5-->
+											<div class="card-body pt-5">
+  <!--begin::Timeline-->
+  <div class="timeline-label">
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">08:42</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-warning fs-1"></i>
+      </div>
+      <div class="fw-mormal timeline-content text-muted ps-3">Revisión de logística y montaje de escenarios</div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">10:00</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-success fs-1"></i>
+      </div>
+      <div class="timeline-content d-flex">
+        <span class="fw-bolder text-gray-800 ps-3">Reunión con proveedores de alimentos</span>
+      </div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">14:37</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-danger fs-1"></i>
+      </div>
+      <div class="timeline-content fw-bolder text-gray-800 ps-3">
+        Depósito realizado de
+        <a href="#" class="text-primary">USD 700</a> para sonido e iluminación
+      </div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">16:50</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-primary fs-1"></i>
+      </div>
+      <div class="timeline-content fw-mormal text-muted ps-3">Supervisión del ensayo general de artistas</div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">18:30</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-success fs-1"></i>
+      </div>
+      <div class="timeline-content fw-bold text-gray-800 ps-3">
+        Confirmación de entrega de material promocional
+      </div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">20:00</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-primary fs-1"></i>
+      </div>
+      <div class="timeline-content fw-mormal text-muted ps-3">Reunión final con seguridad y voluntarios</div>
+    </div>
+
+    <!--begin::Item-->
+    <div class="timeline-item">
+      <div class="timeline-label fw-bolder text-gray-800 fs-6">21:30</div>
+      <div class="timeline-badge">
+        <i class="fa fa-genderless text-danger fs-1"></i>
+      </div>
+      <div class="timeline-content fw-bold text-gray-800 ps-3">
+        Inicio del evento inaugural
+        <a href="#" class="text-primary">#Ceremonia2025</a>
+      </div>
+    </div>
+  </div>
+  <!--end::Timeline-->
+</div>
+
+											<!--end: Card Body-->
 										</div>
+										<!--end: List Widget 5-->
+									</div>
 										<!--end::Col-->
 										<!--begin::Col-->
 										<div class="col-xxl-4">
@@ -1669,9 +1746,10 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="footer bg-white text-center py-2 w-100" style="height: 80px; font-size: 14px;">
+<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 80px; font-size: 14px; z-index: 100;">
     <p class="m-0">Guillermo Mateos Galea</p>
 </div>
+
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->
@@ -4845,7 +4923,7 @@ License: For each use you must have a valid license purchased only from above li
         var options = {
             chart: {
                 type: 'bar',
-                height: 300 // Ajusta la altura según sea necesario
+                height: 220 // Ajusta la altura según sea necesario
             },
             series: [{
                 name: 'Sales',
@@ -4863,10 +4941,10 @@ License: For each use you must have a valid license purchased only from above li
         var options = {
             chart: {
                 type: 'donut',
-                height: 300 // Ajusta la altura según sea necesario
+                height: 400 // Ajusta la altura según sea necesario
             },
             series: [44, 55, 41, 17, 15], // Datos de ejemplo
-            labels: ['Equipo A', 'Equipo B', 'Equipo C', 'Equipo D', 'Equipo E'], // Etiquetas de ejemplo
+            labels: ['Artistas', 'Festivales', 'Entradas', 'Usuarios', 'Patrocinadores'], // Etiquetas de ejemplo
             responsive: [{
                 breakpoint: 480,
                 options: {

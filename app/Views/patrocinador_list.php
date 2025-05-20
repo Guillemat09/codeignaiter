@@ -209,11 +209,11 @@ License: For each use you must have a valid license purchased only from above li
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-					<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
+					<a href="" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
         <span class="btn-label">
             <?php if (session()->has('user')): ?>
                 <div class="media align-items-center">
-                    <img alt="" src="../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
+                    <img alt="" src="../assets/media/avatars/150-24.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
                     <div class="media-body text-light fw-bold">
                         <?= session()->get('user')['name'] ?><br>
                         <?= session()->get('role')['nombre'] ?>
@@ -1537,7 +1537,7 @@ License: For each use you must have a valid license purchased only from above li
 													<form method="get" action="<?= base_url('patrocinadores') ?>">
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Nombre Patrocinador:</label>
+															<label class="form-label fs-6 fw-bold"> Patrocinador:</label>
 														
 															<input type="text" name="nombre" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="patrocinador" value="<?= isset($filters['nombre']) ? esc($filters['nombre']) : '' ?>" />
 
@@ -1545,9 +1545,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Descripcion:</label>
+															<label class="form-label fs-6 fw-bold">Descripción:</label>
 														
-															<input type="text" name="descripcion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="descripcion" value="<?= isset($filters['descripcion']) ? esc($filters['descripcion']) : '' ?>" />
+															<input type="text" name="descripcion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="descripción" value="<?= isset($filters['descripcion']) ? esc($filters['descripcion']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1561,9 +1561,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Input group-->
 														<!--begin::Input group-->
 														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha de creación:</label>
+															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha creación" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
+															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1673,7 +1673,7 @@ License: For each use you must have a valid license purchased only from above li
 													</th>
 													<th class="min-w-125px">
                                         <a href="<?= base_url('patrocinadores?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                            Patrocinador-id
+                                            Patrocinador
                                             <?php if ($sort == 'nombre'): ?>
                                                 <span class="svg-icon svg-icon-5 m-0">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -1746,7 +1746,9 @@ License: For each use you must have a valid license purchased only from above li
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
 
-																<div class="symbol-label fs-7 bg-light-danger text-danger"><?= esc($patrocinador['nombre']) ?></div>
+																<div class="symbol-label fs-7 bg-light-danger text-success">
+																	 <img alt="" src="../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
+																</div>
 															</a>
 														</div>
 														<!--end::Avatar-->
@@ -1786,9 +1788,6 @@ License: For each use you must have a valid license purchased only from above li
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?= base_url('patrocinadores/delete/' . $patrocinador['id']) ?>" class="menu-link px-3" data-kt-patrocinadores-table-filter="delete_row">Eliminar</a>
-															</div>
 															<div class="menu-item px-3">
 													<a href="<?= base_url('patrocinadores/deactivate/' . esc($patrocinador['id'])) ?>"
 														class="menu-link px-3"
@@ -1870,9 +1869,9 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-					<div class="d-flex flex-center flex-column-auto p-10">
-<p>Guillermo Mateos Galea</p>
-				</div>
+<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 80px; font-size: 14px; z-index: 100;">
+    <p class="m-0">Guillermo Mateos Galea</p>
+</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Wrapper-->

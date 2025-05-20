@@ -175,7 +175,7 @@ License: For each use you must have a valid license purchased only from above li
 													<span class="menu-bullet">
 														<span class="bullet bullet-dot"></span>
 													</span>
-													<span class="menu-title">Roles List</span>
+													<span class="menu-title">Roles Lista</span>
 												</a>
 											</div>
 											<?php endif; ?>
@@ -211,7 +211,7 @@ License: For each use you must have a valid license purchased only from above li
 			<!--end::Aside menu-->
 			<!--begin::Footer-->
 			<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-			<a href="../../demo1/dist/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
+			<a href="" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
         <span class="btn-label">
             <?php if (session()->has('user')): ?>
                 <div class="media align-items-center">
@@ -1660,7 +1660,7 @@ License: For each use you must have a valid license purchased only from above li
 									</th>
 									<?php
 									$columns = [
-										'id' => 'Artista-id',
+										'id' => 'Artista',
 										'descripcion' => 'Descripción',
 										'genero' => 'Género',
 										'fecha_creacion' => 'Fecha '
@@ -1744,9 +1744,6 @@ License: For each use you must have a valid license purchased only from above li
 												</div>
 												<!--end::Menu item-->
 												<!--begin::Menu item-->
-												<div class="menu-item px-3">
-													<a href="<?= base_url('artistas/delete/' . esc($artista['id'])) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
-												</div>
 
 												<div class="menu-item px-3">
 													<a href="<?= base_url('artistas/deactivate/' . esc($artista['id'])) ?>"

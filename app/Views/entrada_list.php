@@ -1665,17 +1665,6 @@ License: For each use you must have a valid license purchased only from above li
 														</div>
 													</th>
 													<th class="min-w-125px">
-                                        <a href="<?= base_url('entradas?sort=id&direction=' . ($sort == 'id' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
-                                             ID
-                                            <?php if ($sort == 'id'): ?>
-                                                <span class="svg-icon svg-icon-5 m-0">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <path d="<?= $direction == 'ASC' ? 'M12 2L7 12h10L12 2z' : 'M12 22l5-10H7l5 10z' ?>" fill="black" />
-                                                    </svg>
-                                                </span>
-                                            <?php endif; ?>
-                                        </a>
-                                    </th>
 									<th class="min-w-125px">
                                         <a href="<?= base_url('entradas?sort=tipo_entrada&direction=' . ($sort == 'tipo_entrada' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
                                             Tipo de Entrada
@@ -1778,9 +1767,6 @@ License: For each use you must have a valid license purchased only from above li
 															</div>
 															<!--end::Menu item-->
 															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?= base_url('entradas/delete/' . $entrada['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
-															</div>
 
 															<div class="menu-item px-3">
     <a href="<?= base_url('entradas/deactivate/' . esc($entrada['id'])) ?>" 
