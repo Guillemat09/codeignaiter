@@ -54,8 +54,9 @@ $routes->get('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); /
 $routes->post('festivales/save', 'FestivalController::saveFestival'); // Crear usuario en la base de datos (POST)
 $routes->post('festivales/save/(:num)', 'FestivalController::saveFestival/$1'); // Editar usuario en la base de datos (POST)
 $routes->get('festivales/delete/(:num)', 'FestivalController::delete/$1'); // Eliminar patrocinadores
-$routes->get('festivales/deactivate/(:num)', 'FestivalController::deactivate/$3');
-$routes->get('festivales/toggleActive/(:num)', 'FestivalController::toggleActive/$3');
+$routes->get('festivales/deactivate/(:num)', 'FestivalController::deactivate/$1');
+$routes->get('festivales/toggleActive/(:num)', 'FestivalController::toggleActive/$1');
+
 
 $routes->group('entradas', function($routes) {
     $routes->get('/', 'EntradaController::index');
@@ -64,9 +65,12 @@ $routes->group('entradas', function($routes) {
     $routes->post('save/(:segment)', 'EntradaController::saveEntrada/$1');
     $routes->post('save', 'EntradaController::saveEntrada');
     $routes->get('delete/(:segment)', 'EntradaController::delete/$1');
-    $routes->get('entradas/deactivate/(:num)', 'EntradaController::deactivate/$12');
-    $routes->get('entradas/toggleActive/(:num)', 'EntradaController::toggleActive/$1');
+    
+    // CORREGIDO:
+    $routes->get('deactivate/(:num)', 'EntradaController::deactivate/$1');
+    $routes->get('toggleActive/(:num)', 'EntradaController::toggleActive/$1');
 });
+
 
 $routes->get('fetch-events', 'EventController::fetchEvents');
 $routes->post('add-event', 'EventController::addEvent');

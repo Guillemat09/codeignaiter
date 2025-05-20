@@ -152,7 +152,7 @@ class FestivalController extends BaseController
         if ($festival) {
             // Cambiar el estado actual
             $newStatus = $festival['is_active'] ? 0 : 1;
-            $message = $newStatus ? 'festival dado de alta correctamente.' : 'festival dado de baja correctamente.';
+            $message = $newStatus ? 'Festival dado de alta correctamente.' : 'Festival dado de baja correctamente.';
 
             // Actualizar en la base de datos
             $festivalModel->update($id, ['is_active' => $newStatus]);

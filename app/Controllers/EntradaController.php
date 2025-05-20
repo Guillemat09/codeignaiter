@@ -6,52 +6,52 @@ use App\Models\EntradaModel;
 
 class EntradaController extends BaseController
 {
-    public function index()
-    {
-        $entradaModel = new EntradaModel();
-        
-        // Captura y validación de parámetros
-        $filters = [
-            'usuario_id' => $this->request->getGet('usuario_id'),
-            'festival_id' => $this->request->getGet('festival_id'),
-            'fecha_compra' => $this->request->getGet('fecha_compra'),
-        ];
-        
-        // Capturar los parámetros de ordenación y dirección
-        $sort = $this->request->getGet('sort') ?? 'fecha_compra'; 
-        $direction = $this->request->getGet('direction') ?? 'asc';  // Agregar dirección de ordenación
-        
-        // Aplicar filtros si existen
-        foreach ($filters as $campo => $valor) {
-            if (!empty($valor)) {
-                $entradaModel->like("entradas.$campo", $valor);
-            }
+   public function index()
+{
+    $entradaModel = new EntradaModel();
+
+    // Obtener filtros desde GET
+    $filters = [
+        'tipo_entrada' => $this->request->getGet('tipo_entrada'),
+        'precio' => $this->request->getGet('precio'),
+        'fecha_compra' => $this->request->getGet('fecha_compra'),
+    ];
+
+    // Aplicar filtros
+    foreach ($filters as $campo => $valor) {
+        if (!empty($valor)) {
+            $entradaModel->like($campo, $valor);
         }
-        
-        // Contar el total de registros (sin paginación)
-        $totalRegistros = $entradaModel->countAllResults(false);
-        
-        // Aplicar ordenación
-        $entradaModel->orderBy($sort, $direction);  // Aplicar el orden por el campo y la dirección
-        
-        // Obtener la cantidad de registros por página (con un valor predeterminado)
-        $perPage = $this->request->getGet('perPage') ?? 10; // 10 registros por defecto
-        $page = $this->request->getVar('page') ?? 1;
-        
-        // Obtener datos paginados con filtros y ordenación
-        $data = [
-            'entradas' => $entradaModel->paginate($perPage),
-            'pager' => $entradaModel->pager,
-            'filters' => $filters, // Pasar los filtros a la vista
-            'sort' => $sort,
-            'direction' => $direction, // Pasar la dirección a la vista
-            'perPage' => $perPage,
-            'page' => $page,
-            'totalRegistros' => $totalRegistros, // Número total de registros
-        ];
-        
-        return view('entrada_list', $data);  // Pasar los datos a la vista
     }
+
+    // Ordenación por defecto
+    $sort = $this->request->getGet('sort') ?? 'fecha_compra';
+    $direction = $this->request->getGet('direction') ?? 'asc';
+
+    $entradaModel->orderBy($sort, $direction);
+
+    // Cantidad por página
+    $perPage = $this->request->getGet('perPage') ?? 10;
+
+    // Obtener datos paginados
+    $entradas = $entradaModel->paginate($perPage);
+    $pager = $entradaModel->pager;
+
+    // Total registros con filtros
+    $totalRegistros = $entradaModel->pager->getTotal();
+
+    // Pasar variables a la vista
+    return view('entrada_list', [
+        'entradas' => $entradas,
+        'pager' => $pager,
+        'filters' => $filters,
+        'sort' => $sort,
+        'direction' => $direction,
+        'perPage' => $perPage,
+        'totalRegistros' => $totalRegistros,
+    ]);
+}
+
     
 
     public function saveEntrada($id = null)
@@ -143,7 +143,7 @@ class EntradaController extends BaseController
 
         if ($entrada) {
             $entradaModel->update($id, ['is_active' => 0]); // Marcar entrada como inactivo
-            return redirect()->to('/entradas')->with('success', 'entrada dado de baja correctamente.');
+            return redirect()->to('/entradas')->with('success', 'Entrada dado de baja correctamente.');
         } else {
             return redirect()->to('/entradas')->with('error', 'El entrada no existe.');
         }

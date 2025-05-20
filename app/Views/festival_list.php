@@ -1661,7 +1661,7 @@ License: For each use you must have a valid license purchased only from above li
 									<!--begin::Card body-->
 									<div class="card-body pt-0">
 									<?php if (empty($festivales)): ?>
-							<div class="text-center text-danger fs-4">No se encontraron patrocinadores</div>
+							<div class="text-center text-danger fs-4">No se encontraron Festivales</div>
 							<?php else:?>
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">

@@ -111,9 +111,9 @@ License: For each use you must have a valid license purchased only from above li
 														</span>
 														<span class="menu-title">Usuario</span>
 													</a>
+													<?php endif; ?>
 												</div>
-												<?php endif; ?>
-												<div class="menu-item"> ?> 
+												<div class="menu-item"> 
 													<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>

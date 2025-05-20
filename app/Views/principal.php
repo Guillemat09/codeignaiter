@@ -1629,7 +1629,7 @@ License: For each use you must have a valid license purchased only from above li
 															</div>
 														</div> 
 														<div class="md-5">
-														<div id="chart" style="height: 300px;"></div>
+														<div id="chart" style="height: 200px;"></div>
 														</div>
 													</div>
 													<!--end::Stats-->

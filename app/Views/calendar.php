@@ -244,6 +244,80 @@ License: For each use you must have a valid license purchased only from above li
     </div>
     <!--end::Container-->
 </div>
+						<div id="kt_header" class="header align-items-stretch">
+<!--begin::Container-->
+<div class="container-fluid d-flex align-items-stretch justify-content-between">
+<!--begin::Wrapper-->
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+<!--begin::Navbar-->
+<div class="d-flex align-items-stretch" id="kt_header_nav">
+<div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+<div class="d-flex align-items-stretch" id="kt_header_nav">
+<div class="header-menu align-items-stretch" data-kt-drawer="true" data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle" data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+<div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch" id="#kt_header_menu" data-kt-menu="true">
+<div class="page-title d-flex flex-column me-3">
+            <h1 class="d-flex text-dark fw-bold my-1 fs-3">
+                <?= 'Calendario' ?>
+            </h1>
+            <!--begin::Breadcrumb-->
+            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-1">
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="<?= base_url('principal') ?>" class="text-muted text-hover-primary">Principal</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">
+                    <a href="" class="text-muted text-hover-primary">Listas</a>
+                </li>
+                <!--end::Item-->
+
+                <li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                </li>
+
+                <!--begin::Item-->
+                <li class="breadcrumb-item text-muted">Usuarios</li>
+
+				<li class="breadcrumb-item">
+                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+				
+                </li>
+				<li class="breadcrumb-item text-dark">Calendario</li>
+                <!--end::Item-->
+            </ul>
+            <!--end::Breadcrumb-->
+        </div>
+        <!--end::Page title-->
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<?php if (session()->has('user')): ?>
+<a href="logout" class="btn btn-danger">Cerrar Sesion</a>
+    <?php else: ?>
+<a href="login" class="btn btn-primary me-2">Iniciar Sesion</a>
+<a href="register" class="btn btn-secondary">Registro</a>
+<?php endif;?>
+</div>
+<!--end::Navbar-->
+</div>
+<!--end::Wrapper-->
+</div>
+<!--end::Container-->
+</div>
+					</div>
+					<!--end::Header-->
+					<!--begin::Content-->
+							<!--end::Container-->
+						</div>
 <!-- Modal para agregar evento -->
 <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">

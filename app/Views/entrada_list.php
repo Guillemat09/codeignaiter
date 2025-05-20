@@ -1782,19 +1782,22 @@ License: For each use you must have a valid license purchased only from above li
 																<a href="<?= base_url('entradas/delete/' . $entrada['id']) ?>" class="menu-link px-3" data-kt-users-table-filter="delete_row">Eliminar</a>
 															</div>
 
-															<a href="<?= base_url('entradas/deactivate/' . esc($entrada['id'])) ?>"
-														class="menu-link px-3"
-														data-kt-entradas-table-filter="deactivate_row">
-														<span class="text-danger"></span>
-														<div class="menu-item px-3">
-													<a href="<?= base_url('entradas/toggleActive/' . esc($entrada['id'])) ?>"
-														class="menu-link px-3"
-														data-kt-entradas-table-filter="toggle_active">
-														<?= $entrada['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
-													</a>
-														</div>
-													</a>
-												</div>
+															<div class="menu-item px-3">
+    <a href="<?= base_url('entradas/deactivate/' . esc($entrada['id'])) ?>" 
+       class="menu-link px-3 text-danger"
+       data-kt-entradas-table-filter="deactivate_row">
+        Dar de baja
+    </a>
+</div>
+
+<div class="menu-item px-3">
+    <a href="<?= base_url('entradas/toggleActive/' . esc($entrada['id'])) ?>" 
+       class="menu-link px-3 <?= $entrada['is_active'] ? 'text-danger' : 'text-success' ?>"
+       data-kt-entradas-table-filter="toggle_active">
+        <?= $entrada['is_active'] ? 'Dar de baja' : 'Dar de alta' ?>
+    </a>
+</div>
+
 															<!--end::Menu item-->
 														</div>
 														<!--end::Menu-->
