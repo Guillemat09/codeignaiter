@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,32 +21,38 @@
                 </div>
             <?php endif; ?>
 
+            <!-- Botón de exportar -->
+            <div class="text-end mb-5">
+                <button type="button" id="export-users-btn" class="btn btn-success">Exportar usuarios a Excel</button>
+            </div>
+
             <!-- Formulario -->
             <form action="<?= isset($user) ? base_url('users/save/') . $user['id'] : base_url('users/save') ?>" method="post">
-    <?= csrf_field(); ?>
-    <div class="mb-5">
-        <label for="name" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
-        <input type="text" name="name" id="name" class="form-control form-control-solid" 
-               value="<?= isset($user) ? esc($user['name']) : '' ?>" placeholder="Introduce tu nombre" required>
-    </div>
-    <div class="mb-5">
-        <label for="email" class="form-label fw-bold">Correo<span style="color: red;">*</span></label>
-        <input type="email" name="email" id="email" class="form-control form-control-solid" 
-               value="<?= isset($user) ? esc($user['email']) : '' ?>" placeholder="Introduce tu correo electrónico" required>
-    </div>
-    <div class="mb-5">
-        <label for="password" class="form-label fw-bold">Contraseña<span style="color: red;">*</span></label>
-        <input type="password" name="password" id="password" class="form-control form-control-solid" 
-               value="<?= isset($user) ? esc($user['password']) : '' ?>" placeholder="Introduce tu contraseña" required>
-    </div>
-    <div class="text-center">
-        <button type="submit" class="btn btn-primary"><?= isset($user) ? 'Actualizar' : 'Guardar' ?></button>
-        <a href="<?= base_url('users') ?>" class="btn btn-light">Cancelar</a>
-    </div>
-</form>
+                <?= csrf_field(); ?>
+                <div class="mb-5">
+                    <label for="name" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
+                    <input type="text" name="name" id="name" class="form-control form-control-solid" 
+                        value="<?= isset($user) ? esc($user['name']) : '' ?>" placeholder="Introduce tu nombre" required>
+                </div>
+                <div class="mb-5">
+                    <label for="email" class="form-label fw-bold">Correo<span style="color: red;">*</span></label>
+                    <input type="email" name="email" id="email" class="form-control form-control-solid" 
+                        value="<?= isset($user) ? esc($user['email']) : '' ?>" placeholder="Introduce tu correo electrónico" required>
+                </div>
+                <div class="mb-5">
+                    <label for="password" class="form-label fw-bold">Contraseña<span style="color: red;">*</span></label>
+                    <input type="password" name="password" id="password" class="form-control form-control-solid" 
+                        value="<?= isset($user) ? esc($user['password']) : '' ?>" placeholder="Introduce tu contraseña" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"><?= isset($user) ? 'Actualizar' : 'Guardar' ?></button>
+                    <a href="<?= base_url('users') ?>" class="btn btn-light">Cancelar</a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 <script src="https://preview.keenthemes.com/metronic8/demo1/assets/plugins/global/plugins.bundle.js"></script>
 <script src="https://preview.keenthemes.com/metronic8/demo1/assets/js/scripts.bundle.js"></script>
 </body>

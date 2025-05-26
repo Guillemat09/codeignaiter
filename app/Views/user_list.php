@@ -1624,7 +1624,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
+															<input type="date" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1632,7 +1632,7 @@ License: For each use you must have a valid license purchased only from above li
 
 														<!--begin::Actions-->
 														<div class="d-flex justify-content-end">
-															<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Limpiar</button>
+															<a href=" <?= base_url("/users") ?>" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Resetear</a>
 															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Filtrar</button>
 														</div>
 													</form>
@@ -1657,12 +1657,6 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Add user-->
 												<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user" id="addUser">
 												<!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-												<span class="svg-icon svg-icon-2">
-													<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-														<rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
-														<rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
-													</svg>
-												</span>
 												<!--end::Svg Icon-->Añadir Usuario</button>
 												<!--end::Add user-->
 											</div>

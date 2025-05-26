@@ -26,3 +26,254 @@ INFO - 2025-05-26 11:59:33 --> Session: Class initialized using 'CodeIgniter\Ses
 INFO - 2025-05-26 11:59:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-05-26 11:59:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 INFO - 2025-05-26 11:59:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:03:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:04:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:04:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:04:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:05:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:06:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:06:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:06:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:06:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:07:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:07:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:07:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:08:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:08:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:08:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:08:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:09:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:09:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:09:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:09:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:09:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:10:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:10:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-05-26 12:11:03 --> mysqli_sql_exception: Unknown column 'fecha_compra' in 'where clause' in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp2\htdocs\codeignaiter\app\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-26 12:11:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha_compra' in 'where clause'
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 12:11:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha_compra' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-13%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-13%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 12:11:03 --> [Caused by] mysqli_sql_exception: Unknown column 'fecha_compra' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-13%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-13%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-13%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-05-26 12:11:14 --> mysqli_sql_exception: Unknown column 'fecha_compra' in 'where clause' in C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp2\htdocs\codeignaiter\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp2\htdocs\codeignaiter\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp2\htdocs\codeignaiter\system\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp2\htdocs\codeignaiter\system\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp2\htdocs\codeignaiter\system\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp2\htdocs\codeignaiter\app\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+#7 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+#8 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+#9 C:\xampp2\htdocs\codeignaiter\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp2\htdocs\codeignaiter\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp2\htdocs\codeignaiter\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp2\htdocs\codeignaiter\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-05-26 12:11:14 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha_compra' in 'where clause'
+[Method: GET, Route: festivales]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 2 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 12:11:14 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'fecha_compra' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-14%\' ESCAPE \'!\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-14%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 4 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 8 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+ 9 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-05-26 12:11:14 --> [Caused by] mysqli_sql_exception: Unknown column 'fecha_compra' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-14%\' ESCAPE \'!\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-14%\' ESCAPE \'!\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE \'%2025-02-14%\' ESCAPE \'!\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1728): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `festivales`
+WHERE `fecha_compra` LIKE :fecha_compra: ESCAPE \'!\'', [...], false)
+ 5 SYSTEMPATH\Model.php(678): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1284): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\FestivalController.php(29): CodeIgniter\BaseModel->paginate(10, 'default', 1)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\FestivalController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\FestivalController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2025-05-26 12:11:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:11:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:12:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:13:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:13:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:13:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:14:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:16:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:16:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:17:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:17:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:18:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:20:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:21:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:21:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:21:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:23:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:29:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:31:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:31:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:31:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:32:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:32:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:34:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:34:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:37:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:38:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:38:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:39:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:39:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:40:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:40:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:41:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:43:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:44:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:44:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:44:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:45:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:45:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-05-26 12:45:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

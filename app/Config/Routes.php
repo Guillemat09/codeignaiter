@@ -37,7 +37,6 @@ $routes->post('artistas/save/(:num)', 'ArtistaController::saveArtista/$1'); // E
 $routes->get('artistas/delete/(:num)', 'ArtistaController::delete/$1'); // Eliminar artista
 $routes->get('artistas/deactivate/(:num)', 'ArtistaController::deactivate/$1');
 $routes->get('artistas/toggleActive/(:num)', 'ArtistaController::toggleActive/$1');
-$routes->get('export/csv/(:segment)', 'Export::csv/$1');
 
 
 
@@ -49,6 +48,7 @@ $routes->post('patrocinadores/save/(:num)', 'PatrocinadorController::savePatroci
 $routes->get('patrocinadores/delete/(:num)', 'PatrocinadorController::delete/$1'); // Eliminar patrocinadores
 $routes->get('patrocinadores/deactivate/(:num)', 'PatrocinadorController::deactivate/$1');
 $routes->get('patrocinadores/toggleActive/(:num)', 'PatrocinadorController::toggleActive/$1');
+
 
 $routes->get('festivales', 'FestivalController::index'); // Listar patrocinador
 $routes->get('festivales/save', 'FestivalController::saveFestival'); // Mostrar formulario vacio para meter un patrocinador nuevo

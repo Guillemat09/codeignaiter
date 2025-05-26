@@ -1563,7 +1563,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="text" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
+															<input type="date" name="created_at" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['created_at']) ? esc($filters['created_at']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1571,7 +1571,7 @@ License: For each use you must have a valid license purchased only from above li
 
 														<!--begin::Actions-->
 														<div class="d-flex justify-content-end">
-															<button type="reset" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6" data-kt-menu-dismiss="true" data-kt-patrocinador-table-filter="reset">Limpiar</button>
+															<a href=" <?= base_url("/patrocinadores") ?>" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Resetear</a>
 															<button type="submit" class="btn btn-primary fw-bold px-6" data-kt-menu-dismiss="true" data-kt-patrocinador-table-filter="filter">Filtrar</button>
 														</div>
 													</form>
@@ -1820,20 +1820,17 @@ License: For each use you must have a valid license purchased only from above li
 											</tbody>
 											<!--end::Table body-->
 										</table>
-										<nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <?= $pager->links() ?>
-                            </ul>
-                        </nav>
+						<div class="mt-4">
+    <?= $pager->only(['nombre', 'descripcion', 'genero', 'sort', 'order', 'page', 'perPage'])->links("default", "custom_pagination") ?>
+</div>
+
+
 						<?php endif; ?>
 						<div class="d-flex justify-content-between align-items-center mb-3">
-    <!-- Mostrar cantidad de registros -->
-    <div>
-        <span><?= count($patrocinadores) ?> de <?= $pager->getTotal() ?> patrocinadores</span>
-    </div>
-
-    <!-- Selector de cantidad de registros por página -->
-	<div class="d-flex justify-content-end mb-3">
+						<form method="get" action="<?= current_url() ?>">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <!-- Selector de cantidad de registros por página -->
+		<div class="d-flex justify-content-end mb-3">
     <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
         <label for="perPage" class="me-2">Mostrar</label>
         <select id="perPage" name="perPage" class="form-control form-control-sm w-auto" onchange="this.form.submit()">
@@ -1842,15 +1839,20 @@ License: For each use you must have a valid license purchased only from above li
             <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
             <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
         </select>
-        <span class="ms-2">patrocinadores por página</span>
+        <span class="ms-2">Patrocinadores por página</span>
     </form>
 </div>
+        
+        <!-- Mensaje de mostrando registros --
+    </div>
+</form>
 
-</div>
-										<!--end::Table-->
-									</div>
-									<!--end::Card body-->
-								</div>
+
+
+						<!--end::Table-->
+					</div>
+					<!--end::Card body-->
+				</div>
 								<!--end::Card-->
 							</div>
 

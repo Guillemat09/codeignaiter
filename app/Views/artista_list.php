@@ -4859,10 +4859,9 @@ License: For each use you must have a valid license purchased only from above li
 				document.getElementById("formulariobusqueda").submit();
 			}
 		});
-		document.getElementById('export-excel-btn').addEventListener('click', function() {
-			window.location.href = "<?= base_url('export/csv/artistas') ?>";
-		});
-
+document.getElementById('export-excel-btn').addEventListener('click', function() {
+	window.location.href = "<?= base_url('export/csv/artistas') ?>";
+});
 	</script>
 </body>
 <!--end::Body-->
