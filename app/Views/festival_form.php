@@ -1467,8 +1467,8 @@
 							</div>
 							<!--end::Container-->
 						</div>
-<div class="flex-lg-row-fluid ms-lg-15 d-flex justify-content-center" style="padding-top: -20px;">
-  <div class="w-100" style="max-width: 700px;">
+<div class="flex-lg-row-fluid ms-lg-15 d-flex justify-content-center" style="padding-top: -20px;margin-bottom: 200px;">
+  <div class="w-100" style="max-width: 850px; padding: -20px;">
     <!--begin:::Tabs-->
     <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-8">
       <li class="nav-item">
@@ -1477,12 +1477,18 @@
       <li class="nav-item ms-auto">
         <!-- Botón de Acciones sin opciones -->
         <div class="dropdown">
-          <button class="btn btn-primary ps-7 dropdown-toggle" data-bs-toggle="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="accionesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             Acciones
           </button>
-          <ul class="dropdown-menu">
-            <li><span class="dropdown-item text-muted">Sin acciones disponibles</span></li>
-            <!-- Puedes agregar más acciones aquí en el futuro -->
+          <ul class="dropdown-menu" aria-labelledby="accionesDropdown">
+            <li>
+              <a href="<?= isset($festival['id']) ? base_url('festivales/delete/' . $festival['id']) : '#' ?>" 
+                 class="dropdown-item text-danger"
+                 onclick="return confirm('¿Estás seguro de que quieres eliminar este festival?');"
+              >
+                Eliminar festival
+              </a>
+            </li>
           </ul>
         </div>
       </li>
@@ -1490,83 +1496,1348 @@
     <!--end:::Tabs-->
 
     <!--begin:::Tab content-->
-    <div class="tab-content" id="myTabContent">
-      <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
-        <!--begin::Card-->
-        <div class="card card-flush mb-6 mb-xl-9">
-          <!--begin::Card header-->
-          <div class="card-header mt-6 d-flex justify-content-between align-items-center">
-            <div class="card-title flex-column">
-              <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
-            </div>
-            <div>
-              <!-- Botón Cancelar dentro del card-header -->
-              <a href="<?= base_url('festivales') ?>" class="btn btn-light-primary btn-sm">Cancelar</a>
-            </div>
-          </div>
-          <!--end::Card header-->
+   <div class="card-header mt-6 d-flex justify-content-between align-items-center"style="position: sticky; top: 0; z-index: 10; background-color: #fff; padding-top: 20px;">
+  <div class="card-title flex-column">
+    <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
+  </div>
+  <div>
+    <!-- Botón que abre el modal -->
+    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_add_schedule">
+  <?= isset($festival) ? 'Editar Festival' : 'Añadir Festival' ?>
+</button>
 
-          <!--begin::Card body-->
-        <div class="card-body p-9 pt-4">
-  <form id="festivalForm" method="post" action="<?= isset($festival) ? base_url('festivales/save/' . $festival['id']) : base_url('festivales/save') ?>">
-    <?= csrf_field() ?>
-
-    <?php if (isset($validation)): ?>
-      <div class="alert alert-danger">
-        <ul><?= $validation->listErrors() ?></ul>
-      </div>
-    <?php endif; ?>
-
-    <input type="hidden" name="festivalId" value="<?= isset($festival) ? esc($festival['id']) : '' ?>">
-
-    <div class="mb-5">
-      <label for="nombre" class="form-label fw-bold">Nombre <span style="color: red;">*</span></label>
-      <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
-        value="<?= set_value('nombre', isset($festival['nombre']) ? esc($festival['nombre']) : '') ?>" placeholder="Nombre">
-    </div>
-
-    <div class="mb-5">
-      <label for="descripcion" class="form-label fw-bold">Descripción <span style="color: red;">*</span></label>
-      <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
-        value="<?= set_value('descripcion', isset($festival['descripcion']) ? esc($festival['descripcion']) : '') ?>" placeholder="Descripción">
-    </div>
-
-    <div class="mb-5">
-      <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span style="color: red;">*</span></label>
-      <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
-        value="<?= set_value('fecha_inicio', isset($festival['fecha_inicio']) ? esc($festival['fecha_inicio']) : '') ?>">
-    </div>
-
-    <div class="mb-5">
-      <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span style="color: red;">*</span></label>
-      <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
-        value="<?= set_value('fecha_fin', isset($festival['fecha_fin']) ? esc($festival['fecha_fin']) : '') ?>">
-    </div>
-
-    <div class="mb-5">
-      <label for="lugar" class="form-label fw-bold">Lugar <span style="color: red;">*</span></label>
-      <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
-        value="<?= set_value('lugar', isset($festival['lugar']) ? esc($festival['lugar']) : '') ?>" placeholder="Lugar ">
-    </div>
-
-    <div class="d-flex justify-content-end">
-      <button type="submit" class="btn btn-primary" id="saveBtn">
-        <?= isset($festival) ? 'Actualizar' : 'Guardar' ?>
-      </button>
-    </div>
-  </form>
+  </div>
 </div>
+  <div class="tab-content">
+	<!--begin::Day-->
+	<div id="kt_schedule_day_0" class="tab-pane fade show" bg-white>
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6 bg-white"; style="background-color: white;">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_1" class="tab-pane show active bg-white fade top" style="margin-top: -10;">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Sean Bean</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Karina Clarke</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_2" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Bob Harris</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Caleb Donaldson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">David Stevenson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_3" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Walter White</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">14:30 - 15:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Walter White</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">16:30 - 17:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Iniciativa de Contenido Creativo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Karina Clarke</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_4" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">16:30 - 17:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">16:30 - 17:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_5" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">9:00 - 10:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Sean Bean</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Walter White</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">14:30 - 15:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Mark Randall</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_6" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">14:30 - 15:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Sean Bean</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">David Stevenson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Walter White</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">9:00 - 10:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Caleb Donaldson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_7" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">David Stevenson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Naomi Hayabusa</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">9:00 - 10:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Michael Walters</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Kendell Trevor</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">16:30 - 17:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Mark Randall</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_8" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Sean Bean</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">13:00 - 14:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Yannis Gloverson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Mark Randall</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_9" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Bob Harris</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">9:00 - 10:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Bob Harris</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Peter Marcus</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">12:00 - 13:00
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Karina Clarke</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+	<!--begin::Day-->
+	<div id="kt_schedule_day_10" class="tab-pane fade show">
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">14:30 - 15:30
+				<span class="fs-7 text-muted text-uppercase">pm</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Karina Clarke</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Karina Clarke</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">10:00 - 11:00
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">David Stevenson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+		<!--begin::Time-->
+		<div class="d-flex flex-stack position-relative mt-6">
+			<!--begin::Bar-->
+			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+			<!--end::Bar-->
+			<!--begin::Info-->
+			<div class="fw-bold ms-5">
+				<!--begin::Time-->
+				<div class="fs-7 mb-1">11:00 - 11:45
+				<span class="fs-7 text-muted text-uppercase">am</span></div>
+				<!--end::Time-->
+				<!--begin::Title-->
+				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+				<!--end::Title-->
+				<!--begin::User-->
+				<div class="fs-7 text-muted">Dirigido por
+				<a href="#">Caleb Donaldson</a></div>
+				<!--end::User-->
+			</div>
+			<!--end::Info-->
+			<!--begin::Action-->
+			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+			<!--end::Action-->
+		</div>
+		<!--end::Time-->
+	</div>
+	<!--end::Day-->
+</div>
+<div class="modal fade" id="kt_modal_add_schedule" tabindex="-1" aria-hidden="true">
+  <!--begin::Modal dialog-->
+  <div class="modal-dialog modal-dialog-centered mw-650px">
+    <!--begin::Modal content-->
+    <div class="modal-content">
+      <!--begin::Modal header-->
+      <div class="modal-header">
+        <!--begin::Modal title-->
+        <h2 class="fw-bolder" id="modalTitle"><?= isset($festival) ? 'Editar Festival' : 'Añadir Festival' ?></h2>
+        <!--end::Modal title-->
+        <!--begin::Close-->
+        <button type="button" class="btn btn-icon btn-sm btn-active-icon-primary" data-bs-dismiss="modal" aria-label="Close">
+          <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+          <span class="svg-icon svg-icon-1">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+              <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+            </svg>
+          </span>
+          <!--end::Svg Icon-->
+        </button>
+        <!--end::Close-->
+      </div>
+      <!--end::Modal header-->
 
+      <!--begin::Modal body-->
+      <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+        <div class="flex-lg-row-fluid ms-lg-15 d-flex justify-content-center" style="padding-top: -20px; margin-bottom: 200px;">
+          <div class="w-100" style="max-width: 850px; padding: -20px;">
+            <!--begin:::Tabs-->
+            <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-8">
+              <li class="nav-item">
+                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Festival</a>
+              </li>
+              <li class="nav-item ms-auto">
+                <!-- Botón de Acciones sin opciones -->
+              </li>
+            </ul>
+            <!--end:::Tabs-->
 
+            <!--begin:::Tab content-->
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
+                <!--begin::Card-->
+                <div class="card card-flush mb-6 mb-xl-9">
+                  <!--begin::Card header-->
+                  <div class="card-header mt-6 d-flex justify-content-between align-items-center">
+                    <div class="card-title flex-column">
+                      <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
+                    </div>
+                    <div>
+                      <!-- Botón Cancelar dentro del card-header -->
+                      <a href="<?= base_url('festivales') ?>" class="btn btn-light-primary btn-sm">Cancelar</a>
+                    </div>
+                  </div>
+                  <!--end::Card header-->
 
+                  <!--begin::Card body-->
+                  <div class="card-body p-9 pt-4">
+                    <form id="festivalForm" method="post" action="<?= isset($festival) ? base_url('festivales/save/' . $festival['id']) : base_url('festivales/save') ?>">
+                      <?= csrf_field() ?>
 
+                      <?php if (isset($validation)): ?>
+                        <div class="alert alert-danger">
+                          <ul><?= $validation->listErrors() ?></ul>
+                        </div>
+                      <?php endif; ?>
 
+                      <input type="hidden" name="festivalId" value="<?= isset($festival) ? esc($festival['id']) : '' ?>">
 
+                      <div class="mb-5">
+                        <label for="nombre" class="form-label fw-bold">Nombre <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
+                          value="<?= set_value('nombre', isset($festival['nombre']) ? esc($festival['nombre']) : '') ?>" placeholder="Nombre">
+                      </div>
+
+                      <div class="mb-5">
+                        <label for="descripcion" class="form-label fw-bold">Descripción <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
+                          value="<?= set_value('descripcion', isset($festival['descripcion']) ? esc($festival['descripcion']) : '') ?>" placeholder="Descripción">
+                      </div>
+
+                      <div class="mb-5">
+                        <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span style="color: red;">*</span></label>
+                        <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
+                          value="<?= set_value('fecha_inicio', isset($festival['fecha_inicio']) ? esc($festival['fecha_inicio']) : '') ?>">
+                      </div>
+
+                      <div class="mb-5">
+                        <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span style="color: red;">*</span></label>
+                        <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
+                          value="<?= set_value('fecha_fin', isset($festival['fecha_fin']) ? esc($festival['fecha_fin']) : '') ?>">
+                      </div>
+
+                      <div class="mb-5">
+                        <label for="lugar" class="form-label fw-bold">Lugar <span style="color: red;">*</span></label>
+                        <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
+                          value="<?= set_value('lugar', isset($festival['lugar']) ? esc($festival['lugar']) : '') ?>" placeholder="Lugar ">
+                      </div>
+
+                      <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary" id="saveBtn">
+                          <?= isset($festival) ? 'Actualizar' : 'Guardar' ?>
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                  <!--end::Card body-->
+                </div>
+                <!--end::Card-->
+              </div>
+            </div>
+            <!--end:::Tab content-->
+          </div>
+        </div>
+      </div>
+      <!--end::Modal body-->
+    </div>
+    <!--end::Modal content-->
+  </div>
+  <!--end::Modal dialog-->
+</div>
+<!--end::Card body-->
+</div>
+<!--begin::Card-->
+
+                            <!--end::Content wrapper-->
 <div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 60px; font-size: 14px; z-index: 100;">
     <p class="m-0">Guillermo Mateos Galea</p>
 </div>
 <script src="https://preview.keenthemes.com/metronic8/demo1/assets/plugins/global/plugins.bundle.js"></script>
 <script src="https://preview.keenthemes.com/metronic8/demo1/assets/js/scripts.bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 	<script>var hostUrl = "../../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
@@ -1588,5 +2859,77 @@
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("festivalForm");
+
+  form.addEventListener("submit", function (e) {
+    const nombre = document.getElementById("nombre").value.trim();
+    const descripcion = document.getElementById("descripcion").value.trim();
+    const fechaInicio = document.getElementById("fecha_inicio").value;
+    const fechaFin = document.getElementById("fecha_fin").value;
+    const lugar = document.getElementById("lugar").value.trim();
+
+    let errores = [];
+
+    // Validaciones de campos obligatorios y mínimos
+    if (!nombre) {
+      errores.push("El nombre es obligatorio.");
+    } else if (nombre.length < 3) {
+      errores.push("El nombre debe tener al menos 3 caracteres.");
+    }
+
+    if (!descripcion) {
+      errores.push("La descripción es obligatoria.");
+    } else if (descripcion.length < 5) {
+      errores.push("La descripción debe tener al menos 5 caracteres.");
+    }
+
+    if (!fechaInicio) {
+      errores.push("La fecha de inicio es obligatoria.");
+    }
+
+    if (!fechaFin) {
+      errores.push("La fecha de fin es obligatoria.");
+    }
+
+    if (fechaInicio && fechaFin && new Date(fechaInicio) > new Date(fechaFin)) {
+      errores.push("La fecha de inicio no puede ser posterior a la fecha de fin.");
+    }
+
+    if (!lugar) {
+      errores.push("El lugar es obligatorio.");
+    } else if (lugar.length < 3) {
+      errores.push("El lugar debe tener al menos 3 caracteres.");
+    }
+
+    // Mostrar errores si hay
+    const existingAlert = document.querySelector(".alert-validation");
+    if (existingAlert) {
+      existingAlert.remove(); // Elimina alertas anteriores
+    }
+
+    if (errores.length > 0) {
+      e.preventDefault(); // Previene el envío del formulario
+
+      let mensaje = "<ul>";
+      errores.forEach(error => {
+        mensaje += `<li>${error}</li>`;
+      });
+      mensaje += "</ul>";
+
+      const alertDiv = document.createElement("div");
+      alertDiv.classList.add("alert", "alert-danger", "alert-validation");
+      alertDiv.innerHTML = mensaje;
+      form.prepend(alertDiv);
+
+      // Scroll hacia el inicio del modal
+      document.querySelector('.modal-body').scrollTop = 0;
+    }
+  });
+});
+</script>
+
+
 </body>
 </html>

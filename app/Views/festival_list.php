@@ -1823,28 +1823,25 @@ License: For each use you must have a valid license purchased only from above li
 														<?php endif; ?>
 														<!--begin::Menu-->
 														<div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-																<a href="<?= base_url('festivales/save/' . $festival['id']) ?>" class="menu-link px-3">Editar</a>
-															</div>
-															<!--end::Menu item-->
-															<!--begin::Menu item-->
-															<div class="menu-item px-3">
-													<a href="<?= base_url('festivales/deactivate/' . esc($festival['id'])) ?>"
-														class="menu-link px-3"
-														data-kt-festivales-table-filter="deactivate_row">
-														<span class="text-danger">Dar de baja</span>
-													</a>
-												</div>
-												<div class="menu-item px-3">
-													<a href="<?= base_url('festivales/toggleActive/' . esc($festival['id'])) ?>"
-														class="menu-link px-3"
-														data-kt-festivales-table-filter="toggle_active">
-														<?= $festival['is_active'] ? '<span class="text-danger">Dar de baja</span>' : '<span class="text-success">Dar de alta</span>' ?>
-													</a>
-														</div>
-															<!--end::Menu item-->
-														</div>
+    <!--begin::Menu item-->
+    <div class="menu-item px-3">
+        <a href="<?= base_url('festivales/save/' . esc($festival['id'])) ?>" class="menu-link px-3">Editar</a>
+    </div>
+    <!--end::Menu item-->
+
+    <!-- Mostrar solo uno según estado -->
+    <div class="menu-item px-3">
+        <a href="<?= base_url('festivales/toggleActive/' . esc($festival['id'])) ?>"
+           class="menu-link px-3"
+           data-kt-festivales-table-filter="toggle_active"
+           onclick="return confirm('¿Estás seguro de que quieres <?= $festival['is_active'] ? 'dar de baja' : 'dar de alta' ?> este festival?');">
+           <?= $festival['is_active'] 
+                ? '<span class="text-danger">Dar de baja</span>' 
+                : '<span class="text-success">Dar de alta</span>' ?>
+        </a>
+    </div>
+</div>
+
 														<!--end::Menu-->
 													</td>
 													<!--end::Action=-->
