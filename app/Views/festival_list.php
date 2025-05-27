@@ -1485,7 +1485,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Post-->
 						<div class="post d-flex flex-column-fluid" id="kt_post">
 							<!--begin::Container-->
-<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="margin-top: -200px;">
+<div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper" style="margin-top: -320px;">
 							<div id="kt_content_container" class="container-xxl">
 								<!--begin::Card-->
 								<div class="card">
@@ -1516,7 +1516,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--begin::Card title-->
 										<!--begin::Card toolbar-->
-										<div class="card-toolbar right-0">
+										<div class="card-toolbar right-0 ">
 											<!--begin::Toolbar-->
 											<div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
 												<!--begin::Filter-->
@@ -1567,7 +1567,7 @@ License: For each use you must have a valid license purchased only from above li
 														<div class="mb-10">
 															<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="date" name="fecha_compra" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['fecha_compra']) ? esc($filters['fecha_compra']) : '' ?>" />
+															<input type="date" name="fecha_creacion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
 
 														</div>
 														<!--end::Input group-->
@@ -1659,7 +1659,16 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<!--end::Card header-->
 									<!--begin::Card body-->
+									<<div class="mb-10">
 									<div class="card-body pt-0">
+										<!--begin::Alert-->
+										<?php if (session()->getFlashdata('error')): ?>
+											<div class="alert alert-danger">
+												<?= session()->getFlashdata('error') ?>
+											</div>
+										<?php endif; ?>
+										<!--end::Alert-->
+										<!--begin::Table-->
 									<?php if (empty($festivales)): ?>
 							<div class="text-center text-danger fs-4">No se encontraron Festivales</div>
 							<?php else:?>
@@ -1891,6 +1900,7 @@ License: For each use you must have a valid license purchased only from above li
 						</div>
 						<!--end::Post-->
 					</div>
+									</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
 <div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 60px; font-size: 14px; z-index: 100;">

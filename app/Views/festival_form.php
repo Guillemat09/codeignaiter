@@ -1467,56 +1467,100 @@
 							</div>
 							<!--end::Container-->
 						</div>
-<div class="container d-flex justify-content-center align-items-start" style="min-height: 100vh; padding-top: 60px;">
-    <div class="card shadow-sm w-100" style="max-width: 700px;">
-        <div class="card-header text-center">
-            <h3 class="card-title"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h3>
+<div class="flex-lg-row-fluid ms-lg-15 d-flex justify-content-center" style="padding-top: -20px;">
+  <div class="w-100" style="max-width: 700px;">
+    <!--begin:::Tabs-->
+    <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-8">
+      <li class="nav-item">
+        <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Festival</a>
+      </li>
+      <li class="nav-item ms-auto">
+        <!-- Botón de Acciones sin opciones -->
+        <div class="dropdown">
+          <button class="btn btn-primary ps-7 dropdown-toggle" data-bs-toggle="dropdown">
+            Acciones
+          </button>
+          <ul class="dropdown-menu">
+            <li><span class="dropdown-item text-muted">Sin acciones disponibles</span></li>
+            <!-- Puedes agregar más acciones aquí en el futuro -->
+          </ul>
         </div>
-        <div class="card-body">
-            <!-- Mostrar errores de validación en español -->
-            <?php if (isset($validation)): ?>
-                <div class="alert alert-danger">
-                    <ul>
-                        <?= $validation->listErrors() ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-            <!-- Formulario -->
-            <form action="<?= isset($festival) ? base_url('festivales/save/') . $festival['id'] : base_url('festivales/save') ?>" method="post">
-                <?= csrf_field(); ?>
-                <div class="mb-5">
-                    <label for="nombre" class="form-label fw-bold">Nombre<span style="color: red;">*</span></label>
-                    <input type="text" name="nombre" id="nombre" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['nombre']) : '' ?>" required placeholder="Ingrese el nombre del festival">
-                </div>
-                <div class="mb-5">
-                    <label for="descripcion" class="form-label fw-bold">Descripción<span style="color: red;">*</span></label>
-                    <input type="text" name="descripcion" id="descripcion" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['descripcion']) : '' ?>" required placeholder="Ingrese una descripción del festival">
-                </div> 
-                <div class="mb-5">
-                    <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio</label>
-                    <input type="date" name="fecha_inicio" id="fecha_inicio" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['fecha_inicio']) : '' ?>" required placeholder="Seleccione la fecha de inicio">
-                </div> 
-                <div class="mb-5">
-                    <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin</label>
-                    <input type="date" name="fecha_fin" id="fecha_fin" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['fecha_fin']) : '' ?>" required placeholder="Seleccione la fecha de fin">
-                </div> 
-                <div class="mb-5">
-                    <label for="lugar" class="form-label fw-bold">Lugar</label>
-                    <input type="text" name="lugar" id="lugar" class="form-control form-control-solid" 
-                           value="<?= isset($festival) ? esc($festival['lugar']) : '' ?>" required placeholder="Ingrese el lugar del festival">
-                </div> 
-                <div class="text-center">
-                    <button type="submit" class="btn btn-primary"><?= isset($festival) ? 'Actualizar' : 'Guardar' ?></button>
-                    <a href="<?= base_url('festivales') ?>" class="btn btn-light">Cancelar</a>
-                </div>
-            </form>
-        </div>
+      </li>
+    </ul>
+    <!--end:::Tabs-->
+
+    <!--begin:::Tab content-->
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
+        <!--begin::Card-->
+        <div class="card card-flush mb-6 mb-xl-9">
+          <!--begin::Card header-->
+          <div class="card-header mt-6 d-flex justify-content-between align-items-center">
+            <div class="card-title flex-column">
+              <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
+            </div>
+            <div>
+              <!-- Botón Cancelar dentro del card-header -->
+              <a href="<?= base_url('festivales') ?>" class="btn btn-light-primary btn-sm">Cancelar</a>
+            </div>
+          </div>
+          <!--end::Card header-->
+
+          <!--begin::Card body-->
+        <div class="card-body p-9 pt-4">
+  <form id="festivalForm" method="post" action="<?= isset($festival) ? base_url('festivales/save/' . $festival['id']) : base_url('festivales/save') ?>">
+    <?= csrf_field() ?>
+
+    <?php if (isset($validation)): ?>
+      <div class="alert alert-danger">
+        <ul><?= $validation->listErrors() ?></ul>
+      </div>
+    <?php endif; ?>
+
+    <input type="hidden" name="festivalId" value="<?= isset($festival) ? esc($festival['id']) : '' ?>">
+
+    <div class="mb-5">
+      <label for="nombre" class="form-label fw-bold">Nombre <span style="color: red;">*</span></label>
+      <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
+        value="<?= set_value('nombre', isset($festival['nombre']) ? esc($festival['nombre']) : '') ?>" placeholder="Nombre">
     </div>
+
+    <div class="mb-5">
+      <label for="descripcion" class="form-label fw-bold">Descripción <span style="color: red;">*</span></label>
+      <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
+        value="<?= set_value('descripcion', isset($festival['descripcion']) ? esc($festival['descripcion']) : '') ?>" placeholder="Descripción">
+    </div>
+
+    <div class="mb-5">
+      <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span style="color: red;">*</span></label>
+      <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
+        value="<?= set_value('fecha_inicio', isset($festival['fecha_inicio']) ? esc($festival['fecha_inicio']) : '') ?>">
+    </div>
+
+    <div class="mb-5">
+      <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span style="color: red;">*</span></label>
+      <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
+        value="<?= set_value('fecha_fin', isset($festival['fecha_fin']) ? esc($festival['fecha_fin']) : '') ?>">
+    </div>
+
+    <div class="mb-5">
+      <label for="lugar" class="form-label fw-bold">Lugar <span style="color: red;">*</span></label>
+      <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
+        value="<?= set_value('lugar', isset($festival['lugar']) ? esc($festival['lugar']) : '') ?>" placeholder="Lugar ">
+    </div>
+
+    <div class="d-flex justify-content-end">
+      <button type="submit" class="btn btn-primary" id="saveBtn">
+        <?= isset($festival) ? 'Actualizar' : 'Guardar' ?>
+      </button>
+    </div>
+  </form>
 </div>
+
+
+
+
+
 
 <div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 60px; font-size: 14px; z-index: 100;">
     <p class="m-0">Guillermo Mateos Galea</p>
