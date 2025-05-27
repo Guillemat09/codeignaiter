@@ -107,7 +107,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-arrow"></span>
 											</span>
 											<div class="menu-sub menu-sub-accordion">
-											<?php if (session()->get('role')['nombre'] == "admin"): ?>  
+											<?php if (session()->has('role') && session()->get('role')['nombre'] == "admin"): ?>
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('users') ?>">
 														<span class="menu-bullet">
@@ -133,7 +133,11 @@ License: For each use you must have a valid license purchased only from above li
 														<span class="menu-title">Artistas</span>
 													</a>
 												</div>
-												<?php if (session()->get('role')['nombre'] == "admin" || session()->get('role')['nombre'] == "trabajador" ): ?>  
+												<?php 
+$role = session()->get('role');
+if (is_array($role) && isset($role['nombre']) && ($role['nombre'] == "admin" || $role['nombre'] == "trabajador")): 
+?>
+
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('entradas') ?>">
 														<span class="menu-bullet">

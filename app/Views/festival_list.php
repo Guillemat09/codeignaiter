@@ -86,8 +86,8 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 								</div>
 				
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-									<span class="menu-link">
+								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1 active">
+									<span class="menu-link active hover">
 										<span class="menu-icon">
 											<!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
 											<span class="svg-icon svg-icon-2">
@@ -101,7 +101,7 @@ License: For each use you must have a valid license purchased only from above li
 										<span class="menu-title">Listas</span>
 										<span class="menu-arrow"></span>
 									</span>
-									<div class="menu-sub menu-sub-accordion">
+									<div class="menu-sub menu-sub-accordion active show hover">
 										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
 											<span class="menu-link">
 												<span class="menu-bullet">
@@ -110,7 +110,7 @@ License: For each use you must have a valid license purchased only from above li
 												<span class="menu-title">Usuarios</span>
 												<span class="menu-arrow"></span>
 											</span>
-											<div class="menu-sub menu-sub-accordion">
+											<div class="menu-sub menu-sub-accordion active show">
 											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
 												<div class="menu-item">
 													<a class="menu-link" href="<?= base_url('users') ?>">
@@ -147,7 +147,7 @@ License: For each use you must have a valid license purchased only from above li
 													</a>
 												</div>
 												<?php endif; ?>
-												<div class="menu-item">
+												<div class="menu-item active show">
 													<a class="menu-link" href="<?= base_url('festivales') ?>">
 														<span class="menu-bullet">
 															<span class="bullet bullet-dot"></span>
@@ -1516,7 +1516,7 @@ License: For each use you must have a valid license purchased only from above li
 										</div>
 										<!--begin::Card title-->
 										<!--begin::Card toolbar-->
-										<div class="card-toolbar">
+										<div class="card-toolbar right-0">
 											<!--begin::Toolbar-->
 											<div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
 												<!--begin::Filter-->
@@ -1778,7 +1778,7 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Avatar-->
 														<!--begin::User details-->
 														<div class="d-flex flex-column">
-															<a href class="text-gray-800 text-hover-primary mb-1"><?= esc($festival['nombre']) ?></a>
+															<p class="text-gray-800 text-primary mb-1"><?= esc($festival['nombre']) ?></a>
 														</div>
 														<!--begin::User details-->
 													</td>
@@ -1893,7 +1893,7 @@ License: For each use you must have a valid license purchased only from above li
 					</div>
 					<!--end::Content-->
 					<!--begin::Footer-->
-<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 80px; font-size: 14px; z-index: 100;">
+<div class="footer bg-white text-center py-2 w-100" style="position: fixed; bottom: 0; left: 0; height: 60px; font-size: 14px; z-index: 100;">
     <p class="m-0">Guillermo Mateos Galea</p>
 </div>
 
