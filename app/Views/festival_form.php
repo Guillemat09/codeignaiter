@@ -60,141 +60,53 @@
 					</div>
 					<!--end::Brand-->
 					<!--begin::Aside menu-->
-					<div class="aside-menu flex-column-fluid">
-						<!--begin::Aside Menu-->
-						<div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
-							<!--begin::Menu-->
-							<div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true">
-								<div class="menu-item">
+					<?php
+    $current_url = current_url();
+    $is_festivales_active = strpos($current_url, 'festivales') !== false;
+?>
 
-								<div class="menu-item">
-									<div class="menu-content pt-8 pb-2">
-										<span class="menu-section text-muted text-uppercase fs-8 ls-1">Lista</span>
-									</div>
-								</div>
-				
-								<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1 active">
-									<span class="menu-link active hover">
-										<span class="menu-icon">
-											<!--begin::Svg Icon | path: icons/duotune/general/gen051.svg-->
-											<span class="svg-icon svg-icon-2">
-												<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-													<path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="black" />
-													<path d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z" fill="black" />
-												</svg>
-											</span>
-											<!--end::Svg Icon-->
-										</span>
-										<span class="menu-title">Listas</span>
-										<span class="menu-arrow"></span>
-									</span>
-									<div class="menu-sub menu-sub-accordion active show hover">
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion mb-1">
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Usuarios</span>
-												<span class="menu-arrow"></span>
-											</span>
-											<div class="menu-sub menu-sub-accordion active show">
-											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
-												<div class="menu-item">
-													<a class="menu-link" href="<?= base_url('users') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Usuario</span>
-													</a>
-												</div>
-												<?php endif; ?>
-												<div class="menu-item">
-													<a class="menu-link" href="<?= base_url('patrocinadores') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Patrocinadores</span>
-													</a>
-												</div>
-												<div class="menu-item">
-													<a class="menu-link" href="<?= base_url('artistas') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Artistas</span>
-													</a>
-												</div>
-												<?php if (session()->get('role')['nombre'] == "admin"): ?> 
-												<div class="menu-item">
-													<a class="menu-link" href="<?= base_url('entradas') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Entradas</span>
-													</a>
-												</div>
-												<?php endif; ?>
-												<div class="menu-item active show">
-													<a class="menu-link" href="<?= base_url('festivales') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Festivales</span>
-													</a>
-												</div>
-											</div>
-										</div>
-										<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
-											<span class="menu-link">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Roles</span>
-												<span class="menu-arrow"></span>
-											</span>
-											<?php endif; ?>
-											<div class="menu-sub menu-sub-accordion">
-											<?php if (session()->get('role')['nombre'] == "admin"): ?> 
-												<div class="menu-item">
-													<a class="menu-link" href="<?= base_url('roles') ?>">
-														<span class="menu-bullet">
-															<span class="bullet bullet-dot"></span>
-														</span>
-														<span class="menu-title">Roles Lista</span>
-													</a>
-												</div>
-												<?php endif; ?>
-											</div>
-										</div>
-										<?php if (session()->get('role')['nombre'] == "admin"): ?> 
-										<div class="menu-item">
-											<a class="menu-link" href="<?= base_url('calendar') ?>">
-												<span class="menu-bullet">
-													<span class="bullet bullet-dot"></span>
-												</span>
-												<span class="menu-title">Calendario</span>
-											</a>
-										</div>
-										<?php endif; ?>
-									</div>
-								</div>
-								
-								<div class="menu-item">
-									<div class="menu-content pt-8 pb-0">
-									</div>
-								</div>
-								<div class="menu-item">
-									<div class="menu-content">
-										<div class="separator mx-1 my-4"></div>
-									</div>
-								</div>
-								</div>
-							</div>
-							<!--end::Menu-->
-						</div>
-						<!--end::Aside Menu-->
-					</div>
+<div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper"
+     data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
+     data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer"
+     data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
+
+    <!--begin::Menu-->
+    <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+         id="kt_aside_menu" data-kt-menu="true">
+
+        <div data-kt-menu-trigger="click"
+             class="menu-item menu-accordion mb-1 <?= $is_festivales_active ? 'show active' : '' ?>">
+            <span class="menu-link <?= $is_festivales_active ? 'active' : '' ?>">
+                <span class="menu-icon">
+                    <span class="svg-icon svg-icon-2">
+                        <!-- Ícono SVG aquí, puedes poner el tuyo -->
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                             viewBox="0 0 24 24" fill="none">
+                            <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="black" />
+                            <path d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z" fill="black" />
+                        </svg>
+                    </span>
+                </span>
+                <span class="menu-title">Listas</span>
+                <span class="menu-arrow"></span>
+            </span>
+
+            <div class="menu-sub menu-sub-accordion <?= $is_festivales_active ? 'show' : '' ?>">
+                <div class="menu-item <?= $is_festivales_active ? 'active' : '' ?>">
+                    <a class="menu-link <?= $is_festivales_active ? 'active' : '' ?>" href="<?= base_url('festivales') ?>">
+                        <span class="menu-bullet">
+                            <span class="bullet bullet-dot"></span>
+                        </span>
+                        <span class="menu-title">Festivales</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--end::Menu-->
+</div>
+
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
@@ -2730,96 +2642,87 @@
       <!--end::Modal header-->
 
       <!--begin::Modal body-->
-      <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
-        <div class="flex-lg-row-fluid ms-lg-15 d-flex justify-content-center" style="padding-top: -20px; margin-bottom: 200px;">
-          <div class="w-100" style="max-width: 850px; padding: -20px;">
-            <!--begin:::Tabs-->
-            <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-8">
-              <li class="nav-item">
-                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Festival</a>
-              </li>
-              <li class="nav-item ms-auto">
-                <!-- Botón de Acciones sin opciones -->
-              </li>
-            </ul>
-            <!--end:::Tabs-->
+     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7" style="max-height: 80vh; overflow-y: auto;">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" style="max-width: 800px;">
+      
+      <!-- Tabs -->
+      <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-5">
+        <li class="nav-item">
+          <a class="nav-link text-active-primary active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Festival</a>
+        </li>
+      </ul>
 
-            <!--begin:::Tab content-->
-            <div class="tab-content" id="myTabContent">
-              <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
-                <!--begin::Card-->
-                <div class="card card-flush mb-6 mb-xl-9">
-                  <!--begin::Card header-->
-                  <div class="card-header mt-6 d-flex justify-content-between align-items-center">
-                    <div class="card-title flex-column">
-                      <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
-                    </div>
-                    <div>
-                      <!-- Botón Cancelar dentro del card-header -->
-                      <a href="<?= base_url('festivales') ?>" class="btn btn-light-primary btn-sm">Cancelar</a>
-                    </div>
-                  </div>
-                  <!--end::Card header-->
+      <!-- Contenido -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
+          <div class="card card-flush mb-4">
 
-                  <!--begin::Card body-->
-                  <div class="card-body p-9 pt-4">
-                    <form id="festivalForm" method="post" action="<?= isset($festival) ? base_url('festivales/save/' . $festival['id']) : base_url('festivales/save') ?>">
-                      <?= csrf_field() ?>
-
-                      <?php if (isset($validation)): ?>
-                        <div class="alert alert-danger">
-                          <ul><?= $validation->listErrors() ?></ul>
-                        </div>
-                      <?php endif; ?>
-
-                      <input type="hidden" name="festivalId" value="<?= isset($festival) ? esc($festival['id']) : '' ?>">
-
-                      <div class="mb-5">
-                        <label for="nombre" class="form-label fw-bold">Nombre <span style="color: red;">*</span></label>
-                        <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
-                          value="<?= set_value('nombre', isset($festival['nombre']) ? esc($festival['nombre']) : '') ?>" placeholder="Nombre">
-                      </div>
-
-                      <div class="mb-5">
-                        <label for="descripcion" class="form-label fw-bold">Descripción <span style="color: red;">*</span></label>
-                        <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
-                          value="<?= set_value('descripcion', isset($festival['descripcion']) ? esc($festival['descripcion']) : '') ?>" placeholder="Descripción">
-                      </div>
-
-                      <div class="mb-5">
-                        <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span style="color: red;">*</span></label>
-                        <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
-                          value="<?= set_value('fecha_inicio', isset($festival['fecha_inicio']) ? esc($festival['fecha_inicio']) : '') ?>">
-                      </div>
-
-                      <div class="mb-5">
-                        <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span style="color: red;">*</span></label>
-                        <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
-                          value="<?= set_value('fecha_fin', isset($festival['fecha_fin']) ? esc($festival['fecha_fin']) : '') ?>">
-                      </div>
-
-                      <div class="mb-5">
-                        <label for="lugar" class="form-label fw-bold">Lugar <span style="color: red;">*</span></label>
-                        <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
-                          value="<?= set_value('lugar', isset($festival['lugar']) ? esc($festival['lugar']) : '') ?>" placeholder="Lugar ">
-                      </div>
-
-                      <div class="d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary" id="saveBtn">
-                          <?= isset($festival) ? 'Actualizar' : 'Guardar' ?>
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                  <!--end::Card body-->
-                </div>
-                <!--end::Card-->
-              </div>
+            <!-- Header -->
+            <div class="card-header d-flex justify-content-between align-items-center py-4">
+              <h2 class="mb-0" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
+              <a href="<?= base_url('festivales') ?>" class="btn btn-light-primary btn-sm">Cancelar</a>
             </div>
-            <!--end:::Tab content-->
+
+            <!-- Formulario -->
+            <div class="card-body p-6 pt-0">
+              <form id="festivalForm" method="post" action="<?= isset($festival) ? base_url('festivales/save/' . $festival['id']) : base_url('festivales/save') ?>">
+                <?= csrf_field() ?>
+
+                <?php if (isset($validation)): ?>
+                  <div class="alert alert-danger">
+                    <ul><?= $validation->listErrors() ?></ul>
+                  </div>
+                <?php endif; ?>
+
+                <input type="hidden" name="festivalId" value="<?= isset($festival) ? esc($festival['id']) : '' ?>">
+
+                <div class="mb-4">
+                  <label for="nombre" class="form-label fw-bold">Nombre <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
+                    value="<?= set_value('nombre', $festival['nombre'] ?? '') ?>" placeholder="Nombre">
+                </div>
+
+                <div class="mb-4">
+                  <label for="descripcion" class="form-label fw-bold">Descripción <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
+                    value="<?= set_value('descripcion', $festival['descripcion'] ?? '') ?>" placeholder="Descripción">
+                </div>
+
+                <div class="mb-4">
+                  <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
+                    value="<?= set_value('fecha_inicio', $festival['fecha_inicio'] ?? '') ?>">
+                </div>
+
+                <div class="mb-4">
+                  <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span class="text-danger">*</span></label>
+                  <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
+                    value="<?= set_value('fecha_fin', $festival['fecha_fin'] ?? '') ?>">
+                </div>
+
+                <div class="mb-4">
+                  <label for="lugar" class="form-label fw-bold">Lugar <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
+                    value="<?= set_value('lugar', $festival['lugar'] ?? '') ?>" placeholder="Lugar">
+                </div>
+
+                <div class="d-flex justify-content-end">
+                  <button type="submit" class="btn btn-primary" id="saveBtn">
+                    <?= isset($festival) ? 'Actualizar' : 'Guardar' ?>
+                  </button>
+                </div>
+              </form>
+            </div>
+
           </div>
         </div>
       </div>
+
+    </div>
+  </div>
+</div>
+
       <!--end::Modal body-->
     </div>
     <!--end::Modal content-->
