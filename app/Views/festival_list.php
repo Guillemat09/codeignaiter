@@ -1501,12 +1501,17 @@ License: For each use you must have a valid license purchased only from above li
 
 														</div>
 														<!--begin::Input group-->
-														<div class="mb-10">
-															<label class="form-label fs-6 fw-bold">Fecha:</label>
+													<div class="mb-10">
+														<label class="form-label fs-6 fw-bold">Fecha:</label>
 														
-															<input type="date" name="fecha_creacion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Fecha" value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
-
+														<input type="text"
+																name="fecha_creacion"
+																id="fecha_creacion"
+																class="form-control form-control-solid mb-3 mb-lg-0"
+																placeholder="Selecciona una fecha"
+																value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
 														</div>
+
 														<!--end::Input group-->
 														<!--begin::Input group-->
 
@@ -1607,7 +1612,7 @@ License: For each use you must have a valid license purchased only from above li
 										<!--end::Alert-->
 										<!--begin::Table-->
 									<?php if (empty($festivales)): ?>
-							<div class="text-center text-danger fs-4">No se encontraron Festivales</div>
+							<div class="text-center text-danger fs-4" style="margin-top: 90px;">No se encontraron Festivales</div>
 							<?php else:?>
 										<!--begin::Table-->
 										<table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
@@ -1615,11 +1620,7 @@ License: For each use you must have a valid license purchased only from above li
 											<thead>
 												<!--begin::Table row-->
 												<tr class="text-start text-muted fw-bolder fs-7 text-uppercase gs-0">
-													<th class="w-10px pe-2">
-														<div class="form-check form-check-sm form-check-custom form-check-solid me-3">
-															<input class="form-check-input" type="checkbox" data-kt-check="true" data-kt-check-target="#kt_table_users .form-check-input" value="1" />
-														</div>
-													</th>
+													
 													<th class="min-w-125px">
                                         <a href="<?= base_url('festivales?sort=nombre&direction=' . ($sort == 'nombre' && $direction == 'ASC' ? 'DESC' : 'ASC')) ?>">
                                             Nombre
@@ -1706,16 +1707,12 @@ License: For each use you must have a valid license purchased only from above li
 												<!--begin::Table row-->
 
                                                 <?php foreach ($festivales as $festival): ?>
-													<tr>
+													<tr class="<?= $festival['is_active'] ? '' : 'text-danger' ?>">
 													<!--begin::Checkbox-->
-													<td>
-														<div class="form-check form-check-sm form-check-custom form-check-solid">
-															<input class="form-check-input" type="checkbox" value="1" />
-														</div>
-													</td>
+													
 													<!--end::Checkbox-->
 													<!--begin::User=-->
-													<td class="d-flex align-items-center">
+													<td class="d-flex align-items-center ">
 														<!--begin:: Avatar -->
 														<div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
 														<img alt src="../assets/media/avatars/150-<?= rand(24,25);?>.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;"/>
@@ -1724,7 +1721,10 @@ License: For each use you must have a valid license purchased only from above li
 														<!--end::Avatar-->
 														<!--begin::User details-->
 														<div class="d-flex flex-column">
-															<p class="text-gray-800 text-primary mb-1"><?= esc($festival['nombre']) ?></a>
+															<p class="mb-1 <?= $festival['is_active'] ? 'text-gray-800 text-primary' : 'text-danger' ?>">
+													           <?= esc($festival['nombre']) ?>
+															</p>
+
 														</div>
 														<!--begin::User details-->
 													</td>
@@ -1768,10 +1768,10 @@ License: For each use you must have a valid license purchased only from above li
 
     <!-- Mostrar solo uno según estado -->
     <div class="menu-item px-3">
-        <a href="<?= base_url('festivales/toggleActive/' . esc($festival['id'])) ?>"
-           class="menu-link px-3"
-           data-kt-festivales-table-filter="toggle_active"
-           onclick="return confirm('¿Estás seguro de que quieres <?= $festival['is_active'] ? 'dar de baja' : 'dar de alta' ?> este festival?');">
+        <a href="javascript:void(0);"
+   class="menu-link px-3"
+   onclick="confirmToggleFestival(<?= esc($festival['id']) ?>, <?= $festival['is_active'] ? 'true' : 'false' ?>)">
+
            <?= $festival['is_active'] 
                 ? '<span class="text-danger">Dar de baja</span>' 
                 : '<span class="text-success">Dar de alta</span>' ?>
@@ -4858,6 +4858,7 @@ License: For each use you must have a valid license purchased only from above li
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
     ...
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
@@ -4868,11 +4869,37 @@ License: For each use you must have a valid license purchased only from above li
                     document.getElementById("formulariobusqueda").submit();
 				}
 			});
-
+				flatpickr("#fecha_creacion", {
+					locale: "es",
+					dateFormat: "Y-m-d",     
+					altInput: true,           
+					altFormat: "d-m-Y"         
+				});
 			document.getElementById('export-excel-btn').addEventListener('click', function() {
 			window.location.href = "<?= base_url('export/csv/festivales') ?>";
 		});
 		</script>
+		<script>
+function confirmToggleFestival(id, isActive) {
+    Swal.fire({
+        title: isActive ? '¿Dar de baja?' : '¿Dar de alta?',
+        text: isActive 
+            ? "Este festival se marcará como dado de baja." 
+            : "Este festival volverá a estar activo.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: isActive ? 'Sí, dar de baja' : 'Sí, dar de alta',
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: isActive ? '#d33' : '#198754',
+        cancelButtonColor: '#6c757d'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "<?= base_url('festivales/toggleActive/') ?>" + id;
+        }
+    });
+}
+</script>
+
 	</body>
 	<!--end::Body-->
 </html>

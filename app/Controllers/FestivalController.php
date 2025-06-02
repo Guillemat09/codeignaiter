@@ -97,14 +97,17 @@ public function saveFestival($id = null)
             'lugar' => $this->request->getPost('lugar'),
         ];
 
-        if ($id) {
+               if ($id) {
             $festivalModel->update($id, $festivalData);
             session()->setFlashdata('success', 'Festival actualizado correctamente.');
         } else {
+            // Festival nuevo => marcar como activo
+            $festivalData['is_active'] = 1;
             $festivalModel->save($festivalData);
             session()->setFlashdata('success', 'Festival creado correctamente.');
             $data['festival_creado'] = true;
         }
+
 
         // Opcional: puedes guardar errores en session para mostrarlos si quieres
         if (!$validationPassed) {

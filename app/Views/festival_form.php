@@ -1408,1214 +1408,1222 @@
     <!--end:::Tabs-->
 
     <!--begin:::Tab content-->
-   <div class="card-header mt-6 d-flex justify-content-between align-items-center"style="position: sticky; top: 0; z-index: 10; background-color: #fff; padding-top: 20px;">
-  <div class="card-title flex-column">
-    <h2 class="mb-1" id="formTitle"><?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?></h2>
-  </div>
-  <div>
-    <!-- Botón que abre el modal -->
+<div class="card mt-6">
+  <!-- ENCABEZADO DE LA CARD -->
+  <div class="card-header d-flex justify-content-between align-items-center"
+       style="position: sticky; top: 0; z-index: 10;">
+    <h2 class="mb-0" id="formTitle">
+      <?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?>
+    </h2>
     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_add_schedule">
-  <?= isset($festival) ? 'Editar Festival' : 'Añadir Festival' ?>
-</button>
+      <?= isset($festival) ? 'Editar Festival' : 'Añadir Festival' ?>
+    </button>
+  </div>
+
+  <!-- CONTENIDO DE LA CARD -->
+  <div class="card-body">
+	<div class="tab-content">
+		<!--begin::Day-->
+		<div id="kt_schedule_day_0" class="tab-pane fade show" bg-white>
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6 bg-white"; style="background-color: white;">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_1" class="tab-pane show active bg-white fade top" style="margin-top: -10;">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Sean Bean</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Karina Clarke</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_2" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Bob Harris</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Caleb Donaldson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">David Stevenson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_3" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Walter White</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">14:30 - 15:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Walter White</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">16:30 - 17:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Iniciativa de Contenido Creativo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Karina Clarke</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_4" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">16:30 - 17:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">16:30 - 17:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_5" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">9:00 - 10:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Sean Bean</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Walter White</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">14:30 - 15:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Mark Randall</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_6" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">14:30 - 15:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Sean Bean</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">David Stevenson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Walter White</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">9:00 - 10:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Caleb Donaldson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_7" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">David Stevenson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Naomi Hayabusa</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">9:00 - 10:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Michael Walters</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Kendell Trevor</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">16:30 - 17:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Mark Randall</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_8" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Sean Bean</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">13:00 - 14:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Yannis Gloverson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Mark Randall</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_9" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Bob Harris</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">9:00 - 10:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Bob Harris</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Peter Marcus</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">12:00 - 13:00
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Karina Clarke</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+		<!--begin::Day-->
+		<div id="kt_schedule_day_10" class="tab-pane fade show">
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">14:30 - 15:30
+					<span class="fs-7 text-muted text-uppercase">pm</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Karina Clarke</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Karina Clarke</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">10:00 - 11:00
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">David Stevenson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+			<!--begin::Time-->
+			<div class="d-flex flex-stack position-relative mt-6">
+				<!--begin::Bar-->
+				<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
+				<!--end::Bar-->
+				<!--begin::Info-->
+				<div class="fw-bold ms-5">
+					<!--begin::Time-->
+					<div class="fs-7 mb-1">11:00 - 11:45
+					<span class="fs-7 text-muted text-uppercase">am</span></div>
+					<!--end::Time-->
+					<!--begin::Title-->
+					<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
+					<!--end::Title-->
+					<!--begin::User-->
+					<div class="fs-7 text-muted">Dirigido por
+					<a href="#">Caleb Donaldson</a></div>
+					<!--end::User-->
+				</div>
+				<!--end::Info-->
+				<!--begin::Action-->
+				<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
+				<!--end::Action-->
+			</div>
+			<!--end::Time-->
+		</div>
+		<!--end::Day-->
+	</div>
+  </div>
+</div>
 
   </div>
 </div>
-  <div class="tab-content">
-	<!--begin::Day-->
-	<div id="kt_schedule_day_0" class="tab-pane fade show" bg-white>
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6 bg-white"; style="background-color: white;">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_1" class="tab-pane show active bg-white fade top" style="margin-top: -10;">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Sean Bean</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Karina Clarke</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_2" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Aprobaciones del Comité</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Bob Harris</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Caleb Donaldson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">David Stevenson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_3" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Walter White</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">14:30 - 15:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Walter White</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">16:30 - 17:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Iniciativa de Contenido Creativo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Karina Clarke</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_4" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">16:30 - 17:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">16:30 - 17:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_5" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">9:00 - 10:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Sean Bean</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Walter White</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">14:30 - 15:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Mark Randall</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_6" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">14:30 - 15:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Sean Bean</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">David Stevenson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Walter White</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">9:00 - 10:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Caleb Donaldson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_7" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">David Stevenson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Naomi Hayabusa</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">9:00 - 10:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión de Estimación del Proyecto 9 Grados</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Michael Walters</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Kendell Trevor</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">16:30 - 17:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Almuerzo y Aprendizaje</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Mark Randall</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_8" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Sean Bean</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">13:00 - 14:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Yannis Gloverson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Mark Randall</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_9" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Capacidad del Equipo de Desarrollo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Bob Harris</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">9:00 - 10:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión y Pruebas del Proyecto</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Bob Harris</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Peter Marcus</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">12:00 - 13:00
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Discusión de Campaña de Marketing</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Karina Clarke</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-	<!--begin::Day-->
-	<div id="kt_schedule_day_10" class="tab-pane fade show">
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">14:30 - 15:30
-				<span class="fs-7 text-muted text-uppercase">pm</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Karina Clarke</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Propuesta de Presentación de Ventas</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Karina Clarke</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">10:00 - 11:00
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Reunión Semanal del Equipo</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">David Stevenson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-		<!--begin::Time-->
-		<div class="d-flex flex-stack position-relative mt-6">
-			<!--begin::Bar-->
-			<div class="position-absolute h-100 w-4px bg-secondary rounded top-0 start-0"></div>
-			<!--end::Bar-->
-			<!--begin::Info-->
-			<div class="fw-bold ms-5">
-				<!--begin::Time-->
-				<div class="fs-7 mb-1">11:00 - 11:45
-				<span class="fs-7 text-muted text-uppercase">am</span></div>
-				<!--end::Time-->
-				<!--begin::Title-->
-				<a href="#" class="fs-5 fw-bolder text-dark text-hover-primary mb-2">Revisión de Diseño UI/UX del Dashboard</a>
-				<!--end::Title-->
-				<!--begin::User-->
-				<div class="fs-7 text-muted">Dirigido por
-				<a href="#">Caleb Donaldson</a></div>
-				<!--end::User-->
-			</div>
-			<!--end::Info-->
-			<!--begin::Action-->
-			<a href="#" class="btn btn-light bnt-active-light-primary btn-sm">Ver</a>
-			<!--end::Action-->
-		</div>
-		<!--end::Time-->
-	</div>
-	<!--end::Day-->
-</div>
+
 <div class="modal fade" id="kt_modal_add_schedule" tabindex="-1" aria-hidden="true">
   <!--begin::Modal dialog-->
   <div class="modal-dialog modal-dialog-centered mw-650px">
@@ -2689,17 +2697,30 @@
                     value="<?= set_value('descripcion', $festival['descripcion'] ?? '') ?>" placeholder="Descripción">
                 </div>
 
-                <div class="mb-4">
-                  <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span class="text-danger">*</span></label>
-                  <input type="date" class="form-control form-control-solid" id="fecha_inicio" name="fecha_inicio" required
-                    value="<?= set_value('fecha_inicio', $festival['fecha_inicio'] ?? '') ?>">
-                </div>
+             <div class="mb-4">
+				<label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span class="text-danger">*</span></label>
+				<input type="text"
+						class="form-control form-control-solid datepicker"
+						id="fecha_inicio"
+						name="fecha_inicio"
+						placeholder="Selecciona una fecha"
+						value="<?= set_value('fecha_inicio', $festival['fecha_inicio'] ?? '') ?>" />
+				</div>
+
 
                 <div class="mb-4">
-                  <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span class="text-danger">*</span></label>
-                  <input type="date" class="form-control form-control-solid" id="fecha_fin" name="fecha_fin" required
-                    value="<?= set_value('fecha_fin', $festival['fecha_fin'] ?? '') ?>">
-                </div>
+					<label for="fecha_fin" class="form-label fw-bold">
+						Fecha de Fin <span class="text-danger">*</span>
+					</label>
+					<input type="text"
+							class="form-control form-control-solid datepicker"
+							id="fecha_fin"
+							name="fecha_fin"
+							required
+							placeholder="Selecciona una fecha"
+							value="<?= set_value('fecha_fin', $festival['fecha_fin'] ?? '') ?>">
+					</div>
+
 
                 <div class="mb-4">
                   <label for="lugar" class="form-label fw-bold">Lugar <span class="text-danger">*</span></label>
@@ -2762,9 +2783,18 @@
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+
+	
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("festivalForm");
+flatpickr(".datepicker", {
+    locale: "es",
+    dateFormat: "Y-m-d",     
+    altInput: true,           
+    altFormat: "d-m-Y"         
+  });
 
   form.addEventListener("submit", function (e) {
     const nombre = document.getElementById("nombre").value.trim();
