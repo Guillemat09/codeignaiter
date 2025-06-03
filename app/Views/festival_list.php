@@ -86,11 +86,7 @@ License: For each use you must have a valid license purchased only from above li
     $current_url = current_url(); // o service('uri')->getPath() para comparar rutas
     $is_festivales_active = strpos($current_url, 'festivales') !== false;
 ?>
-<div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper"
-     data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}"
-     data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer"
-     data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0">
-
+<div class="my-5 my-lg-5" id="kt_aside_menu_wrapper">
     <!--begin::Menu-->
     <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
          id="kt_aside_menu" data-kt-menu="true">
@@ -1801,25 +1797,25 @@ License: For each use you must have a valid license purchased only from above li
                             </ul>
                         </nav>
 						<?php endif; ?>
-						<div class="d-flex justify-content-between align-items-center mb-3">
+<div class="d-flex justify-content-between align-items-center mb-3">
     <!-- Mostrar cantidad de registros -->
     <div>
         <span><?= count($festivales) ?> de <?= $pager->getTotal() ?> Festivales</span>
     </div>
 
     <!-- Selector de cantidad de registros por página -->
-	<div class="d-flex justify-content-end mb-3">
-    <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
-        <label for="perPage" class="me-2">Mostrar</label>
-        <select id="perPage" name="perPage" class="form-control form-control-sm w-auto" onchange="this.form.submit()">
-            <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
-            <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
-            <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
-            <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
-        </select>
-        <span class="ms-2">Festivales por página</span>
-    </form>
-</div>
+    <div>
+        <form method="get" action="<?= current_url() ?>" class="d-flex align-items-center">
+            <label for="perPage" class="me-2 mb-0" style="white-space: nowrap;">Mostrar</label>
+            <select id="perPage" name="perPage" class="form-select form-select-sm w-auto" onchange="this.form.submit()">
+                <option value="5" <?= $perPage == 5 ? 'selected' : '' ?>>5</option>
+                <option value="10" <?= $perPage == 10 ? 'selected' : '' ?>>10</option>
+                <option value="25" <?= $perPage == 25 ? 'selected' : '' ?>>25</option>
+                <option value="50" <?= $perPage == 50 ? 'selected' : '' ?>>50</option>
+            </select>
+            <span class="ms-2" style="white-space: nowrap;">Festivales por página</span>
+        </form>
+    </div>
 </div>
 										<!--end::Table-->
 									</div>
@@ -4859,7 +4855,7 @@ License: For each use you must have a valid license purchased only from above li
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
-    ...
+	<script src="path-to-metronic/plugins/custom/sweetalert2/sweetalert2.min.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
 		<script>
@@ -4898,6 +4894,20 @@ function confirmToggleFestival(id, isActive) {
         }
     });
 }
+<?php if (session()->getFlashdata('success')): ?>
+<script>
+    Swal.fire({
+        text: "<?= session()->getFlashdata('success') ?>",
+        icon: "success",
+        buttonsStyling: false,
+        confirmButtonText: "Entendido",
+        customClass: {
+            confirmButton: "btn btn-primary"
+        }
+    });
+</script>
+<?php endif; ?>
+
 </script>
 
 	</body>

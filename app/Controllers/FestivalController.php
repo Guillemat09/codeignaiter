@@ -162,5 +162,40 @@ public function saveFestival($id = null)
         }
     }
 
+   public function exportFestivales()
+{
+    $festivalModel = new FestivalModel();
+    $festivales = $festivalModel->findAll();
+
+    // Encabezados para descarga CSV
+    header('Content-Type: text/csv; charset=UTF-8');
+    header('Content-Disposition: attachment; filename="festivales.csv"');
+
+    // Agregar BOM para que Excel detecte UTF-8 correctamente
+    echo "\xEF\xBB\xBF";
+
+    $output = fopen('php://output', 'w');
+
+    // Encabezado del CSV
+    fputcsv($output, ['Nombre', 'Lugar', 'Descripción', 'Fecha Inicio', 'Fecha Fin']);
+
+    // Datos de los festivales con formato de fecha en español (dd/mm/yyyy)
+    foreach ($festivales as $festival) {
+        $fechaInicio = date('d/m/Y', strtotime($festival['fecha_inicio']));
+        $fechaFin = date('d/m/Y', strtotime($festival['fecha_fin']));
+
+        fputcsv($output, [
+            $festival['nombre'],
+            $festival['lugar'],
+            $festival['descripcion'],
+            $fechaInicio,
+            $fechaFin,
+        ]);
+    }
+
+    fclose($output);
+    exit;
+}
+
 }
 
