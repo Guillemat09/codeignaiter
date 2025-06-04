@@ -1392,16 +1392,6 @@
           <button class="btn btn-primary dropdown-toggle" type="button" id="accionesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
             Acciones
           </button>
-          <ul class="dropdown-menu" aria-labelledby="accionesDropdown">
-            <li>
-              <a href="<?= isset($festival['id']) ? base_url('festivales/delete/' . $festival['id']) : '#' ?>" 
-                 class="dropdown-item text-danger"
-                 onclick="return confirm('¿Estás seguro de que quieres eliminar este festival?');"
-              >
-                Eliminar festival
-              </a>
-            </li>
-          </ul>
         </div>
       </li>
     </ul>
