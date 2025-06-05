@@ -1,0 +1,18 @@
+-Mirar exportar ponerlo en español y lo de utf8
+
+-Sin modal
+
+-alertas al cerrar sesion
+
+-validaciones de login en español
+
+
+-responsive lista
+..header rarillo en movil
+..poner los filtros y el buscar
+..exportar
+..paginacion y lo de lo cuantoas cosas quieres que se vea por pagina 
+..Paginación rota si ordenas y ponerlo centrado y con estilos de metronic
+
+-responive editar
+
