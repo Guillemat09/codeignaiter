@@ -6,38 +6,57 @@ use App\Models\FestivalModel;
 
 class FestivalController extends BaseController
 {
-    public function index()
-{
-    $festivalModel = new FestivalModel();
-    $filters = $this->request->getGet();  // Obtener filtros del formulario
+public function index()
+    {
+        $festivalModel = new FestivalModel();
 
-    // Configurar paginación
-    $perPage = $this->request->getVar('perPage') ? $this->request->getVar('perPage') : 10; // 10 es el valor predeterminado
-    $currentPage = $this->request->getVar('page') ? $this->request->getVar('page') : 1; // Página actual
-    $sort = $this->request->getVar('sort') ? $this->request->getVar('sort') : 'nombre'; // Orden por defecto: 'nombre'
-    $direction = $this->request->getVar('direction') ? $this->request->getVar('direction') : 'ASC'; // Orden ascendente por defecto
+        // Capturamos los filtros del GET
+        $filters = [
+            'nombre' => $this->request->getGet('nombre'),
+            'descripcion' => $this->request->getGet('descripcion'),
+            'fecha_inicio' => $this->request->getGet('fecha_inicio'),
+            'fecha_fin' => $this->request->getGet('fecha_fin'),
+            'lugar' => $this->request->getGet('lugar'),
+            'fecha_creacion' => $this->request->getGet('fecha_creacion'),
+        ];
 
-    // Eliminar los parámetros de paginación y ordenación de los filtros antes de pasarlos al modelo
-    unset($filters['sort']);
-    unset($filters['direction']);
-    unset($filters['page']);
-    unset($filters['perPage']); // Eliminar el parámetro de cantidad por página de los filtros
+        // Parámetros de orden y paginación
+        $sort = $this->request->getGet('sort') ?? 'id';
+        $order = strtoupper($this->request->getGet('order') ?? 'ASC');
+        $perPage = (int) ($this->request->getGet('perPage') ?? 10);
+        $page = (int) ($this->request->getGet('page') ?? 1);
 
-    // Obtener los festivales filtrados y paginados
-    $data['festivales'] = $festivalModel->filter($filters)  // Aplicar filtros
-                                        ->orderBy($sort, $direction)  // Aplicar ordenación
-                                        ->paginate($perPage, 'default', $currentPage);  // Paginación
+        // Aplicar filtros con like si tienen valor
+        foreach ($filters as $key => $value) {
+            if (!empty($value)) {
+                $festivalModel->like($key, $value);
+            }
+        }
 
-    // Pasar a la vista los datos necesarios
-    $data['pager'] = $festivalModel->pager;  // Pasar el objeto de paginación a la vista
-    $data['filters'] = $filters;  // Pasar los filtros aplicados a la vista
-    $data['sort'] = $sort;  // Campo de ordenación
-    $data['direction'] = $direction;  // Dirección de ordenación
-    $data['perPage'] = $perPage;  // Número de registros por página
-    $data['currentPage'] = $currentPage;  // Página actual
+        // Aplicar orden
+        $festivalModel->orderBy($sort, $order);
 
-    return view('festival_list', $data);  // Pasar los datos a la vista
-}
+        // Obtener total para mostrar en la vista (opcional)
+        $totalRegistros = $festivalModel->countAllResults(false);
+
+        // Obtener datos paginados
+        $festivales = $festivalModel->paginate($perPage, 'default', $page);
+
+        // Pasar datos a la vista
+        $data = [
+            'festivales' => $festivales,
+            'pager' => $festivalModel->pager,
+            'filters' => $filters,
+            'sort' => $sort,
+            'order' => $order,
+            'perPage' => $perPage,
+            'page' => $page,
+            'totalRegistros' => $totalRegistros,
+        ];
+
+        return view('festival_list', $data);
+    }
+
 
     
 

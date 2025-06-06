@@ -30,7 +30,7 @@ class Export extends BaseController
             case 'festivales':
                 $model = new FestivalModel();
                 $filename = "festivales.csv";
-                $headers = ['ID', 'Nombre', 'Descripción', 'Fecha de Inicio', 'Fecha de Fin', 'Lugar', 'Fecha de Creación'];
+                $headers = ['ID', 'Nombre', 'Descripción', 'Fecha de Inicio', 'Fecha de Fin', 'Lugar','Dar de alta', 'Fecha de Creación'];
                 break;
 
             case 'patrocinadores':
@@ -65,9 +65,17 @@ class Export extends BaseController
         fputcsv($output, $headers);
 
         // Agregar datos
-        foreach ($data as $row) {
-            fputcsv($output, $row);
-        }
+       // Agregar datos
+foreach ($data as $row) {
+    if ($type === 'festivales') {
+        $row['fecha_inicio'] = date('d/m/Y', strtotime($row['fecha_inicio']));
+        $row['fecha_fin'] = date('d/m/Y', strtotime($row['fecha_fin']));
+        $row['fecha_creacion'] = date('d/m/Y', strtotime($row['fecha_creacion']));
+    }
+
+    fputcsv($output, $row);
+}
+
 
         fclose($output);
         exit();
