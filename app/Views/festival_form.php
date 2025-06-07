@@ -165,9 +165,9 @@ License: For each use you must have a valid license purchased only from above li
 					<!--begin::Brand-->
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
-						<a href="#">
-							<img alt="Logo" src="../assets/media/logos/logo.png" class="h-70px logo" />
-						</a>
+						<a href=<?= base_url('principal') ?>>
+						<img alt="Logo" src="../assets/media/logos/logo.png" class="h-70px logo" />
+					</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
 						<div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle d-none d-lg-flex" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
@@ -214,7 +214,7 @@ License: For each use you must have a valid license purchased only from above li
 
                                     <div class="menu-sub menu-sub-accordion">
                                         <div class="menu-item">
-                                            <a class="menu-link" href="#">
+											<a class="menu-link" href="<?= base_url('festivales') ?>">
                                                 <span class="menu-bullet">
                                                     <span class="bullet bullet-dot"></span>
                                                 </span>
@@ -232,26 +232,28 @@ License: For each use you must have a valid license purchased only from above li
 					<!--end::Aside menu-->
 					<!--begin::Footer-->
 					<div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-                        <a href="" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
-                            <span class="btn-label">
-                                <div class="media align-items-center">
-                                    <img alt="" src="../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
-                                    <div class="media-body text-light fw-bold">
-                                        Usuario Demo<br>
-                                        Administrador
-                                    </div>
-                                </div>
-                            </span>
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-                            <span class="svg-icon btn-icon svg-icon-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
-                                    <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->
-                        </a>
-                    </div>
+					<a href="" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss="click" title="">
+						<span class="btn-label">
+							<?php if (session()->has('user')): ?>
+								<div class="media align-items-center">
+									<img alt="" src="../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
+									<div class="media-body text-light fw-bold">
+										<?= session()->get('user')['name'] ?><br>
+										<?= session()->get('role')['nombre'] ?>
+									</div>
+								</div>
+							<?php endif; ?>
+						</span>
+						<!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
+						<span class="svg-icon btn-icon svg-icon-2">
+							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+								<path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM15 17C15 16.4 14.6 16 14 16H8C7.4 16 7 16.4 7 17C7 17.6 7.4 18 8 18H14C14.6 18 15 17.6 15 17ZM17 12C17 11.4 16.6 11 16 11H8C7.4 11 7 11.4 7 12C7 12.6 7.4 13 8 13H16C16.6 13 17 12.6 17 12ZM17 7C17 6.4 16.6 6 16 6H8C7.4 6 7 6.4 7 7C7 7.6 7.4 8 8 8H16C16.6 8 17 7.6 17 7Z" fill="black" />
+								<path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black" />
+							</svg>
+						</span>
+						<!--end::Svg Icon-->
+					</a>
+				</div>
 					<!--end::Footer-->
 				</div>
 				<!--end::Aside-->
@@ -268,7 +270,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Page title-->
 								<div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
 									<!--begin::Title-->
-									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Gestión de Festivales</h1>
+									<h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Festivales</h1>
 									<!--end::Title-->
 									<!--begin::Separator-->
 									<span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -277,7 +279,7 @@ License: For each use you must have a valid license purchased only from above li
 									<ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
 										<!--begin::Item-->
 										<li class="breadcrumb-item text-muted">
-											<a href="#" class="text-muted text-hover-primary">Home</a>
+											<a href="#" class="text-muted text-hover-primary">Principal</a>
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
@@ -309,9 +311,16 @@ License: For each use you must have a valid license purchased only from above li
 								</div>
 								<!--end::Page title-->
 								<!--begin::Actions-->
-                                <div class="mt-2 mb-2">
-                                    <a href="#" class="btn btn-danger">Cerrar Sesión</a>
-                                </div>
+                    <div class="mt-2 mb-2">
+    <?php if (session()->has('user')): ?>
+        <a href="<?= base_url('logout') ?>" class="btn btn-danger">Cerrar Sesión</a>
+    <?php else: ?>
+        <a href="<?= base_url('login') ?>" class="btn btn-primary me-2">Iniciar Sesion</a>
+        <a href="<?= base_url('register') ?>" class="btn btn-secondary">Registro</a>
+    <?php endif; ?>
+    <a class="btn btn-primary" href="<?= base_url('festivales') ?>">Volver</a>
+</div>
+
                                 <!--end::Actions-->
                             </div>
                             
@@ -345,7 +354,7 @@ License: For each use you must have a valid license purchased only from above li
                                     <!-- Header -->
                                     <div class="card-header d-flex justify-content-between align-items-center py-4 bg-light">
                                         <h2 class="mb-0" id="formTitle">Crear Festival</h2>
-                                        <a href="#" class="btn btn-light-primary btn-sm">Cancelar</a>
+                                        <a class="btn btn-light-primary btn-sm" href="<?= base_url('festivales') ?>">Cancelar</a>
                                     </div>
 
                                     <!-- Formulario -->
@@ -373,14 +382,12 @@ License: For each use you must have a valid license purchased only from above li
                                             <div class="fecha-grid">
                                                 <div class="mb-4">
                                                     <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control form-control-solid datepicker" id="fecha_inicio" name="fecha_inicio"
-                                                        placeholder="Selecciona una fecha" value="" />
+                                                   <input type="text" class="form-control datepicker" id="fecha_inicio" name="fecha_inicio" placeholder="Selecciona una fecha" value="" />
                                                 </div>
 
                                                 <div class="mb-4">
                                                     <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span class="text-danger">*</span></label>
-                                                    <input type="text" class="form-control form-control-solid datepicker" id="fecha_fin" name="fecha_fin" required
-                                                        placeholder="Selecciona una fecha" value="">
+                                                  <input type="text" class="form-control datepicker" id="fecha_fin" name="fecha_fin" placeholder="Selecciona una fecha" value=""/>
                                                 </div>
                                             </div>
 
@@ -531,6 +538,89 @@ License: For each use you must have a valid license purchased only from above li
 					}
 				});
 			}
+
+$(document).ready(function () {
+    $('#festivalForm').on('submit', function (e) {
+        e.preventDefault(); // evitamos envío por defecto hasta validar
+
+        let isValid = true;
+        let errores = [];
+
+        const nombre = $('#nombre').val().trim();
+        const descripcion = $('#descripcion').val().trim();
+        const fecha_inicio = $('#fecha_inicio').val().trim();
+        const fecha_fin = $('#fecha_fin').val().trim();
+        const lugar = $('#lugar').val().trim();
+
+        // Validar campos obligatorios y mínimos caracteres
+        if (nombre === '') {
+            isValid = false;
+            errores.push('El nombre es obligatorio.');
+        } else if (nombre.length < 5) {
+            isValid = false;
+            errores.push('El nombre debe tener al menos 5 caracteres.');
+        }
+
+        if (descripcion === '') {
+            isValid = false;
+            errores.push('La descripción es obligatoria.');
+        } else if (descripcion.length < 5) {
+            isValid = false;
+            errores.push('La descripción debe tener al menos 5 caracteres.');
+        }
+
+        if (fecha_inicio === '') {
+            isValid = false;
+            errores.push('La fecha de inicio es obligatoria.');
+        }
+
+        if (fecha_fin === '') {
+            isValid = false;
+            errores.push('La fecha de fin es obligatoria.');
+        }
+
+        if (lugar === '') {
+            isValid = false;
+            errores.push('El lugar es obligatorio.');
+        } else if (lugar.length < 5) {
+            isValid = false;
+            errores.push('El lugar debe tener al menos 5 caracteres.');
+        }
+
+        // Validar que fecha_fin >= fecha_inicio
+        if (fecha_inicio !== '' && fecha_fin !== '') {
+            let inicio = new Date(fecha_inicio);
+            let fin = new Date(fecha_fin);
+            if (fin < inicio) {
+                isValid = false;
+                errores.push('La fecha de fin debe ser igual o posterior a la fecha de inicio.');
+            }
+        }
+
+        const alertBox = $('.alert-danger');
+        const errorList = alertBox.find('ul');
+        errorList.empty();
+
+        if (!isValid) {
+            // Mostrar errores
+            errores.forEach(function (error) {
+                errorList.append('<li>' + error + '</li>');
+            });
+            alertBox.removeClass('d-none');
+
+            // Scroll al alert
+            $('html, body').animate({
+                scrollTop: alertBox.offset().top - 100
+            }, 400);
+
+            return false; // Cancelar submit
+        } else {
+            alertBox.addClass('d-none');
+            this.submit(); // Enviar formulario si todo está OK
+        }
+    });
+});
+
 
 			// Mostrar mensaje de éxito (ejemplo)
 			// Swal.fire({

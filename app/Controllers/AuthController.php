@@ -152,11 +152,13 @@ return view ('login');
     /**
      * Cierra la sesión del usuario.
      */
-    public function logout()
-    {
-        session()->destroy();
-        return redirect()->to('/login')->with('success', 'Has cerrado sesión correctamente.');
-    }
+   public function logout()
+{
+    session()->destroy();
+    session()->setFlashdata('logout_success', 'Sesión cerrada correctamente.');
+    return redirect()->to('/login');
+}
+
 }
 
 

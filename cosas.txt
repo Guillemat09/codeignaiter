@@ -1,14 +1,10 @@
 
 -alertas al cerrar sesion
 
--validaciones de login en español
+-header rarillo en movil  (bien)
 
--header rarillo en movil
-
-..en editar no se ve estilos
-..las validaciones no la hacen 
--el dar de baja y alta 
+                                                             ..las validaciones                       (hechas)
 
 -mirar estilos del editar
--emnlazar la lista y el boton cancelar
+                                                   -emnlazar la lista y el boton cancelar          (hecho)
 

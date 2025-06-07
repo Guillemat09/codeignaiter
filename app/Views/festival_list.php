@@ -498,17 +498,17 @@ License: For each use you must have a valid license purchased only from above li
 																<!--end::Menu item-->
 
 																<!-- Mostrar solo uno según estado -->
-																<div class="menu-item px-3">
-																	<a href="javascript:void(0);"
-																		class="menu-link px-3"
-																		onclick="confirmToggleFestival(<?= esc($festival['id']) ?>, <?= $festival['is_active'] ? 'true' : 'false' ?>)">
-
-																		<?= $festival['is_active']
-																			? '<span class="text-danger">Dar de baja</span>'
-																			: '<span class="text-success">Dar de alta</span>' ?>
-																	</a>
-																</div>
-															</div>
+													<div class="menu-item px-3">
+														<a href="<?= base_url('festivales/toggleActive/' . esc($festival['id'])) ?>"
+														class="menu-link px-3"
+														data-kt-users-table-filter="toggle_active">
+															<?= $festival['is_active']
+																? '<span class="text-danger">Dar de baja</span>'
+																: '<span class="text-success">Dar de alta</span>' ?>
+														</a>
+													</div>
+													
+													</div>
 
 															<!--end::Menu-->
 														</td>
@@ -679,8 +679,8 @@ License: For each use you must have a valid license purchased only from above li
 	<script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
-
 	<script src="path-to-metronic/plugins/custom/sweetalert2/sweetalert2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!--end::Page Custom Javascript-->
 	<!--end::Javascript-->
 	<script>

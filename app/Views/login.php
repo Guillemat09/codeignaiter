@@ -131,9 +131,22 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../assets/js/custom/authentication/sign-in/general.js"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
+		<?php if(session()->getFlashdata('logout_success')): ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  Swal.fire({
+    icon: 'success',
+    title: '¡Listo!',
+    text: '<?= session()->getFlashdata('logout_success') ?>',
+    timer: 3000,
+    timerProgressBar: true,
+    showConfirmButton: false
+  });
+</script>
+<?php endif; ?>
+
 	</body>
 	<!--end::Body-->
 </html>
