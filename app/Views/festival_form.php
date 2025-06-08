@@ -24,21 +24,21 @@ License: For each use you must have a valid license purchased only from above li
 		<meta property="og:url" content="https://keenthemes.com/metronic" />
 		<meta property="og:site_name" content="Keenthemes | Metronic" />
 		<link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-		<link rel="shortcut icon" href="../assets/media/logos/logo.ico" />
+		<link rel="shortcut icon" href="../../assets/media/logos/logo.ico" />
 		<!--begin::Fonts-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendor Stylesheets(used by this page)-->
-		<link href="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendor Stylesheets-->
 		<!--begin::Global Stylesheets Bundle(used by all pages)-->
-		<link href="../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-		<link href="../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="../../assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
 		<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
 		<!-- Flatpickr CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+		<link href="../../assets/plugins/custom/flatpickr/flatpickr.bundle.css" rel="stylesheet" type="text/css" />
 
 		<!--end::Global Stylesheets Bundle-->
 		<style>
@@ -166,7 +166,7 @@ License: For each use you must have a valid license purchased only from above li
 					<div class="aside-logo flex-column-auto" id="kt_aside_logo">
 						<!--begin::Logo-->
 						<a href=<?= base_url('principal') ?>>
-						<img alt="Logo" src="../assets/media/logos/logo.png" class="h-70px logo" />
+						<img alt="Logo" src="../../assets/media/logos/logo.png" class="h-70px logo" />
 					</a>
 						<!--end::Logo-->
 						<!--begin::Aside toggler-->
@@ -236,7 +236,7 @@ License: For each use you must have a valid license purchased only from above li
 						<span class="btn-label">
 							<?php if (session()->has('user')): ?>
 								<div class="media align-items-center">
-									<img alt="" src="../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
+									<img alt="" src="../../assets/media/avatars/150-25.jpg" class="rounded-circle me-2" style="width: 40px; height: 40px;" />
 									<div class="media-body text-light fw-bold">
 										<?= session()->get('user')['name'] ?><br>
 										<?= session()->get('role')['nombre'] ?>
@@ -304,8 +304,10 @@ License: For each use you must have a valid license purchased only from above li
 										</li>
 										<!--end::Item-->
 										<!--begin::Item-->
-										<li class="breadcrumb-item text-dark">Crear Festival</li>
-										<!--end::Item-->
+										<li class="breadcrumb-item text-dark">
+											<?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?>
+										</li>
+																				<!--end::Item-->
 									</ul>
 									<!--end::Breadcrumb-->
 								</div>
@@ -313,7 +315,7 @@ License: For each use you must have a valid license purchased only from above li
 								<!--begin::Actions-->
                     <div class="mt-2 mb-2">
     <?php if (session()->has('user')): ?>
-        <a href="<?= base_url('logout') ?>" class="btn btn-danger">Cerrar Sesión</a>
+        <a href="<?= base_url('logout') ?>" class="btn btn-danger"  id="logoutBtn">Cerrar Sesión</a>
     <?php else: ?>
         <a href="<?= base_url('login') ?>" class="btn btn-primary me-2">Iniciar Sesion</a>
         <a href="<?= base_url('register') ?>" class="btn btn-secondary">Registro</a>
@@ -348,68 +350,82 @@ License: For each use you must have a valid license purchased only from above li
 						<!--end::Toolbar-->
 						<!--begin::Post-->
                         <div class="post d-flex flex-column-fluid" id="kt_post">
-                            <!--begin::Container-->
-                            <div id="kt_content_container" class="container-xxl">
-                                <div class="card shadow-sm border rounded-3 mx-auto" style="max-width: 900px;">
-                                    <!-- Header -->
-                                    <div class="card-header d-flex justify-content-between align-items-center py-4 bg-light">
-                                        <h2 class="mb-0" id="formTitle">Crear Festival</h2>
-                                        <a class="btn btn-light-primary btn-sm" href="<?= base_url('festivales') ?>">Cancelar</a>
-                                    </div>
+    <!--begin::Container-->
+    <div id="kt_content_container" class="container-xxl">
+        <div class="card card-flush mx-auto" style="max-width: 900px;">
+            <!-- Header -->
+            <div class="card-header align-items-center py-5">
+                <div class="card-title">
+                    <h2 class="text-dark fw-bold fs-2">
+                        <?= isset($festival) ? 'Editar Festival' : 'Crear Festival' ?>
+                    </h2>
+                </div>
 
-                                    <!-- Formulario -->
-                                    <div class="card-body p-6 pt-0">
-                                        <form id="festivalForm" method="post" action="#">
-                                            <div class="alert alert-danger d-none">
-                                                <ul></ul>
-                                            </div>
+                <div class="card-toolbar">
+                    <a href="<?= base_url('festivales') ?>" class="btn btn-light btn-sm">
+                        Cancelar
+                    </a>
+                </div>
+            </div>
 
-                                            <input type="hidden" name="festivalId" value="">
+            <!-- Formulario -->
+            <div class="card-body pt-0">
+                <form id="festivalForm" method="post" action="#">
+                    <div class="alert alert-danger d-none">
+                        <ul></ul>
+                    </div>
 
-                                            <div class="mb-4">
-                                                <label for="nombre" class="form-label fw-bold">Nombre <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
-                                                    value="" placeholder="Nombre">
-                                            </div>
+                    <input type="hidden" name="festivalId" value="">
 
-                                            <div class="mb-4">
-                                                <label for="descripcion" class="form-label fw-bold">Descripción <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
-                                                    value="" placeholder="Descripción">
-                                            </div>
+                    <div class="mb-5">
+                        <label for="nombre" class="required fw-semibold fs-6 mb-2">Nombre</label>
+                        <input type="text" class="form-control form-control-solid" id="nombre" name="nombre" required
+                            value="<?= isset($festival) ? esc($festival['nombre']) : '' ?>" placeholder="Nombre">
+                    </div>
 
-                                            <!-- Grid responsive para fechas -->
-                                            <div class="fecha-grid">
-                                                <div class="mb-4">
-                                                    <label for="fecha_inicio" class="form-label fw-bold">Fecha de Inicio <span class="text-danger">*</span></label>
-                                                   <input type="text" class="form-control datepicker" id="fecha_inicio" name="fecha_inicio" placeholder="Selecciona una fecha" value="" />
-                                                </div>
+                    <div class="mb-5">
+                        <label for="descripcion" class="required fw-semibold fs-6 mb-2">Descripción</label>
+                        <input type="text" class="form-control form-control-solid" id="descripcion" name="descripcion" required
+                            value="<?= isset($festival) ? esc($festival['descripcion']) : '' ?>" placeholder="Descripción">
+                    </div>
 
-                                                <div class="mb-4">
-                                                    <label for="fecha_fin" class="form-label fw-bold">Fecha de Fin <span class="text-danger">*</span></label>
-                                                  <input type="text" class="form-control datepicker" id="fecha_fin" name="fecha_fin" placeholder="Selecciona una fecha" value=""/>
-                                                </div>
-                                            </div>
-
-                                            <div class="mb-4">
-                                                <label for="lugar" class="form-label fw-bold">Lugar <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
-                                                    value="" placeholder="Lugar">
-                                            </div>
-
-                                            <div class="d-flex justify-content-end">
-                                                <button type="submit" class="btn btn-primary" id="saveBtn">
-                                                    Guardar
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end::Container-->
+                    <!-- Grid responsive para fechas -->
+                    <div class="row mb-5">
+                        <div class="col-md-6">
+                            <label for="fecha_inicio" class="required fw-semibold fs-6 mb-2 datapicker">Fecha de Inicio</label>
+                            <input type="text" class="form-control form-control-solid datepicker" id="fecha_inicio" name="fecha_inicio"
+                                placeholder="Selecciona una fecha"
+                                value="<?= isset($festival) ? esc($festival['fecha_inicio']) : '' ?>" />
                         </div>
-						<!--end::Post-->
-					</div>
+
+                        <div class="col-md-6">
+                            <label for="fecha_fin" class="required fw-semibold fs-6 mb-2 datapicker">Fecha de Fin</label>
+                            <input type="text" class="form-control form-control-solid datepicker" id="fecha_fin" name="fecha_fin"
+                                placeholder="Selecciona una fecha"
+                                value="<?= isset($festival) ? esc($festival['fecha_fin']) : '' ?>" />
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <label for="lugar" class="required fw-semibold fs-6 mb-2">Lugar</label>
+                        <input type="text" class="form-control form-control-solid" id="lugar" name="lugar" required
+                            value="<?= isset($festival) ? esc($festival['lugar']) : '' ?>" placeholder="Lugar">
+                    </div>
+
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-primary" id="saveBtn">
+                            Guardar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--end::Container-->
+</div>
+</div>
+<!--end::Post-->
+
 					<!--end::Content-->
 					<!--begin::Footer-->
 					<div class="footer py-4 d-flex flex-lg-column" id="kt_footer">
@@ -445,20 +461,20 @@ License: For each use you must have a valid license purchased only from above li
 		</div>
 		<!--end::Scrolltop-->
 		<!--end::Main-->
-		<script>var hostUrl = "../assets/";</script>
+		<script>var hostUrl = "../../assets/";</script>
 		<!--begin::Javascript-->
 		<!--begin::Global Javascript Bundle(used by all pages)-->
-		<script src="../assets/plugins/global/plugins.bundle.js"></script>
-		<script src="../assets/js/scripts.bundle.js"></script>
+		<script src="../../assets/plugins/global/plugins.bundle.js"></script>
+		<script src="../../assets/js/scripts.bundle.js"></script>
 		<!--end::Global Javascript Bundle-->
 		<!--begin::Page Vendors Javascript(used by this page)-->
-		<script src="../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="../../assets/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 		<!--end::Page Vendors Javascript-->
 		<!--begin::Page Custom Javascript(used by this page)-->
-		<script src="../assets/js/custom/widgets.js"></script>
-		<script src="../assets/js/custom/apps/chat/chat.js"></script>
-		<script src="../assets/js/custom/modals/create-app.js"></script>
-		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
+		<script src="../../assets/js/custom/widgets.js"></script>
+		<script src="../../assets/js/custom/apps/chat/chat.js"></script>
+		<script src="../../assets/js/custom/modals/create-app.js"></script>
+		<script src="../../assets/js/custom/modals/upgrade-plan.js"></script>
 		<script src="../../assets/js/custom/chart.js"></script>
 		<script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <!-- DataTables JS -->
@@ -466,8 +482,7 @@ License: For each use you must have a valid license purchased only from above li
 	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/dataTables.buttons.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/buttons/1.7.1/js/buttons.html5.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-	<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/es.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<!--end::Page Custom Javascript-->
 		<!--end::Javascript-->
@@ -622,17 +637,47 @@ $(document).ready(function () {
 });
 
 
-			// Mostrar mensaje de éxito (ejemplo)
-			// Swal.fire({
-			//     text: "Festival guardado correctamente",
-			//     icon: "success",
-			//     buttonsStyling: false,
-			//     confirmButtonText: "Entendido",
-			//     customClass: {
-			//         confirmButton: "btn btn-primary"
-			//     }
-			// });
+
+
+	
 		</script>
+<?php if (session()->getFlashdata('success')): ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: '¡Éxito!',
+            text: '<?= session()->getFlashdata('success') ?>'
+        });
+    </script>
+<?php endif; ?>
+
+<?php if (session()->getFlashdata('error')): ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: '<?= session()->getFlashdata('error') ?>'
+        });
+    </script>
+<?php endif; ?>
+
+
+		<script>
+document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita que redireccione inmediatamente
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Sesión cerrada',
+        text: 'Has cerrado sesión correctamente.',
+        showConfirmButton: false,
+        timer: 1000, // Duración en milisegundos antes de redirigir
+        timerProgressBar: true
+    }).then(() => {
+        window.location.href = this.href; // Redirige al logout
+    });
+});
+</script>
 	</body>
 	<!--end::Body-->
 </html>

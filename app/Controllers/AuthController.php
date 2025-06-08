@@ -87,22 +87,21 @@ class AuthController extends BaseController
         // Buscar el usuario en la base de datos
         $user = $userModel->where('email', $email)->first();
 
-        if ($user && $password == $user['password']) {
-            // Autenticación exitosa
-            $roleModel = new \App\Models\RolModel();
+if ($user && $password == $user['password']) {
+    // Autenticación exitosa
+    $roleModel = new \App\Models\RolModel();
+    $role = $roleModel->find($user['role_id']);
+    session()->set('user', $user);
+    session()->set('role', $role);
 
-            // Buscar el rol correspondiente en la base de datos
-            $role = $roleModel->find($user['role_id']);
+    // Redirige a /principal con mensaje flash de éxito
+    return redirect()->to('/principal')->with('success', 'Has iniciado sesión correctamente.');
+} else {
+    // Validación de error sin cambios
+    session()->setFlashdata('error', 'Email o contraseña incorrectos.');
+    return view('login');
+}
 
-            // Guardar el usuario y el rol en la sesión
-            session()->set('user', $user);
-            session()->set('role', $role);
-            return view('principal');
-        } else {
-            // Autenticación fallida
-            session()->setFlashdata('error', 'Email o contraseña incorrectos.');
-            return view('login');
-        }
     }
     session()->setFlashdata('error', '');
 return view ('login');

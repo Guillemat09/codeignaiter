@@ -178,7 +178,7 @@ License: For each use you must have a valid license purchased only from above li
 									</div>
 									<div class="mt-2 mb-2">
 										<?php if (session()->has('user')): ?>
-											<a href="logout" class="btn btn-danger">Cerrar Sesión</a>
+											<a href="logout" class="btn btn-danger" id="logoutBtn">Cerrar Sesión</a>
 												<?php else: ?>
 											<a href="login" class="btn btn-primary me-2">Iniciar Sesion</a>
 											<a href="register" class="btn btn-secondary">Registro</a>
@@ -1486,6 +1486,7 @@ License: For each use you must have a valid license purchased only from above li
 		<script src="../assets/js/custom/modals/create-app.js"></script>
 		<script src="../assets/js/custom/modals/upgrade-plan.js"></script>
 		<script src="../../assets/js/custom/chart.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script>
     document.addEventListener('DOMContentLoaded', function () {
         var options = {
@@ -1530,6 +1531,41 @@ License: For each use you must have a valid license purchased only from above li
         chart.render();
     });
 </script>
+		<script>
+document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita redirección inmediata
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Sesión cerrada',
+        text: 'Has cerrado sesión correctamente.',
+        showConfirmButton: false,
+        timer: 1000,
+        timerProgressBar: true
+    }).then(() => {
+        window.location.href = this.href; // Redirige al logout
+    });
+});
+</script>
+
+<?php if(session()->getFlashdata('success')): ?>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+Swal.fire({
+    icon: 'success',
+    title: 'Inicio sesión exitosa',
+    text: '<?= session()->getFlashdata('success') ?>',
+    showConfirmButton: false,
+    timer: 2000,
+    timerProgressBar: true
+});
+</script>
+<?php endif; ?>
+
+
+
+
+
 	</body>
 	<!--end::Body-->
 </html>

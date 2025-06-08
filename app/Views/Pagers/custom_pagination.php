@@ -8,11 +8,6 @@
                         <span aria-hidden="true">&laquo;&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item">
-                    <a class="page-link" href="<?= $pager->getPrevious() ?>" aria-label="Anterior">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
             <?php endif; ?>
 
             <!-- Enlaces a las páginas -->
@@ -26,11 +21,6 @@
 
             <!-- Enlace a la última página -->
             <?php if ($pager->hasNextPage()): ?>
-                <li class="page-item">
-                    <a class="page-link" href="<?= $pager->getNext() ?>" aria-label="Siguiente">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
                 <li class="page-item">
                     <a class="page-link" href="<?= $pager->getLast() ?>" aria-label="Última">
                         <span aria-hidden="true">&raquo;&raquo;</span>

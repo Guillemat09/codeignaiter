@@ -1,10 +1,6 @@
 
--alertas al cerrar sesion
-
 -header rarillo en movil  (bien)
 
-                                                             ..las validaciones                       (hechas)
 
--mirar estilos del editar
-                                                   -emnlazar la lista y el boton cancelar          (hecho)
-
+prueba@example.com
+password123

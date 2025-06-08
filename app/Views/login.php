@@ -136,6 +136,23 @@ License: For each use you must have a valid license purchased only from above li
 		<?php if(session()->getFlashdata('logout_success')): ?>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+document.getElementById('buttonSubmit').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita redirección inmediata
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Bienvenido',
+        text: 'Has iniciado sesión correctamente.',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true
+    }).then(() => {
+        window.location.href = this.href; // Redirige al login (o dashboard si ya está logueado)
+    });
+});
+</script>
+
+<script>
   Swal.fire({
     icon: 'success',
     title: '¡Listo!',
@@ -146,6 +163,18 @@ License: For each use you must have a valid license purchased only from above li
   });
 </script>
 <?php endif; ?>
+
+<?php if (session()->getFlashdata('logout_message')): ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Sesión cerrada',
+            text: '<?= session()->getFlashdata('logout_message') ?>',
+            confirmButtonText: 'Entendido'
+        });
+    </script>
+<?php endif; ?>
+
 
 	</body>
 	<!--end::Body-->

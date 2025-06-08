@@ -39,7 +39,16 @@ License: For each use you must have a valid license purchased only from above li
 	<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.7.1/css/buttons.dataTables.min.css">
-	<link href="assets/plugins/custom/flatpickr/flatpickr.bundle.css" rel="stylesheet" type="text/css" />
+	<link href="../../assets/plugins/custom/flatpickr/flatpickr.bundle.css" rel="stylesheet" type="text/css" />
+	<style>
+html {
+    overflow-y: scroll !important;
+}
+
+
+
+</style>
+
 
 	<!--end::Global Stylesheets Bundle-->
 </head>
@@ -205,7 +214,7 @@ License: For each use you must have a valid license purchased only from above li
 						<!--begin::Actions-->
 						<div class="mt-2 mb-2">
 							<?php if (session()->has('user')): ?>
-								<a href="logout" class="btn btn-danger">Cerrar Sesión</a>
+								<a href="logout" class="btn btn-danger" id="logoutBtn">Cerrar Sesión</a>
 							<?php else: ?>
 								<a href="login" class="btn btn-primary me-2">Iniciar Sesion</a>
 								<a href="register" class="btn btn-secondary">Registro</a>
@@ -289,7 +298,7 @@ License: For each use you must have a valid license purchased only from above li
 													</div>
 													<div class="mb-10">
 														<label class="form-label fs-6 fw-bold">Fecha:</label>
-														<input type="text" name="fecha_creacion" id="fecha_creacion" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Selecciona una fecha" value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
+														<input type="text" name="fecha_creacion" id="fecha_creacion" class="form-control form-control-solid mb-3 mb-lg-0 datepicker" placeholder="Selecciona una fecha" value="<?= isset($filters['fecha_creacion']) ? esc($filters['fecha_creacion']) : '' ?>" />
 													</div>
 													<div class="d-flex justify-content-end">
 														<a href="<?= base_url('/festivales') ?>" class="btn btn-light btn-active-light-primary fw-bold me-2 px-6">Resetear</a>
@@ -683,6 +692,22 @@ License: For each use you must have a valid license purchased only from above li
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 	<!--end::Page Custom Javascript-->
 	<!--end::Javascript-->
+			<script>
+document.getElementById('logoutBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Evita que redireccione inmediatamente
+
+    Swal.fire({
+        icon: 'success',
+        title: 'Sesión cerrada',
+        text: 'Has cerrado sesión correctamente.',
+        showConfirmButton: false,
+        timer: 1000, // Duración en milisegundos antes de redirigir
+        timerProgressBar: true
+    }).then(() => {
+        window.location.href = this.href; // Redirige al logout
+    });
+});
+</script>
 	<script>
 		document.getElementById("busquedaFestival").addEventListener("keypress", function(event) {
 			if (event.keyCode == 13) {
@@ -692,12 +717,15 @@ License: For each use you must have a valid license purchased only from above li
 		});
 	</script>
 	<script>
-		flatpickr("#fecha_creacion", {
-			locale: "es",
-			dateFormat: "Y-m-d",
-			altInput: true,
-			altFormat: "d-m-Y"
-		});
+document.addEventListener("DOMContentLoaded", function() {
+				flatpickr(".datepicker", {
+					locale: "es",
+					dateFormat: "Y-m-d",     
+					altInput: true,           
+					altFormat: "d-m-Y"         
+					
+				});
+			});
 	</script>
 	<script>
 		document.getElementById('export-excel-btn').addEventListener('click', function() {
@@ -740,4 +768,20 @@ License: For each use you must have a valid license purchased only from above li
 
 <?php endif; ?>
 
+
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Éxito',
+        text: '<?= session()->getFlashdata('success') ?>',
+        timer: 1000,
+        showConfirmButton: false
+    });
+</script>
+
+
+
+
+
+</body>
 </html>
